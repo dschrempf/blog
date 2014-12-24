@@ -1,0 +1,157 @@
+.centered {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 900px;
+}
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans;
+  line-height: 1.5;
+  background: #fff;
+  color: #444444;
+}
+body h1,
+body h2,
+body h3,
+body h4 {
+  color: #444444;
+  font-weight: normal;
+  font-family: Oswald, sans;
+}
+body h1 img,
+body h2 img,
+body h3 img,
+body h4 img {
+  vertical-align: middle;
+  border: 0 none;
+}
+body h1 {
+  font-size: 42px;
+}
+body h1.title {
+  text-align: left;
+}
+body h2 {
+  color: #444444;
+  margin-top: 50px;
+  position: relative;
+  font-size: 32px;
+}
+body h3 {
+  font-size: 18px;
+}
+body a {
+  text-decoration: none;
+  color: #31576b;
+  text-decoration: underline;
+}
+body a:hover {
+  color: #111e25;
+}
+body pre {
+  background: white;
+}
+body code {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  color: #444444;
+}
+body img {
+  border: 1px solid #ccc;
+  max-width: 600px;
+}
+body .tag {
+  background: transparent;
+  font-size: 0.6em;
+}
+body .tag span {
+  background: #31576b;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+body .pubdate {
+  font-family: "Libre Baskerville", Georgia, "Times New Roman", sans-serif;
+  font-style: italic;
+  color: #aaa;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+body .pubdate p {
+  display: inline;
+  margin-right: 10px;
+}
+body .nav-blog {
+  text-align: right;
+}
+body .org-info-js_info-navigation {
+  background: #bbbbbb;
+}
+body #content,
+body #postamble {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 900px;
+}
+body #content {
+  margin-top: 10px;
+}
+body #postamble {
+  font-size: 0.8em;
+  margin-top: 50px;
+  text-align: center;
+  color: #aaa;
+}
+body #postamble a {
+  color: #5290b0;
+}
+body .intro {
+  padding: 20px 0px;
+  border-bottom: 1px solid #CCC;
+  width: 900px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  color: #CCC;
+}
+body .intro h1 {
+  font-size: 42px;
+  color: #CCC;
+  margin: 0;
+  padding: 0;
+}
+body .intro p {
+  color: #aaa;
+  font-size: 14px !important;
+}
+body .nav {
+  font-family: Oswald, sans;
+  text-align: center;
+}
+body .nav ul {
+  list-style: none;
+  width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+body .nav ul li {
+  display: inline-block;
+  margin: 0;
+}
+body .nav ul li a {
+  line-height: 46px;
+  display: inline-block;
+  padding: 0 20px;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: normal;
+  color: #aaa;
+}
+body .nav ul li a:hover {
+  text-decoration: underline;
+}
+body #disqus_thread {
+  margin-top: 40px;
+}
+body .clearfix {
+  clear: both;
+}
