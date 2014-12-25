@@ -9,7 +9,6 @@
 
     body .nav {
     text-align: center;
-	font-size:1.3em;
     }
     body .nav ul {
     list-style: none;
@@ -25,8 +24,9 @@
     display: inline-block;
     padding: 0 20px;
     border-radius: 0;
-    text-decoration: none;
-    font-weight: normal;
+    /* text-decoration: none; */
+    font-weight: bold;
+    /* font-weight: normal; */
     color: #aaa;
     }
     body .nav ul li a:hover {
@@ -958,7 +958,7 @@ content: "*** "
     #show_source {margin: 0; padding: 0;}
 
     #postamble {
-    /* font-size: 75%; */
+    font-size: 75%;
 	width: 900px;
 	max-width: 100%;
 	margin-top: 10px;
@@ -966,7 +966,7 @@ content: "*** "
 	margin-right:auto;
     text-align: center;
 	padding: .2em;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     /* Does not play well with Disqus. */
     /* color: #aaaaaa; */
 	/* background-color: #ffffff; */
