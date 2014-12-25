@@ -2,13 +2,14 @@
 
 @media all
 {
-    /* html { */
-    .centered {
+    html {
 	margin: 0;
-    /* max-width: 65%; */
-    max-width: 900px;
-    width: 900px;
 	font: 300 .9em/1.6em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif;
+	background-image: url(http://orgmode.org/img/org-mode-unicorn-logo-worg.png);
+	background-attachment: fixed;
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-color: white;
     }
 
     body .nav {
@@ -17,7 +18,6 @@
     }
     body .nav ul {
         list-style: none;
-        width: 900px;
         margin: 0 auto;
         padding: 0;
     }
@@ -37,10 +37,10 @@
     body .nav ul li a:hover {
         text-decoration: underline;
     }
-    
+
     body {
-	font-size: 14pt;
-	line-height: 1.5;
+	font-size: 12pt;
+	line-height: 18pt;
 	color: black;
 	margin-top: 0;
 
@@ -965,6 +965,7 @@ content: "*** "
 	max-width: 80%;
 	margin-left: 20px;
 	margin-top: 10px;
+    text-align: center;
 	padding: .2em;
 	border: 1px solid gray;
 	background-color: #ffffff;
