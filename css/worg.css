@@ -54,7 +54,7 @@
     body .title {
     text-align: left;        
 	margin-left: 0px;
-	font-size: 22pt;
+	font-size: 28pt;
     }
 
     #org-div-home-and-up{
@@ -966,6 +966,7 @@ content: "*** "
 	margin-right:auto;    
     text-align: center;
 	padding: .2em;
+    color: #aaaaaa;
 	background-color: #ffffff;
 	z-index: -1000;
     }
