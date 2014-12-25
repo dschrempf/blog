@@ -26,8 +26,7 @@
     padding: 0 20px;
     border-radius: 0;
     text-decoration: none;
-    font-weight: bold;
-    /* font-weight: normal; */
+    font-weight: normal;
     color: #aaa;
     }
     body .nav ul li a:hover {
@@ -967,6 +966,7 @@ content: "*** "
 	margin-right:auto;
     text-align: center;
 	padding: .2em;
+    border: 1px solid gray;
     /* Does not play well with Disqus. */
     /* color: #aaaaaa; */
 	/* background-color: #ffffff; */
