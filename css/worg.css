@@ -43,8 +43,8 @@
     }
     body #content {
 	padding-top: 0px;
-	min-width: 700px;
-	max-width: 70%;
+	width: 900px;
+	max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 	background-color: white;
@@ -959,9 +959,11 @@ content: "*** "
 
     #postamble {
 	font-size: 75%;
-	min-width: 700px;
-	max-width: 70%;
+	width: 900px;
+	max-width: 100%;
 	margin-top: 10px;
+	margin-left:auto;
+	margin-right:auto;    
     text-align: center;
 	padding: .2em;
 	background-color: #ffffff;
