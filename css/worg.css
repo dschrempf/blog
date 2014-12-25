@@ -1,9 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif);
 
-.centered {
-    margin: 0 auto;        
-}
-
 @media all
 {
     html {
@@ -50,9 +46,8 @@
     }
     body #content {
 	padding-top: 0px;
-	max-width: 80%;
-	min-width: 700px;
-	margin-left: 20px;
+	max-width: 900px;
+	min-width: 900px;
 	background-color: white;
 	padding: 2em;
 	/* box-shadow: 3px 3px 5px #888; */
@@ -965,9 +960,8 @@ content: "*** "
 
     #postamble {
 	font-size: 75%;
-	min-width: 700px;
-	max-width: 80%;
-	margin-left: 20px;
+	min-width: 900px;
+	max-width: 900px;
 	margin-top: 10px;
     text-align: center;
 	padding: .2em;
