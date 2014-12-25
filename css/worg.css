@@ -8,8 +8,8 @@
     }
 
     body .nav {
-    font-family: Oswald, sans;
     text-align: center;
+	font-size:1.45em;
     }
     body .nav ul {
     list-style: none;
@@ -34,8 +34,8 @@
     }
 
     body {
-	font-size: 12pt;
-	line-height: 18pt;
+	font-size: 14pt;
+	line-height: 21pt;
 	color: black;
 	margin-top: 0;
     margin-left: auto;
@@ -52,7 +52,7 @@
 	/* box-shadow: 3px 3px 5px #888; */
     }
     body .title {
-    text-align: left;        
+    text-align: left;
 	margin-left: 0px;
 	font-size: 28pt;
     }
@@ -963,11 +963,12 @@ content: "*** "
 	max-width: 100%;
 	margin-top: 10px;
 	margin-left:auto;
-	margin-right:auto;    
+	margin-right:auto;
     text-align: center;
 	padding: .2em;
-    color: #aaaaaa;
-	background-color: #ffffff;
+    /* Does not play well with Disqus. */
+    /* color: #aaaaaa; */
+	/* background-color: #ffffff; */
 	z-index: -1000;
     }
 
