@@ -9,7 +9,7 @@
 
     body .nav {
     text-align: center;
-	font-size:1.45em;
+	font-size:1.3em;
     }
     body .nav ul {
     list-style: none;
@@ -26,7 +26,8 @@
     padding: 0 20px;
     border-radius: 0;
     text-decoration: none;
-    font-weight: normal;
+    font-weight: bold;
+    /* font-weight: normal; */
     color: #aaa;
     }
     body .nav ul li a:hover {
@@ -958,7 +959,7 @@ content: "*** "
     #show_source {margin: 0; padding: 0;}
 
     #postamble {
-	font-size: 75%;
+    /* font-size: 75%; */
 	width: 900px;
 	max-width: 100%;
 	margin-top: 10px;
