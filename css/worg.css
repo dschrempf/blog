@@ -48,6 +48,7 @@
     margin: 0;
     }
     body .nav ul li a {
+    font-size: 1em;
     line-height: 2em;
     display: inline-block;
     padding: 0 20px;
