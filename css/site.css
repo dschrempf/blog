@@ -87,6 +87,7 @@
     /* ensure doesn't flow off the screen when expanded */
     max-height: 80%;
     overflow: auto;
+    z-index: -1;
     }
     #table-of-contents h2 {
     font-size: 1.3em;
@@ -264,7 +265,7 @@ content: "*** "
     background-color: #ffffff;
     padding: 1.2em;
     border: 2px solid #dddddd;
-    overflow: hidden;
+    overflow: auto;
     }
 
     .org-info-box {
