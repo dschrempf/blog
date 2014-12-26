@@ -4,7 +4,8 @@
 {
     html {
     margin: 0;
-    font: 300 .9em/1.6em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif;
+    font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif;
+    /* font: 300 .9em/1.6em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
     }
 
     body .nav {
@@ -978,7 +979,7 @@ content: "*** "
     }
 
     .footer {
-    font-size: 75%;
+    /* font-size: 75%; */
     color: #aaaaaa;
     }
 
