@@ -87,7 +87,7 @@
     /* ensure doesn't flow off the screen when expanded */
     max-height: 80%;
     overflow: auto;
-    z-index: -1000;
+    z-index: 1000;
     }
     #table-of-contents h2 {
     font-size: 1.3em;
