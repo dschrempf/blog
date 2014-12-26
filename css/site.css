@@ -38,7 +38,6 @@
     body .nav {
     font-size: 1em;
     text-align: center;
-    border-bottom: 1px solid #ddd;
     }
     body .nav ul {
     list-style: none;
@@ -54,13 +53,14 @@
     line-height: 2em;
     display: inline-block;
     padding: 0 20px;
-    border-radius: 0;
+    border-bottom: 1px solid #ddd;
+    /* border-radius: 0; */
     /* text-decoration: none; */
     font-weight: normal;
     color: #aaa;
     }
     body .nav ul li a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
     }
 
     #org-div-home-and-up{
