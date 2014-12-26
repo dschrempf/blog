@@ -1,3 +1,4 @@
+/* Taken from the Org mode Worg project. */
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif);
 
 @media all
@@ -85,7 +86,9 @@
     -moz-border-radius-bottomleft: 5px;
     /* ensure doesn't flow off the screen when expanded */
     max-height: 80%;
-    overflow: auto; }
+    overflow: visible;
+    /* overflow: auto; */
+    }
     #table-of-contents h2 {
     font-size: 1.3em;
     /* font-size: 13pt; */
