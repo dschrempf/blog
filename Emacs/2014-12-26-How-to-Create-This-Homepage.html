@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>How to Create This Homepage</title>
-<!-- 2014-12-26 Fri 11:50 -->
+<!-- 2014-12-26 Fri 11:57 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -218,13 +218,13 @@ files so that they can be hosted by GitHub:
 
 <pre class="src src-lisp" id="Org-publish-setup">(setq org-publish-project-alist
       '(
-        <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Blog posts in org mode that are exported to html and hosted</span>
+        <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Blog posts in Org mode that are exported to html and hosted</span>
         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">by GitHub.</span>
         (<span style="color: #008000;">"blog"</span>
-         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Directory with org files.</span>
+         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Directory with Org files.</span>
          <span style="color: #006FE0;">:base-directory</span> <span style="color: #008000;">"~/Dropbox/blog/posts/"</span>
          <span style="color: #006FE0;">:base-extension</span> <span style="color: #008000;">"org"</span>
-         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Output directory for html files on github.</span>
+         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Output directory for html files on GitHub.</span>
          <span style="color: #006FE0;">:publishing-directory</span> <span style="color: #008000;">"~/Dropbox/blog/fazky.github.io/"</span>
          <span style="color: #006FE0;">:publishing-function</span> (org-html-publish-to-html)
          <span style="color: #006FE0;">:html-extension</span> <span style="color: #008000;">"html"</span>
@@ -291,12 +291,12 @@ user name and tracking ID).
 <span style="color: #008000;">&lt;/div&gt;"</span>))
 
 (<span style="color: #0000FF;">defun</span> <span style="color: #006699;">website-html-postamble</span> (info)
-  <span style="color: #036A07;">"Put Disqus into org-mode website postamble.  Do not show</span>
+  <span style="color: #036A07;">"Put Disqus into Org mode website postamble.  Do not show</span>
 <span style="color: #036A07;">   disqus for the Archive and the Index."</span>
   (concat
    (<span style="color: #0000FF;">cond</span> ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"Archive"</span>) <span style="color: #008000;">""</span>)
          ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"Index"</span>) <span style="color: #008000;">""</span>)
-         ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"fazky :: Github -&gt; IO ()"</span>) <span style="color: #008000;">""</span>)
+         ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"fazky :: GitHub -&gt; IO ()"</span>) <span style="color: #008000;">""</span>)
          (t <span style="color: #008000;">"&lt;div id='disqus_thread'&gt;&lt;/div&gt;</span>
 <span style="color: #008000;">&lt;script type='text/javascript'&gt;</span>
 <span style="color: #008000;">  var disqus_shortname = 'YOUR DISQUS NAME HERE'; // required: replace example with your forum shortname</span>
@@ -334,7 +334,7 @@ user name and tracking ID).
 <div id="postamble" class="status">
 <div id='disqus_thread'></div>
 <script type='text/javascript'>
-  var disqus_shortname = 'fazky'; // required: replace example with your forum shortname
+  var disqus_shortname = 'Fazky'; // required: replace example with your forum shortname
   (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
