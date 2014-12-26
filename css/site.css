@@ -123,12 +123,14 @@
       font-family:Sans;
       font-weight:bold; */
     font-size:2.1em;
-    padding:0 0 30px 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 7%;
+    padding:10px 0 10px 0;
+    /* padding:0 0 30px 0; */
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    /* margin-right: 7%; */
     /*    color: #6C5D4F; */
     color: grey;
+    border-bottom: 1px solid #ddd;
     }
 
     /*
@@ -148,7 +150,7 @@ content: "*** "
     h2 {
     font-family:sans-serif;
     font-size:1.45em;
-    line-height:16px;
+    /* line-height:16px; */
     padding:10px 0 10px 0;
     color: black;
     border-bottom: 1px solid #ddd;
