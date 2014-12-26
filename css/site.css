@@ -86,8 +86,7 @@
     -moz-border-radius-bottomleft: 5px;
     /* ensure doesn't flow off the screen when expanded */
     max-height: 80%;
-    overflow: visible;
-    /* overflow: auto; */
+    overflow: auto;
     }
     #table-of-contents h2 {
     font-size: 1.3em;
@@ -265,7 +264,7 @@ content: "*** "
     background-color: #ffffff;
     padding: 1.2em;
     border: 2px solid #dddddd;
-    overflow: auto;
+    overflow: hidden;
     }
 
     .org-info-box {
