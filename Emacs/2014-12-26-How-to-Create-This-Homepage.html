@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>How to Create This Homepage</title>
-<!-- 2014-12-26 Fri 12:10 -->
+<!-- 2014-12-26 Fri 12:13 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -299,14 +299,19 @@ user name and tracking ID).
          ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"fazky :: GitHub -&gt; IO ()"</span>) <span style="color: #008000;">""</span>)
          (t <span style="color: #008000;">"&lt;div id='disqus_thread'&gt;&lt;/div&gt;</span>
 <span style="color: #008000;">&lt;script type='text/javascript'&gt;</span>
-<span style="color: #008000;">  var disqus_shortname = 'YOUR DISQUS NAME HERE'; // required: replace example with your forum shortname</span>
+<span style="color: #008000;">  // required: replace example with your forum shortname</span>
+<span style="color: #008000;">  var disqus_shortname = 'YOUR DISQUS NAME HERE';</span>
 <span style="color: #008000;">  (function() {</span>
-<span style="color: #008000;">      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;</span>
+<span style="color: #008000;">      var dsq = document.createElement('script');</span>
+<span style="color: #008000;">      dsq.type = 'text/javascript'; dsq.async = true;</span>
 <span style="color: #008000;">      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';</span>
-<span style="color: #008000;">      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);</span>
+<span style="color: #008000;">      (document.getElementsByTagName('head')[0] || </span>
+<span style="color: #008000;">       document.getElementsByTagName('body')[0]).appendChild(dsq);</span>
 <span style="color: #008000;">  })();</span>
 <span style="color: #008000;">&lt;/script&gt;</span>
-<span style="color: #008000;">&lt;noscript&gt;&lt;p&gt;Please enable JavaScript to view the &lt;a href='http://disqus.com/?ref_noscript'&gt;comments powered by Disqus.&lt;/a&gt;&lt;/p&gt;&lt;/noscript&gt;"</span>))
+<span style="color: #008000;">&lt;noscript&gt;&lt;p&gt;Please enable JavaScript to view the</span>
+<span style="color: #008000;">  &lt;a href='http://disqus.com/?ref_noscript'&gt;comments powered by Disqus.&lt;/a&gt;&lt;/p&gt;</span>
+<span style="color: #008000;">&lt;/noscript&gt;"</span>))
    (format <span style="color: #008000;">"&lt;div class='footer'&gt;</span>
 <span style="color: #008000;">Copyright 2014 AUTHOR&lt;br/&gt;</span>
 <span style="color: #008000;">Last updated %s &lt;br/&gt;</span>
