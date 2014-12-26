@@ -38,6 +38,7 @@
     body .nav {
     font-size: 1em;
     text-align: center;
+    border-bottom: 1px solid #ddd;
     }
     body .nav ul {
     list-style: none;
