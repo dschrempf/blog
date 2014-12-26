@@ -39,12 +39,15 @@
     font-size: 1em;
     text-align: center;
     border-bottom: 1px solid #ddd;
+    width: 900px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     }
     body .nav ul {
     list-style: none;
     margin: 0 auto;
     padding: 0;
-    border-bottom: 1px solid #ddd;
     }
     body .nav ul li {
     display: inline-block;
