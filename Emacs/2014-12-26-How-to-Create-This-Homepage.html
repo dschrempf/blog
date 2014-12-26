@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Archive</title>
+<title>How to Create This Homepage</title>
 <!-- 2014-12-26 Fri 11:23 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
@@ -147,15 +147,72 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Archive</h1>
-<ul class="org-ul">
-<li><a href="Haskell/2014-12-23-First-Post.html">Easy Pretty Print in Haskell</a></li>
-<li><a href="Emacs/2014-12-26-How-to-Create-This-Homepage.html">How to Create This Homepage</a></li>
-<li id="[[<a href="index.org][fazky">index.org][fazky</a>">Github -&gt; IO ()]]</li>
-</ul>
+<h1 class="title">How to Create This Homepage</h1>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2014-12-26 Fri&gt; </span></span> This homepage was created with Emacs and <a href="http://orgmode.org/">Org mode</a>.
+It is hosted at <a href="https://pages.github.com/">github.io</a> and comments can be done using <a href="https://disqus.com/">Disqus</a>.  I
+assume a working Org mode setup and a <i>GitHub</i> and a <i>Disqus</i> account.
+</p>
+
+<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">General Idea</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+<b>Org mode</b> is a great tool for taking notes and exporting them to all
+kind of formats.  One of this formats is <b>HTML</b>.  The idea here is to
+use the publishing capabilities of Org mode to create a very basic
+website that can be used to blog and publish articles.  <b>GitHub</b>
+offers a freely available hosting service, a very easy way to make the
+website available.  The ability to comment posts can be added with
+<b>Disqus</b>.  Many people also use <a href="http://jekyllrb.com/">Jekyll</a> to create homepages and blogs
+together with Org mode and GitHub.  This is certainly a very appealing
+alternative but I prefer a setting that is easier to set up and has
+fewer options.
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2">Folder Structure</h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<p>
+I decided to use the following folder structure; it is somehow
+arbitrary but the Org mode publishing setup has to be adjusted
+accordingly:
+</p>
+
+<pre class="example">
+blog
+├── blog/css
+├── blog/fazky.github.io
+├── blog/img
+├── blog/js
+└── blog/posts
+
+5 directories
+</pre>
+
+<p>
+The folders <code>css</code>, <code>img</code> and <code>js</code> are self explanatory.  Good style
+sheets are hard to get.  I use a <a href="file:~/Dropbox/blog/css/worg.css">neat one</a> from <a href="http://orgmode.org/worg/">Worg</a> with a few
+changes.  <code>fazky.github.io</code> is the git repository of the GitHub
+homepage (there are detailed explanations on <a href="https://pages.github.com/">GitHub</a> about how to set
+it up).  The Org files reside in the <code>posts</code> directory.
+</p>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<div class='footer'>
+<div id='disqus_thread'></div>
+<script type='text/javascript'>
+  var disqus_shortname = 'fazky'; // required: replace example with your forum shortname
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
 Last updated 2014-12-26 <br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
