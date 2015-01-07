@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Zip Folders with GNU Parallel</title>
-<!-- 2015-01-07 Wed 10:42 -->
+<!-- 2015-01-07 Wed 12:50 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -176,6 +176,16 @@ to use it to zip many folders (or files) in parallel.
 <div class="org-src-container">
 
 <pre class="src src-sh">parallel -a folders <span style="color: #008000;">"tar -czf {}.tar.gz {}"</span>
+</pre>
+</div>
+
+<p>
+In order to unzip many files at ones (this method can also be used to
+zip the files if their names follow certain patterns):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">parallel <span style="color: #008000;">"tar -xzf {}"</span> ::: *.tar.gz
 </pre>
 </div>
 </div>
