@@ -3,11 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Archive</title>
+<title>Dateutils</title>
 <!-- 2015-01-07 Wed 13:45 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
+<meta  name="description" content="Work with times and dates in the shell."
+ />
+<meta  name="keywords" content="Dateutils, Time, Date, Difference, Shell, Seconds" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center; }
@@ -147,22 +150,30 @@ for the JavaScript code in this tag.
 </div>
 </div>
 <div id="content">
-<h1 class="title">Archive</h1>
-<ul class="org-ul">
-<li><a href="Haskell/2014-12-23-First-Post.html">Easy Pretty Print in Haskell</a>
-</li>
-<li><a href="Emacs/2014-12-26-How-to-Create-This-Homepage.html">How to Create This Homepage</a>
-</li>
-<li><a href="Linux/2015-01-07-GNU-Parallel.html">Zip Folders with GNU Parallel</a>
-</li>
-<li><a href="Linux/2015-01-07-Dateutils.html">Dateutils</a>
-</li>
-<li><a href="index.html">Concept -&gt; IO ()</a>
-</li>
-</ul>
+<h1 class="title">Dateutils</h1>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-01-07 Wed&gt;</span></span> Did you ever need to calculate the time difference
+between to consecutive time stamps from a log file or something
+similar?  Check <a href="http://www.fresse.org/dateutils/">dateutils</a> out, it is really useful:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">ddiff -i <span style="color: #008000;">'%H:%M:%S'</span> <span style="color: #008000;">'19:09:43,683'</span> <span style="color: #008000;">'19:34:10,350'</span>
+</pre>
+</div>
 </div>
 <div id="postamble" class="status">
-<div class='footer'>
+<div id='disqus_thread'></div>
+<script type='text/javascript'>
+  var disqus_shortname = 'Fazky'; // required: replace example with your forum shortname
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
 Last updated 2015-01-07 <br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
