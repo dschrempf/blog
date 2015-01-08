@@ -131,7 +131,7 @@
     /* margin-right: 7%; */
     /*    color: #6C5D4F; */
     color: grey;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     }
 
     /*
@@ -154,7 +154,7 @@ content: "*** "
     /* line-height:16px; */
     padding:10px 0 10px 0;
     color: black;
-    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     }
 
     .outline-text-2 {
