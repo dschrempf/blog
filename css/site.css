@@ -5,7 +5,7 @@
 {
     html {
     margin: 0;
-    font: 300 1em/1.5em "Open Sans", "Droid Sans", Cambria, Georgia, serif;
+    font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "Droid Sans", serif;
     /* font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
     /* font: 300 .9em/1.6em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
     }
@@ -96,7 +96,7 @@
     z-index: 1000;
     }
     #table-of-contents h2 {
-    /* font-family:sans-serif; */
+    font-family:sans;
     font-size:1.45em;
     /* font-size: 13pt; */
     max-width: 9em;
@@ -121,9 +121,8 @@
     }
 
     h1 {
-    /*
-      font-family:Sans;
-      font-weight:bold; */
+    font-family:sans;
+    /* font-weight:bold; */
     font-size:2.1em;
     padding:10px 0 10px 0;
     /* padding:0 0 30px 0; */
@@ -150,7 +149,7 @@ content: "*** "
 */
 
     h2 {
-    /* font-family:sans-serif; */
+    font-family:sans;
     font-size:1.45em;
     /* line-height:16px; */
     padding:10px 0 10px 0;
@@ -163,7 +162,7 @@ content: "*** "
     }
 
     h3 {
-    /* font-family:sans-serif; */
+    font-family:sans;
     font-size:1.3em;
     color: grey;
     margin-left: 0.6em;
@@ -177,7 +176,7 @@ content: "*** "
     }
 
     h4 {
-    /* font-family:sans-serif; */
+    font-family:sans;
     font-size:1.2em;
     margin-left: 1.2em;
     color: #A5573E;
