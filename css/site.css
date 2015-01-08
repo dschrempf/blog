@@ -1,11 +1,12 @@
 /* Taken from the Org mode Worg project. */
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono|Droid+Serif);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Droid+Sans|Droid+Sans+Mono|Droid+Serif);
 
 @media all
 {
     html {
     margin: 0;
-    font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif;
+    font: 300 1em/1.5em "Open Sans", "Droid Sans", Cambria, Georgia, serif;
+    /* font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
     /* font: 300 .9em/1.6em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
     }
 
