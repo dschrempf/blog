@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>A Simple MCMC Simulation</title>
-<!-- 2015-01-15 Thu 11:26 -->
+<!-- 2015-01-15 Thu 11:29 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -199,13 +199,9 @@ Now, we want to know the probability of tossing a head \(\theta\).  A
 maximum likelihood guess would be \(\theta = 0.58\) because then, the
 probability of observing 58 heads
 </p>
-<div class="org-src-container">
-
-<pre class="src src-latex"><span style="color: #FF5500;">\begin</span>{<span style="color: #006699;">align</span>}
-<span style="color: #0000ff;">  P(58 </span><span style="color: #FF5500;">\mathrm</span><span style="color: #0000ff;">{ heads}) = {100 </span><span style="color: #FF5500;">\choose</span><span style="color: #0000ff;"> 58} (0.58)^{58} (0.42)^{42}</span>
-<span style="color: #FF5500;">\end</span>{<span style="color: #006699;">align</span>}
-</pre>
-</div>
+\begin{align}
+  P(58 \mathrm{ heads}) = {100 \choose 58} (0.58)^{58} (0.42)^{42}
+\end{align}
 <p>
 is greatest (an example of the binomial distribution).
 </p>
