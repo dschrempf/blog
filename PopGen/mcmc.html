@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>A Simple MCMC Simulation</title>
-<!-- 2015-01-15 Thu 11:29 -->
+<!-- 2015-01-15 Thu 11:51 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -214,7 +214,7 @@ observation).
 </p>
 
 <p>
-The following C++ code does exactly this.
+The following C++ code does exactly this (the last column is the posterior).
 </p>
 
 <div class="org-src-container">
@@ -253,6 +253,7 @@ The following C++ code does exactly this.
     <span style="color: #0000FF;">const</span> <span style="color: #6434A3;">gsl_rng_type</span> * <span style="color: #BA36A5;">t</span>;
     <span style="color: #6434A3;">gsl_rng</span> * <span style="color: #BA36A5;">r</span>;
     <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">theta</span>;               <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">The probability of tossing a head.</span>
+    <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">posterior</span>[100];           <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">The posterior.</span>
 
     gsl_rng_env_setup();
 
@@ -266,12 +267,20 @@ The following C++ code does exactly this.
     <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">calculated (see below).</span>
     theta = gsl_rng_uniform (r);
 
+    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">"Start MCMC."</span> &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+
+    fix_width_cout_str(<span style="color: #008000;">"iteration"</span>);
     fix_width_cout_str(<span style="color: #008000;">"theta_old"</span>);
     fix_width_cout_str(<span style="color: #008000;">"theta_pri"</span>);
     fix_width_cout_str(<span style="color: #008000;">"ln_tot"</span>);
     fix_width_cout_str(<span style="color: #008000;">"pr_of_acc"</span>);
     fix_width_cout_str(<span style="color: #008000;">"theta_new"</span>);
     <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+
+    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Initialize posterior.</span>
+    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; 100; i++) {
+        posterior[i] = 0.0;
+    }
 
     <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; n_iter; i++)
         {
@@ -333,12 +342,14 @@ The following C++ code does exactly this.
             <span style="color: #0000FF;">if</span> (u &lt; acc)
                 {
                     theta = theta_prime;
+                    posterior[(<span style="color: #6434A3;">int</span>)(<span style="color: #6434A3;">theta</span>*100)] += 1.0;
                 }
 
             <span style="color: #8D8D84;">//////////////////////////////</span>
             <span style="color: #8D8D84;">//</span><span style="color: #8D8D84; font-style: italic;">Log results.</span>
             <span style="color: #0000FF;">if</span> (i % print_every == 0)
                 {
+                    fix_width_cout_dbl (i);
                     fix_width_cout_dbl (old_theta);
                     fix_width_cout_dbl (theta_prime);
                     fix_width_cout_dbl (ln_tot);
@@ -346,7 +357,32 @@ The following C++ code does exactly this.
                     fix_width_cout_dbl (theta);
                     <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
                 }
+
+        }
+
+    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">"MCMC finished."</span> &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+
+    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Normalize posterior.</span>
+    <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">sum</span> = 0.0;
+    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; 100; i++) {
+        sum += posterior[i];
     }
+    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; 100; i++) {
+        posterior[i] = posterior[i]/sum;
+    }
+
+
+    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> =0 ; i &lt; 100; i++) {
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">"Theta between "</span>;
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(3) &lt;&lt; i;
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">" and "</span>;
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(3) &lt;&lt; i+1;
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">":\t"</span>;
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(4) &lt;&lt; <span style="color: #D0372D;">std</span>::setprecision(2) &lt;&lt; (posterior[i]);
+        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+    }
+
 
     gsl_rng_free (r);
 
