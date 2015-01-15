@@ -1003,6 +1003,7 @@ content: "*** "
 
     .org-dl dt {
         font-weight: bold;
+        /* color: maroon; */
     }
 
 } /* END OF @media all */
