@@ -181,11 +181,11 @@ content: "*** "
 
     h4 {
         font-family:sans;
-        font-size:1.2em;
+        font-size:1.1em;
         /* margin-left: 1.2em; */
         margin-bottom: 0;
         border-bottom: 1px solid #ddd;
-        color: grey;
+        /* color: grey; */
     }
 
     .outline-text-4 {
