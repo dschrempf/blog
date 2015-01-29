@@ -212,10 +212,11 @@ content: "*** "
         font-family: monospace;
         font-weight: bold;
         color: #555555;
-        background-color: #CCCCCC;
+        background-color: #DDDDDD;
         margin-right: 10px;
         border: 1px;
         border-style: groove;
+        border-color: #888888;
     }
 
     .tag {
