@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Dateutils</title>
-<!-- 2015-01-22 Thu 15:42 -->
+<title>Zip Folders with GNU Parallel</title>
+<!-- 2015-01-29 Thu 18:10 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
-<meta  name="description" content="Work with times and dates in the shell."
+<meta  name="description" content="How to zip folders in parallel."
  />
-<meta  name="keywords" content="Dateutils, Time, Date, Difference, Shell, Seconds" />
+<meta  name="keywords" content="GNU Parallel, Parallel, Tar, Zip" />
 <link rel='stylesheet' href='/css/site.css' type='text/css'/>
 </head>
 <body>
@@ -24,16 +24,40 @@
 </div>
 </div>
 <div id="content">
-<h1 class="title">Dateutils</h1>
+<h1 class="title">Zip Folders with GNU Parallel</h1>
 <p>
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-01-07 Wed&gt; </span></span> Did you ever need to calculate the time difference
-between to consecutive time stamps from a log file or something
-similar?  Check <a href="http://www.fresse.org/dateutils/">dateutils</a> out, it is really useful:
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-01-07 Wed&gt; </span></span> Working with large files takes a long time.
+Sometimes, it is worth to zip folders individually, so that a single
+archive does not get too large.  <a href="http://www.gnu.org/s/parallel">GNU Parallel</a> is a shell tool to
+execute jobs in parallel.  Here, I show one of possibly many methods
+to use it to zip many folders (or files) in parallel.
 </p>
 
+<ol class="org-ol">
+<li>Create a file with all folders that you want to zip, e.g with:</li>
+</ol>
 <div class="org-src-container">
 
-<pre class="src src-sh">ddiff -i <span style="color: #008000;">'%H:%M:%S'</span> <span style="color: #008000;">'19:09:43,683'</span> <span style="color: #008000;">'19:34:10,350'</span>
+<pre class="src src-sh">ls -1 &gt; folders
+</pre>
+</div>
+
+<ol class="org-ol">
+<li>Use GNU Parallel to zip them:</li>
+</ol>
+<div class="org-src-container">
+
+<pre class="src src-sh">parallel -a folders <span style="color: #008000;">"tar -czf {}.tar.gz {}"</span>
+</pre>
+</div>
+
+<p>
+In order to unzip many files at ones (this method can also be used to
+zip the files if their names follow certain patterns):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">parallel <span style="color: #008000;">"tar -xzf {}"</span> ::: *.tar.gz
 </pre>
 </div>
 </div>
@@ -49,7 +73,7 @@ similar?  Check <a href="http://www.fresse.org/dateutils/">dateutils</a> out, it
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
-Last updated 2015-01-22 <br/>
+Last updated 2015-01-29 <br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
