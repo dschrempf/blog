@@ -211,7 +211,8 @@ content: "*** "
     .timestamp {
         font-weight: bold;
         font-size: 0.8em;
-        color: #444;
+        /* color: #444444; */
+        background-color: #444444
     }
 
     .tag {
