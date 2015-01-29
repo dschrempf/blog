@@ -213,10 +213,13 @@ content: "*** "
         font-weight: bold;
         color: #666666;
         background-color: #EEEEEE;
-        padding-left: 1ch;
-        margin-right: 10px;
         border: 1px groove;
         border-color: #AAAAAA;
+        /* Org mode puts a space after timestamps, also increase the box size
+by one space to the left. */
+        padding-left: 1ch;
+        /* Put a space between the timestamp and the text that follows. */
+        margin-right: 1ch;
     }
 
     .tag {
