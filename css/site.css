@@ -211,9 +211,9 @@ content: "*** "
     .timestamp {
         font-family: monospace;
         font-weight: bold;
-        font-size: 0.8em;
-        /* color: #444444; */
-        background-color: #999999
+        color: #333333;
+        background-color: #AAAAAA;
+        padding-right: 10px;
     }
 
     .tag {
