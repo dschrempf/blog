@@ -209,10 +209,11 @@ content: "*** "
     }
 
     .timestamp {
+        font-family: monospace;
         font-weight: bold;
         font-size: 0.8em;
         /* color: #444444; */
-        background-color: #444444
+        background-color: #999999
     }
 
     .tag {
