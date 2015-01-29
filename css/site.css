@@ -211,13 +211,12 @@ content: "*** "
     .timestamp {
         font-family: monospace;
         font-weight: bold;
-        color: #555555;
-        background-color: #DDDDDD;
-        padding-left: 10px;
+        color: #666666;
+        background-color: #EEEEEE;
+        padding-left: 1ch;
         margin-right: 10px;
-        border: 1px;
-        border-style: groove;
-        border-color: #555555;
+        border: 1px groove;
+        border-color: #AAAAAA;
     }
 
     .tag {
