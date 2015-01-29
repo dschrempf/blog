@@ -213,6 +213,7 @@ content: "*** "
         font-weight: bold;
         color: #333333;
         background-color: #AAAAAA;
+        padding-right: -5px;
         margin-right: 10px;
     }
 
