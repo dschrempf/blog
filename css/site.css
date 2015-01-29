@@ -208,6 +208,12 @@ content: "*** "
         color: #444;
     }
 
+    .timestamp {
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #444;
+    }
+
     .tag {
 
     }
