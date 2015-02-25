@@ -199,7 +199,7 @@
         font-family: monospace;
         font-weight: bold;
         color: #666666;
-        background-color: #EEEEEE;
+        background-color: #FBFBFB;
         border: 1px groove;
         border-color: #AAAAAA;
         /* Org mode puts a space after timestamps, also increase the box size
@@ -277,9 +277,9 @@ by one space to the left. */
         font-family: Droid Sans Mono, Monaco, Consolas, "Lucida Console", monospace;
         color: black;
         font-size: 90%;
-        background-color: #ffffff;
+        background-color: #fbfbfb;
         padding: 1.2em;
-        border: 2px solid #dddddd;
+        border: 1px solid #dddddd;
         overflow: auto;
     }
 
