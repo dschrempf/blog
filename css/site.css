@@ -44,8 +44,9 @@
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        backgrounf: #fbfbfb;
-        border: 1px 1px 0px 1px solid #ddd;
+        background: #fbfbfb;
+        border: 1px solid #ddd;
+        border-bottom-style: none;
     }
     body .nav ul {
         list-style: none;
