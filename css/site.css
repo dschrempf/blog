@@ -6,8 +6,6 @@
     html {
         margin: 0;
         font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "Droid Sans", serif;
-        /* font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
-        /* font: 300 .9em/1.6em "Droid Serif", Cambria, Georgia, "DejaVu Serif", serif; */
     }
 
     b {
@@ -16,22 +14,20 @@
     body {
         font-size: 1em;
         line-height: 1.5em;
-        /* font-size: 12pt; */
-        /* line-height: 18pt; */
         color: black;
-        margin-top: 0;
         margin-left: auto;
         margin-right: auto;
+        text-align: justify;
+
     }
     body #content {
-        padding-top: 0px;
         width: 900px;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         background-color: white;
-        padding: 2em;
-        /* box-shadow: 3px 3px 5px #888; */
+        padding: 3em;
+        border: 1px solid #ddd;
     }
     body .title {
         text-align: left;
@@ -82,17 +78,19 @@
         /* font-size: 0.8em; */
         /* font-size: 10pt; */
         position: fixed;
-        right: 0em;
-        top: 0em;
+        right: -1px;
+        top: -1px;
         background: white;
         line-height: 1.5em;
         /* line-height: 12pt; */
         text-align: right;
-        box-shadow: 0 0 1em #777777;
-        -webkit-box-shadow: 0 0 1em #777777;
-        -moz-box-shadow: 0 0 1em #777777;
-        -webkit-border-bottom-left-radius: 5px;
-        -moz-border-radius-bottomleft: 5px;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        /* box-shadow: 0 0 1em #777777; */
+        /* -webkit-box-shadow: 0 0 1em #777777; */
+        /* -moz-box-shadow: 0 0 1em #777777; */
+        /* -webkit-border-bottom-left-radius: 5px; */
+        /* -moz-border-radius-bottomleft: 5px; */
         /* ensure doesn't flow off the screen when expanded */
         max-height: 80%;
         overflow: auto;
@@ -125,15 +123,9 @@
 
     h1 {
         font-family:sans;
-        /* font-weight:bold; */
         font-size:2.1em;
-        padding:10px 0 10px 0;
-        /* padding:0 0 30px 0; */
-        /* margin-top: 10px; */
-        /* margin-bottom: 10px; */
-        /* margin-right: 7%; */
         color: #336699;
-        /* color: grey; */
+        padding: 5px 0px 5px 0px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -152,9 +144,8 @@
     h2 {
         font-family:sans;
         font-size:1.45em;
-        /* line-height:16px; */
-        padding:10px 0 10px 0;
         color: #336699;
+        padding: 5px 0px 5px 0px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -166,7 +157,7 @@
         font-family:sans;
         font-size:1.3em;
         color: #336699;
-        /* margin-left: 0.6em; */
+        padding: 5px 0px 5px 0px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -180,10 +171,8 @@
     h4 {
         font-family:sans;
         font-size:1.1em;
-        /* margin-left: 1.2em; */
-        margin-bottom: 0;
+        padding: 5px 0px 5px 0px;
         border-bottom: 1px solid #ddd;
-        /* color: grey; */
     }
 
     .outline-text-4 {
