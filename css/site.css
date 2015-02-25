@@ -47,6 +47,7 @@
         background: #fbfbfb;
         border: 1px solid #ddd;
         border-bottom-style: none;
+        padding: 0 3em 0 3em;
     }
     body .nav ul {
         list-style: none;
