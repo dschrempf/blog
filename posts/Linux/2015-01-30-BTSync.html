@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>BitTorrent Sync over SSH Proxy</title>
-<!-- 2015-01-30 Fri 16:17 -->
+<!-- 2015-02-25 Wed 12:03 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -90,7 +90,8 @@ interested please see, e.g., <a href="https://help.ubuntu.com/community/SSH/Open
 If this worked out, every process on client A that accesses
 <code>localhost:1080</code> will be forwarded to client B that is outside the
 firewall.  I.e., you could also tell Firefox to use this SOCKS proxy
-so that you can access sites that you cannot otherwise.
+so that you can access sites that you cannot otherwise.  Actually this
+is a very good idea to test if the SOCKS proxy works in general.
 </p>
 </div>
 </div>
@@ -100,8 +101,10 @@ so that you can access sites that you cannot otherwise.
 <div class="outline-text-2" id="text-unnumbered-3">
 <p>
 Now, BTSync should automatically find this SOCKS proxy (because it is
-using the standard port 1080) and uses it to circumvent the firewall.
-A sample configuration file looks like this:
+using the standard port 1080; my BTSync version is <code>1.4.106</code>) and uses
+it to circumvent the firewall.  The very good and informative debug
+output of the SSH tunnel can be used to identify possible problems.  A
+sample configuration file looks like this:
 </p>
 
 <div class="org-src-container">
@@ -171,7 +174,7 @@ A sample configuration file looks like this:
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
-Last updated 2015-01-30 <br/>
+Last updated 2015-02-25 <br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>

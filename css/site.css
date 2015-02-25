@@ -132,31 +132,29 @@
         /* margin-top: 10px; */
         /* margin-bottom: 10px; */
         /* margin-right: 7%; */
-        /*    color: #6C5D4F; */
-        color: grey;
+        color: #336699;
+        /* color: grey; */
         border-bottom: 1px solid #ddd;
     }
 
-    /*
-      h2:before {
-      content: "* "
-      }
+    /* h2:before { */
+    /*     content: "* " */
+    /* } */
 
-h3:before {
-content: "** "
-}
+    /* h3:before { */
+    /*     content: "** " */
+    /* } */
 
-h4:before {
-content: "*** "
-}
-   */
+    /* h4:before { */
+    /*     content: "*** " */
+    /* } */
 
     h2 {
         font-family:sans;
         font-size:1.45em;
         /* line-height:16px; */
         padding:10px 0 10px 0;
-        /* color: grey; */
+        color: #336699;
         border-bottom: 1px solid #ddd;
     }
 
@@ -167,7 +165,7 @@ content: "*** "
     h3 {
         font-family:sans;
         font-size:1.3em;
-        color: grey;
+        color: #336699;
         /* margin-left: 0.6em; */
         border-bottom: 1px solid #ddd;
     }
@@ -1024,6 +1022,33 @@ by one space to the left. */
     .org-dl dt {
         font-weight: bold;
         /* color: maroon; */
+    }
+
+    .theorem {
+        font-style: italic;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background-color: #FBFBFB;
+    }
+
+    /* unvisited link */
+    a:link {
+        color: #336699;
+    }
+
+    /* visited link */
+    a:visited {
+        color: #666666;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: #003366;
+    }
+
+    /* selected link */
+    a:active {
+        color: #001122;
     }
 
 } /* END OF @media all */
