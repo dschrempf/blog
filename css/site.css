@@ -38,7 +38,7 @@
     body .nav {
         font-size: 1em;
         text-align: center;
-        border-bottom: 1px solid #ddd;
+        /* border-bottom: 1px solid #ddd; */
         width: 900px;
         max-width: 100%;
         margin-left: auto;
