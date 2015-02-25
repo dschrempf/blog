@@ -4,7 +4,7 @@
 @media all
 {
     html {
-        margin: 0;
+        margin: 0px;
         font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "Droid Sans", serif;
     }
 
@@ -17,22 +17,23 @@
         color: black;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
         text-align: justify;
-
     }
     body #content {
         width: 900px;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
-        background-color: white;
+        background: #fbfbfb;
         padding: 3em;
         border: 1px solid #ddd;
     }
     body .title {
         text-align: left;
-        margin-left: 0px;
-        font-size: 2em;
+        /* margin-left: 0px; */
+        /* font-size: 2em; */
     }
 
     body .nav {
@@ -75,24 +76,20 @@
 
     /* TOC inspired by http://jashkenas.github.com/coffee-script */
     #table-of-contents {
-        /* font-size: 0.8em; */
-        /* font-size: 10pt; */
         position: fixed;
-        right: -1px;
-        top: -1px;
-        background: white;
-        line-height: 1.5em;
-        /* line-height: 12pt; */
+        right: 0px;
+        top: 0px;
+        background: #fbfbfb;
         text-align: right;
-        border-left: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        /* box-shadow: 0 0 1em #777777; */
+        /* box-shadow: 0 0 1em #ddd; */
         /* -webkit-box-shadow: 0 0 1em #777777; */
         /* -moz-box-shadow: 0 0 1em #777777; */
         /* -webkit-border-bottom-left-radius: 5px; */
         /* -moz-border-radius-bottomleft: 5px; */
         /* ensure doesn't flow off the screen when expanded */
         max-height: 80%;
+        margin: 0.5em;
+        padding: 0.5em;
         overflow: auto;
         z-index: 1000;
     }
@@ -120,12 +117,14 @@
         /* border: 1px solid gray; */
         background-color: #eeeeee;
     }
-
+    
+    
     h1 {
         font-family:sans;
         font-size:2.1em;
         color: #336699;
-        padding: 5px 0px 5px 0px;
+        margin: 1em -5px 1em -5px;
+        padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -145,7 +144,8 @@
         font-family:sans;
         font-size:1.45em;
         color: #336699;
-        padding: 5px 0px 5px 0px;
+        margin: 1em -5px 1em -5px;
+        padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -157,7 +157,8 @@
         font-family:sans;
         font-size:1.3em;
         color: #336699;
-        padding: 5px 0px 5px 0px;
+        margin: 1em -5px 1em -5px;
+        padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -171,7 +172,8 @@
     h4 {
         font-family:sans;
         font-size:1.1em;
-        padding: 5px 0px 5px 0px;
+        margin: 1em -5px 1em -5px;
+        padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
     }
 
@@ -199,7 +201,7 @@
         font-family: monospace;
         font-weight: bold;
         color: #666666;
-        background-color: #FBFBFB;
+        background-color: #eeeeee;
         border: 1px groove;
         border-color: #AAAAAA;
         /* Org mode puts a space after timestamps, also increase the box size
@@ -277,7 +279,7 @@ by one space to the left. */
         font-family: Droid Sans Mono, Monaco, Consolas, "Lucida Console", monospace;
         color: black;
         font-size: 90%;
-        background-color: #fbfbfb;
+        background-color: #eeeeee;
         padding: 1.2em;
         border: 1px solid #dddddd;
         overflow: auto;
@@ -1015,9 +1017,12 @@ by one space to the left. */
 
     .theorem {
         font-style: italic;
-        border-top: 1px solid #ddd;
-        border-bottom: 1px solid #ddd;
-        background-color: #FBFBFB;
+        margin-left: -5px;
+        margin-right: -5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border: 1px solid #ddd;
+        background-color: #eeeeee;
     }
 
     /* unvisited link */
