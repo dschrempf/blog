@@ -214,7 +214,9 @@ by one space to the left. */
         padding-left: 1ch;
         /* Put a space between the timestamp and the text that follows. */
         margin-right: 1ch;
-        word-spacing: 2px;
+        word-spacing: 1ch;
+        text-justify: none;
+        display: inline-block;
     }
 
     .tag {
