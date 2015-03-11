@@ -211,9 +211,9 @@
         border-color: #AAAAAA;
         /* Org mode puts a space after timestamps, also increase the box size
 by one space to the left. */
-        padding: 1ch 0 0 0;
+        padding: 0px 0px 0px 0px;
         /* Put a space between the timestamp and the text that follows. */
-        margin: 0 0 0 0;
+        margin: 0px 0px 0px 0px;
         word-spacing: 1ch;
         text-justify: none;
         display: inline-block;
