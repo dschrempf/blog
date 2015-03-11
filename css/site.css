@@ -213,7 +213,7 @@
         border-color: #AAAAAA;
         padding: 2px 2px 0px 2px;
         margin: 0px 0px 0px 0px;
-        word-spacing: 1ch;
+        word-spacing: 0.5ch;
         text-justify: none;
         display: inline-block;
     }
