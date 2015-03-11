@@ -12,6 +12,8 @@
         font-weight: bold;
     }
     body {
+        width: 900px;
+        max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
         color: black;
@@ -22,8 +24,6 @@
         text-align: justify;
     }
     body #content {
-        width: 900px;
-        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         background: #fbfbfb;
