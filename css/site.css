@@ -203,16 +203,15 @@
     }
 
     .timestamp {
+        /* Put timestamp into inline box so that it does not get justified. */
         font-family: monospace;
         font-weight: bold;
         color: #666666;
+        line-height: 1.3em;
         background-color: #eeeeee;
         border: 1px dotted;
         border-color: #AAAAAA;
-        /* Org mode puts a space after timestamps, also increase the box size
-by one space to the left. */
-        padding: 0px 0px 0px 0px;
-        /* Put a space between the timestamp and the text that follows. */
+        padding: 2px 2px 0px 2px;
         margin: 0px 0px 0px 0px;
         word-spacing: 1ch;
         text-justify: none;
