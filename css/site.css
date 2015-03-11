@@ -12,8 +12,6 @@
         font-weight: bold;
     }
     body {
-        width: 900px;
-        max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
         color: black;
@@ -24,8 +22,10 @@
         text-align: justify;
     }
     body #content {
-        /* margin-left: auto; */
-        /* margin-right: auto; */
+        width: 900px;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
         background: #fbfbfb;
         padding: 0 1.5em 1.5em 1.5em;
         border: 1px solid #ddd;
