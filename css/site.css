@@ -216,7 +216,6 @@ by one space to the left. */
         margin-right: 1ch;
         word-spacing: 1ch;
         text-justify: none;
-        display: inline-block;
     }
 
     .tag {
