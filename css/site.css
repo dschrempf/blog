@@ -207,7 +207,7 @@
         font-weight: bold;
         color: #666666;
         background-color: #eeeeee;
-        border: 1px groove;
+        border: 1px dotted;
         border-color: #AAAAAA;
         /* Org mode puts a space after timestamps, also increase the box size
 by one space to the left. */
