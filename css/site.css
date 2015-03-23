@@ -327,7 +327,7 @@
         margin: 1em 0em 1em 0em;
     }
 
-    .example {
+    pre.example {
         overflow: auto;
         border: 1px solid #dddddd;
         background-color: #eeeeee;
