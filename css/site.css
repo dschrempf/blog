@@ -16,8 +16,8 @@
         font-size: 1em;
         line-height: 1.5em;
         color: black;
-        margin-left: auto;
-        margin-right: auto;
+        /* margin-left: auto; */
+        /* margin-right: auto; */
         margin-top: 0.5em;
         margin-bottom: 0.5em;
         text-align: justify;
@@ -1009,7 +1009,7 @@
 
     #postamble {
         /* font-size: 75%; */
-        width: 200px;
+        width: 1024px;
         max-width: 100%;
         margin-top: 0.5em;
         margin-right: auto;
