@@ -41,7 +41,6 @@
     body .nav {
         font-size: 1em;
         text-align: center;
-        /* border-bottom: 1px solid #ddd; */
         width: 1024px;
         max-width: 100%;
         margin-left: auto;
@@ -49,11 +48,11 @@
         background: #fbfbfb;
         border: 1px solid #ddd;
         border-bottom-style: none;
-        padding: 0 1.5em 0 1.5em;
+        /* padding: 0 1.5em 0 1.5em; */
     }
     @media screen and (max-width: 1024px){
         body .nav {
-            padding: 0em 1em 0em 1em;
+            /* padding: 0em 1em 0em 1em; */
             border: none;
         }
     }
