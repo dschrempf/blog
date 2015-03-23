@@ -31,7 +31,7 @@
     }
     @media screen and (max-width: 1024px){
         body #content {
-            padding: 0em 0.5em 0em 0.5em;
+            padding: 0em 1em 0em 1em;
             border: none;
         }
     }
@@ -55,7 +55,7 @@
     }
     @media screen and (max-width: 1024px){
         body .nav {
-            padding: 0em 0.5em 0em 0.5em;
+            padding: 0em 1em 0em 1em;
             border: none;
         }
     }
