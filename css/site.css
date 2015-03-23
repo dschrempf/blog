@@ -31,7 +31,7 @@
     }
     @media screen and (max-width: 1024px){
         body #content {
-            padding: 0 0em 0em 0em;
+            padding: 0em 0.5em 0em 0.5em;
             border: none;
         }
     }
@@ -40,7 +40,6 @@
         /* margin-left: 0px; */
         /* font-size: 2em; */
     }
-
     body .nav {
         font-size: 1em;
         text-align: center;
@@ -53,6 +52,12 @@
         border: 1px solid #ddd;
         border-bottom-style: none;
         padding: 0 1.5em 0 1.5em;
+    }
+    @media screen and (max-width: 1024px){
+        body .nav {
+            padding: 0em 0.5em 0em 0.5em;
+            border: none;
+        }
     }
     body .nav ul {
         list-style: none;
