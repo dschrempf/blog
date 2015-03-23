@@ -11,6 +11,8 @@
         font-weight: bold;
     }
     body {
+        width: 1024px;
+        max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
         color: black;
@@ -21,10 +23,6 @@
         text-align: justify;
     }
     body #content {
-        width: 900px;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
         background: #fbfbfb;
         padding: 0 1.5em 1.5em 1.5em;
         border: 1px solid #ddd;
@@ -1009,13 +1007,13 @@
 
     #postamble {
         /* font-size: 75%; */
-        width: 900px;
+        width: 1024px;
         max-width: 100%;
-        margin-top: 10px;
-        margin-left:auto;
-        margin-right:auto;
+        margin-top: 0.5em;
+        margin-right: auto;
+        margin-bottom: 0.5em;
+        margin-left: auto;
         text-align: center;
-        padding: .2em;
         /* border: 1px solid gray; */
         /* Does not play well with Disqus. */
         /* color: #aaaaaa; */
