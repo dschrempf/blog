@@ -56,11 +56,10 @@
         background: #fbfbfb;
         border: 1px solid #ddd;
         border-bottom-style: none;
-        /* padding: 0 1.5em 0 1.5em; */
+        padding: 1em 0em 1em 0em;
     }
     @media screen and (max-width: 1024px){
         body .nav {
-            /* padding: 0em 1em 0em 1em; */
             border: none;
         }
     }
