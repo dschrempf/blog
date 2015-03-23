@@ -305,14 +305,26 @@
     /*     padding: 1em; */
     /*  } */
 
+    /* TODO shift this to div tag. */
     pre {
         font-family: Droid Sans Mono, Monaco, Consolas, "Lucida Console", monospace;
         color: black;
         font-size: 90%;
-        background-color: #eeeeee;
+        /* background-color: #eeeeee; */
         padding: 1.2em;
-        border: 1px solid #dddddd;
+        margin-left: 0em;
+        margin-right: 0em;
+        margin-bottom: 0em;
+        /* border: 1px solid #dddddd; */
+        border: none;
         overflow: auto;
+    }
+
+    .org-src-container {
+        overflow: auto;
+        border: 1px solid #dddddd;
+        background-color: #eeeeee;
+        margin: 1em 0em 1em 0em;
     }
 
     .org-info-box {
@@ -1012,10 +1024,6 @@
         font-style: italic;
     }
 
-    .org-src-container {
-        overflow: auto;
-    }
-
     #show_source {margin: 0; padding: 0;}
 
     #postamble {
@@ -1079,6 +1087,10 @@
     /* selected link */
     a:active {
         color: #001122;
+    }
+
+    table {
+        margin: 1em auto 1em auto;
     }
 
 } /* END OF @media all */
