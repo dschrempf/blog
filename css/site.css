@@ -18,7 +18,17 @@
         color: black;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
         text-align: justify;
+    }
+    @media screen and (max-width: 1024px){
+        body {
+            margin-top: 0em;
+            margin-bottom: 0em;
+            padding: 0em 1em 1em 1em;
+            border: none;
+        }
     }
     body #content {
         margin-left: auto;
@@ -41,13 +51,12 @@
         text-align: center;
         width: 1024px;
         max-width: 100%;
-        margin-top: 0em;
         margin-left: auto;
         margin-right: auto;
         background: #fbfbfb;
         border: 1px solid #ddd;
         border-bottom-style: none;
-        padding: 1em 0em 0em 0em;
+        /* padding: 0 1.5em 0 1.5em; */
     }
     @media screen and (max-width: 1024px){
         body .nav {
