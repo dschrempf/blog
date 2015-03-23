@@ -86,8 +86,6 @@
         line-height: 2em;
         display: inline-block;
         padding: 0 20px;
-        /* border-radius: 0; */
-        /* text-decoration: none; */
         font-weight: normal;
         color: #666666;
     }
@@ -112,10 +110,8 @@
     #table-of-contents h2 {
         font-family:sans;
         font-size:1.45em;
-        /* font-size: 13pt; */
         max-width: 9em;
         border: 0;
-        /* font-weight: normal; */
         padding-left: 0.5em;
         padding-right: 0.5em;
         padding-top: 0.05em;
@@ -265,7 +261,7 @@
     }
 
     code {
-        font-size: 100%;
+        font-size: 1em;
         color: black;
         border: 1px solid #dedede;
         padding: 0px 0.2em;
@@ -288,7 +284,7 @@
     pre {
         font-family: Droid Sans Mono, Monospace, Courier;
         color: black;
-        font-size: 90%;
+        font-size: 0.9em;
         border: none;
         overflow: auto;
         border: 1px solid #dddddd;
@@ -341,7 +337,8 @@
     }
 
     .footer {
-        color: #666666;
+        font-size: 0.8em;
+        color: #222222;
     }
 
     .theorem {
