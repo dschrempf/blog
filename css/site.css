@@ -49,14 +49,14 @@
     body .nav {
         font-size: 1em;
         text-align: center;
-        width: 1024px;
-        max-width: 100%;
+        /* width: 1024px; */
+        /* max-width: 100%; */
         margin-left: auto;
         margin-right: auto;
         background: #fbfbfb;
         border: 1px solid #ddd;
         border-bottom-style: none;
-        padding: 1em 0em 1em 0em;
+        padding: 0.5em 1.5emem 0.5em 1.5em;
     }
     @media screen and (max-width: 1024px){
         body .nav {
