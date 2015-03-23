@@ -42,7 +42,7 @@
         font-size: 1em;
         text-align: center;
         /* border-bottom: 1px solid #ddd; */
-        width: 900px;
+        width: 1024px;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
@@ -1009,7 +1009,7 @@
 
     #postamble {
         /* font-size: 75%; */
-        width: 1024px;
+        width: 800px;
         max-width: 100%;
         margin-top: 0.5em;
         margin-right: auto;
