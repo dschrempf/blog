@@ -7,7 +7,6 @@
         margin: 0px;
         font: 300 1em/1.5em "Droid Serif", Cambria, Georgia, "Droid Sans", serif;
     }
-
     b {
         font-weight: bold;
     }
@@ -29,6 +28,12 @@
         background: #fbfbfb;
         padding: 0 1.5em 1.5em 1.5em;
         border: 1px solid #ddd;
+    }
+    @media screen and (max-width: 1024px){
+        body #content {
+            padding: 0 0em 0em 0em;
+            border: none;
+        }
     }
     body .title {
         text-align: left;
