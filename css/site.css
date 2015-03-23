@@ -1014,12 +1014,14 @@
         margin-bottom: 0.5em;
         margin-left: auto;
         text-align: center;
-        /* border: 1px solid gray; */
-        /* Does not play well with Disqus. */
-        /* color: #aaaaaa; */
-        /* background-color: #ffffff; */
-        /* z-index: -1000; */
+        padding: 0 1.5em 1.5em 1.5em;
     }
+    @media screen and (max-width: 1024px){
+        #postamble {
+            padding: 0em 1em 0em 1em;
+        }
+    }
+
     #postamble p {
         line-height: 1.5;
         padding: 0;
