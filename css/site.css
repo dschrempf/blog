@@ -37,8 +37,6 @@
     }
     body .title {
         text-align: left;
-        /* margin-left: 0px; */
-        /* font-size: 2em; */
     }
     body .nav {
         font-size: 1em;
@@ -89,18 +87,26 @@
     }
 
     /* TOC inspired by http://jashkenas.github.com/coffee-script */
+    @media screen and (max-width: 1024px){
+        #table-of-contents {
+            display: none;
+        }
+    }
     #table-of-contents {
         position: fixed;
         right: 0px;
         top: 0px;
         background: #fbfbfb;
         text-align: right;
+        float: right;
+        border: 1px solid #CCC;
         /* box-shadow: 0 0 1em #ddd; */
         /* -webkit-box-shadow: 0 0 1em #777777; */
         /* -moz-box-shadow: 0 0 1em #777777; */
         /* -webkit-border-bottom-left-radius: 5px; */
         /* -moz-border-radius-bottomleft: 5px; */
         /* ensure doesn't flow off the screen when expanded */
+        max-width: 50%;
         max-height: 80%;
         margin: 0.5em;
         padding: 0.5em;
@@ -1063,15 +1069,3 @@
     }
 
 } /* END OF @media all */
-
-
-
-@media screen
-{
-    #table-of-contents {
-        float: right;
-        border: 1px solid #CCC;
-        max-width: 50%;
-        overflow: auto;
-    }
-} /* END OF @media screen */
