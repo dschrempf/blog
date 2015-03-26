@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>How to Create This Homepage</title>
-<!-- 2015-03-23 Mon 18:15 -->
+<!-- 2015-03-26 Thu 16:31 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -38,19 +38,24 @@
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2014-12-26 Fri&gt; </span></span> This homepage was created with Emacs and <a href="http://orgmode.org/">Org mode</a>.
 It is hosted at <a href="https://pages.github.com/">github.io</a> and comments can be done using <a href="https://disqus.com/">Disqus</a>.  I
-assume a working Org mode setup and a GitHub and a Disqus account.
+assume a working Org mode setup and a GitHub as well as a Disqus
+account.
 </p>
 
 <div id="outline-container-unnumbered-1" class="outline-2">
 <h2 id="unnumbered-1">General Idea</h2>
 <div class="outline-text-2" id="text-unnumbered-1">
+<dl class="org-dl">
+<dt>Org mode</dt><dd>A great tool for taking notes and exporting them to
+all kind of formats.  One of this formats is <b>HTML</b>.  The idea
+here is to use the publishing capabilities of Org mode to create
+a very basic website that can be used to blog and publish
+articles.</dd>
+<dt>GitHub</dt><dd>Offers a freely available hosting service, a very easy way
+to make the website available.</dd>
+<dt>Disqus</dt><dd>Provides the ability to comment posts.</dd>
+</dl>
 <p>
-<b>Org mode</b> is a great tool for taking notes and exporting them to all
-kind of formats.  One of this formats is <b>HTML</b>.  The idea here is to
-use the publishing capabilities of Org mode to create a very basic
-website that can be used to blog and publish articles.  <b>GitHub</b>
-offers a freely available hosting service, a very easy way to make the
-website available.  <b>Disqus</b> provides the ability to comment posts.
 Many people also use <a href="http://jekyllrb.com/">Jekyll</a> to create homepages and blogs together
 with Org mode and GitHub.  This is certainly a very appealing
 alternative but I prefer a setting that is easier to set up and has
@@ -69,26 +74,25 @@ accordingly:
 </p>
 
 <pre class="example">
-/home/dominik/Dropbox/blog
+/blog
 ├── css
 ├── fazky.github.io
-├── img
 ├── js
 └── org
 
-5 directories
+4 directories
 </pre>
 
 <p>
-The folders <code>css</code>, <code>img</code> and <code>js</code> are self explanatory.  Good style
-sheets are hard to get.  I use a <a href="file:~/Dropbox/blog/org/posts/css/site.css">neat one</a> from <a href="http://orgmode.org/worg/">Worg</a> with a few
-changes.  <code>fazky.github.io</code> is the git repository of the GitHub
-homepage (there are detailed explanations on <a href="https://pages.github.com/">GitHub</a> about how to set
-it up).  The Org files reside in the <code>org</code> directory.  It is
-important that you create an <code>index.org</code> file because GitHub is
-looking for an <code>index.html</code> file and displays it as the main page.
-You can use all capabilities of Org mode and its <a href="http://orgmode.org/manual/HTML-export.html#HTML-export">export and publishing
-framework</a>.
+The folders <code>css</code> and <code>js</code> are self explanatory.  Good style sheets
+are hard to get.  I use a <a href="file:~/Dropbox/blog/org/posts/css/site.css">neat one</a> from <a href="http://orgmode.org/worg/">Worg</a> with a few changes.  For
+this setup, it has to be saved as <code>/blog/css/site.css</code>.
+<code>fazky.github.io</code> is the git repository of the GitHub homepage (there
+are detailed explanations on <a href="https://pages.github.com/">GitHub</a> about how to set it up).  The Org
+files reside in the <code>org</code> directory.  It is important that you create
+an <code>index.org</code> file because GitHub is looking for an <code>index.html</code> file
+and displays it as the main page.  You can use all capabilities of Org
+mode and its <a href="http://orgmode.org/manual/HTML-export.html#HTML-export">export and publishing framework</a>.
 </p>
 </div>
 </div>
@@ -109,7 +113,7 @@ files so that they can be hosted by GitHub:
         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">by GitHub.</span>
         (<span style="color: #008000;">"blog"</span>
          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Directory with Org files.</span>
-         <span style="color: #006FE0;">:base-directory</span> <span style="color: #008000;">"~/Dropbox/blog/posts/"</span>
+         <span style="color: #006FE0;">:base-directory</span> <span style="color: #008000;">"~/Dropbox/blog/org/"</span>
          <span style="color: #006FE0;">:base-extension</span> <span style="color: #008000;">"org"</span>
          <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Output directory for html files on GitHub.</span>
          <span style="color: #006FE0;">:publishing-directory</span> <span style="color: #008000;">"~/Dropbox/blog/fazky.github.io/"</span>
@@ -123,19 +127,26 @@ files so that they can be hosted by GitHub:
          <span style="color: #006FE0;">:sitemap-sort-files</span> anti-chronologically
          <span style="color: #006FE0;">:sitemap-style</span> list
          <span style="color: #006FE0;">:recursive</span> t
+         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Do not make index right now.</span>
+         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">:makeindex t</span>
          <span style="color: #006FE0;">:section-numbers</span> nil
          <span style="color: #006FE0;">:with-toc</span> t
-         <span style="color: #006FE0;">:html-head</span> <span style="color: #008000;">"&lt;link rel='stylesheet' href='/css/site.css' type='text/css'/&gt;"</span>
+         <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Do not include predefined header scripts.</span>
+         <span style="color: #006FE0;">:html-head-include-default-style</span> nil
+         <span style="color: #006FE0;">:html-head-include-scripts</span> nil
+         <span style="color: #006FE0;">:html-head</span> <span style="color: #008000;">"&lt;link rel='stylesheet' href='/css/site.css' type='text/css'/&gt;</span>
+<span style="color: #008000;">&lt;meta name=\"viewport\" content=\"width=device-width\"/&gt;"</span>
          <span style="color: #006FE0;">:html-preamble</span> website-html-preamble
          <span style="color: #006FE0;">:html-postamble</span> website-html-postamble
          <span style="color: #006FE0;">:html-link-home</span> <span style="color: #008000;">"http://fazky.github.io/"</span>
          <span style="color: #006FE0;">:html-link-use-abs-url</span> nil)
 
-        (<span style="color: #008000;">"images"</span>
-         <span style="color: #006FE0;">:base-directory</span> <span style="color: #008000;">"~/Dropbox/blog/img/"</span>
-         <span style="color: #006FE0;">:base-extension</span> <span style="color: #008000;">"jpg\\|gif\\|png"</span>
-         <span style="color: #006FE0;">:publishing-directory</span> <span style="color: #008000;">"~/Dropbox/blog/fazky.github.io/img/"</span>
-         <span style="color: #006FE0;">:publishing-function</span> org-publish-attachment)
+        (<span style="color: #008000;">"static"</span>
+         <span style="color: #006FE0;">:base-directory</span> <span style="color: #008000;">"~/Dropbox/blog/org/"</span>
+         <span style="color: #006FE0;">:base-extension</span> <span style="color: #008000;">"jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"</span>
+         <span style="color: #006FE0;">:publishing-directory</span> <span style="color: #008000;">"~/Dropbox/blog/fazky.github.io/"</span>
+         <span style="color: #006FE0;">:publishing-function</span> org-publish-attachment
+         <span style="color: #006FE0;">:recursive</span> t)
 
         (<span style="color: #008000;">"js"</span>
          <span style="color: #006FE0;">:base-directory</span> <span style="color: #008000;">"~/Dropbox/blog/js/"</span>
@@ -149,9 +160,8 @@ files so that they can be hosted by GitHub:
          <span style="color: #006FE0;">:publishing-directory</span> <span style="color: #008000;">"~/Dropbox/blog/fazky.github.io/css/"</span>
          <span style="color: #006FE0;">:publishing-function</span> org-publish-attachment)
 
-        (<span style="color: #008000;">"website"</span> <span style="color: #006FE0;">:components</span> (<span style="color: #008000;">"blog"</span> <span style="color: #008000;">"images"</span> <span style="color: #008000;">"js"</span> <span style="color: #008000;">"css"</span>))
-        )
-      )
+        <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">("website" :components ("blog" "images" "js" "css"))))</span>
+        (<span style="color: #008000;">"website"</span> <span style="color: #006FE0;">:components</span> (<span style="color: #008000;">"blog"</span> <span style="color: #008000;">"static"</span> <span style="color: #008000;">"js"</span> <span style="color: #008000;">"css"</span>))))
 </pre>
 </div>
 
@@ -183,7 +193,7 @@ user name and tracking ID).
   (concat
    (<span style="color: #0000FF;">cond</span> ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"Archive"</span>) <span style="color: #008000;">""</span>)
          ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"Index"</span>) <span style="color: #008000;">""</span>)
-         ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"fazky :: GitHub -&gt; IO ()"</span>) <span style="color: #008000;">""</span>)
+         ((string= (car (plist-get info <span style="color: #006FE0;">:title</span>)) <span style="color: #008000;">"GitHub -&gt; IO ()"</span>) <span style="color: #008000;">""</span>)
          (t <span style="color: #008000;">"&lt;div id='disqus_thread'&gt;&lt;/div&gt;</span>
 <span style="color: #008000;">&lt;script type='text/javascript'&gt;</span>
 <span style="color: #008000;">  // required: replace example with your forum shortname</span>
@@ -227,9 +237,10 @@ user name and tracking ID).
 <h2 id="unnumbered-4">Workflow</h2>
 <div class="outline-text-2" id="text-unnumbered-4">
 <p>
-Create your homepages with Emacs Org mode.  Include links, source
-blocks, images and so on.  This is explained in great detail on the
-<a href="http://orgmode.org/manual/HTML-export.html#HTML-export">Org mode homepage</a>.  Publish the homepage with <code>org-publish</code> (i.e.,
+Create your homepages with Emacs Org mode.  The <code>index.org</code> file can
+include links to all blog articles.  Links, source blocks, images and
+so on can be used everywhere.  This is explained in great detail on
+the <a href="http://orgmode.org/manual/HTML-export.html#HTML-export">Org mode homepage</a>.  Publish the homepage with <code>org-publish</code> (i.e.,
 bind this to a key) and push the changes to GitHub.  Voila!
 </p>
 </div>
@@ -247,7 +258,7 @@ bind this to a key) and push the changes to GitHub.  Voila!
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-03-23</span></span><br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-03-26</span></span><br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
