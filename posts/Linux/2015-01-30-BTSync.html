@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>BitTorrent Sync over SSH Proxy</title>
-<!-- 2015-03-26 Thu 17:23 -->
+<!-- 2015-04-01 Wed 11:40 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -110,11 +110,17 @@ output of the SSH tunnel can be used to identify possible problems.  A
 sample configuration file looks like this:
 </p>
 
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-04-01 Wed&gt; </span></span> The automatic detection of the SOCKS proxy did not
+work anymore (BTSync version <code>2.0.93</code>).  I have adjusted the
+configuration file below.
+</p>
+
 <div class="org-src-container">
 
 <pre class="src src-java">{
   <span style="color: #008000;">"device_name"</span> : <span style="color: #008000;">"username@clientA"</span>,
-  <span style="color: #008000;">"listening_port"</span> : 0, <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">0 - randomize port.</span>
+  <span style="color: #008000;">"listening_port"</span> : 1080, <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">0 - randomize port.</span>
 
   <span style="color: #8D8D84;">/* </span><span style="color: #8D8D84; font-style: italic;">The storage_path dir contains auxilliary app files if no</span>
 <span style="color: #8D8D84; font-style: italic;">   storage_path field: .sync dir created in the directory where binary</span>
@@ -131,7 +137,10 @@ sample configuration file looks like this:
   <span style="color: #008000;">"download_limit"</span> : 0,
   <span style="color: #008000;">"upload_limit"</span> : 0,
 
-  <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Proxy configuration --- not needed.</span>
+  <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Proxy configuration</span>
+  <span style="color: #008000;">"proxy_type"</span> : <span style="color: #008000;">"socks4"</span>, <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Valid types: "socks4", "socks5", "http_connect". Any other value means no proxy</span>
+  <span style="color: #008000;">"proxy_addr"</span> : <span style="color: #008000;">"127.0.0.1"</span>, <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">IP address of proxy server.</span>
+  <span style="color: #008000;">"proxy_port"</span> : 1080,
 
   <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Do not use the webui.</span>
   <span style="color: #008000;">"webui"</span> :
@@ -177,7 +186,7 @@ sample configuration file looks like this:
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-03-26</span></span><br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-01</span></span><br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
