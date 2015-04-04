@@ -228,7 +228,8 @@
         color: #666666;
         line-height: 1.3em;
         background-color: #eeeeee;
-        border: 1px dotted;
+        border: 2px solid;
+        /* border: 1px dotted; */
         border-color: #aaaaaa;
         padding: 2px 3px 0px 3px;
         margin: 0px 0px 0px 0px;
