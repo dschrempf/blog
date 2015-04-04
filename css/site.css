@@ -230,7 +230,7 @@
         background-color: #eeeeee;
         border: 1px dotted;
         border-color: #aaaaaa;
-        padding: 2px 2px 0px 2px;
+        padding: 2px 3px 0px 3px;
         margin: 0px 0px 0px 0px;
         word-spacing: 0.5ch;
         text-justify: none;
@@ -261,10 +261,21 @@
     }
 
     code {
+        /* Put code into inline box so that it does not get justified. */
         font-size: 1em;
-        color: black;
-        border: 1px solid #dedede;
-        padding: 0px 0.2em;
+        font-family: monospace;
+        font-weight: bold;
+        color: #336699;
+        line-height: 1.3em;
+        background-color: #eeeeee;
+        border: 2px solid;
+        border-color: #aaaaaa;
+        padding: 2px 3px 0px 3px;
+        /* padding: 2px 2px 0px 2px; */
+        margin: 0px 0px 0px 0px;
+        word-spacing: 0.5ch;
+        text-justify: none;
+        display: inline-block;
     }
 
     img {

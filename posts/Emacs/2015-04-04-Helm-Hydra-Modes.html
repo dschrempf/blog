@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Emacs Helm and Hydra Minor Modes</title>
-<!-- 2015-04-04 Sat 15:28 -->
+<!-- 2015-04-04 Sat 15:36 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -43,19 +43,20 @@ Recently, I stumbled upon two nice Emacs minor modes.
 <h2 id="unnumbered-1">Helm Mode</h2>
 <div class="outline-text-2" id="text-unnumbered-1">
 <p>
-<b>Helm mode</b> offers an incremental completion and selection narrowing
+Helm mode offers an <b>incremental completion</b> and <b>selection narrowing</b>
 framework.  It will help you to find what you're looking for in Emacs
 (like buffers, files, commands etc).  Resources and discussions can be
 found at the following homepages:
 </p>
 <ul class="org-ul">
 <li>development and installation instructions at the <a href="https://github.com/emacs-helm/helm">Helm mode GitHub page</a>;</li>
-<li>the Emacs initialization files and <a href="https://github.com/thierryvolpiatto/emacs-tv-config">configuration of Helm maintainer</a>;</li>
-<li><a href="http://tuhdo.github.io/helm-intro.html">a good overview of the features.</a></li>
+<li>the Emacs initialization files and <a href="https://github.com/thierryvolpiatto/emacs-tv-config">configuration of the Helm maintainer</a>;</li>
+<li><a href="http://tuhdo.github.io/helm-intro.html">a good overview of the features</a> and a sample configuration.</li>
 </ul>
 
 <p>
-I can recommend to bind the <code>TAB</code> key back to
+I can recommend to use the <code>TAB</code> key for completion and not for other
+actions.  You can bind the <code>TAB</code> key back to
 <code>helm-execute-persistent-action</code> with
 </p>
 <div class="org-src-container">
@@ -68,12 +69,13 @@ I can recommend to bind the <code>TAB</code> key back to
 </div>
 
 <p>
-I had used Ido mode extensively before I switched to Helm mode.  I
+I had used <a href="http://emacswiki.org/emacs/InteractivelyDoThings">Ido mode</a> extensively before I switched to Helm mode.  I
 must admit that the first thought was: too heavy and, oh, I miss the
 insertion with <code>RET</code> as well as that Ido remembers which files I had
-visited earlier.  However, I enjoy most that I get an overview of what
-is out there.  That is what I miss with Ido mode.  Try it out
-yourself!
+visited earlier.  Also, completion cannot be used when looking for
+commands with <code>helm-M-x</code>.  However, with Helm mode I enjoy most that I
+get an overview of what is out there.  That is what I miss with Ido
+mode.  Try it out yourself!
 </p>
 </div>
 </div>
@@ -85,7 +87,7 @@ yourself!
 Hydra mode makes Emacs key bindings stick around so that they can be
 used without modifiers.  It also displays them on the screen, so that
 rarely used shortcuts can be remembered without looking into the
-configuration files again (and again and again).
+configuration files again (and again and again).  It is very useful!
 </p>
 
 <p>
