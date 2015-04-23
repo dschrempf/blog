@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Syncthing with SSH Port Forwarding</title>
+<!-- 2015-04-23 Thu 17:09 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Dominik Schrempf" />
+<meta  name="description" content="Description"
+ />
+<meta  name="keywords" content="Keywords" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Syncthing with SSH Port Forwarding</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">Introduction</a></li>
+<li><a href="#orgheadline2"><span class="todo nilTODO">TODO</span> Setup of the SSH Port Forwarding</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Introduction</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-04-22 Wed&gt; </span></span> Recently, I have explained how to configure
+<a href="2015-01-30-BTSync.html">BitTorrent Sync over an SSH SOCKS proxy</a>.  However, due to various
+problems with BTSync, I tried Syncthing and I am very satisfied with
+it.
+</p>
+
+<p>
+Advantages that I have experienced so far:
+</p>
+<ul class="org-ul">
+<li>open source;</li>
+<li>publicly available synchronization protocol;</li>
+<li>very reliable if the configuration is fine;</li>
+<li>it's a young project with motivated developers;</li>
+<li>fast.</li>
+</ul>
+
+<p>
+Disadvantages that I have experienced so far:
+</p>
+<ul class="org-ul">
+<li>needs more CPU (this is an issue if you are using devices with old
+or slow hardware, e.g., a Raspberry Pi);</li>
+<li>the configuration is more tedious;</li>
+<li>it's a young project and some bugs are exposed to the user.</li>
+</ul>
+
+<p>
+The general setup is very well explained on the project homepages:
+</p>
+<ul class="org-ul">
+<li><a href="https://syncthing.net/">https://syncthing.net/</a> and</li>
+<li><a href="https://github.com/syncthing/syncthing">https://github.com/syncthing/syncthing</a>.</li>
+</ul>
+
+<p>
+However, I have the problem, that my computer at work (client A) is
+behind a firewall and not exposed to the public.  In order to
+circumvent it, we need a client B that has full internet access, runs
+an SSH server and is accessible by client A; then we can set up SSH
+such that it forwards connection from outside to client A; check it
+out.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2"><a id="ID-f74b5e2f-ba36-4d14-a6d3-77106e89bbaa"></a><span class="todo TODO">TODO</span> Setup of the SSH Port Forwarding</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+In order for this to work, you need SSH access from client A to client
+B.  Client B needs to have access to the internet.  Then you can setup
+a dynamic SSH tunnel at client A with:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh -vvv -N -D 1080 username@clientB
+</pre>
+</div>
+<dl class="org-dl">
+<dt><code>-vvv</code></dt><dd>Increase verbosity to a high level, so that you can debug
+problems if you have any (can be removed later).</dd>
+<dt><code>-N</code></dt><dd>Do not open an interactive session (no commands can be
+entered at prompt).</dd>
+<dt><code>-D 1080</code></dt><dd>Dynamically forward all requests to <code>localhost:1080</code> to
+client B (act as a SOCKS proxy on port 1080; if you are
+interested please see, e.g., <a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding">port forwarding</a>).</dd>
+</dl>
+
+<p>
+If this worked out, every process on client A that accesses
+<code>localhost:1080</code> will be forwarded to client B that is outside the
+firewall.  I.e., you could also tell Firefox to use this SOCKS proxy
+so that you can access sites that you cannot otherwise.  Actually this
+is a very good idea to test if the SOCKS proxy works in general.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script type='text/javascript'>
+  var disqus_shortname = 'Fazky'; // required: replace example with your forum shortname
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
+Copyright 2014 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-23</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
+<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
+</div>
+<script type='text/javascript'>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-57993874-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>

@@ -4,13 +4,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>BitTorrent Sync over SSH Proxy</title>
-<!-- 2015-04-04 Sat 15:28 -->
+<!-- 2015-04-23 Thu 17:09 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
 <meta  name="description" content="Use BitTorrent Sync over an SSH SOCKS Proxy"
  />
 <meta  name="keywords" content="BTSync, BitTorrent, Sync, SOCKS, Proxy, SSH" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
 <link rel='stylesheet' href='/css/site.css' type='text/css'/>
 <meta name="viewport" content="width=device-width"/>
 </head>
@@ -20,7 +21,7 @@
 <ul>
 <li><a href='/'>Home</a></li>
 <li><a href='/archive.html'>Archive</a></li>
-<li><a href='http://github.com/fazky'>GitHub</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
 </ul>
 </div>
 </div>
@@ -30,16 +31,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#unnumbered-1">Introduction</a></li>
-<li><a href="#unnumbered-2">Setup of SSH Tunnel</a></li>
-<li><a href="#unnumbered-3">BTSync Setup</a></li>
+<li><a href="#orgheadline1">Introduction</a></li>
+<li><a href="#orgheadline2">Setup of SSH Tunnel</a></li>
+<li><a href="#orgheadline3">BTSync Setup</a></li>
 </ul>
 </div>
 </div>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-04-22 Wed&gt; </span></span> I have switched from BitTorrent Sync to <a href="https://syncthing.net/">Syncthing</a>.
+Reasons are:
+</p>
+<ul class="org-ul">
+<li>the synchronization was not reliable (synchronization stalled
+sometimes; every update leads to a re-synchronization of all files);</li>
+<li>the corporate policy is not to my liking (a Pro version is
+available; the free version only supports a limited amount of
+folders and clients; it is not sure if it will stay free in the
+future).</li>
+</ul>
+<p>
+Please also refer to the blog entry that describes how to configure
+<a href="2015-04-22-Syncthing.html">Syncthing with SSH port forwarding</a>.
+</p>
 
-<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">Introduction</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Introduction</h2>
+<div class="outline-text-2" id="text-orgheadline1">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-01-30 Fri&gt; </span></span> <a href="http://www.getsync.com/">BitTorrent Sync</a> is a nice program that lets you sync
 two clients using advanced peer-to-peer technology.  It can be a very
@@ -52,9 +69,9 @@ Please see the installation instructions on their homepage.
 </p>
 
 <p>
-The problem I had is that one of my clients (say Client A) is behind a
-firewall.  In order to circumvent it, we need a Client B that has full
-access to the internet and that is accessible by Client A; then we ca
+The problem I had is that one of my clients (say client A) is behind a
+firewall.  In order to circumvent it, we need a client B that has full
+access to the internet and that is accessible by client A; then we ca
 set up an SSH SOCKS proxy; check it out.
 </p>
 
@@ -66,9 +83,9 @@ set up an SSH SOCKS proxy; check it out.
 </div>
 </div>
 
-<div id="outline-container-unnumbered-2" class="outline-2">
-<h2 id="unnumbered-2">Setup of SSH Tunnel</h2>
-<div class="outline-text-2" id="text-unnumbered-2">
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">Setup of SSH Tunnel</h2>
+<div class="outline-text-2" id="text-orgheadline2">
 <p>
 In order for this to work, you need SSH access from client A to client
 B.  Client B needs to have access to the internet.  Then you can setup
@@ -99,9 +116,9 @@ is a very good idea to test if the SOCKS proxy works in general.
 </div>
 </div>
 
-<div id="outline-container-unnumbered-3" class="outline-2">
-<h2 id="unnumbered-3">BTSync Setup</h2>
-<div class="outline-text-2" id="text-unnumbered-3">
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">BTSync Setup</h2>
+<div class="outline-text-2" id="text-orgheadline3">
 <p>
 Now, BTSync should automatically find this SOCKS proxy (because it is
 using the standard port 1080; my BTSync version is <code>1.4.106</code>) and uses
@@ -186,8 +203,8 @@ configuration file below.
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-04</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.4.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-23</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
