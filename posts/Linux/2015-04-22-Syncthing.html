@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Syncthing with SSH Port Forwarding</title>
-<!-- 2015-04-23 Thu 18:39 -->
+<!-- 2015-04-24 Fri 21:04 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
@@ -32,7 +32,11 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgheadline1">Introduction</a></li>
-<li><a href="#orgheadline2"><span class="todo nilTODO">TODO</span> Setup of the SSH Port Forwarding</a></li>
+<li><a href="#orgheadline2">The Idea</a></li>
+<li><a href="#orgheadline3">The Setup</a></li>
+<li><a href="#orgheadline4">Test the Setup</a></li>
+<li><a href="#orgheadline5">Remote Port Forwarding</a></li>
+<li><a href="#orgheadline6">Amazing Stuff</a></li>
 </ul>
 </div>
 </div>
@@ -55,17 +59,16 @@ Advantages that I have experienced so far:
 <li>publicly available synchronization protocol;</li>
 <li>very reliable if the configuration is fine;</li>
 <li>it's a young project with motivated developers;</li>
-<li>fast.</li>
+<li>it is fast (if enough CPU is available).</li>
 </ul>
 
 <p>
 Disadvantages that I have experienced so far:
 </p>
 <ul class="org-ul">
-<li>needs more CPU (this is an issue if you are using devices with old
-or slow hardware, e.g., a Raspberry Pi);</li>
-<li>the configuration is more tedious;</li>
-<li>it's a young project and some bugs are exposed to the user.</li>
+<li>needs more CPU (this is an issue if you are using devices with very
+old or slow hardware, e.g., a Raspberry Pi);</li>
+<li>the configuration is more tedious.</li>
 </ul>
 
 <p>
@@ -77,45 +80,166 @@ The general setup is very well explained on the project homepages:
 </ul>
 
 <p>
-However, I have the problem, that my computer at work (client A) is
+However, I have the problem, that my computer at work (<code>clientA</code>) is
 behind a firewall and not exposed to the public.  In order to
-circumvent it, we need a client B that has full internet access, runs
-an SSH server and is accessible by client A; then we can set up SSH
-such that it forwards connection from outside to client A; check it
-out.
+circumvent the firewall, we need a <code>clientB</code> that has full internet
+access, runs an SSH server and is accessible by <code>clientA</code>; then we can
+set up SSH such that it forwards connection from outside to <code>clientA</code>;
+check it out.
 </p>
+
+
+<div class="figure">
+<p><img src="syncthing-ssh-port-forward.png" alt="syncthing-ssh-port-forward.png" />
+</p>
+</div>
 </div>
 </div>
 
 <div id="outline-container-orgheadline2" class="outline-2">
-<h2 id="orgheadline2"><a id="ID-f74b5e2f-ba36-4d14-a6d3-77106e89bbaa"></a><span class="todo TODO">TODO</span> Setup of the SSH Port Forwarding</h2>
+<h2 id="orgheadline2">The Idea</h2>
 <div class="outline-text-2" id="text-orgheadline2">
 <p>
-In order for this to work, you need SSH access from client A to client
-B.  Client B needs to have access to the internet.  Then you can setup
-a dynamic SSH tunnel at client A with:
+We will use SSH port forwarding to map a port on <code>clientA</code> (let it be
+port 22111) to a port on the NAT router at <code>my.router.hostname</code> (here
+I will use port 22222).  The router has to redirect the port to the
+<code>clientC</code> that listens for incoming connections at this specific port
+with Syncthing (port 20000 here).
 </p>
-<div class="org-src-container">
 
-<pre class="src src-sh">ssh -vvv -N -D 1080 username@clientB
-</pre>
+<p>
+In more detail, after the configuration below, the port
+<code>localhost:22111</code> on <code>clientA</code> will point to a random port on
+<code>clientB</code>.  There, the SSH server redirects the traffic to another
+random outgoing port and forwards it to <code>my.router.hostname:22222</code>.
+You still need to setup your router so that it forwards incoming
+connections to <code>clientC:20000</code> (many router port forwarding tutorials
+are available online).
+</p>
+
+<p>
+This way, we can circumvent the firewall that prevents direct access
+to <code>my.router.hostname:22222</code>.
+</p>
 </div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">The Setup</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+In order for this to work, you need SSH access from <code>clientA</code> to
+<code>clientB</code> (let's assume that your user name is <code>user</code>).  <code>clientB</code>
+needs to run an SSH server and have full access to the internet.
+</p>
+
+<p>
+The forwarding from <code>clientA</code> to the router at <code>my.router.hostname</code>
+is done by the following SSH command:
+</p>
+<pre class="example">
+ssh -N -vvv -L 22111:my.router.hostname:22222 user@clientB
+</pre>
 <dl class="org-dl">
-<dt><code>-vvv</code></dt><dd>Increase verbosity to a high level, so that you can debug
-problems if you have any (can be removed later).</dd>
 <dt><code>-N</code></dt><dd>Do not open an interactive session (no commands can be
 entered at prompt).</dd>
-<dt><code>-D 1080</code></dt><dd>Dynamically forward all requests to <code>localhost:1080</code> to
-client B (act as a SOCKS proxy on port 1080; if you are
-interested please see, e.g., <a href="https://help.ubuntu.com/community/SSH/OpenSSH/PortForwarding">port forwarding</a>).</dd>
+<dt><code>-vvv</code></dt><dd>Increase verbosity to a high level, so that you can debug
+problems if you have any (can be removed later).</dd>
+<dt><code>-L</code></dt><dd>This tells SSH to use the SSH server at <code>clientB</code> to map the
+local (<code>-L</code>) port 22111 on the client that runs the SSH command
+(in this case <code>clientA</code>) to port 22222 on <code>my.router.hostname</code>.
+Hence, if <code>localhost:22111</code> is accessed at <code>clientA</code>, it gets
+forwarded to the NAT router which in turn has to be set up to
+forward incoming requests at port number 22222 to , e.g.,
+<code>clientC:22000</code>.</dd>
 </dl>
 
 <p>
-If this worked out, every process on client A that accesses
-<code>localhost:1080</code> will be forwarded to client B that is outside the
-firewall.  I.e., you could also tell Firefox to use this SOCKS proxy
-so that you can access sites that you cannot otherwise.  Actually this
-is a very good idea to test if the SOCKS proxy works in general.
+It is important to notice that the forwarding specification (for both,
+local and remote forwards) consists of 3 parts <code>p1:host:p2</code>.  <code>p1</code> is
+the port on the client that executes the SSH command; <code>host</code> is the
+host seen from the SSH server (e.g., <code>clientB</code>) and not from the
+client executing the command; <code>p2</code> is the port on <code>host</code> seen from the
+SSH server.  I.e., <code>ssh -L 123:localhost:456 ssh_server</code> forwards port
+123 on the client executing the SSH command to port 456 on
+<code>ssh_server</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Test the Setup</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+The setup can be tested very easily and efficiently with the following
+method (this method can also be used with other software or ports).
+</p>
+<ol class="org-ol">
+<li>Close all running Syncthing processes on both sides.</li>
+<li>Tell <code>clientC</code> to listen on port 22000 by running <code>nc -l -p 22000</code> on <code>clientC</code>.</li>
+<li>Access port 22111 on <code>clientA</code> by running <code>nc -v localhost 22111</code>
+   on <code>clientA</code>.</li>
+<li>Type some stuff into the terminal at <code>clientA</code> and hope that it is
+printed at <code>clientC</code>.</li>
+</ol>
+
+<p>
+If everything works, you can remove the <code>-vvv</code> flag, add a <code>-q</code> flag
+which tells SSH to be quiet and run the SSH port forwarding at boot.
+</p>
+<pre class="example">
+ssh -N -q -L 22111:my.router.hostname:22222 user@clientB
+</pre>
+
+<p>
+A good <a href="http://blog.trackets.com/2014/05/17/ssh-tunnel-local-and-remote-port-forwarding-explained-with-examples.html">blog article about port forwarding</a>.
+</p>
+
+<p>
+Furthermore, the port forwarding has to be started before Syncthing
+starts, otherwise there be dragons.  I have written a small script
+that waits some time to start the port forwarding as well as a script
+that does the same for <code>syncthing.service</code> and
+<code>syncthing-inotify.service</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Remote Port Forwarding</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<p>
+Furthermore, if you want to reach <code>clientA</code> from home, remote port
+forwarding can also be done.  However, I did not need this and did not
+follow it up, e.g.:
+</p>
+<pre class="example">
+ssh -N -q -R 22000:localhost:22200 clientB
+</pre>
+<p>
+This would tell <code>clientB</code> to forward incoming requests at port 22200
+to the client that executes the SSH command; in this case,
+<code>clientA</code>.  Take care, <code>GatewayPorts</code> has to be set to <code>yes</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-2">
+<h2 id="orgheadline6">Amazing Stuff</h2>
+<div class="outline-text-2" id="text-orgheadline6">
+<p>
+Something to think about: Assume a working SSH server on <code>clientC</code>
+that is accessible by <code>clientA</code> (maybe only via <code>clientB</code>).  Suppose,
+that the IP address of the router is <code>192.168.1.1</code> (seen from
+<code>clientC</code>; local area network).  What does the following command
+(executed on <code>clientA</code>) achieve?
+</p>
+<pre class="example">
+ssh -L 12345:192.168.1.1:80 clientC
+</pre>
+<p>
+Try to access <code>localhost:12345</code> in your browser at <code>clientA</code> and watch
+the pure awesomeness!
 </p>
 </div>
 </div>
@@ -132,7 +256,7 @@ is a very good idea to test if the SOCKS proxy works in general.
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2014 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-23</span></span><br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-24</span></span><br/>
 Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
