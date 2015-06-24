@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2015-06-24 Wed 17:47 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>Debugging with Emacs and GDB</title>
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Dominik Schrempf" />
+<meta  name="description" content="Use GDB from withing Emacs to debug source code."
+ />
+<meta  name="keywords" content="GDB, Emacs, CPP, GUD, Debugger, Debugging" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Debugging with Emacs and GDB</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgheadline1">Introduction</a></li>
+<li><a href="#orgheadline2">The GNU Poject Debugger</a></li>
+<li><a href="#orgheadline3">GDB in Emacs</a></li>
+<li><a href="#orgheadline4">Customize GDB</a></li>
+<li><a href="#orgheadline5">Window Management</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline1" class="outline-2">
+<h2 id="orgheadline1">Introduction</h2>
+<div class="outline-text-2" id="text-orgheadline1">
+<p>
+Erroneous source code can be a nasty issue to tackle.  Print
+statements that inform you about the states of variables are handy but
+sometimes they are unable to represent the intrinsic structure of the
+code.  Debuggers allow you to run your code step by step, display and
+watch variables and see what is going on <i>inside</i> another program
+while it executes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-2">
+<h2 id="orgheadline2">The GNU Poject Debugger</h2>
+<div class="outline-text-2" id="text-orgheadline2">
+<p>
+Here, we will use the <a href="http://www.gnu.org/software/gdb/">GNU Project Debugger (GDB)</a>, because it is freely
+available, very actively developed and can be used on many operating
+systems.  It can
+</p>
+<ul class="org-ul">
+<li>start your program, specifying anything that might affect its behavior;</li>
+<li>make your program stop on specified conditions;</li>
+<li>examine what has happened, when your program has stopped;</li>
+<li>change things in your program, so you can experiment with correcting
+the effects of one bug and go on to learn about another.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3">GDB in Emacs</h2>
+<div class="outline-text-2" id="text-orgheadline3">
+<p>
+To debug our program, we will use <b>Emacs</b> and <b>C source code</b>,
+although <code>gdb</code> can be used from the command line and can debug many
+different languages.
+</p>
+
+<p>
+A good overview about debugging in Emacs with GDB can be found in the
+<a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/GDB-Graphical-Interface.html#GDB-Graphical-Interface">Emacs manual</a>.
+</p>
+
+<p>
+A short step-by-step guide:
+</p>
+<ul class="org-ul">
+<li><p>
+Open and save a new file <code>hello.c</code> with the following contents:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="color: #94BFF3;">#include</span> <span style="color: #CC9393;">&lt;stdio.h&gt;</span>
+
+<span style="color: #7CB8BB;">int</span> <span style="color: #93E0E3;">main</span>(<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">argc</span>, <span style="color: #7CB8BB;">char</span>* <span style="color: #DFAF8F;">argv</span>[]) {
+    <span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span>;
+    printf(<span style="color: #CC9393;">"hello world\n"</span>);
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> ( i=0;i&lt;10;++i) {
+        printf(<span style="color: #CC9393;">"%d \n"</span>,i);
+    }
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> 0;
+}
+</pre>
+</div></li>
+
+<li>Compile it with <code>M-x compile</code>; enter the command <code>gcc -Wall -g
+  hello.c -o hello</code>.  Usually, it is very helpful to compile your
+source code with debugging flags (e.g., <code>-g</code> for <code>gcc</code>), so that
+nothing is optimized out by the compiler.</li>
+<li>Activate the graphical debugging environment with <code>M-x
+  gdb-many-windows</code>.</li>
+<li>Start the debugger with <code>M-x gdb</code>; enter the command <code>gdb -i=mi
+  hello</code>.</li>
+</ul>
+
+<p>
+From withing the Grand Unified Debugger (GUD) buffer, you can run
+(<code>r</code>) the program to its end or to the first break point, start
+(<code>start</code>) and run in until the beginning of the main procedure.  You
+can execute the program line-by-line (<code>n</code>) or step into functions with
+<code>s</code>.
+</p>
+
+<p>
+Breakpoints can be set from withing the source buffer by clicking on
+the fringe or with <code>C-x C-a C-b</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline4" class="outline-2">
+<h2 id="orgheadline4">Customize GDB</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+<p>
+To permanently set the nice GDB user interface layout, put
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(setq gdb-many-windows t)
+</pre>
+</div>
+<p>
+into your <code>.emacs</code> file.  I have also written a function, that
+facilitates the starting of the debugger:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #F0DFAF; font-weight: bold;">defvar</span> <span style="color: #DFAF8F;">gdb-my-history</span> nil <span style="color: #9FC59F;">"History list for dom-gdb-MYPROG."</span>)
+(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-MYPROG</span> ()
+  <span style="color: #9FC59F;">"Debug MYPROG with `</span><span style="color: #9FC59F;">gdb</span><span style="color: #9FC59F;">'."</span>
+  (interactive)
+  (<span style="color: #F0DFAF; font-weight: bold;">let*</span> ((wd <span style="color: #CC9393;">"/path/to/working/directory"</span>)
+         (pr <span style="color: #CC9393;">"/path/to/executable"</span>)
+         (dt <span style="color: #CC9393;">"/path/to/datafile"</span>)
+         (guess (concat <span style="color: #CC9393;">"gdb -i=mi -cd="</span> wd <span style="color: #CC9393;">" --args "</span> pr <span style="color: #CC9393;">" -s "</span> dt))
+         (arg (read-from-minibuffer <span style="color: #CC9393;">"Run gdb (like this): "</span>
+                                    guess nil nil 'gdb-my-history)))
+    (gdb arg)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">Window Management</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+<p>
+Upon debugging a program with many source files, GDB displays new
+source files in (random?) windows in your Emacs frame.  This is
+especially tedious if you use <code>gdb-many-windows</code>.  I have written a
+function <code>dom-gdb-restore-windows</code>, that resets the display and fixes
+the window layout:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-restore-windows</span> ()
+  <span style="color: #9FC59F;">"Restore GDB session."</span>
+  (interactive)
+  (<span style="color: #F0DFAF; font-weight: bold;">if</span> (eq gdb-many-windows t)
+      (gdb-restore-windows)
+    (dom-gdb-restore-windows-gud-io-and-source)))
+
+(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-restore-windows-gud-io-and-source</span> ()
+  <span style="color: #9FC59F;">"Restore GUD buffer, IO buffer and source buffer next to each other."</span>
+  (interactive)
+  <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Select dedicated GUD buffer.</span>
+  (switch-to-buffer gud-comint-buffer)
+  (delete-other-windows)
+  (set-window-dedicated-p (get-buffer-window) t)
+  (<span style="color: #F0DFAF; font-weight: bold;">when</span> (or gud-last-last-frame gdb-show-main)
+    (<span style="color: #F0DFAF; font-weight: bold;">let</span> ((side-win (split-window nil nil t))
+          (bottom-win (split-window)))
+      <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Put source to the right.</span>
+      (set-window-buffer
+       side-win
+       (<span style="color: #F0DFAF; font-weight: bold;">if</span> gud-last-last-frame
+           (gud-find-file (car gud-last-last-frame))
+         (gud-find-file gdb-main-file)))
+      (setq gdb-source-window side-win)
+      <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Show dedicated IO buffer below.</span>
+      (set-window-buffer
+       bottom-win
+       (gdb-get-buffer-create 'gdb-inferior-io))
+      (set-window-dedicated-p bottom-win t))))
+
+(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-display-source-buffer</span> ()
+  <span style="color: #9FC59F;">"Display gdb source buffer if it is set."</span>
+  (interactive)
+  (<span style="color: #F0DFAF; font-weight: bold;">when</span> (or gud-last-last-frame gdb-show-main)
+    (switch-to-buffer
+     (<span style="color: #F0DFAF; font-weight: bold;">if</span> gud-last-last-frame
+         (gud-find-file (car gud-last-last-frame))
+       (gud-find-file gdb-main-file))))
+  (delete-other-windows))
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script type='text/javascript'>
+  var disqus_shortname = 'Fazky'; // required: replace example with your forum shortname
+  (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
+Copyright 2014 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-06-24</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
+<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
+</div>
+<script type='text/javascript'>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-57993874-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>

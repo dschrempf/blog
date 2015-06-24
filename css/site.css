@@ -185,6 +185,17 @@
     .outline-text-4 {
     }
 
+    h5 {
+        font-family:sans;
+        font-size:1em;
+        margin: 1em -5px 1em -5px;
+        padding: 5px 5px 5px 5px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .outline-text-4 {
+    }
+
     a {
         text-decoration: none;
         font-weight: normal;
@@ -228,7 +239,7 @@
         color: #666666;
         line-height: 1.3em;
         background-color: #eeeeee;
-        border: 2px solid;
+        border: 1px solid;
         /* border: 1px dotted; */
         border-color: #aaaaaa;
         padding: 2px 3px 0px 3px;
@@ -269,7 +280,7 @@
         color: #336699;
         line-height: 1.3em;
         background-color: #eeeeee;
-        border: 2px solid;
+        border: 1px solid;
         border-color: #aaaaaa;
         padding: 2px 3px 0px 3px;
         /* padding: 2px 2px 0px 2px; */
