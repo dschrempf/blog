@@ -145,7 +145,7 @@
         font-size:2.1em;
         line-height:2.1em;
         /* color: #336699; */
-        color: black;
+        color: #333333;
         margin: 0em -5px 0em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -155,7 +155,7 @@
         font-family:sans;
         font-size:1.45em;
         /* color: #336699; */
-        color: black;
+        color: #333333;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -168,7 +168,7 @@
         font-family:sans;
         font-size:1.3em;
         /* color: #336699; */
-        color: black;
+        color: #333333;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
