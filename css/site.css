@@ -9,7 +9,7 @@
     }
 
     body {
-        width: 1024px;
+        width: 900px;
         max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
@@ -21,7 +21,7 @@
         text-align: justify;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 900px){
         body {
             margin-top: 0em;
             margin-bottom: 0em;
@@ -38,7 +38,7 @@
         border: 1px solid #ddd;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 900px){
         body #content {
             padding: 0em 1em 1em 1em;
             border: none;
@@ -53,7 +53,7 @@
     body .nav {
         font-size: 1em;
         text-align: center;
-        /* width: 1024px; */
+        /* width: 900px; */
         /* max-width: 100%; */
         margin-left: auto;
         margin-right: auto;
@@ -63,7 +63,7 @@
         padding: 0.5em 1.5em 0.5em 1.5em;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 900px){
         body .nav {
             padding: 0.5em 1em 0.5em 1em;
             border: none;
@@ -130,7 +130,7 @@
     }
 
     /* Do not display TOC when screen is small. */
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 900px){
         #table-of-contents {
             display: none;
         }
@@ -145,7 +145,7 @@
         font-size:2.1em;
         line-height:2.1em;
         /* color: #336699; */
-        color: #333333;
+        color: black;
         margin: 0em -5px 0em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -155,7 +155,7 @@
         font-family:sans;
         font-size:1.45em;
         /* color: #336699; */
-        color: #333333;
+        color: black;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -168,7 +168,7 @@
         font-family:sans;
         font-size:1.3em;
         /* color: #336699; */
-        color: #333333;
+        color: black;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -340,7 +340,7 @@
 
     /* Postamble. */
     #postamble {
-        width: 1024px;
+        width: 900px;
         max-width: 90%;
         margin-top: 0.5em;
         margin-right: auto;
@@ -350,7 +350,7 @@
         padding: 0 1.5em 1.5em 1.5em;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 1024px){
+    @media screen and (max-width: 900px){
         #postamble {
             padding: 0em 1em 0em 1em;
         }
