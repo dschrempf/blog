@@ -144,7 +144,8 @@
         font-family:sans;
         font-size:2.1em;
         line-height:2.1em;
-        color: #336699;
+        /* color: #336699; */
+        color: black;
         margin: 0em -5px 0em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -153,7 +154,8 @@
     h2 {
         font-family:sans;
         font-size:1.45em;
-        color: #336699;
+        /* color: #336699; */
+        color: black;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
@@ -165,7 +167,8 @@
     h3 {
         font-family:sans;
         font-size:1.3em;
-        color: #336699;
+        /* color: #336699; */
+        color: black;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
         border-bottom: 1px solid #ddd;
