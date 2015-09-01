@@ -5,11 +5,11 @@
 {
     html {
         margin: 0px;
-        font: 300 1em/1.5em "Droid Serif", "Droid Sans", serif;
+        font: 250 1em/1.5em "Droid Serif", "Droid Sans", serif;
     }
 
     body {
-        width: 800px;
+        width: 1024px;
         max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
@@ -21,7 +21,7 @@
         text-align: justify;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 1024px){
         body {
             margin-top: 0em;
             margin-bottom: 0em;
@@ -38,7 +38,7 @@
         border: 1px solid #ddd;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 1024px){
         body #content {
             padding: 0em 1em 1em 1em;
             border: none;
@@ -63,7 +63,7 @@
         padding: 0.5em 1.5em 0.5em 1.5em;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 1024px){
         body .nav {
             padding: 0.5em 1em 0.5em 1em;
             border: none;
