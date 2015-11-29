@@ -238,7 +238,7 @@
     .timestamp {
         /* Put timestamp into inline box so that it does not get justified. */
         font-family: monospace;
-        font-weight: bold;
+        /* font-weight: bold; */
         color: #666666;
         line-height: 1.3em;
         background-color: #eeeeee;

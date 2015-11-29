@@ -3,15 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>A Simple MCMC Simulation</title>
-<!-- 2015-04-24 Fri 21:04 -->
+<!-- 2015-11-29 Sun 17:07 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Simple MCMC Simulation</title>
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Dominik Schrempf" />
 <meta  name="description" content="MCMC simulation to approximate observations of coin tosses."
  />
 <meta  name="keywords" content="MCMC, Simulation, Bayesian Statistics, Coin Toss" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
 <link rel='stylesheet' href='/css/site.css' type='text/css'/>
 <meta name="viewport" content="width=device-width"/>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -54,41 +54,41 @@ The following C++ code does exactly this (the last column is the posterior).
 
 <div class="org-src-container">
 
-<pre class="src src-C++"><span style="color: #808080;">#include</span> <span style="color: #008000;">&lt;iostream&gt;</span>
-<span style="color: #808080;">#include</span> <span style="color: #008000;">&lt;iomanip&gt;</span>
+<pre class="src src-C++"><span style="color: #94BFF3;">#include</span> <span style="color: #CC9393;">&lt;iostream&gt;</span>
+<span style="color: #94BFF3;">#include</span> <span style="color: #CC9393;">&lt;iomanip&gt;</span>
 
-<span style="color: #808080;">#include</span> <span style="color: #008000;">&lt;math.h&gt;</span>
-<span style="color: #808080;">#include</span> <span style="color: #008000;">&lt;gsl/gsl_rng.h&gt;</span>
+<span style="color: #94BFF3;">#include</span> <span style="color: #CC9393;">&lt;math.h&gt;</span>
+<span style="color: #94BFF3;">#include</span> <span style="color: #CC9393;">&lt;gsl/gsl_rng.h&gt;</span>
 
-<span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Run a coin toss MCMC simulation.</span>
+<span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Run a coin toss MCMC simulation.</span>
 
-<span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">User interface.</span>
-<span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Observation.</span>
-<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">n_tosses</span> = 100;
-<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">n_heads</span>  = 58;
-<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">n_tails</span>  = n_tosses - n_heads;
+<span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">User interface.</span>
+<span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Observation.</span>
+<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">n_tosses</span> = 100;
+<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">n_heads</span>  = 58;
+<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">n_tails</span>  = n_tosses - n_heads;
 
-<span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">MCMC settings.</span>
-<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">n_iter</span>      = 10000;
-<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">print_every</span> = 500;
-<span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">delta</span>    = 0.1;
+<span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">MCMC settings.</span>
+<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">n_iter</span>      = 10000;
+<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">print_every</span> = 500;
+<span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">delta</span>    = 0.1;
 
-<span style="color: #6434A3;">void</span> <span style="color: #006699;">fix_width_cout_str</span> (<span style="color: #D0372D;">std</span>::<span style="color: #6434A3;">string</span> <span style="color: #BA36A5;">s</span>)
+<span style="color: #7CB8BB;">void</span> <span style="color: #93E0E3;">fix_width_cout_str</span> (<span style="color: #BFEBBF;">std</span>::<span style="color: #7CB8BB;">string</span> <span style="color: #DFAF8F;">s</span>)
 {
-    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(10) &lt;&lt; <span style="color: #D0372D;">std</span>::fixed &lt;&lt; <span style="color: #D0372D;">std</span>::setprecision(2)&lt;&lt; s &lt;&lt; <span style="color: #008000;">"  "</span>;
+    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::setw(10) &lt;&lt; <span style="color: #BFEBBF;">std</span>::fixed &lt;&lt; <span style="color: #BFEBBF;">std</span>::setprecision(2)&lt;&lt; s &lt;&lt; <span style="color: #CC9393;">"  "</span>;
 }
 
-<span style="color: #6434A3;">void</span> <span style="color: #006699;">fix_width_cout_dbl</span> (<span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">d</span>)
+<span style="color: #7CB8BB;">void</span> <span style="color: #93E0E3;">fix_width_cout_dbl</span> (<span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">d</span>)
 {
-    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(10) &lt;&lt; <span style="color: #D0372D;">std</span>::fixed &lt;&lt; <span style="color: #D0372D;">std</span>::setprecision(2)&lt;&lt; d &lt;&lt; <span style="color: #008000;">"  "</span>;
+    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::setw(10) &lt;&lt; <span style="color: #BFEBBF;">std</span>::fixed &lt;&lt; <span style="color: #BFEBBF;">std</span>::setprecision(2)&lt;&lt; d &lt;&lt; <span style="color: #CC9393;">"  "</span>;
 }
 
-<span style="color: #6434A3;">int</span> <span style="color: #006699;">main</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">argc</span>, <span style="color: #6434A3;">char</span> *<span style="color: #BA36A5;">argv</span>[])
+<span style="color: #7CB8BB;">int</span> <span style="color: #93E0E3;">main</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">argc</span>, <span style="color: #7CB8BB;">char</span> *<span style="color: #DFAF8F;">argv</span>[])
 {
-    <span style="color: #0000FF;">const</span> <span style="color: #6434A3;">gsl_rng_type</span> * <span style="color: #BA36A5;">t</span>;
-    <span style="color: #6434A3;">gsl_rng</span> * <span style="color: #BA36A5;">r</span>;
-    <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">theta</span>;               <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">The probability of tossing a head.</span>
-    <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">posterior</span>[100];           <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">The posterior.</span>
+    <span style="color: #F0DFAF; font-weight: bold;">const</span> <span style="color: #7CB8BB;">gsl_rng_type</span> * <span style="color: #DFAF8F;">t</span>;
+    <span style="color: #7CB8BB;">gsl_rng</span> * <span style="color: #DFAF8F;">r</span>;
+    <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">theta</span>;               <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">The probability of tossing a head.</span>
+    <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">posterior</span>[100];           <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">The posterior.</span>
 
     gsl_rng_env_setup();
 
@@ -96,67 +96,67 @@ The following C++ code does exactly this (the last column is the posterior).
     r = gsl_rng_alloc (t);
     gsl_rng_set (r, 1);
 
-    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Pick a first guess from the prior distribution (uniform prior).</span>
-    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Here, the prior does not really effect the posterior.  However,</span>
-    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">it kicks in, when the likelihood ratio for acceptance is</span>
-    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">calculated (see below).</span>
+    <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Pick a first guess from the prior distribution (uniform prior).</span>
+    <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Here, the prior does not really effect the posterior.  However,</span>
+    <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">it kicks in, when the likelihood ratio for acceptance is</span>
+    <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">calculated (see below).</span>
     theta = gsl_rng_uniform (r);
 
-    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">"Start MCMC."</span> &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">"Start MCMC."</span> &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
 
-    fix_width_cout_str(<span style="color: #008000;">"iteration"</span>);
-    fix_width_cout_str(<span style="color: #008000;">"theta_old"</span>);
-    fix_width_cout_str(<span style="color: #008000;">"theta_pri"</span>);
-    fix_width_cout_str(<span style="color: #008000;">"ln_tot"</span>);
-    fix_width_cout_str(<span style="color: #008000;">"pr_of_acc"</span>);
-    fix_width_cout_str(<span style="color: #008000;">"theta_new"</span>);
-    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+    fix_width_cout_str(<span style="color: #CC9393;">"iteration"</span>);
+    fix_width_cout_str(<span style="color: #CC9393;">"theta_old"</span>);
+    fix_width_cout_str(<span style="color: #CC9393;">"theta_pri"</span>);
+    fix_width_cout_str(<span style="color: #CC9393;">"ln_tot"</span>);
+    fix_width_cout_str(<span style="color: #CC9393;">"pr_of_acc"</span>);
+    fix_width_cout_str(<span style="color: #CC9393;">"theta_new"</span>);
+    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
 
-    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Initialize posterior.</span>
-    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; 100; i++) {
+    <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Initialize posterior.</span>
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span> = 0; i &lt; 100; i++) {
         posterior[i] = 0.0;
     }
 
-    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; n_iter; i++)
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span> = 0; i &lt; n_iter; i++)
         {
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Acceptance ratio.</span>
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">acc</span>;
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">ln_likelihood_ratio</span>;
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">ln_prior_ratio</span>;
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">ln_proposal_ratio</span>;
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">ln_tot</span>;
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Acceptance ratio.</span>
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">acc</span>;
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_likelihood_ratio</span>;
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_prior_ratio</span>;
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_proposal_ratio</span>;
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_tot</span>;
 
-            <span style="color: #8D8D84;">//////////////////////////////</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Propose a new theta.</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Uniform, symmetric jump algorithm (Metropolis algorithm).</span>
+            <span style="color: #5F7F5F;">//////////////////////////////</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Propose a new theta.</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Uniform, symmetric jump algorithm (Metropolis algorithm).</span>
 
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">The jump algorithm influences the runtime (How many</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">proposals are accepted?) but it should not change the</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">posterior; this can be proven for the Metropolos and</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">the Metropolis-Hastings (non-symmetric jumps) algorithm.</span>
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">old_theta</span>   = theta;
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">rn</span>          = gsl_rng_uniform (r);
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">theta_prime</span> = theta + (rn - 0.5) * delta;
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">The jump algorithm influences the runtime (How many</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">proposals are accepted?) but it should not change the</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">posterior; this can be proven for the Metropolos and</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">the Metropolis-Hastings (non-symmetric jumps) algorithm.</span>
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">old_theta</span>   = theta;
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">rn</span>          = gsl_rng_uniform (r);
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">theta_prime</span> = theta + (rn - 0.5) * delta;
 
-            <span style="color: #0000FF;">if</span> (theta_prime &lt; 0.0)
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> (theta_prime &lt; 0.0)
                 theta_prime = - theta_prime;
-            <span style="color: #0000FF;">if</span> (theta_prime &gt; 1.0)
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> (theta_prime &gt; 1.0)
                 theta_prime = 2.0 - theta_prime;
 
-            <span style="color: #8D8D84;">//////////////////////////////</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Accept theta_prime?</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Calculate the natural logarithm of the likelihood</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">ratios of the new proposal to the old one.  It consists</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">of:</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">1. The likelihood ratio due to the model.</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">2. The ratio of the prior (this is, where the prior</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">comes in).  If the likelihood ratio of the model is</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">flat (i.e., ln_likelihood_ratio ~= 0.0), the prior is</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">very informative; something that we do not want in</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">general.</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">3. The ratio of the proposal (the jumping algorithm).</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">This is, how we incorporate non-symmetric jumping</span>
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">algorithms, so that they do not change the posterior.</span>
+            <span style="color: #5F7F5F;">//////////////////////////////</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Accept theta_prime?</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Calculate the natural logarithm of the likelihood</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">ratios of the new proposal to the old one.  It consists</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">of:</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">1. The likelihood ratio due to the model.</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">2. The ratio of the prior (this is, where the prior</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">comes in).  If the likelihood ratio of the model is</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">flat (i.e., ln_likelihood_ratio ~= 0.0), the prior is</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">very informative; something that we do not want in</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">general.</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">3. The ratio of the proposal (the jumping algorithm).</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">This is, how we incorporate non-symmetric jumping</span>
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">algorithms, so that they do not change the posterior.</span>
             ln_likelihood_ratio =
                 (n_heads*log(theta_prime) + n_tails*log(1.0-theta_prime)) -
                 (n_heads*log(theta) + n_tails*log(1.0-theta));
@@ -164,25 +164,25 @@ The following C++ code does exactly this (the last column is the posterior).
             ln_proposal_ratio = 0.0;
             ln_tot = ln_likelihood_ratio + ln_prior_ratio + ln_proposal_ratio;
 
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Circumvent underflow error.</span>
-            <span style="color: #0000FF;">if</span> (ln_tot &lt; -300.0)
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Circumvent underflow error.</span>
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> (ln_tot &lt; -300.0)
                 acc = 0.0;
-            <span style="color: #0000FF;">else</span> <span style="color: #0000FF;">if</span> (ln_tot &gt; 0.0)
+            <span style="color: #F0DFAF; font-weight: bold;">else</span> <span style="color: #F0DFAF; font-weight: bold;">if</span> (ln_tot &gt; 0.0)
                 acc = 1.0;
-            <span style="color: #0000FF;">else</span>
+            <span style="color: #F0DFAF; font-weight: bold;">else</span>
                 acc = exp (ln_tot);
 
-            <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Accept with probability acc.</span>
-            <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">u</span> = gsl_rng_uniform (r);
-            <span style="color: #0000FF;">if</span> (u &lt; acc)
+            <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Accept with probability acc.</span>
+            <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">u</span> = gsl_rng_uniform (r);
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> (u &lt; acc)
                 {
                     theta = theta_prime;
-                    posterior[(<span style="color: #6434A3;">int</span>)(<span style="color: #6434A3;">theta</span>*100)] += 1.0;
+                    posterior[(<span style="color: #7CB8BB;">int</span>)(<span style="color: #7CB8BB;">theta</span>*100)] += 1.0;
                 }
 
-            <span style="color: #8D8D84;">//////////////////////////////</span>
-            <span style="color: #8D8D84;">//</span><span style="color: #8D8D84; font-style: italic;">Log results.</span>
-            <span style="color: #0000FF;">if</span> (i % print_every == 0)
+            <span style="color: #5F7F5F;">//////////////////////////////</span>
+            <span style="color: #5F7F5F;">//</span><span style="color: #7F9F7F;">Log results.</span>
+            <span style="color: #F0DFAF; font-weight: bold;">if</span> (i % print_every == 0)
                 {
                     fix_width_cout_dbl (i);
                     fix_width_cout_dbl (old_theta);
@@ -190,38 +190,38 @@ The following C++ code does exactly this (the last column is the posterior).
                     fix_width_cout_dbl (ln_tot);
                     fix_width_cout_dbl (acc);
                     fix_width_cout_dbl (theta);
-                    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+                    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
                 }
 
         }
 
-    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">"MCMC finished."</span> &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
-    <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">"MCMC finished."</span> &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
+    <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
 
-    <span style="color: #8D8D84;">// </span><span style="color: #8D8D84; font-style: italic;">Normalize posterior.</span>
-    <span style="color: #6434A3;">double</span> <span style="color: #BA36A5;">sum</span> = 0.0;
-    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; 100; i++) {
+    <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Normalize posterior.</span>
+    <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">sum</span> = 0.0;
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span> = 0; i &lt; 100; i++) {
         sum += posterior[i];
     }
-    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> = 0; i &lt; 100; i++) {
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span> = 0; i &lt; 100; i++) {
         posterior[i] = posterior[i]/sum;
     }
 
 
-    <span style="color: #0000FF;">for</span> (<span style="color: #6434A3;">int</span> <span style="color: #BA36A5;">i</span> =0 ; i &lt; 100; i++) {
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">"Theta between "</span>;
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(3) &lt;&lt; i;
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">" and "</span>;
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(3) &lt;&lt; i+1;
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #008000;">":\t"</span>;
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::setw(4) &lt;&lt; <span style="color: #D0372D;">std</span>::setprecision(2) &lt;&lt; (posterior[i]);
-        <span style="color: #D0372D;">std</span>::cout &lt;&lt; <span style="color: #D0372D;">std</span>::endl;
+    <span style="color: #F0DFAF; font-weight: bold;">for</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span> =0 ; i &lt; 100; i++) {
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">"Theta between "</span>;
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::setw(3) &lt;&lt; i;
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">" and "</span>;
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::setw(3) &lt;&lt; i+1;
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">":\t"</span>;
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::setw(4) &lt;&lt; <span style="color: #BFEBBF;">std</span>::setprecision(2) &lt;&lt; (posterior[i]);
+        <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
     }
 
 
     gsl_rng_free (r);
 
-    <span style="color: #0000FF;">return</span> 0;
+    <span style="color: #F0DFAF; font-weight: bold;">return</span> 0;
 }
 </pre>
 </div>
@@ -237,9 +237,9 @@ The following C++ code does exactly this (the last column is the posterior).
   })();
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
-Copyright 2014 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-04-24</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
+Copyright 2015 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-11-29</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.2) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
