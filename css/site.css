@@ -279,7 +279,7 @@
         /* Put code into inline box so that it does not get justified. */
         font-size: 1em;
         font-family: monospace;
-        font-weight: bold;
+        /* font-weight: bold; */
         color: #336699;
         line-height: 1.3em;
         background-color: #eeeeee;
@@ -309,12 +309,14 @@
 
     pre {
         font-family: Droid Sans Mono, Monospace, Courier;
-        color: black;
-        font-size: 0.9em;
+        /* color: black; */
+        color: #dcdccc;
+        font-size: 1em;
         border: none;
         overflow: auto;
         border: 1px solid #dddddd;
-        background-color: #eeeeee;
+        /* background-color: #eeeeee; */
+        background-color: #3f3f3f;
         padding: 0.5em 1em 0.5em 1em;
         margin: 1em 0em 1em 0em;
     }

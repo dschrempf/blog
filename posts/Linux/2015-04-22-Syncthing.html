@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-06-24 Wed 17:47 -->
+<!-- 2015-11-29 Sun 16:52 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>Syncthing with SSH Port Forwarding</title>
@@ -84,8 +84,8 @@ However, I have the problem, that my computer at work (<code>clientA</code>) is
 behind a firewall and not exposed to the public.  In order to
 circumvent the firewall, we need a <code>clientB</code> that has full internet
 access, runs an SSH server and is accessible by <code>clientA</code>; then we can
-set up SSH such that it forwards connection from outside to <code>clientA</code>;
-check it out.
+set up SSH such that it forwards connection requests from <code>clientA</code> to
+the outside and the other way around; check it out.
 </p>
 
 
@@ -255,9 +255,9 @@ the pure awesomeness!
   })();
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
-Copyright 2014 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-06-24</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3beta) <br/>
+Copyright 2015 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-11-29</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.2) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
