@@ -1,12 +1,3 @@
-#+TITLE: Source Code of Blog/Homepage
-#+BEGIN_HTML
-<script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-#+END_HTML
-
-Test math equations:
-=(solve a b)= should return $X$, from $AX=B$.
-\begin{align}
-  AX=B
-\end{align}
+#+TITLE: HTML export of Org Source of Blog/Homepage
+The articles are written in Org Mode.  This repository is the HTML
+export.
