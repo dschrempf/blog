@@ -1,3 +1,6 @@
 #+TITLE: Source Code of Blog/Homepage
 Test math equations:
 =(solve a b)= should return $X$, from $AX=B$.
+\begin{align}
+  AX=B
+\end{align}
