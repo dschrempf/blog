@@ -3,15 +3,15 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2015-11-29 Sun 17:07 -->
-<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
+<!-- 2016-04-08 Fri 21:42 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Syncthing with SSH Port Forwarding</title>
-<meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Dominik Schrempf" />
-<meta  name="description" content="Description"
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Dominik Schrempf" />
+<meta name="description" content="Description"
  />
-<meta  name="keywords" content="Keywords" />
+<meta name="keywords" content="Keywords" />
 <link rel='stylesheet' href='/css/site.css' type='text/css'/>
 <meta name="viewport" content="width=device-width"/>
 </head>
@@ -31,19 +31,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline1">Introduction</a></li>
-<li><a href="#orgheadline2">The Idea</a></li>
-<li><a href="#orgheadline3">The Setup</a></li>
-<li><a href="#orgheadline4">Test the Setup</a></li>
-<li><a href="#orgheadline5">Remote Port Forwarding</a></li>
-<li><a href="#orgheadline6">Amazing Stuff</a></li>
+<li><a href="#org21265d5">Introduction</a></li>
+<li><a href="#orgc1d68a">The Idea</a></li>
+<li><a href="#org184740a">The Setup</a></li>
+<li><a href="#org92e8635">Test the Setup</a></li>
+<li><a href="#org93bd1d1">Remote Port Forwarding</a></li>
+<li><a href="#org89ffdd9">Amazing Stuff</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1">Introduction</h2>
-<div class="outline-text-2" id="text-orgheadline1">
+<div id="outline-container-org21265d5" class="outline-2">
+<h2 id="org21265d5">Introduction</h2>
+<div class="outline-text-2" id="text-org21265d5">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-04-22 Wed&gt; </span></span> Recently, I have explained how to configure
 <a href="2015-01-30-BTSync.html">BitTorrent Sync over an SSH SOCKS proxy</a>.  However, due to various
@@ -96,9 +96,9 @@ the outside and the other way around; check it out.
 </div>
 </div>
 
-<div id="outline-container-orgheadline2" class="outline-2">
-<h2 id="orgheadline2">The Idea</h2>
-<div class="outline-text-2" id="text-orgheadline2">
+<div id="outline-container-orgc1d68a" class="outline-2">
+<h2 id="orgc1d68a">The Idea</h2>
+<div class="outline-text-2" id="text-orgc1d68a">
 <p>
 We will use SSH port forwarding to map a port on <code>clientA</code> (let it be
 port 22111) to a port on the NAT router at <code>my.router.hostname</code> (here
@@ -124,9 +124,9 @@ to <code>my.router.hostname:22222</code>.
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-2">
-<h2 id="orgheadline3">The Setup</h2>
-<div class="outline-text-2" id="text-orgheadline3">
+<div id="outline-container-org184740a" class="outline-2">
+<h2 id="org184740a">The Setup</h2>
+<div class="outline-text-2" id="text-org184740a">
 <p>
 In order for this to work, you need SSH access from <code>clientA</code> to
 <code>clientB</code> (let's assume that your user name is <code>user</code>).  <code>clientB</code>
@@ -167,9 +167,9 @@ SSH server.  I.e., <code>ssh -L 123:localhost:456 ssh_server</code> forwards por
 </div>
 </div>
 
-<div id="outline-container-orgheadline4" class="outline-2">
-<h2 id="orgheadline4">Test the Setup</h2>
-<div class="outline-text-2" id="text-orgheadline4">
+<div id="outline-container-org92e8635" class="outline-2">
+<h2 id="org92e8635">Test the Setup</h2>
+<div class="outline-text-2" id="text-org92e8635">
 <p>
 The setup can be tested very easily and efficiently with the following
 method (this method can also be used with other software or ports).
@@ -178,7 +178,7 @@ method (this method can also be used with other software or ports).
 <li>Close all running Syncthing processes on both sides.</li>
 <li>Tell <code>clientC</code> to listen on port 22000 by running <code>nc -l -p 22000</code> on <code>clientC</code>.</li>
 <li>Access port 22111 on <code>clientA</code> by running <code>nc -v localhost 22111</code>
-   on <code>clientA</code>.</li>
+on <code>clientA</code>.</li>
 <li>Type some stuff into the terminal at <code>clientA</code> and hope that it is
 printed at <code>clientC</code>.</li>
 </ol>
@@ -205,9 +205,9 @@ that does the same for <code>syncthing.service</code> and
 </div>
 </div>
 
-<div id="outline-container-orgheadline5" class="outline-2">
-<h2 id="orgheadline5">Remote Port Forwarding</h2>
-<div class="outline-text-2" id="text-orgheadline5">
+<div id="outline-container-org93bd1d1" class="outline-2">
+<h2 id="org93bd1d1">Remote Port Forwarding</h2>
+<div class="outline-text-2" id="text-org93bd1d1">
 <p>
 Furthermore, if you want to reach <code>clientA</code> from home, remote port
 forwarding can also be done.  However, I did not need this and did not
@@ -224,9 +224,9 @@ to the client that executes the SSH command; in this case,
 </div>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-2">
-<h2 id="orgheadline6">Amazing Stuff</h2>
-<div class="outline-text-2" id="text-orgheadline6">
+<div id="outline-container-org89ffdd9" class="outline-2">
+<h2 id="org89ffdd9">Amazing Stuff</h2>
+<div class="outline-text-2" id="text-org89ffdd9">
 <p>
 Something to think about: Assume a working SSH server on <code>clientC</code>
 that is accessible by <code>clientA</code> (maybe only via <code>clientB</code>).  Suppose,
@@ -256,8 +256,8 @@ the pure awesomeness!
 </script>
 <noscript><p>Please enable JavaScript to view the <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p></noscript><div class='footer'>
 Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2015-11-29</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.2) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-04-08</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.4) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
