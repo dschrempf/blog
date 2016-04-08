@@ -33,7 +33,7 @@
     body #content {
         margin-left: auto;
         margin-right: auto;
-        background: #fbfbfb;
+        background: #ffffff;
         padding: 0 1.5em 1.5em 1.5em;
         border: 1px solid #ddd;
     }
@@ -45,10 +45,6 @@
         }
     }
 
-    body .title {
-        text-align: left;
-    }
-
     /* Naviation bar at the top. */
     body .nav {
         font-size: 1em;
@@ -57,7 +53,7 @@
         /* max-width: 100%; */
         margin-left: auto;
         margin-right: auto;
-        background: #fbfbfb;
+        background: #ffffff;
         border: 1px solid #ddd;
         border-bottom-style: none;
         padding: 0.5em 1.5em 0.5em 1.5em;
@@ -95,7 +91,7 @@
         position: fixed;
         right: 0px;
         top: 0px;
-        background: #fbfbfb;
+        background: #ffffff;
         text-align: right;
         float: right;
         border: 1px solid #ccc;
@@ -109,9 +105,9 @@
 
     #table-of-contents h2 {
         font-family:sans;
-        font-size:1.45em;
+        font-size: 1em;
         max-width: 9em;
-        border: 0;
+        border: none;
         padding-left: 0.5em;
         padding-right: 0.5em;
         padding-top: 0.05em;
@@ -119,7 +115,9 @@
     }
 
     #table-of-contents #text-table-of-contents {
+        font-size: 0.8em;
         display: none;
+        line-height: 1em;
         text-align: left;
     }
 
@@ -130,7 +128,7 @@
     }
 
     /* Do not display TOC when screen is small. */
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 800px){
         #table-of-contents {
             display: none;
         }
@@ -142,9 +140,10 @@
 
     h1 {
         font-family:sans;
-        font-size:2.1em;
-        line-height:2.1em;
+        font-size:2em;
+        line-height:2em;
         /* color: #336699; */
+        text-align: center;
         color: black;
         margin: 0em -5px 0em -5px;
         padding: 5px 5px 5px 5px;
@@ -231,19 +230,17 @@
         color: #006666;
     }
 
-    .timestamp-kwd {
-        color: #444;
-    }
+    /* .timestamp-kwd { */
+    /*     color: #444; */
+    /* } */
 
     .timestamp {
-        /* Put timestamp into inline box so that it does not get justified. */
         font-family: monospace;
         /* font-weight: bold; */
         color: #666666;
         line-height: 1.3em;
         background-color: #eeeeee;
-        border: 1px solid;
-        /* border: 1px dotted; */
+        border: 0px solid;
         border-color: #aaaaaa;
         padding: 2px 3px 0px 3px;
         margin: 0px 0px 0px 0px;
@@ -291,7 +288,7 @@
         color: #336699;
         line-height: 1.3em;
         background-color: #eeeeee;
-        border: 1px solid;
+        border: 0px solid;
         border-color: #aaaaaa;
         padding: 2px 3px 0px 3px;
         /* padding: 2px 2px 0px 2px; */
