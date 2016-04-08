@@ -1,15 +1,15 @@
 /* Taken from the Org mode Worg project. */
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif|Droid+Sans|Droid+Sans+Mono);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
 
 @media all
 {
     html {
         margin: 0px;
-        font: 250 1em/1.5em "Droid Serif", "Droid Sans", serif;
+        font-family: 'Open Sans', sans-serif;
     }
 
     body {
-        width: 900px;
+        width: 1000px;
         max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
@@ -21,7 +21,7 @@
         text-align: justify;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 1000px){
         body {
             margin-top: 0em;
             margin-bottom: 0em;
@@ -38,7 +38,7 @@
         border: 1px solid #ddd;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 1000px){
         body #content {
             padding: 0em 1em 1em 1em;
             border: none;
@@ -53,7 +53,7 @@
     body .nav {
         font-size: 1em;
         text-align: center;
-        /* width: 900px; */
+        /* width: 1000px; */
         /* max-width: 100%; */
         margin-left: auto;
         margin-right: auto;
@@ -63,7 +63,7 @@
         padding: 0.5em 1.5em 0.5em 1.5em;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 1000px){
         body .nav {
             padding: 0.5em 1em 0.5em 1em;
             border: none;
@@ -130,7 +130,7 @@
     }
 
     /* Do not display TOC when screen is small. */
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 1000px){
         #table-of-contents {
             display: none;
         }
@@ -331,7 +331,7 @@
 
     /* Postamble. */
     #postamble {
-        width: 900px;
+        width: 1000px;
         max-width: 90%;
         margin-top: 0.5em;
         margin-right: auto;
@@ -341,7 +341,7 @@
         padding: 0 1.5em 1.5em 1.5em;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 1000px){
         #postamble {
             padding: 0em 1em 0em 1em;
         }
