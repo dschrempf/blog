@@ -1,1 +1,3 @@
-Test me.  Does this how up as README?
+#+TITLE: Source Code of Blog/Homepage
+Test math equations:
+=(solve a b)= should return $X$, from $AX=B$.
