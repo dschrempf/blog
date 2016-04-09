@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-04-09 Sat 12:01 -->
+<!-- 2016-04-09 Sat 12:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Configure SSH</title>
@@ -75,6 +75,7 @@ ssh yourusername@yourserver.example.com
 Now, it is getting better; edit or create the file <code>~/.ssh.config</code>:
 </p>
 <pre class="example">
+#~/.ssh/config
 Host server
      HostName yourserver.example.com
      User yourusername
@@ -138,13 +139,14 @@ However, we can also do something much more awesome.  Put this into
 your <code>~/.ssh/config</code>:
 </p>
 <pre class="example">
-Host server
-     HostName yourserver.example.com
-     User yourusername
+#~/.ssh/config
+  Host server
+       HostName yourserver.example.com
+       User yourusername
 
-Host private
-     ProxyCommand ssh -q server -W privatecomputer.local:22
-     User privateusername
+  Host private
+       ProxyCommand ssh -q server -W privatecomputer.local:22
+       User privateusername
 </pre>
 
 <p>
