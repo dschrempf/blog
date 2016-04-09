@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-04-09 Sat 11:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Simulator for Continuous Time Markov Chains</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Dominik Schrempf" />
+<meta name="description" content="Simulate a continuous time Markov chain with any transition rate matrix."
+ />
+<meta name="keywords" content="CTMC, Markov Chain, Continuous-Time Markov Chain" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">A Simulator for Continuous Time Markov Chains</h1>
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2016-04-09 Sat] </span></span> I extended <a href="2015-03-26-PopGen-CPP-Programs.html">my set of C++ programs</a> to include a
+simulator for generic continuous-time Markov chains.  I.e., any
+transition rate matrix can be used.
+</p>
+
+<p>
+If you are interested, just get the <a href="https://github.com/dschrempf/popgen-cpp-programs">GitHub repository</a> and compile the
+whole set of programs with <code>make all</code>.  Documentation can be found in
+the <code>doc/</code> folder (check the <code>CTMC</code> class).
+</p>
+
+<p>
+There is a sample program <code>src/moran_model_boundary_mutation</code>, that
+runs the Moran model with boundary mutation (De Maio, N., Schrempf,
+D., &amp; Kosiol, C. (2015). PoMo: An Allele Frequency-Based Approach for
+Species Tree Estimation. Systematic Biology, 64(6),
+1018–1031. <a href="10.1093/sysbio/syv048">10.1093/sysbio/syv048</a>).
+</p>
+
+<p>
+Using the chain is as easy as:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Define a GNU Scientific Library Matrix object.</span>
+<span style="color: #7CB8BB;">gsl_matrix</span> * <span style="color: #DFAF8F;">my_transition_rate_matrix</span> = alloc_and_set_matrix();
+<span style="color: #7CB8BB;">CTMC</span> <span style="color: #93E0E3;">my_chain</span>(my_transition_rate_matrix, number_of_states);
+my_chain.run(a_specific_time);
+
+<span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Now we print some output.</span>
+my_chain.print_hitting_times(<span style="color: #BFEBBF;">std</span>::cout);
+my_chain.print_invariant_distribution(<span style="color: #BFEBBF;">std</span>::cout);
+</pre>
+</div>
+
+<p>
+If you want to log the path of the chain, you have to activate the log
+path upon initialization:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-C++"><span style="color: #7CB8BB;">CTMC</span> <span style="color: #93E0E3;">my_chain</span>(my_transition_rate_matrix, number_of_states, <span style="color: #BFEBBF;">true</span>);
+
+<span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Print the path.</span>
+my_chain.print_path(<span style="color: #BFEBBF;">std</span>::cout);
+</pre>
+</div>
+<p>
+Logging the path is disabled by default because it uses a lot of
+memory.
+</p>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script>
+    var disqus_config = function () {
+        this.page.identifier = '(A Simulator for Continuous Time Markov Chains)';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//dschrempf.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
+Copyright 2015 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-04-09</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.4) <br/>
+<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
+</div>
+<script type='text/javascript'>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-57993874-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>

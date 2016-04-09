@@ -1,11 +1,11 @@
 /* Taken from the Org mode Worg project. */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic|Inconsolata:400,700);
 @media all
 {
     html {
         margin: 0px;
         font-family: 'Open Sans', sans-serif;
+        font-family: 'Inconsolata', ;
     }
 
     body {
@@ -236,7 +236,6 @@
 
     .timestamp {
         font-family: monospace;
-        /* font-weight: bold; */
         color: #666666;
         line-height: 1.3em;
         background-color: #eeeeee;
