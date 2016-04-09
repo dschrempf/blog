@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-04-09 Sat 11:57 -->
+<!-- 2016-04-09 Sat 12:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Configure SSH</title>
@@ -59,10 +59,10 @@ your login without any password.
 ssh-keygen
 
 <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Copy the key on your server.</span>
-ssh-copy-id myusername@yourserver.example.com
+ssh-copy-id yourusername@yourserver.example.com
 
 <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Try it out and be happy!</span>
-ssh myusername@yourserver.example.com
+ssh yourusername@yourserver.example.com
 </pre>
 </div>
 </div>
@@ -81,11 +81,11 @@ Host server
 </pre>
 
 <p>
-Try to log into <code>yourserver</code>:
+Try to log into <code>yourserver</code> (now aliased <code>server</code>):
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">ssh yourserver
+<pre class="src src-sh">ssh server
 </pre>
 </div>
 <p>
@@ -128,8 +128,8 @@ ssh privateusername@privatecomputer.local
 We can setup SSH keys so that we do not have to enter passwords
 </p>
 <ul class="org-ul">
-<li>from <code>home</code> to <code>yourserver</code> (we already did that);</li>
-<li>from <code>yourserver</code> to <code>privatecomputer.local</code> (you can do that now,
+<li>from <code>home</code> to <code>server</code> (we already did that);</li>
+<li>from <code>server</code> to <code>privatecomputer.local</code> (you can do that now,
 if you want).</li>
 </ul>
 
@@ -143,7 +143,7 @@ Host server
      User yourusername
 
 Host private
-     ProxyCommand ssh -q yourserver -W privatecomputer.local:22
+     ProxyCommand ssh -q server -W privatecomputer.local:22
      User privateusername
 </pre>
 
