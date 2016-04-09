@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-04-09 Sat 11:57 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Configure SSH</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Dominik Schrempf" />
+<meta name="description" content="A proper configuration of SSH can save a lot of time (typing passwords, hosts)."
+ />
+<meta name="keywords" content="SSH, .ssh, SSH Configuration, SSH Config" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Configure SSH</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org34946cb">Login with SSH Key</a></li>
+<li><a href="#org5822ee8">Use <code>~/.ssh/config</code></a></li>
+<li><a href="#org1a50a95">ProxyCommand</a></li>
+</ul>
+</div>
+</div>
+<p>
+Did you ever get sick of typing the IP of your SSH server.  There is
+an incredible feature of SSH that saves you a lot of time typing
+host names, IP addresses or passwords.
+</p>
+
+<div id="outline-container-org34946cb" class="outline-2">
+<h2 id="org34946cb">Login with SSH Key</h2>
+<div class="outline-text-2" id="text-org34946cb">
+<p>
+First, you want to create your own <a href="https://wiki.archlinux.org/index.php/SSH_keys">SSH key</a> so that your server accepts
+your login without any password.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Create an SSH key (use the standard path).  Be careful, if you do</span>
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">not set a passphrase, anybody that has access to your computer can</span>
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">log into servers that have been set up to accept your key.</span>
+ssh-keygen
+
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Copy the key on your server.</span>
+ssh-copy-id myusername@yourserver.example.com
+
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Try it out and be happy!</span>
+ssh myusername@yourserver.example.com
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5822ee8" class="outline-2">
+<h2 id="org5822ee8">Use <code>~/.ssh/config</code></h2>
+<div class="outline-text-2" id="text-org5822ee8">
+<p>
+Now, it is getting better; edit or create the file <code>~/.ssh.config</code>:
+</p>
+<pre class="example">
+Host server
+     HostName yourserver.example.com
+     User yourusername
+</pre>
+
+<p>
+Try to log into <code>yourserver</code>:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh yourserver
+</pre>
+</div>
+<p>
+Wow, that was fast.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1a50a95" class="outline-2">
+<h2 id="org1a50a95">ProxyCommand</h2>
+<div class="outline-text-2" id="text-org1a50a95">
+<p>
+And it can get better.  Very often, the computer <code>privatecomputer</code>
+that you want to log in, is only accessible from the local network but
+not from the outside.  However, you have access to <code>server</code> which,
+in turn has access to <code>private</code>.
+</p>
+
+
+<div class="figure">
+<p><img src="ssh-proxy.png" alt="ssh-proxy.png" />
+</p>
+</div>
+
+<p>
+Hmm, normally, you would need to
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Log into the server.</span>
+ssh yourusername@yourserver.example.com
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Wait.  Enter password.  Wait.</span>
+ssh privateusername@privatecomputer.local
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Wait.  Enter password.  Wait.</span>
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">That sucks.</span>
+</pre>
+</div>
+
+<p>
+We can setup SSH keys so that we do not have to enter passwords
+</p>
+<ul class="org-ul">
+<li>from <code>home</code> to <code>yourserver</code> (we already did that);</li>
+<li>from <code>yourserver</code> to <code>privatecomputer.local</code> (you can do that now,
+if you want).</li>
+</ul>
+
+<p>
+However, we can also do something much more awesome.  Put this into
+your <code>~/.ssh/config</code>:
+</p>
+<pre class="example">
+Host server
+     HostName yourserver.example.com
+     User yourusername
+
+Host private
+     ProxyCommand ssh -q yourserver -W privatecomputer.local:22
+     User privateusername
+</pre>
+
+<p>
+And try it out:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">ssh private
+</pre>
+</div>
+
+<p>
+Wow.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script>
+    var disqus_config = function () {
+        this.page.identifier = '(Configure SSH)';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//dschrempf.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
+Copyright 2015 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-04-09</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.4) <br/>
+<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
+</div>
+<script type='text/javascript'>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-57993874-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>
