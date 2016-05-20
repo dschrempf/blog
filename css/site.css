@@ -1,5 +1,5 @@
 /* Taken from the Org mode Worg project. */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300italic|Inconsolata:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic|Inconsolata:400);
 @media all
 {
     html {
@@ -140,6 +140,7 @@
 
     h1 {
         font-family:sans;
+        font-weight: normal;
         font-size:2em;
         line-height:2em;
         /* color: #336699; */
@@ -152,6 +153,7 @@
 
     h2 {
         font-family:sans;
+        font-weight: normal;
         font-size:1.45em;
         /* color: #336699; */
         color: black;
@@ -165,6 +167,7 @@
 
     h3 {
         font-family:sans;
+        font-weight: normal;
         font-size:1.3em;
         /* color: #336699; */
         color: black;
@@ -178,6 +181,7 @@
 
     h4 {
         font-family:sans;
+        font-weight: normal;
         font-size:1.1em;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
@@ -189,6 +193,7 @@
 
     h5 {
         font-family:sans;
+        font-weight: normal;
         font-size:1em;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
