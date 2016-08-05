@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2016-08-05 Fri 20:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Get rid of Google</title>
+<meta name="generator" content="Org-mode" />
+<meta name="author" content="Dominik Schrempf" />
+<meta name="description" content="How to use your phone without Google applications"
+ />
+<meta name="keywords" content="Android, Google, APKPure" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Get rid of Google</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7379f41">Cyanogenmod without Open GApps</a></li>
+<li><a href="#org651683c">Application management</a></li>
+<li><a href="#org04c6b1c">Contact and calendar</a></li>
+<li><a href="#orge319d8b">Replacement of Google applications</a></li>
+<li><a href="#org9ed8363">Conclusion</a></li>
+</ul>
+</div>
+</div>
+<p>
+I like a lot of stuff that Google is doing, especially that it
+supports open source so much.  However, I really dislike their
+attitude towards user privacy.  That is why I decided to get rid of
+Google on my Android phone.  However, I had to solve some problems in
+order to keep user-friendliness at a high level and to be able to use
+all applications that I need.
+</p>
+
+<p>
+The main issues are:
+</p>
+<ol class="org-ol">
+<li>Which <a href="#org7379f41">ROM</a> do I use?</li>
+<li>How do I <a href="#org651683c">install software</a> and keep it up to date?</li>
+<li>How do I synchronize all my <a href="#org04c6b1c">contacts and calendar</a>?</li>
+<li>Can I <a href="#orge319d8b">replace all applications</a> that do not run without Google Play
+Services?</li>
+</ol>
+
+<p>
+The answers are:
+</p>
+<div id="outline-container-org7379f41" class="outline-2">
+<h2 id="org7379f41"><a id="ID-355d5345-87bf-4f4f-b10f-4447b4b25c3e"></a>Cyanogenmod without Open GApps</h2>
+<div class="outline-text-2" id="text-org7379f41">
+<p>
+I have been using <a href="http://www.cyanogenmod.org/">Cyanogenmod</a> for quite some time now and I am very
+happy with it.  After a complete backup, I formatted every possible
+partition on my phone and did a clean reinstall without Open GApps.
+This left me with a Google-less Android install.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org651683c" class="outline-2">
+<h2 id="org651683c"><a id="ID-1e6ca9e5-e19d-4fb3-8c25-d43f42beb9c5"></a>Application management</h2>
+<div class="outline-text-2" id="text-org651683c">
+<p>
+Use <a href="https://f-droid.org/">F-Droid</a>.  For applications that are not available in F-Droid, use
+a <i>service</i> that provides APK files of Google Play Store applications.
+</p>
+
+<p>
+This is the main drawback, because one has to trust this <i>service</i> and
+believe that it does not alter the APK files in any way.  I decided to
+use <a href="https://apkpure.com/">APKPure</a> because it comes with an application that can update all
+installed applications.  I compared the <code>md5</code> check sums of randomly
+chosen APK files from <i>APKPure</i> with the one from the Google Play
+Store and could not find any differences.  This problem of completely
+trusting an unknown organization is still bugging me but I did not
+find another solution so far (especially because all application
+stores are incomplete).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org04c6b1c" class="outline-2">
+<h2 id="org04c6b1c"><a id="ID-103c56e4-2de5-450f-b550-26ee223922a7"></a>Contact and calendar</h2>
+<div class="outline-text-2" id="text-org04c6b1c">
+<p>
+For contact and calendar synchronization, I use a Raspberry Pi with
+<a href="https://owncloud.org/">Owncloud</a> together with <a href="https://davdroid.bitfire.at/">DavDroid</a> on the phone (which is available on
+F-Droid).  I am sure there are other services available that do not
+require an extensive server setup like this one.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge319d8b" class="outline-2">
+<h2 id="orge319d8b"><a id="ID-be47bed7-3ded-448c-83a6-920269a66a1d"></a>Replacement of Google applications</h2>
+<div class="outline-text-2" id="text-orge319d8b">
+<p>
+I replaced Google Maps with OsmAnd; Gmail with the native Android mail
+client; I never used Google Now nor Hangouts nor any other Google
+application.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9ed8363" class="outline-2">
+<h2 id="org9ed8363"><a id="ID-a453e579-13e4-482d-9683-e1a26cd5db6a"></a>Conclusion</h2>
+<div class="outline-text-2" id="text-org9ed8363">
+<p>
+This was way easier than I thought.  Ironically, a local application
+that provides information about public transport was the only one that
+complained about Google Play Services being non-existent.  Well, I
+guess I can live with that.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script>
+    var disqus_config = function () {
+        this.page.identifier = '(Get rid of Google)';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+
+        s.src = '//dschrempf.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
+Copyright 2015 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-08-05</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
+<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
+</div>
+<script type='text/javascript'>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-57993874-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>
