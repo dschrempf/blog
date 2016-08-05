@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-04-09 Sat 11:15 -->
+<!-- 2016-08-05 Fri 20:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>How to Create This Homepage</title>
+<title>How to create this homepage</title>
 <meta name="generator" content="Org-mode" />
 <meta name="author" content="Dominik Schrempf" />
 <meta name="keywords" content="Emacs, Org-Mode, Org Mode, Disqus, Homepage, Publish, Export" />
@@ -24,14 +24,14 @@
 </div>
 </div>
 <div id="content">
-<h1 class="title">How to Create This Homepage</h1>
+<h1 class="title">How to create this homepage</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge5967c6">General Idea</a></li>
-<li><a href="#orgcbf10be">Folder Structure</a></li>
-<li><a href="#org4f759fc">Org Mode Publishing Setup</a></li>
+<li><a href="#orgbc019e1">General idea</a></li>
+<li><a href="#org9db5f59">Folder structure</a></li>
+<li><a href="#org80fa157">Org Mode publishing setup</a></li>
 <li><a href="#orgad92b17">Workflow</a></li>
 </ul>
 </div>
@@ -51,9 +51,9 @@ account.
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-09 Sat&gt; </span></span> Another update.
 </p>
 
-<div id="outline-container-orge5967c6" class="outline-2">
-<h2 id="orge5967c6">General Idea</h2>
-<div class="outline-text-2" id="text-orge5967c6">
+<div id="outline-container-orgbc019e1" class="outline-2">
+<h2 id="orgbc019e1">General idea</h2>
+<div class="outline-text-2" id="text-orgbc019e1">
 <dl class="org-dl">
 <dt>Org mode</dt><dd>A great tool for taking notes and exporting them to
 all kind of formats.  One of this formats is <b>HTML</b>.  The idea
@@ -73,14 +73,20 @@ fewer options.
 </div>
 </div>
 
-<div id="outline-container-orgcbf10be" class="outline-2">
-<h2 id="orgcbf10be">Folder Structure</h2>
-<div class="outline-text-2" id="text-orgcbf10be">
+<div id="outline-container-org9db5f59" class="outline-2">
+<h2 id="org9db5f59">Folder structure</h2>
+<div class="outline-text-2" id="text-org9db5f59">
 <p>
 I decided to use the following folder structure; it is somehow
 arbitrary but the Org mode publishing setup has to be adjusted
 accordingly:
 </p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">tree -d -L 2 ~/Shared/blog
+</pre>
+</div>
 
 <pre class="example">
 /home/dominik/Shared/blog
@@ -108,9 +114,9 @@ framework</a>.
 </div>
 </div>
 
-<div id="outline-container-org4f759fc" class="outline-2">
-<h2 id="org4f759fc">Org Mode Publishing Setup</h2>
-<div class="outline-text-2" id="text-org4f759fc">
+<div id="outline-container-org80fa157" class="outline-2">
+<h2 id="org80fa157">Org Mode publishing setup</h2>
+<div class="outline-text-2" id="text-org80fa157">
 <p>
 This is the main step.  Org mode has to know how to export your Org
 files so that they can be hosted by GitHub:
@@ -247,21 +253,21 @@ bind this to a key) and push the changes to GitHub.  Voila!
 <div id='disqus_thread'></div>
 <script>
     var disqus_config = function () {
-        this.page.identifier = '(How to Create This Homepage)';
+        this.page.identifier = '(How to create this homepage)';
     };
     (function() {
         var d = document, s = d.createElement('script');
-        
+
         s.src = '//dschrempf.disqus.com/embed.js';
-        
+
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
 Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-04-09</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.4) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-08-05</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>

@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-04-09 Sat 00:15 -->
+<!-- 2016-08-05 Fri 20:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BitTorrent Sync over SSH Proxy</title>
+<title>BitTorrent Sync over SSH proxy</title>
 <meta name="generator" content="Org-mode" />
 <meta name="author" content="Dominik Schrempf" />
 <meta name="description" content="Use BitTorrent Sync over an SSH SOCKS Proxy"
@@ -26,14 +26,14 @@
 </div>
 </div>
 <div id="content">
-<h1 class="title">BitTorrent Sync over SSH Proxy</h1>
+<h1 class="title">BitTorrent Sync over SSH proxy</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#org62fbe2d">Introduction</a></li>
-<li><a href="#org61c1443">Setup of SSH Tunnel</a></li>
-<li><a href="#orge0a1be4">BTSync Setup</a></li>
+<li><a href="#org0fed06b">Setup of SSH tunnel</a></li>
+<li><a href="#org1594d2a">BTSync setup</a></li>
 </ul>
 </div>
 </div>
@@ -75,6 +75,23 @@ access to the internet and that is accessible by client A; then we ca
 set up an SSH SOCKS proxy; check it out.
 </p>
 
+<div class="org-src-container">
+
+<pre class="src src-ditaa">+----------+          +----------+                
+| Client A |----------| Firewall |----------------+ 
++----------+          |     cRED |                |
+     ^                +----------+                |
+     |                                     +------------+      +-----------+
+     |                                     |  Internet  |&lt;----&gt;| Client C  |
+     |                                     |      cBLU  |      +-----------+
+     |                                     +------------+    
+     |                                            ^          
+     |  SSH Tunnel    +----------+                |          
+     +---------------&gt;| Client B |&lt;---------------+          
+                      +----------+
+</pre>
+</div>
+
 
 <div class="figure">
 <p><img src="firewall-ssh-proxy.png" alt="firewall-ssh-proxy.png" />
@@ -83,9 +100,9 @@ set up an SSH SOCKS proxy; check it out.
 </div>
 </div>
 
-<div id="outline-container-org61c1443" class="outline-2">
-<h2 id="org61c1443">Setup of SSH Tunnel</h2>
-<div class="outline-text-2" id="text-org61c1443">
+<div id="outline-container-org0fed06b" class="outline-2">
+<h2 id="org0fed06b">Setup of SSH tunnel</h2>
+<div class="outline-text-2" id="text-org0fed06b">
 <p>
 In order for this to work, you need SSH access from client A to client
 B.  Client B needs to have access to the internet.  Then you can setup
@@ -116,9 +133,9 @@ is a very good idea to test if the SOCKS proxy works in general.
 </div>
 </div>
 
-<div id="outline-container-orge0a1be4" class="outline-2">
-<h2 id="orge0a1be4">BTSync Setup</h2>
-<div class="outline-text-2" id="text-orge0a1be4">
+<div id="outline-container-org1594d2a" class="outline-2">
+<h2 id="org1594d2a">BTSync setup</h2>
+<div class="outline-text-2" id="text-org1594d2a">
 <p>
 Now, BTSync should automatically find this SOCKS proxy (because it is
 using the standard port 1080; my BTSync version is <code>1.4.106</code>) and uses
@@ -195,21 +212,21 @@ configuration file below.
 <div id='disqus_thread'></div>
 <script>
     var disqus_config = function () {
-        this.page.identifier = '(BitTorrent Sync over SSH Proxy)';
+        this.page.identifier = '(BitTorrent Sync over SSH proxy)';
     };
     (function() {
         var d = document, s = d.createElement('script');
-        
+
         s.src = '//dschrempf.disqus.com/embed.js';
-        
+
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
 Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-04-09</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.4) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-08-05</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>

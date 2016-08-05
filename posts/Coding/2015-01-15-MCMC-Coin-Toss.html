@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-04-09 Sat 00:15 -->
+<!-- 2016-08-05 Fri 20:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>A Simple MCMC Simulation</title>
+<title>A simple MCMC simulation</title>
 <meta name="generator" content="Org-mode" />
 <meta name="author" content="Dominik Schrempf" />
 <meta name="description" content="MCMC simulation to approximate observations of coin tosses."
@@ -27,7 +27,7 @@
 </div>
 </div>
 <div id="content">
-<h1 class="title">A Simple MCMC Simulation</h1>
+<h1 class="title">A simple MCMC simulation</h1>
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-01-15 Thu&gt; </span></span> Suppose we observe 58 heads out of 100 coin tosses.
 Now, we want to know the probability of tossing a head \(\theta\).  A
@@ -89,7 +89,7 @@ The following C++ code does exactly this (the last column is the posterior).
     <span style="color: #7CB8BB;">gsl_rng</span> * <span style="color: #DFAF8F;">r</span>;
     <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">theta</span>;               <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">The probability of tossing a head.</span>
     <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">posterior</span>[100];           <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">The posterior.</span>
-
+    
     gsl_rng_env_setup();
 
     t = gsl_rng_default;
@@ -103,7 +103,7 @@ The following C++ code does exactly this (the last column is the posterior).
     theta = gsl_rng_uniform (r);
 
     <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">"Start MCMC."</span> &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
-
+    
     fix_width_cout_str(<span style="color: #CC9393;">"iteration"</span>);
     fix_width_cout_str(<span style="color: #CC9393;">"theta_old"</span>);
     fix_width_cout_str(<span style="color: #CC9393;">"theta_pri"</span>);
@@ -125,7 +125,7 @@ The following C++ code does exactly this (the last column is the posterior).
             <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_prior_ratio</span>;
             <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_proposal_ratio</span>;
             <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">ln_tot</span>;
-
+            
             <span style="color: #5F7F5F;">//////////////////////////////</span>
             <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Propose a new theta.</span>
             <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Uniform, symmetric jump algorithm (Metropolis algorithm).</span>
@@ -171,7 +171,7 @@ The following C++ code does exactly this (the last column is the posterior).
                 acc = 1.0;
             <span style="color: #F0DFAF; font-weight: bold;">else</span>
                 acc = exp (ln_tot);
-
+            
             <span style="color: #5F7F5F;">// </span><span style="color: #7F9F7F;">Accept with probability acc.</span>
             <span style="color: #7CB8BB;">double</span> <span style="color: #DFAF8F;">u</span> = gsl_rng_uniform (r);
             <span style="color: #F0DFAF; font-weight: bold;">if</span> (u &lt; acc)
@@ -192,7 +192,7 @@ The following C++ code does exactly this (the last column is the posterior).
                     fix_width_cout_dbl (theta);
                     <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
                 }
-
+            
         }
 
     <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">"MCMC finished."</span> &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
@@ -207,7 +207,7 @@ The following C++ code does exactly this (the last column is the posterior).
         posterior[i] = posterior[i]/sum;
     }
 
-
+    
     <span style="color: #F0DFAF; font-weight: bold;">for</span> (<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span> =0 ; i &lt; 100; i++) {
         <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #CC9393;">"Theta between "</span>;
         <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::setw(3) &lt;&lt; i;
@@ -218,7 +218,7 @@ The following C++ code does exactly this (the last column is the posterior).
         <span style="color: #BFEBBF;">std</span>::cout &lt;&lt; <span style="color: #BFEBBF;">std</span>::endl;
     }
 
-
+    
     gsl_rng_free (r);
 
     <span style="color: #F0DFAF; font-weight: bold;">return</span> 0;
@@ -230,21 +230,21 @@ The following C++ code does exactly this (the last column is the posterior).
 <div id='disqus_thread'></div>
 <script>
     var disqus_config = function () {
-        this.page.identifier = '(A Simple MCMC Simulation)';
+        this.page.identifier = '(A simple MCMC simulation)';
     };
     (function() {
         var d = document, s = d.createElement('script');
-        
+
         s.src = '//dschrempf.disqus.com/embed.js';
-        
+
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
 Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-04-09</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.4) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-08-05</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
