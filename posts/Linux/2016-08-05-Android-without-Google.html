@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-20 Tue 11:40 -->
+<!-- 2016-09-20 Tue 16:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Get rid of Google</title>
@@ -40,6 +40,7 @@
 <li><a href="#orgc9c4914">microG</a>
 <ul>
 <li><a href="#org9ae6a9a">Installation of Xposed</a></li>
+<li><a href="#orgc7fba01">Installation of microG Services Core</a></li>
 </ul>
 </li>
 </ul>
@@ -135,7 +136,7 @@ Google Play Services.
 <h3 id="orgc9c4914">microG</h3>
 <div class="outline-text-3" id="text-orgc9c4914">
 <p>
-The setup on Cyanogenmod with Android 6.01 is tough because system
+The setup on Cyanogenmod with Android 6.0.1 is tough because system
 spoofing needs to be available. However, it works great.
 </p>
 </div>
@@ -151,16 +152,23 @@ Xposed Installer.</li>
 cache).</li>
 <li>Wipe cache and reboot; check if the Xposed framework is working
 correctly (start Xposed installer).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc7fba01" class="outline-4">
+<h4 id="orgc7fba01">Installation of microG Services Core</h4>
+<div class="outline-text-4" id="text-orgc7fba01">
+<ul class="org-ul">
 <li>With Xposed, download FakeGApps and activate it; reboot.</li>
 <li>With F-Droid, activate the <a href="https://microg.org/fdroid.html">microG repository</a></li>
 <li>With F-Droid, install microG Services Core, microG Services
-Framework Proxy and LocalGsmNlpBackend.</li>
-<li>With LocalGsmNlpBackend: grant permissions, check settings and
-create a database (this takes a long time).</li>
+Framework Proxy and a network location backend (e.g.,
+MozillaNlpbackend).</li>
 <li>With microG, open settings and check if spoofing support is enabled
 (Self-Check).</li>
-<li>With microG, enable everything (also unified the network location
-provider backend).</li>
+<li>With microG, enable everything (also the network location provider
+backend).</li>
 <li>And yea, it works!</li>
 </ul>
 </div>
