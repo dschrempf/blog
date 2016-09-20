@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-20 Tue 16:08 -->
+<!-- 2016-09-20 Tue 16:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Get rid of Google</title>
@@ -14,7 +14,6 @@
 <meta name="keywords" content="Android, Google, APKPure" />
 <link rel='stylesheet' href='/css/site.css' type='text/css'/>
 <meta name="viewport" content="width=device-width"/>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -124,11 +123,16 @@ require an extensive server setup like this one.
 <p>
 I replaced Google Maps with OsmAnd; Gmail with the native Android mail
 client; I never used Google Now nor Hangouts nor any other Google
-application.  However, \ldots, some applications do not work or report
-issues about missing Google Play Services.  That's when I dived into
-this and found <a href="https://microg.org/">microG</a>, an open source library that provides
-replacement functions for a lot of functions usually provided by
-Google Play Services.
+application.  
+</p>
+
+<p>
+So far, this was way easier than I thought.  Ironically, a local
+application that provides information about public transport was the
+only one that complained about Google Play Services being
+non-existent.  That's when I dived into this issue and found <a href="https://microg.org/">microG</a>,
+an open source library that provides replacements for a lot of
+functions usually provided by Google Play Services.
 </p>
 </div>
 
@@ -180,10 +184,10 @@ backend).</li>
 <h2 id="org84012e3"><a id="ID-a453e579-13e4-482d-9683-e1a26cd5db6a"></a>Conclusion</h2>
 <div class="outline-text-2" id="text-org84012e3">
 <p>
-This was way easier than I thought.  Ironically, a local application
-that provides information about public transport was the only one that
-complained about Google Play Services being non-existent.  Well, I
-guess I can live with that.
+Installing Android without Google Play Services was way easier than I
+thought.  However, to enable applications that require certain
+features like the messaging or the location interface of Google Play
+Services, extensive tinkering is necessary.
 </p>
 </div>
 </div>
