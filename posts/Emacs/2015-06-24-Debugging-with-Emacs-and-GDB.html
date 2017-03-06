@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-20 Tue 11:41 -->
+<!-- 2017-03-06 Mon 12:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Debugging with Emacs and GDB</title>
-<meta name="generator" content="Org-mode" />
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Dominik Schrempf" />
 <meta name="description" content="Use GDB from withing Emacs to debug source code."
  />
@@ -31,18 +31,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org2922653">Introduction</a></li>
-<li><a href="#org27ac875">The GNU poject debugger</a></li>
-<li><a href="#orgcddc20c">GDB in Emacs</a></li>
-<li><a href="#org03a1ceb">Customize GDB</a></li>
-<li><a href="#org662e286">Window management</a></li>
+<li><a href="#org3006d55">Introduction</a></li>
+<li><a href="#org3471647">The GNU poject debugger</a></li>
+<li><a href="#orgabcb4fa">GDB in Emacs</a></li>
+<li><a href="#org0ea77e6">Customize GDB</a></li>
+<li><a href="#orgecd3eac">Window management</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2922653" class="outline-2">
-<h2 id="org2922653">Introduction</h2>
-<div class="outline-text-2" id="text-org2922653">
+<div id="outline-container-org3006d55" class="outline-2">
+<h2 id="org3006d55">Introduction</h2>
+<div class="outline-text-2" id="text-org3006d55">
 <p>
 Erroneous source code can be a nasty issue to tackle.  Print
 statements that inform you about the states of variables are handy but
@@ -54,9 +54,9 @@ while it executes.
 </div>
 </div>
 
-<div id="outline-container-org27ac875" class="outline-2">
-<h2 id="org27ac875">The GNU poject debugger</h2>
-<div class="outline-text-2" id="text-org27ac875">
+<div id="outline-container-org3471647" class="outline-2">
+<h2 id="org3471647">The GNU poject debugger</h2>
+<div class="outline-text-2" id="text-org3471647">
 <p>
 Here, we will use the <a href="http://www.gnu.org/software/gdb/">GNU project debugger (GDB)</a>, because it is freely
 available, very actively developed and can be used on many operating
@@ -72,9 +72,9 @@ the effects of one bug and go on to learn about another.</li>
 </div>
 </div>
 
-<div id="outline-container-orgcddc20c" class="outline-2">
-<h2 id="orgcddc20c">GDB in Emacs</h2>
-<div class="outline-text-2" id="text-orgcddc20c">
+<div id="outline-container-orgabcb4fa" class="outline-2">
+<h2 id="orgabcb4fa">GDB in Emacs</h2>
+<div class="outline-text-2" id="text-orgabcb4fa">
 <p>
 To debug our program, we will use <b>Emacs</b> and <b>C source code</b>,
 although <code>gdb</code> can be used from the command line and can debug many
@@ -132,9 +132,9 @@ the fringe or with <code>C-x C-a C-b</code>.
 </div>
 </div>
 
-<div id="outline-container-org03a1ceb" class="outline-2">
-<h2 id="org03a1ceb">Customize GDB</h2>
-<div class="outline-text-2" id="text-org03a1ceb">
+<div id="outline-container-org0ea77e6" class="outline-2">
+<h2 id="org0ea77e6">Customize GDB</h2>
+<div class="outline-text-2" id="text-org0ea77e6">
 <p>
 To permanently set the nice GDB user interface layout, put
 </p>
@@ -149,7 +149,7 @@ facilitates the starting of the debugger:
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="color: #F0DFAF; font-weight: bold;">defvar</span> <span style="color: #DFAF8F;">gdb-my-history</span> nil <span style="color: #9FC59F;">"History list for dom-gdb-MYPROG."</span>)
 (<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-MYPROG</span> ()
-  <span style="color: #9FC59F;">"Debug MYPROG with `</span><span style="color: #9FC59F;">gdb</span><span style="color: #9FC59F;">'."</span>
+  <span style="color: #9FC59F;">"Debug MYPROG with `</span><span style="color: #BFEBBF;">gdb</span><span style="color: #9FC59F;">'."</span>
   (interactive)
   (<span style="color: #F0DFAF; font-weight: bold;">let*</span> ((wd <span style="color: #CC9393;">"/path/to/working/directory"</span>)
          (pr <span style="color: #CC9393;">"/path/to/executable"</span>)
@@ -163,9 +163,9 @@ facilitates the starting of the debugger:
 </div>
 </div>
 
-<div id="outline-container-org662e286" class="outline-2">
-<h2 id="org662e286">Window management</h2>
-<div class="outline-text-2" id="text-org662e286">
+<div id="outline-container-orgecd3eac" class="outline-2">
+<h2 id="orgecd3eac">Window management</h2>
+<div class="outline-text-2" id="text-orgecd3eac">
 <p>
 Upon debugging a program with many source files, GDB displays new
 source files in (random?) windows in your Emacs frame.  This is
@@ -235,9 +235,9 @@ the window layout:
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
-Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-09-20</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
+Copyright 2015-2017 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-03-06</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>

@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-20 Tue 11:40 -->
+<!-- 2017-03-06 Mon 12:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BitTorrent Sync over SSH proxy</title>
-<meta name="generator" content="Org-mode" />
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Dominik Schrempf" />
 <meta name="description" content="Use BitTorrent Sync over an SSH SOCKS Proxy"
  />
@@ -31,9 +31,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga460d5a">Introduction</a></li>
-<li><a href="#org50e4c55">Setup of SSH tunnel</a></li>
-<li><a href="#org2e03088">BTSync setup</a></li>
+<li><a href="#org62fbe2d">Introduction</a></li>
+<li><a href="#org0fed06b">Setup of SSH tunnel</a></li>
+<li><a href="#org1594d2a">BTSync setup</a></li>
 </ul>
 </div>
 </div>
@@ -54,9 +54,9 @@ Please also refer to the blog entry that describes how to configure
 <a href="2015-04-22-Syncthing.html">Syncthing with SSH port forwarding</a>.
 </p>
 
-<div id="outline-container-orga460d5a" class="outline-2">
-<h2 id="orga460d5a">Introduction</h2>
-<div class="outline-text-2" id="text-orga460d5a">
+<div id="outline-container-org62fbe2d" class="outline-2">
+<h2 id="org62fbe2d">Introduction</h2>
+<div class="outline-text-2" id="text-org62fbe2d">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-01-30 Fri&gt; </span></span> <a href="http://www.getsync.com/">BitTorrent Sync</a> is a nice program that lets you sync
 two clients using advanced peer-to-peer technology.  It can be a very
@@ -75,22 +75,6 @@ access to the internet and that is accessible by client A; then we ca
 set up an SSH SOCKS proxy; check it out.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-ditaa">+----------+          +----------+                
-| Client A |----------| Firewall |----------------+ 
-+----------+          |     cRED |                |
-     ^                +----------+                |
-     |                                     +------------+      +-----------+
-     |                                     |  Internet  |&lt;----&gt;| Client C  |
-     |                                     |      cBLU  |      +-----------+
-     |                                     +------------+    
-     |                                            ^          
-     |  SSH Tunnel    +----------+                |          
-     +---------------&gt;| Client B |&lt;---------------+          
-                      +----------+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img src="firewall-ssh-proxy.png" alt="firewall-ssh-proxy.png" />
@@ -99,9 +83,9 @@ set up an SSH SOCKS proxy; check it out.
 </div>
 </div>
 
-<div id="outline-container-org50e4c55" class="outline-2">
-<h2 id="org50e4c55">Setup of SSH tunnel</h2>
-<div class="outline-text-2" id="text-org50e4c55">
+<div id="outline-container-org0fed06b" class="outline-2">
+<h2 id="org0fed06b">Setup of SSH tunnel</h2>
+<div class="outline-text-2" id="text-org0fed06b">
 <p>
 In order for this to work, you need SSH access from client A to client
 B.  Client B needs to have access to the internet.  Then you can setup
@@ -131,9 +115,9 @@ is a very good idea to test if the SOCKS proxy works in general.
 </div>
 </div>
 
-<div id="outline-container-org2e03088" class="outline-2">
-<h2 id="org2e03088">BTSync setup</h2>
-<div class="outline-text-2" id="text-org2e03088">
+<div id="outline-container-org1594d2a" class="outline-2">
+<h2 id="org1594d2a">BTSync setup</h2>
+<div class="outline-text-2" id="text-org1594d2a">
 <p>
 Now, BTSync should automatically find this SOCKS proxy (because it is
 using the standard port 1080; my BTSync version is <code>1.4.106</code>) and uses
@@ -221,9 +205,9 @@ configuration file below.
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
-Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-09-20</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
+Copyright 2015-2017 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-03-06</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>

@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-20 Tue 11:41 -->
+<!-- 2017-03-06 Mon 12:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>How to create this homepage</title>
-<meta name="generator" content="Org-mode" />
+<meta name="generator" content="Org mode" />
 <meta name="author" content="Dominik Schrempf" />
 <meta name="keywords" content="Emacs, Org-Mode, Org Mode, Disqus, Homepage, Publish, Export" />
 <link rel='stylesheet' href='/css/site.css' type='text/css'/>
@@ -29,10 +29,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf0245d7">General idea</a></li>
-<li><a href="#org44bd449">Folder structure</a></li>
-<li><a href="#org4b89a32">Org Mode publishing setup</a></li>
-<li><a href="#org043c8a5">Workflow</a></li>
+<li><a href="#orgbc019e1">General idea</a></li>
+<li><a href="#org9db5f59">Folder structure</a></li>
+<li><a href="#org80fa157">Org Mode publishing setup</a></li>
+<li><a href="#orgad92b17">Workflow</a></li>
 </ul>
 </div>
 </div>
@@ -51,9 +51,9 @@ account.
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-09 Sat&gt; </span></span> Another update.
 </p>
 
-<div id="outline-container-orgf0245d7" class="outline-2">
-<h2 id="orgf0245d7">General idea</h2>
-<div class="outline-text-2" id="text-orgf0245d7">
+<div id="outline-container-orgbc019e1" class="outline-2">
+<h2 id="orgbc019e1">General idea</h2>
+<div class="outline-text-2" id="text-orgbc019e1">
 <dl class="org-dl">
 <dt>Org mode</dt><dd>A great tool for taking notes and exporting them to
 all kind of formats.  One of this formats is <b>HTML</b>.  The idea
@@ -73,19 +73,14 @@ fewer options.
 </div>
 </div>
 
-<div id="outline-container-org44bd449" class="outline-2">
-<h2 id="org44bd449">Folder structure</h2>
-<div class="outline-text-2" id="text-org44bd449">
+<div id="outline-container-org9db5f59" class="outline-2">
+<h2 id="org9db5f59">Folder structure</h2>
+<div class="outline-text-2" id="text-org9db5f59">
 <p>
 I decided to use the following folder structure; it is somehow
 arbitrary but the Org mode publishing setup has to be adjusted
 accordingly:
 </p>
-
-<div class="org-src-container">
-<pre class="src src-sh">tree -d -L 2 ~/Shared/blog
-</pre>
-</div>
 
 <pre class="example">
 /home/dominik/Shared/blog
@@ -113,16 +108,16 @@ framework</a>.
 </div>
 </div>
 
-<div id="outline-container-org4b89a32" class="outline-2">
-<h2 id="org4b89a32">Org Mode publishing setup</h2>
-<div class="outline-text-2" id="text-org4b89a32">
+<div id="outline-container-org80fa157" class="outline-2">
+<h2 id="org80fa157">Org Mode publishing setup</h2>
+<div class="outline-text-2" id="text-org80fa157">
 <p>
 This is the main step.  Org mode has to know how to export your Org
 files so that they can be hosted by GitHub:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp" id="org92bccf2">(setq org-publish-project-alist
+<pre class="src src-lisp" id="orgcdcb070">(setq org-publish-project-alist
       '(
         <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Blog posts in Org mode that are exported to html and hosted</span>
         <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">by GitHub.</span>
@@ -175,7 +170,7 @@ user name and tracking ID).
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp" id="orgc6fa07f"><span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">BugFix: Manually disable home/up links in preamble.</span>
+<pre class="src src-lisp" id="org1e4cce8"><span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">BugFix: Manually disable home/up links in preamble.</span>
 (setq org-html-home/up-format <span style="color: #CC9393;">""</span>)
 
 (<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">website-html-preamble</span> (info)
@@ -233,9 +228,9 @@ user name and tracking ID).
 </div>
 </div>
 
-<div id="outline-container-org043c8a5" class="outline-2">
-<h2 id="org043c8a5">Workflow</h2>
-<div class="outline-text-2" id="text-org043c8a5">
+<div id="outline-container-orgad92b17" class="outline-2">
+<h2 id="orgad92b17">Workflow</h2>
+<div class="outline-text-2" id="text-orgad92b17">
 <p>
 Create your homepages with Emacs Org mode.  The <code>index.org</code> file can
 include links to all blog articles.  Links, source blocks, images and
@@ -262,9 +257,9 @@ bind this to a key) and push the changes to GitHub.  Voila!
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
-Copyright 2015 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2016-09-20</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.3.5) <br/>
+Copyright 2015-2017 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-03-06</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
