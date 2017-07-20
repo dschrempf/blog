@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-06 Mon 12:48 -->
+<!-- 2017-07-20 Thu 17:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Debugging with Emacs and GDB</title>
@@ -31,18 +31,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3006d55">Introduction</a></li>
-<li><a href="#org3471647">The GNU poject debugger</a></li>
-<li><a href="#orgabcb4fa">GDB in Emacs</a></li>
-<li><a href="#org0ea77e6">Customize GDB</a></li>
-<li><a href="#orgecd3eac">Window management</a></li>
+<li><a href="#org9fb1f71">Introduction</a></li>
+<li><a href="#org67f5393">The GNU poject debugger</a></li>
+<li><a href="#orgd08206b">GDB in Emacs</a></li>
+<li><a href="#orgaba5fb9">Customize GDB</a></li>
+<li><a href="#orgb894a48">Window management</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3006d55" class="outline-2">
-<h2 id="org3006d55">Introduction</h2>
-<div class="outline-text-2" id="text-org3006d55">
+<div id="outline-container-org9fb1f71" class="outline-2">
+<h2 id="org9fb1f71">Introduction</h2>
+<div class="outline-text-2" id="text-org9fb1f71">
 <p>
 Erroneous source code can be a nasty issue to tackle.  Print
 statements that inform you about the states of variables are handy but
@@ -54,9 +54,9 @@ while it executes.
 </div>
 </div>
 
-<div id="outline-container-org3471647" class="outline-2">
-<h2 id="org3471647">The GNU poject debugger</h2>
-<div class="outline-text-2" id="text-org3471647">
+<div id="outline-container-org67f5393" class="outline-2">
+<h2 id="org67f5393">The GNU poject debugger</h2>
+<div class="outline-text-2" id="text-org67f5393">
 <p>
 Here, we will use the <a href="http://www.gnu.org/software/gdb/">GNU project debugger (GDB)</a>, because it is freely
 available, very actively developed and can be used on many operating
@@ -72,9 +72,9 @@ the effects of one bug and go on to learn about another.</li>
 </div>
 </div>
 
-<div id="outline-container-orgabcb4fa" class="outline-2">
-<h2 id="orgabcb4fa">GDB in Emacs</h2>
-<div class="outline-text-2" id="text-orgabcb4fa">
+<div id="outline-container-orgd08206b" class="outline-2">
+<h2 id="orgd08206b">GDB in Emacs</h2>
+<div class="outline-text-2" id="text-orgd08206b">
 <p>
 To debug our program, we will use <b>Emacs</b> and <b>C source code</b>,
 although <code>gdb</code> can be used from the command line and can debug many
@@ -94,16 +94,16 @@ A short step-by-step guide:
 Open and save a new file <code>hello.c</code> with the following contents:
 </p>
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #94BFF3;">#include</span> <span style="color: #CC9393;">&lt;stdio.h&gt;</span>
+<pre class="src src-c"><span style="color: #bc6ec5;">#include</span> <span style="color: #4f97d7;">&lt;</span><span style="color: #2d9574;">stdio.h</span><span style="color: #4f97d7;">&gt;</span>
 
-<span style="color: #7CB8BB;">int</span> <span style="color: #93E0E3;">main</span>(<span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">argc</span>, <span style="color: #7CB8BB;">char</span>* <span style="color: #DFAF8F;">argv</span>[]) {
-    <span style="color: #7CB8BB;">int</span> <span style="color: #DFAF8F;">i</span>;
-    printf(<span style="color: #CC9393;">"hello world\n"</span>);
-    <span style="color: #F0DFAF; font-weight: bold;">for</span> ( i=0;i&lt;10;++i) {
-        printf(<span style="color: #CC9393;">"%d \n"</span>,i);
-    }
-    <span style="color: #F0DFAF; font-weight: bold;">return</span> 0;
-}
+<span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">main</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">argc</span>, <span style="color: #ce537a; font-weight: bold;">char</span>* <span style="color: #7590db;">argv</span><span style="color: #bc6ec5;">[]</span><span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">{</span>
+    <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">i</span>;
+    printf<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"hello world\n"</span><span style="color: #bc6ec5;">)</span>;
+    <span style="color: #4f97d7; font-weight: bold;">for</span> <span style="color: #bc6ec5;">(</span> i=<span style="color: #a45bad;">0</span>;i&lt;<span style="color: #a45bad;">10</span>;++i<span style="color: #bc6ec5;">)</span> <span style="color: #bc6ec5;">{</span>
+        printf<span style="color: #2d9574;">(</span><span style="color: #2d9574;">"%d \n"</span>,i<span style="color: #2d9574;">)</span>;
+    <span style="color: #bc6ec5;">}</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">0</span>;
+<span style="color: #4f97d7;">}</span>
 </pre>
 </div></li>
 
@@ -132,14 +132,14 @@ the fringe or with <code>C-x C-a C-b</code>.
 </div>
 </div>
 
-<div id="outline-container-org0ea77e6" class="outline-2">
-<h2 id="org0ea77e6">Customize GDB</h2>
-<div class="outline-text-2" id="text-org0ea77e6">
+<div id="outline-container-orgaba5fb9" class="outline-2">
+<h2 id="orgaba5fb9">Customize GDB</h2>
+<div class="outline-text-2" id="text-orgaba5fb9">
 <p>
 To permanently set the nice GDB user interface layout, put
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(setq gdb-many-windows t)
+<pre class="src src-lisp"><span style="color: #4f97d7;">(</span>setq gdb-many-windows t<span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 <p>
@@ -147,25 +147,25 @@ into your <code>.emacs</code> file.  I have also written a function, that
 facilitates the starting of the debugger:
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(<span style="color: #F0DFAF; font-weight: bold;">defvar</span> <span style="color: #DFAF8F;">gdb-my-history</span> nil <span style="color: #9FC59F;">"History list for dom-gdb-MYPROG."</span>)
-(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-MYPROG</span> ()
-  <span style="color: #9FC59F;">"Debug MYPROG with `</span><span style="color: #BFEBBF;">gdb</span><span style="color: #9FC59F;">'."</span>
-  (interactive)
-  (<span style="color: #F0DFAF; font-weight: bold;">let*</span> ((wd <span style="color: #CC9393;">"/path/to/working/directory"</span>)
-         (pr <span style="color: #CC9393;">"/path/to/executable"</span>)
-         (dt <span style="color: #CC9393;">"/path/to/datafile"</span>)
-         (guess (concat <span style="color: #CC9393;">"gdb -i=mi -cd="</span> wd <span style="color: #CC9393;">" --args "</span> pr <span style="color: #CC9393;">" -s "</span> dt))
-         (arg (read-from-minibuffer <span style="color: #CC9393;">"Run gdb (like this): "</span>
-                                    guess nil nil 'gdb-my-history)))
-    (gdb arg)))
+<pre class="src src-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defvar</span> <span style="color: #7590db;">gdb-my-history</span> nil <span style="color: #2aa1ae;">"History list for dom-gdb-MYPROG."</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dom-gdb-MYPROG</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"Debug MYPROG with `</span><span style="color: #a45bad;">gdb</span><span style="color: #2aa1ae;">'."</span>
+  <span style="color: #bc6ec5;">(</span>interactive<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let*</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>wd <span style="color: #2d9574;">"/path/to/working/directory"</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>pr <span style="color: #2d9574;">"/path/to/executable"</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>dt <span style="color: #2d9574;">"/path/to/datafile"</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>guess <span style="color: #b1951d;">(</span>concat <span style="color: #2d9574;">"gdb -i=mi -cd="</span> wd <span style="color: #2d9574;">" --args "</span> pr <span style="color: #2d9574;">" -s "</span> dt<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span>arg <span style="color: #b1951d;">(</span>read-from-minibuffer <span style="color: #2d9574;">"Run gdb (like this): "</span>
+                                    guess nil nil 'gdb-my-history<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>gdb arg<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgecd3eac" class="outline-2">
-<h2 id="orgecd3eac">Window management</h2>
-<div class="outline-text-2" id="text-orgecd3eac">
+<div id="outline-container-orgb894a48" class="outline-2">
+<h2 id="orgb894a48">Window management</h2>
+<div class="outline-text-2" id="text-orgb894a48">
 <p>
 Upon debugging a program with many source files, GDB displays new
 source files in (random?) windows in your Emacs frame.  This is
@@ -175,45 +175,45 @@ the window layout:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-restore-windows</span> ()
-  <span style="color: #9FC59F;">"Restore GDB session."</span>
-  (interactive)
-  (<span style="color: #F0DFAF; font-weight: bold;">if</span> (eq gdb-many-windows t)
-      (gdb-restore-windows)
-    (dom-gdb-restore-windows-gud-io-and-source)))
+<pre class="src src-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dom-gdb-restore-windows</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"Restore GDB session."</span>
+  <span style="color: #bc6ec5;">(</span>interactive<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #2d9574;">(</span>eq gdb-many-windows t<span style="color: #2d9574;">)</span>
+      <span style="color: #2d9574;">(</span>gdb-restore-windows<span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>dom-gdb-restore-windows-gud-io-and-source<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 
-(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-restore-windows-gud-io-and-source</span> ()
-  <span style="color: #9FC59F;">"Restore GUD buffer, IO buffer and source buffer next to each other."</span>
-  (interactive)
-  <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Select dedicated GUD buffer.</span>
-  (switch-to-buffer gud-comint-buffer)
-  (delete-other-windows)
-  (set-window-dedicated-p (get-buffer-window) t)
-  (<span style="color: #F0DFAF; font-weight: bold;">when</span> (or gud-last-last-frame gdb-show-main)
-    (<span style="color: #F0DFAF; font-weight: bold;">let</span> ((side-win (split-window nil nil t))
-          (bottom-win (split-window)))
-      <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Put source to the right.</span>
-      (set-window-buffer
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dom-gdb-restore-windows-gud-io-and-source</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"Restore GUD buffer, IO buffer and source buffer next to each other."</span>
+  <span style="color: #bc6ec5;">(</span>interactive<span style="color: #bc6ec5;">)</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Select dedicated GUD buffer.</span>
+  <span style="color: #bc6ec5;">(</span>switch-to-buffer gud-comint-buffer<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>delete-other-windows<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>set-window-dedicated-p <span style="color: #2d9574;">(</span>get-buffer-window<span style="color: #2d9574;">)</span> t<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> <span style="color: #2d9574;">(</span>or gud-last-last-frame gdb-show-main<span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>side-win <span style="color: #4f97d7;">(</span>split-window nil nil t<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+          <span style="color: #b1951d;">(</span>bottom-win <span style="color: #4f97d7;">(</span>split-window<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+      <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Put source to the right.</span>
+      <span style="color: #67b11d;">(</span>set-window-buffer
        side-win
-       (<span style="color: #F0DFAF; font-weight: bold;">if</span> gud-last-last-frame
-           (gud-find-file (car gud-last-last-frame))
-         (gud-find-file gdb-main-file)))
-      (setq gdb-source-window side-win)
-      <span style="color: #5F7F5F;">;; </span><span style="color: #7F9F7F;">Show dedicated IO buffer below.</span>
-      (set-window-buffer
+       <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">if</span> gud-last-last-frame
+           <span style="color: #4f97d7;">(</span>gud-find-file <span style="color: #bc6ec5;">(</span>car gud-last-last-frame<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+         <span style="color: #4f97d7;">(</span>gud-find-file gdb-main-file<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+      <span style="color: #67b11d;">(</span>setq gdb-source-window side-win<span style="color: #67b11d;">)</span>
+      <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Show dedicated IO buffer below.</span>
+      <span style="color: #67b11d;">(</span>set-window-buffer
        bottom-win
-       (gdb-get-buffer-create 'gdb-inferior-io))
-      (set-window-dedicated-p bottom-win t))))
+       <span style="color: #b1951d;">(</span>gdb-get-buffer-create 'gdb-inferior-io<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span>
+      <span style="color: #67b11d;">(</span>set-window-dedicated-p bottom-win t<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 
-(<span style="color: #F0DFAF; font-weight: bold;">defun</span> <span style="color: #93E0E3;">dom-gdb-display-source-buffer</span> ()
-  <span style="color: #9FC59F;">"Display gdb source buffer if it is set."</span>
-  (interactive)
-  (<span style="color: #F0DFAF; font-weight: bold;">when</span> (or gud-last-last-frame gdb-show-main)
-    (switch-to-buffer
-     (<span style="color: #F0DFAF; font-weight: bold;">if</span> gud-last-last-frame
-         (gud-find-file (car gud-last-last-frame))
-       (gud-find-file gdb-main-file))))
-  (delete-other-windows))
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">dom-gdb-display-source-buffer</span> <span style="color: #bc6ec5;">()</span>
+  <span style="color: #2aa1ae;">"Display gdb source buffer if it is set."</span>
+  <span style="color: #bc6ec5;">(</span>interactive<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">when</span> <span style="color: #2d9574;">(</span>or gud-last-last-frame gdb-show-main<span style="color: #2d9574;">)</span>
+    <span style="color: #2d9574;">(</span>switch-to-buffer
+     <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">if</span> gud-last-last-frame
+         <span style="color: #b1951d;">(</span>gud-find-file <span style="color: #4f97d7;">(</span>car gud-last-last-frame<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+       <span style="color: #b1951d;">(</span>gud-find-file gdb-main-file<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>delete-other-windows<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 </pre>
 </div>
 </div>
@@ -236,8 +236,8 @@ the window layout:
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
 Copyright 2015-2017 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-03-06</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-07-20</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>

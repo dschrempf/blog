@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-07-20 Thu 17:30 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Happy folding around monads in Haskell</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dominik Schrempf" />
+<meta name="description" content="An example of a monadic fold"
+ />
+<meta name="keywords" content="Haskell, Monad, Fold" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Happy folding around monads in Haskell</h1>
+<p>
+Folds are complicated themselves, but monadic folds always have blown my mind.
+In what follows, I try to dissect <code>foldlM</code> for a specific example.
+</p>
+
+<p>
+Monadic folds can be used to <b>perform a series of actions that depend on the
+previous output</b>. The following function produces an <i>action b</i> from a <i>value a</i>
+also taking into account the output of the previous <i>action b</i>.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">f</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span>b <span style="color: #7590db;">-&gt;</span> a <span style="color: #7590db;">-&gt;</span> m b<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+And here the definition of <code>foldlM</code> (which is the same as <code>foldM</code>).
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">foldlM</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Foldable</span> t, <span style="color: #ce537a; font-weight: bold;">Monad</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #4f97d7;">(</span>b <span style="color: #7590db;">-&gt;</span> a <span style="color: #7590db;">-&gt;</span> m b<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">-&gt;</span> b <span style="color: #7590db;">-&gt;</span> t a <span style="color: #7590db;">-&gt;</span> m b
+<span style="color: #bc6ec5; font-weight: bold;">foldlM</span> f z0 xs <span style="color: #7590db;">=</span> foldr f' return xs z0
+  <span style="color: #4f97d7; font-weight: bold;">where</span> f' x k z <span style="color: #7590db;">=</span> f z x <span style="color: #7590db;">&gt;&gt;=</span> k
+</pre>
+</div>
+
+<p>
+Let's have a look at an example. The following function performs <code>n</code> jumps of a
+Markov chain starting from a given <code>State</code> <code>s</code> (an integer) according to a
+transition probability matrix <code>ProbMatrix</code> <code>p</code> (don't worry about the state
+space, or the state space size, it does not matter). At the moment, I am not
+sure how to access or store the actual chain. This could be done by an
+equivalent of <code>scanl</code> for general monads, which I was unable to find.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Monad</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #ce537a; font-weight: bold;">State</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">ProbMatrix</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">Int</span> <span style="color: #7590db;">-&gt;</span> m <span style="color: #ce537a; font-weight: bold;">State</span>
+<span style="color: #bc6ec5; font-weight: bold;">jumpN</span> s p n <span style="color: #7590db;">=</span> foldM jump s <span style="color: #4f97d7;">(</span>replicate n p<span style="color: #4f97d7;">)</span>
+
+<span style="color: #bc6ec5; font-weight: bold;">jump</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Monad</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #ce537a; font-weight: bold;">State</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">ProbMatrix</span> <span style="color: #7590db;">-&gt;</span> m <span style="color: #ce537a; font-weight: bold;">State</span>
+</pre>
+</div>
+
+<p>
+And specifically, with <code>p</code> being any transition probability matrix
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> foldM jump <span style="color: #a45bad;">0</span> <span style="color: #4f97d7;">[</span>p, p<span style="color: #4f97d7;">]</span>
+</pre>
+</div>
+<p>
+Now we use the definition of <code>foldM</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> foldr f' return <span style="color: #4f97d7;">[</span>p, p<span style="color: #4f97d7;">]</span> <span style="color: #a45bad;">0</span>
+  <span style="color: #4f97d7; font-weight: bold;">where</span> f' x k z <span style="color: #7590db;">=</span> jump z x <span style="color: #7590db;">&gt;&gt;=</span> k
+</pre>
+</div>
+<p>
+which leads to
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> f' p <span style="color: #4f97d7;">(</span>foldr f' return <span style="color: #bc6ec5;">[</span>p<span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span> <span style="color: #a45bad;">0</span>
+            <span style="color: #7590db;">=</span> f' p <span style="color: #4f97d7;">(</span>f' p <span style="color: #bc6ec5;">(</span>foldr f' return <span style="color: #2d9574; font-weight: bold;">[]</span><span style="color: #bc6ec5;">)</span> <span style="color: #a45bad;">0</span>
+            <span style="color: #7590db;">=</span> f' p <span style="color: #bc6ec5;">(</span>f' p <span style="color: #2d9574;">(</span>return<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span> <span style="color: #a45bad;">0</span>
+            <span style="color: #7590db;">=</span> f' p <span style="color: #bc6ec5;">(</span>f' p return<span style="color: #bc6ec5;">)</span> <span style="color: #a45bad;">0</span>
+            <span style="color: #7590db;">=</span> jump <span style="color: #a45bad;">0</span> p <span style="color: #7590db;">&gt;&gt;=</span> <span style="color: #bc6ec5;">(</span>f' p return<span style="color: #bc6ec5;">)</span>
+</pre>
+</div>
+<p>
+And finally, we got what we wanted. This is the first time, that we see that
+first, we perform a jump from zero and use the output to feed it to the next
+jump.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> jump <span style="color: #a45bad;">0</span> p <span style="color: #7590db;">&gt;&gt;=</span> <span style="color: #4f97d7;">(</span>f' p return<span style="color: #4f97d7;">)</span>
+            <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+            s' <span style="color: #7590db;">&lt;-</span> jump <span style="color: #a45bad;">0</span> p
+            f' p return s'
+            <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+            s' <span style="color: #7590db;">&lt;-</span> jump <span style="color: #a45bad;">0</span> p
+            <span style="color: #4f97d7;">(</span>jump s' p <span style="color: #7590db;">&gt;&gt;=</span> return<span style="color: #4f97d7;">)</span>
+            <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+            s'  <span style="color: #7590db;">&lt;-</span> jump <span style="color: #a45bad;">0</span>  p
+            s'' <span style="color: #7590db;">&lt;-</span> jump s' p
+            return s''
+</pre>
+</div>
+<p>
+Holy crap, I am not sure if understanding this was worth the pain :-).
+</p>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script>
+    var disqus_config = function () {
+        this.page.identifier = '(Happy folding around monads in Haskell)';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+
+        s.src = '//dschrempf.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
+Copyright 2015-2017 Dominik Schrempf<br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-07-20</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9) <br/>
+<a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
+</div>
+<script type='text/javascript'>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-57993874-1', 'auto');
+ ga('send', 'pageview');
+
+</script>
+</div>
+</body>
+</html>

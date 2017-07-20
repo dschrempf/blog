@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-03-06 Mon 12:48 -->
+<!-- 2017-07-20 Thu 17:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Syncthing with SSH Port Forwarding</title>
@@ -31,19 +31,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org21265d5">Introduction</a></li>
-<li><a href="#orgd67e4e5">The idea</a></li>
-<li><a href="#orgff41050">The setup</a></li>
-<li><a href="#org9109d0c">Test the setup</a></li>
-<li><a href="#org363dec2">Remote port forwarding</a></li>
-<li><a href="#org02d66f4">Amazing stuff</a></li>
+<li><a href="#org86c08a9">Introduction</a></li>
+<li><a href="#orgfb24a4b">The idea</a></li>
+<li><a href="#org9cd52cc">The setup</a></li>
+<li><a href="#orgcf23253">Test the setup</a></li>
+<li><a href="#orgedd1c60">Remote port forwarding</a></li>
+<li><a href="#org2f69140">Amazing stuff</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org21265d5" class="outline-2">
-<h2 id="org21265d5">Introduction</h2>
-<div class="outline-text-2" id="text-org21265d5">
+<div id="outline-container-org86c08a9" class="outline-2">
+<h2 id="org86c08a9">Introduction</h2>
+<div class="outline-text-2" id="text-org86c08a9">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2015-04-22 Wed&gt; </span></span> Recently, I have explained how to configure
 <a href="2015-01-30-BTSync.html">BitTorrent Sync over an SSH SOCKS proxy</a>.  However, due to various
@@ -96,9 +96,9 @@ the outside and the other way around; check it out.
 </div>
 </div>
 
-<div id="outline-container-orgd67e4e5" class="outline-2">
-<h2 id="orgd67e4e5">The idea</h2>
-<div class="outline-text-2" id="text-orgd67e4e5">
+<div id="outline-container-orgfb24a4b" class="outline-2">
+<h2 id="orgfb24a4b">The idea</h2>
+<div class="outline-text-2" id="text-orgfb24a4b">
 <p>
 We will use SSH port forwarding to map a port on <code>clientA</code> (let it be
 port 22111) to a port on the NAT router at <code>my.router.hostname</code> (here
@@ -124,9 +124,9 @@ to <code>my.router.hostname:22222</code>.
 </div>
 </div>
 
-<div id="outline-container-orgff41050" class="outline-2">
-<h2 id="orgff41050">The setup</h2>
-<div class="outline-text-2" id="text-orgff41050">
+<div id="outline-container-org9cd52cc" class="outline-2">
+<h2 id="org9cd52cc">The setup</h2>
+<div class="outline-text-2" id="text-org9cd52cc">
 <p>
 In order for this to work, you need SSH access from <code>clientA</code> to
 <code>clientB</code> (let's assume that your user name is <code>user</code>).  <code>clientB</code>
@@ -139,6 +139,7 @@ is done by the following SSH command:
 </p>
 <pre class="example">
 ssh -N -vvv -L 22111:my.router.hostname:22222 user@clientB
+
 </pre>
 <dl class="org-dl">
 <dt><code>-N</code></dt><dd>Do not open an interactive session (no commands can be
@@ -167,9 +168,9 @@ SSH server.  I.e., <code>ssh -L 123:localhost:456 ssh_server</code> forwards por
 </div>
 </div>
 
-<div id="outline-container-org9109d0c" class="outline-2">
-<h2 id="org9109d0c">Test the setup</h2>
-<div class="outline-text-2" id="text-org9109d0c">
+<div id="outline-container-orgcf23253" class="outline-2">
+<h2 id="orgcf23253">Test the setup</h2>
+<div class="outline-text-2" id="text-orgcf23253">
 <p>
 The setup can be tested very easily and efficiently with the following
 method (this method can also be used with other software or ports).
@@ -189,6 +190,7 @@ which tells SSH to be quiet and run the SSH port forwarding at boot.
 </p>
 <pre class="example">
 ssh -N -q -L 22111:my.router.hostname:22222 user@clientB
+
 </pre>
 
 <p>
@@ -205,9 +207,9 @@ that does the same for <code>syncthing.service</code> and
 </div>
 </div>
 
-<div id="outline-container-org363dec2" class="outline-2">
-<h2 id="org363dec2">Remote port forwarding</h2>
-<div class="outline-text-2" id="text-org363dec2">
+<div id="outline-container-orgedd1c60" class="outline-2">
+<h2 id="orgedd1c60">Remote port forwarding</h2>
+<div class="outline-text-2" id="text-orgedd1c60">
 <p>
 Furthermore, if you want to reach <code>clientA</code> from home, remote port
 forwarding can also be done.  However, I did not need this and did not
@@ -215,6 +217,7 @@ follow it up, e.g.:
 </p>
 <pre class="example">
 ssh -N -q -R 22000:localhost:22200 clientB
+
 </pre>
 <p>
 This would tell <code>clientB</code> to forward incoming requests at port 22200
@@ -224,9 +227,9 @@ to the client that executes the SSH command; in this case,
 </div>
 </div>
 
-<div id="outline-container-org02d66f4" class="outline-2">
-<h2 id="org02d66f4">Amazing stuff</h2>
-<div class="outline-text-2" id="text-org02d66f4">
+<div id="outline-container-org2f69140" class="outline-2">
+<h2 id="org2f69140">Amazing stuff</h2>
+<div class="outline-text-2" id="text-org2f69140">
 <p>
 Something to think about: Assume a working SSH server on <code>clientC</code>
 that is accessible by <code>clientA</code> (maybe only via <code>clientB</code>).  Suppose,
@@ -236,6 +239,7 @@ that the IP address of the router is <code>192.168.1.1</code> (seen from
 </p>
 <pre class="example">
 ssh -L 12345:192.168.1.1:80 clientC
+
 </pre>
 <p>
 Try to access <code>localhost:12345</code> in your browser at <code>clientA</code> and watch
@@ -261,8 +265,8 @@ the pure awesomeness!
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
 Copyright 2015-2017 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-03-06</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 9.0.5) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-07-20</span></span><br/>
+Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
 <script type='text/javascript'>
