@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-09-05 Tue 18:01 -->
+<!-- 2017-09-05 Tue 18:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Marvell Storage Utility on HPE ProLiant MicroServer Gen10</title>
@@ -41,23 +41,22 @@
 <h2 id="org35c3f7e">Marvell SATA controller</h2>
 <div class="outline-text-2" id="text-org35c3f7e">
 <p>
-Recently I purchased an HPE ProLiant MicroServer Gen10 which comes with a
-Marvell hardware SATA controller 88SE9230, also called Marvell Storage Utility
-(MSU). As far as I know, this controller as an ARM chip to prvide RAID 0
-(non-redundant combination of disks), RAID 1 (straight mirroring) or RAID 10 (a
-combination of RAID 0 and RAID 1).
+Recently I purchased an HPE ProLiant MicroServer Gen10 which comes with the
+Marvell SATA controller 88SE9230, also called Marvell Storage Utility (MSU). As
+far as I know, this controller has an ARM chip to provide RAID 0 (non-redundant
+combination of disks), RAID 1 (straight mirroring) or RAID 10 (a combination of
+RAID 0 and RAID 1).
 </p>
 
 <p>
-Neither Marvell nor HPE do not provide drivers for generic Linux systems but
-they do provide a package for ClearOS which uses the Red Hat Package Manager
-(RPM).
+Neither Marvell nor HPE do provide drivers for generic Linux systems but they do
+provide a package for ClearOS which uses the Red Hat Package Manager (RPM).
 </p>
 
 <p>
 Initially, I tried to manage the RAID using the Marvell BIOS utility which can
 be accessed by the EFI shell. The BIOS utility and the user guide can be
-downloaded from the <a href="https://www.hpe.com/us/en/support.html">HPE support center</a>. However, this procedure is slow,
+downloaded from the <a href="https://www.hpe.com/us/en/support.html">HPE support center</a>. However, this procedure is slow and
 complicated, especially if the server is headless, as in my case. Furthermore,
 monitoring the disks with SMART data is also impossible. So I decided to invest
 some time in amending the ClearOS package for Arch Linux and provide an <a href="https://aur.archlinux.org/packages/marvell-msu/">AUR
@@ -85,12 +84,13 @@ These scripts also pull the <code>sg</code> module in case it is not loaded.
 </p>
 
 <p>
-For my purposes however, the MSU client <code>mvcli</code>, which is located in the folder
-<code>/opt/marvell/storage/cli</code> is all I need. Don't forget to manually load the <code>sg</code>
-module, which sets up the SCSI devices for this script, e.g., with
+For my purposes however (I do not need a web interface), the MSU client <code>mvcli</code>,
+which is located in the folder <code>/opt/marvell/storage/cli</code> is all I need. Don't
+forget to manually load the <code>sg</code> module, which sets up the SCSI devices for this
+script, e.g., with
 </p>
 <pre class="example">
-modprobe -a sg
+sudo modprobe -a sg
 
 </pre>
 
