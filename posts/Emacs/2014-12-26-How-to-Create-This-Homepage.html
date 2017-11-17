@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-20 Thu 17:30 -->
+<!-- 2017-11-17 Fri 09:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>How to create this homepage</title>
@@ -81,6 +81,11 @@ I decided to use the following folder structure; it is somehow
 arbitrary but the Org mode publishing setup has to be adjusted
 accordingly:
 </p>
+
+<div class="org-src-container">
+<pre class="src src-sh">tree -d -L <span style="color: #a45bad;">2</span> ~/Shared/blog
+</pre>
+</div>
 
 <pre class="example">
 /home/dominik/Shared/blog
@@ -174,7 +179,7 @@ user name and tracking ID).
 <span style="color: #4f97d7;">(</span>setq org-html-home/up-format <span style="color: #2d9574;">""</span><span style="color: #4f97d7;">)</span>
 
 <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">website-html-preamble</span> <span style="color: #bc6ec5;">(</span>info<span style="color: #bc6ec5;">)</span>
-  <span style="color: #2aa1ae;">"Org-mode website HTML export preamble."</span>
+  <span style="color: #9f8766;">"Org-mode website HTML export preamble."</span>
   <span style="color: #bc6ec5;">(</span>format <span style="color: #2d9574;">"&lt;div class='nav'&gt;</span>
 <span style="color: #2d9574;">&lt;ul&gt;</span>
 <span style="color: #2d9574;">&lt;li&gt;&lt;a href='/'&gt;Home&lt;/a&gt;&lt;/li&gt;</span>
@@ -183,8 +188,8 @@ user name and tracking ID).
 <span style="color: #2d9574;">&lt;/div&gt;"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 
 <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">website-html-postamble</span> <span style="color: #bc6ec5;">(</span>info<span style="color: #bc6ec5;">)</span>
-  <span style="color: #2aa1ae;">"Put Disqus into Org mode website postamble.  Do not show</span>
-<span style="color: #2aa1ae;">   disqus for the Archive and the Index."</span>
+  <span style="color: #9f8766;">"Put Disqus into Org mode website postamble.  Do not show</span>
+<span style="color: #9f8766;">   disqus for the Archive and the Index."</span>
   <span style="color: #bc6ec5;">(</span>concat
    <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">cond</span> <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #4f97d7;">(</span>car <span style="color: #bc6ec5;">(</span>plist-get info <span style="color: #4f97d7;">:title</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span> <span style="color: #2d9574;">"Archive"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
          <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #4f97d7;">(</span>car <span style="color: #bc6ec5;">(</span>plist-get info <span style="color: #4f97d7;">:title</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span> <span style="color: #2d9574;">"Index"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
@@ -258,20 +263,10 @@ bind this to a key) and push the changes to GitHub.  Voila!
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><div class='footer'>
 Copyright 2015-2017 Dominik Schrempf<br/>
-Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-07-20</span></span><br/>
-Built with <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.1 (<a href="http://orgmode.org">Org</a> mode 9.0.9) <br/>
+Last updated <span class="timestamp-wrapper"><span class="timestamp">2017-11-17</span></span><br/>
+Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="http://orgmode.org">Org</a> mode 9.1.2) <br/>
 <a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML
 </div>
-<script type='text/javascript'>
- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
- })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
- ga('create', 'UA-57993874-1', 'auto');
- ga('send', 'pageview');
-
-</script>
 </div>
 </body>
 </html>
