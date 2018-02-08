@@ -1,5 +1,5 @@
 /* Taken from the Org mode Worg project. */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic);
 /* @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,600,300italic); */
 @media all
 {
@@ -9,7 +9,7 @@
     }
 
     body {
-        width: 1000px;
+        width: 900px;
         max-width: 100%;
         font-size: 1em;
         line-height: 1.5em;
@@ -21,7 +21,7 @@
         text-align: justify;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 900px){
         body {
             margin-top: 0em;
             margin-bottom: 0em;
@@ -38,7 +38,7 @@
         border: 1px solid #ddd;
     }
     /* No margins and no padding if the screen is small. */
-    @media screen and (max-width: 1000px){
+    @media screen and (max-width: 900px){
         body #content {
             padding: 0em 1em 1em 1em;
             border: none;
@@ -49,8 +49,6 @@
     body .nav {
         font-size: 1em;
         text-align: center;
-        /* width: 1000px; */
-        /* max-width: 100%; */
         margin-left: auto;
         margin-right: auto;
         background: #ffffff;
@@ -58,6 +56,7 @@
         border-bottom-style: none;
         padding: 0.5em 1.5em 0.5em 1.5em;
     }
+
     /* No margins and no padding if the screen is small. */
     @media screen and (max-width: 1000px){
         body .nav {
@@ -86,7 +85,6 @@
         color: #666666;
     }
 
-    /* Table of contents. */
     #table-of-contents {
         font-family:serif;
         position: fixed;
@@ -143,7 +141,6 @@
         font-weight: normal;
         font-size:2em;
         line-height:2em;
-        /* color: #336699; */
         text-align: center;
         color: black;
         margin: 0em -5px 0em -5px;
@@ -155,7 +152,6 @@
         font-family:serif;
         font-weight: normal;
         font-size:2em;
-        /* color: #336699; */
         color: black;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
@@ -166,7 +162,6 @@
         font-family:serif;
         font-weight: normal;
         font-size:1.5em;
-        /* color: #336699; */
         color: black;
         margin: 1em -5px 1em -5px;
         padding: 5px 5px 5px 5px;
@@ -196,12 +191,7 @@
         font-weight: bold;
         font-size:1em;
         margin: 0 0 0 0;
-        /* padding: 5px 5px 5px 5px; */
-        /* border-bottom: 1px solid #ddd; */
     }
-
-    /* .outline-text-4 { */
-    /* } */
 
     a {
         text-decoration: none;
@@ -234,10 +224,6 @@
     .done {
         color: #006666;
     }
-
-    /* .timestamp-kwd { */
-    /*     color: #444; */
-    /* } */
 
     .timestamp {
         font-family: monospace;
@@ -293,14 +279,12 @@
         /* Put code into inline box so that it does not get justified. */
         font-size: 1em;
         font-family: monospace;
-        /* font-weight: bold; */
         color: #336699;
         line-height: 1.3em;
         background-color: #eeeeee;
         border: 0px solid;
         border-color: #aaaaaa;
         padding: 2px 3px 0px 3px;
-        /* padding: 2px 2px 0px 2px; */
         margin: 0px 0px 0px 0px;
         word-spacing: 0.5ch;
         text-justify: none;
@@ -323,13 +307,11 @@
 
     pre {
         font-family: Droid Sans Mono, monospace;
-        /* color: black; */
         color: #dcdccc;
         font-size: 1em;
         border: none;
         overflow: auto;
         border: 1px solid #dddddd;
-        /* background-color: #eeeeee; */
         background-color: #3f3f3f;
         padding: 0.5em 1em 0.5em 1em;
         margin: 1em 0em 1em 0em;
@@ -346,6 +328,7 @@
         text-align: center;
         padding: 0 1.5em 1.5em 1.5em;
     }
+
     /* No margins and no padding if the screen is small. */
     @media screen and (max-width: 1000px){
         #postamble {
@@ -364,25 +347,14 @@
         color: #888888;
     }
 
-    .footer {
-        font-size: 0.8em;
-        color: #888888;
-    }
-
-    .theorem {
+    .THEOREM {
         font-style: italic;
-        margin-left: -5px;
-        margin-right: -5px;
-        padding-left: 5px;
-        padding-right: 5px;
+        margin-left: -0.5em;
+        margin-right: -0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         border: 1px solid #ddd;
         background-color: #eeeeee;
     }
-
-    /* #org-div-home-and-up{ */
-    /*     position: fixed; */
-    /*     right: 0; */
-    /*     top: 4em; */
-    /* } */
 
 }
