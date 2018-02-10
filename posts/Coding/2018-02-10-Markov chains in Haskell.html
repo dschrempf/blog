@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-02-10 Sat 17:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Markov chains in Haskell</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Dominik Schrempf" />
+<meta name="description" content="A clean Markov chain in Haskell"
+ />
+<meta name="keywords" content="Markov chain, Haskell, Transition matrix, Markov process" />
+<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+<meta name="viewport" content="width=device-width"/>
+</head>
+<body>
+<div id="preamble" class="status">
+<div class='nav'>
+<ul>
+<li><a href='/'>Home</a></li>
+<li><a href='/archive.html'>Archive</a></li>
+<li><a href='http://github.com/dschrempf'>GitHub</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<h1 class="title">Markov chains in Haskell</h1>
+<p>
+I have been working on Markov chains for quite a while now and wanted to assess how
+Haskell can deal with simulating a simple, discrete chain.
+</p>
+
+<p>
+Many sources can be found online. The code presented here is partly taken from a
+<a href="https://stackoverflow.com/questions/25286816/generating-sequence-from-markov-chain-in-haskell">question on stackoverflow</a>. However, I was unsatisfied with the nomenclature and
+parts of the code. So I refactored most of it. Also, there is a Haskell library
+<a href="https://hackage.haskell.org/package/markov-chain">markov-chain</a>, which I am unsatisfied with because of code readability (it's
+pretty abstruse). Furthermore, I looked through a lengthy post about using
+Markov chains to simulate <a href="https://idontgetoutmuch.wordpress.com/2013/12/07/haskell-ising-markov-metropolis/">interaction of magnetic spins</a> using the Ising model.
+The concept of a Markov chain is explained well in this article but I believe
+that the example is too complicated to understand in a reasonable amount of
+time. Also, the <a href="https://hackage.haskell.org/package/repa">Repa package</a> is used to represent the transition matrices. This
+seemed a little bit of an overkill to me, so I decided to go with <a href="http://hackage.haskell.org/package/containers-0.5.11.0/docs/Data-Map-Strict.html">maps</a>.
+</p>
+
+<p>
+In this example, we will handle sentences with words. So our states are words
+which are strings. It is also convenient to introduce some type synonyms.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #4f97d7; font-weight: bold;">module</span> <span style="color: #ce537a; font-weight: bold;">Main</span> <span style="color: #4f97d7; font-weight: bold;">where</span>
+
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #4f97d7; font-weight: bold;">qualified</span> <span style="color: #ce537a; font-weight: bold;">Control.Monad.Random</span> <span style="color: #4f97d7; font-weight: bold;">as</span> <span style="color: #ce537a; font-weight: bold;">R</span>
+<span style="color: #4f97d7; font-weight: bold;">import</span> <span style="color: #4f97d7; font-weight: bold;">qualified</span> <span style="color: #ce537a; font-weight: bold;">Data.Map</span> <span style="color: #4f97d7; font-weight: bold;">as</span> <span style="color: #ce537a; font-weight: bold;">M</span>
+  
+<span style="color: #9f8766;">-- | For better readability of the code, it is convenient to distinguish between</span>
+<span style="color: #9f8766;">-- the source and the target.</span>
+<span style="color: #4f97d7; font-weight: bold;">type</span> <span style="color: #ce537a; font-weight: bold;">Source</span> <span style="color: #7590db;">=</span> <span style="color: #ce537a; font-weight: bold;">String</span>
+<span style="color: #4f97d7; font-weight: bold;">type</span> <span style="color: #ce537a; font-weight: bold;">Target</span> <span style="color: #7590db;">=</span> <span style="color: #ce537a; font-weight: bold;">String</span>
+  
+<span style="color: #9f8766;">-- | Transition from 'Source' to 'Target' observed in a sample.</span>
+<span style="color: #4f97d7; font-weight: bold;">type</span> <span style="color: #ce537a; font-weight: bold;">Transitions</span> <span style="color: #7590db;">=</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">(</span><span style="color: #ce537a; font-weight: bold;">Source</span>, <span style="color: #ce537a; font-weight: bold;">Target</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">]</span>
+
+<span style="color: #9f8766;">-- | A 'Target' with associated frequency.</span>
+<span style="color: #4f97d7; font-weight: bold;">type</span> <span style="color: #ce537a; font-weight: bold;">TargetF</span> <span style="color: #7590db;">=</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Target</span>, <span style="color: #ce537a; font-weight: bold;">Rational</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+As mentioned before, the transition matrix is represented using a map. This
+might not be very efficient but it is easy to understand. The keys are just all
+the words that we can start from. The values are, for each source, the targets
+that we can <i>jump</i> to and their respective frequencies in the data.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #4f97d7; font-weight: bold;">type</span> <span style="color: #ce537a; font-weight: bold;">TransitionMatrix</span> <span style="color: #7590db;">=</span> <span style="color: #ce537a; font-weight: bold;">M.Map</span> <span style="color: #ce537a; font-weight: bold;">Source</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">TargetF</span><span style="color: #4f97d7;">]</span>
+</pre>
+</div>
+
+<p>
+This function is the heart of the simulation. For a given transition probability
+matrix and an initial string add a new word until a stop condition is reached.
+Here, the stop condition is the end of a sentence (a period ".").
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">generateSequence</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">R.MonadRandom</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #ce537a; font-weight: bold;">TransitionMatrix</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">String</span> <span style="color: #7590db;">-&gt;</span> m <span style="color: #ce537a; font-weight: bold;">String</span>
+<span style="color: #bc6ec5; font-weight: bold;">generateSequence</span> tm s
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">We have to test first, if the string is not null, otherwise 'last' throws</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">an exception.</span>
+  <span style="color: #7590db;">|</span> not <span style="color: #4f97d7;">(</span>null s<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">&amp;&amp;</span> last s <span style="color: #7590db;">==</span> <span style="color: #2d9574;">'.'</span> <span style="color: #7590db;">=</span> return s
+  <span style="color: #7590db;">|</span> otherwise <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+      s' <span style="color: #7590db;">&lt;-</span> R.fromList <span style="color: #7590db;">$</span> tm <span style="color: #7590db;">M.!</span> s
+      ss <span style="color: #7590db;">&lt;-</span> generateSequence tm s'
+      <span style="color: #2aa1ae; background-color: #292e34;">-- </span><span style="color: #2aa1ae; background-color: #292e34;">Only add a space after another word.</span>
+      return <span style="color: #7590db;">$</span> <span style="color: #4f97d7; font-weight: bold;">if</span> null s <span style="color: #4f97d7; font-weight: bold;">then</span> ss <span style="color: #4f97d7; font-weight: bold;">else</span> s <span style="color: #7590db;">++</span> <span style="color: #2d9574;">" "</span> <span style="color: #7590db;">++</span> ss
+</pre>
+</div>
+
+<p>
+The next functions are used to fill the transition matrix given a list of
+observed transitions.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #9f8766;">-- | Add a target with its frequency to a list of targets with their</span>
+<span style="color: #9f8766;">-- frequencies.</span>
+<span style="color: #bc6ec5; font-weight: bold;">addTargetF</span> <span style="color: #7590db;">::</span> <span style="color: #ce537a; font-weight: bold;">TargetF</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">TargetF</span><span style="color: #4f97d7;">]</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">TargetF</span><span style="color: #4f97d7;">]</span>
+<span style="color: #bc6ec5; font-weight: bold;">addTargetF</span> <span style="color: #4f97d7;">(</span>t, f<span style="color: #4f97d7;">)</span> ts <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">case</span> lookup t ts <span style="color: #4f97d7; font-weight: bold;">of</span>
+                   <span style="color: #ce537a; font-weight: bold;">Nothing</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #4f97d7;">(</span>t, f<span style="color: #4f97d7;">)</span> <span style="color: #ce537a; font-weight: bold;">:</span> ts
+                   <span style="color: #ce537a; font-weight: bold;">Just</span> n  <span style="color: #7590db;">-&gt;</span> <span style="color: #4f97d7;">(</span>t, n<span style="color: #7590db;">+</span>f<span style="color: #4f97d7;">)</span> <span style="color: #ce537a; font-weight: bold;">:</span> filter notT ts <span style="color: #4f97d7; font-weight: bold;">where</span>
+                     notT <span style="color: #4f97d7;">(</span>r, <span style="color: #4f97d7; font-weight: bold;">_</span><span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=</span> r <span style="color: #7590db;">/=</span> t
+
+<span style="color: #9f8766;">-- | Add more targets and their frequencies to a list of targets with their</span>
+<span style="color: #9f8766;">-- frequencies. This function is needed because 'M.insertWith' requires an</span>
+<span style="color: #9f8766;">-- inserting function of type (a -&gt; a -&gt; a).</span>
+<span style="color: #bc6ec5; font-weight: bold;">addTargetFs</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">TargetF</span><span style="color: #4f97d7;">]</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">TargetF</span><span style="color: #4f97d7;">]</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">TargetF</span><span style="color: #4f97d7;">]</span>
+<span style="color: #bc6ec5; font-weight: bold;">addTargetFs</span> tsA tsB <span style="color: #7590db;">=</span> foldr addTargetF tsB tsA
+
+<span style="color: #9f8766;">-- | Convert the observed transitions to the transition rate matrix.</span>
+<span style="color: #bc6ec5; font-weight: bold;">transitionsToMatrix</span> <span style="color: #7590db;">::</span> <span style="color: #ce537a; font-weight: bold;">Transitions</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">TransitionMatrix</span>
+<span style="color: #bc6ec5; font-weight: bold;">transitionsToMatrix</span> <span style="color: #7590db;">=</span> foldr insert M.empty
+  <span style="color: #4f97d7; font-weight: bold;">where</span>
+    insert t <span style="color: #7590db;">=</span> M.insertWith addTargetFs <span style="color: #4f97d7;">(</span>fst t<span style="color: #4f97d7;">)</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">(</span>snd t, <span style="color: #a45bad;">1.0</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">]</span>
+</pre>
+</div>
+
+<p>
+Now, we need a collection of samples and a way to retrieve all the observed
+transitions. The start of sentences is a little bit tricky. We kind of introduce
+a new state here, the empty string "", which is followed by the first words of
+the provided sentences.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #9f8766;">-- | Collect all transitions from one word to the next.</span>
+<span style="color: #bc6ec5; font-weight: bold;">getTransitions</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">String</span><span style="color: #4f97d7;">]</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">Transitions</span>
+<span style="color: #bc6ec5; font-weight: bold;">getTransitions</span> <span style="color: #4f97d7;">(</span>s<span style="color: #ce537a; font-weight: bold;">:</span>ss<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=</span> zip <span style="color: #4f97d7;">(</span><span style="color: #2d9574;">""</span><span style="color: #ce537a; font-weight: bold;">:</span>ws<span style="color: #4f97d7;">)</span> ws <span style="color: #7590db;">++</span> getTransitions ss
+  <span style="color: #4f97d7; font-weight: bold;">where</span> ws <span style="color: #7590db;">=</span> words s
+<span style="color: #bc6ec5; font-weight: bold;">getTransitions</span> <span style="color: #4f97d7; font-weight: bold;">_</span>      <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">[]</span>
+
+<span style="color: #9f8766;">-- | A collection of samples.</span>
+<span style="color: #bc6ec5; font-weight: bold;">samples</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">[</span><span style="color: #ce537a; font-weight: bold;">String</span><span style="color: #4f97d7;">]</span>
+<span style="color: #bc6ec5; font-weight: bold;">samples</span> <span style="color: #7590db;">=</span> <span style="color: #4f97d7;">[</span> <span style="color: #2d9574;">"I am a monster."</span>
+         , <span style="color: #2d9574;">"I am a rock star."</span>
+         , <span style="color: #2d9574;">"I want to go to Hawaii."</span>
+         , <span style="color: #2d9574;">"I want to eat a hamburger."</span>
+         , <span style="color: #2d9574;">"I have a really big headache."</span>
+         , <span style="color: #2d9574;">"Haskell  is a fun language."</span>
+         , <span style="color: #2d9574;">"Go eat a big hamburger."</span>
+         , <span style="color: #2d9574;">"Markov chains are fun to use."</span>
+         <span style="color: #4f97d7;">]</span>
+</pre>
+</div>
+
+<p>
+And that's already it. We can combine and execute our functions in the following
+way.
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">main</span> <span style="color: #7590db;">::</span> <span style="color: #ce537a; font-weight: bold;">IO</span> <span style="color: #4f97d7; font-weight: bold;">()</span>
+<span style="color: #bc6ec5; font-weight: bold;">main</span> <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
+  s <span style="color: #7590db;">&lt;-</span> generateSequence <span style="color: #4f97d7;">(</span>transitionsToMatrix <span style="color: #7590db;">$</span> getTransitions samples<span style="color: #4f97d7;">)</span> <span style="color: #2d9574;">""</span>
+  print s
+</pre>
+</div>
+
+<p>
+E.g.,
+</p>
+<pre class="example">
+&gt; main
+"I am a big hamburger."
+
+</pre>
+
+<p>
+Of course, the next step is to remove the <code>String</code> type dependency so that we
+can use our chain for arbitrary types. Then, we might try to convert our code
+into simulating a <a href="2016-04-09-Continuous-Time-Markov-Chain.html">continuous-time Markov process</a>, but this is another topic.
+</p>
+</div>
+<div id="postamble" class="status">
+<div id='disqus_thread'></div>
+<script>
+    var disqus_config = function () {
+        this.page.identifier = '(Markov chains in Haskell)';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+
+        s.src = '//dschrempf.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><p>Copyright 2015-2018 Dominik Schrempf</p>
+<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-02-10</span></span></p>
+<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.6) </p>
+<p><a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML</p>
+</div>
+</div>
+</body>
+</html>
