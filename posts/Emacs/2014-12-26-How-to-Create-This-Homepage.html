@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-10 Sat 17:18 -->
+<!-- 2018-04-10 Tue 08:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>How to create this homepage</title>
@@ -82,11 +82,6 @@ arbitrary but the Org mode publishing setup has to be adjusted
 accordingly:
 </p>
 
-<div class="org-src-container">
-<pre class="src src-sh">tree -d -L <span style="color: #a45bad;">2</span> ~/Shared/blog
-</pre>
-</div>
-
 <pre class="example">
 /home/dominik/Shared/blog
 ├── dschrempf.github.io
@@ -122,47 +117,47 @@ files so that they can be hosted by GitHub:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp" id="org7ae628c"><span style="color: #4f97d7;">(</span>setq org-publish-project-alist
-      '<span style="color: #bc6ec5;">(</span>
-        <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Blog posts in Org mode that are exported to html and hosted</span>
-        <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">by GitHub.</span>
+<pre class="src src-lisp" id="org7ae628c"><span style="color: #3a81c3;">(</span>setq org-publish-project-alist
+      '<span style="color: #6c3163;">(</span>
+        <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Blog posts in Org mode that are exported to html and hosted</span>
+        <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">by GitHub.</span>
         <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"blog"</span>
-         <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Directory with Org files.</span>
-         <span style="color: #4f97d7;">:base-directory</span> <span style="color: #2d9574;">"~/Shared/blog/org/"</span>
-         <span style="color: #4f97d7;">:base-extension</span> <span style="color: #2d9574;">"org"</span>
-         <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Output directory for html files on GitHub.</span>
-         <span style="color: #4f97d7;">:publishing-directory</span> <span style="color: #2d9574;">"~/Shared/blog/dschrempf.github.io/"</span>
-         <span style="color: #4f97d7;">:publishing-function</span> <span style="color: #67b11d;">(</span>org-html-publish-to-html<span style="color: #67b11d;">)</span>
-         <span style="color: #4f97d7;">:html-extension</span> <span style="color: #2d9574;">"html"</span>
-         <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Create a sitemap that contains all posts in</span>
-         <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">anti-chronological order.</span>
-         <span style="color: #4f97d7;">:auto-sitemap</span> t
-         <span style="color: #4f97d7;">:sitemap-filename</span> <span style="color: #2d9574;">"archive.org"</span>
-         <span style="color: #4f97d7;">:sitemap-title</span> <span style="color: #2d9574;">"Archive"</span>
-         <span style="color: #4f97d7;">:sitemap-sort-files</span> anti-chronologically
-         <span style="color: #4f97d7;">:sitemap-style</span> list
-         <span style="color: #4f97d7;">:recursive</span> t
-         <span style="color: #4f97d7;">:section-numbers</span> nil
-         <span style="color: #4f97d7;">:with-toc</span> t
-         <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Do not include predefined header scripts.</span>
-         <span style="color: #4f97d7;">:html-head-include-default-style</span> nil
-         <span style="color: #4f97d7;">:html-head-include-scripts</span> nil
-         <span style="color: #4f97d7;">:html-head</span> <span style="color: #2d9574;">"&lt;link rel='stylesheet' href='/css/site.css' type='text/css'/&gt;</span>
+         <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Directory with Org files.</span>
+         <span style="color: #3a81c3;">:base-directory</span> <span style="color: #2d9574;">"~/Shared/blog/org/"</span>
+         <span style="color: #3a81c3;">:base-extension</span> <span style="color: #2d9574;">"org"</span>
+         <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Output directory for html files on GitHub.</span>
+         <span style="color: #3a81c3;">:publishing-directory</span> <span style="color: #2d9574;">"~/Shared/blog/dschrempf.github.io/"</span>
+         <span style="color: #3a81c3;">:publishing-function</span> <span style="color: #67b11d;">(</span>org-html-publish-to-html<span style="color: #67b11d;">)</span>
+         <span style="color: #3a81c3;">:html-extension</span> <span style="color: #2d9574;">"html"</span>
+         <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Create a sitemap that contains all posts in</span>
+         <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">anti-chronological order.</span>
+         <span style="color: #3a81c3;">:auto-sitemap</span> t
+         <span style="color: #3a81c3;">:sitemap-filename</span> <span style="color: #2d9574;">"archive.org"</span>
+         <span style="color: #3a81c3;">:sitemap-title</span> <span style="color: #2d9574;">"Archive"</span>
+         <span style="color: #3a81c3;">:sitemap-sort-files</span> anti-chronologically
+         <span style="color: #3a81c3;">:sitemap-style</span> list
+         <span style="color: #3a81c3;">:recursive</span> t
+         <span style="color: #3a81c3;">:section-numbers</span> nil
+         <span style="color: #3a81c3;">:with-toc</span> t
+         <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Do not include predefined header scripts.</span>
+         <span style="color: #3a81c3;">:html-head-include-default-style</span> nil
+         <span style="color: #3a81c3;">:html-head-include-scripts</span> nil
+         <span style="color: #3a81c3;">:html-head</span> <span style="color: #2d9574;">"&lt;link rel='stylesheet' href='/css/site.css' type='text/css'/&gt;</span>
 <span style="color: #2d9574;">&lt;meta name=\"viewport\" content=\"width=device-width\"/&gt;"</span>
-         <span style="color: #4f97d7;">:html-preamble</span> website-html-preamble
-         <span style="color: #4f97d7;">:html-postamble</span> website-html-postamble
-         <span style="color: #4f97d7;">:html-link-home</span> <span style="color: #2d9574;">"http://dschrempf.github.io/"</span>
-         <span style="color: #4f97d7;">:html-link-use-abs-url</span> nil<span style="color: #2d9574;">)</span>
+         <span style="color: #3a81c3;">:html-preamble</span> website-html-preamble
+         <span style="color: #3a81c3;">:html-postamble</span> website-html-postamble
+         <span style="color: #3a81c3;">:html-link-home</span> <span style="color: #2d9574;">"http://dschrempf.github.io/"</span>
+         <span style="color: #3a81c3;">:html-link-use-abs-url</span> nil<span style="color: #2d9574;">)</span>
 
         <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"static"</span>
-         <span style="color: #4f97d7;">:base-directory</span> <span style="color: #2d9574;">"~/Shared/blog/org/"</span>
-         <span style="color: #4f97d7;">:base-extension</span> <span style="color: #2d9574;">"css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"</span>
-         <span style="color: #4f97d7;">:publishing-directory</span> <span style="color: #2d9574;">"~/Shared/blog/dschrempf.github.io/"</span>
-         <span style="color: #4f97d7;">:publishing-function</span> org-publish-attachment
-         <span style="color: #4f97d7;">:recursive</span> t<span style="color: #2d9574;">)</span>
+         <span style="color: #3a81c3;">:base-directory</span> <span style="color: #2d9574;">"~/Shared/blog/org/"</span>
+         <span style="color: #3a81c3;">:base-extension</span> <span style="color: #2d9574;">"css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"</span>
+         <span style="color: #3a81c3;">:publishing-directory</span> <span style="color: #2d9574;">"~/Shared/blog/dschrempf.github.io/"</span>
+         <span style="color: #3a81c3;">:publishing-function</span> org-publish-attachment
+         <span style="color: #3a81c3;">:recursive</span> t<span style="color: #2d9574;">)</span>
 
-        <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">("website" :components ("blog" "images" "js" "css"))))</span>
-        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"website"</span> <span style="color: #4f97d7;">:components</span> <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"blog"</span> <span style="color: #2d9574;">"static"</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+        <span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">("website" :components ("blog" "images" "js" "css"))))</span>
+        <span style="color: #2d9574;">(</span><span style="color: #2d9574;">"website"</span> <span style="color: #3a81c3;">:components</span> <span style="color: #67b11d;">(</span><span style="color: #2d9574;">"blog"</span> <span style="color: #2d9574;">"static"</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>
 </pre>
 </div>
 
@@ -175,25 +170,25 @@ user name and tracking ID).
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp" id="org10458bd"><span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">BugFix: Manually disable home/up links in preamble.</span>
-<span style="color: #4f97d7;">(</span>setq org-html-home/up-format <span style="color: #2d9574;">""</span><span style="color: #4f97d7;">)</span>
+<pre class="src src-lisp" id="org10458bd"><span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">BugFix: Manually disable home/up links in preamble.</span>
+<span style="color: #3a81c3;">(</span>setq org-html-home/up-format <span style="color: #2d9574;">""</span><span style="color: #3a81c3;">)</span>
 
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">website-html-preamble</span> <span style="color: #bc6ec5;">(</span>info<span style="color: #bc6ec5;">)</span>
-  <span style="color: #9f8766;">"Org-mode website HTML export preamble."</span>
-  <span style="color: #bc6ec5;">(</span>format <span style="color: #2d9574;">"&lt;div class='nav'&gt;</span>
+<span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">defun</span> <span style="color: #6c3163; font-weight: bold;">website-html-preamble</span> <span style="color: #6c3163;">(</span>info<span style="color: #6c3163;">)</span>
+  <span style="color: #da8b55;">"Org-mode website HTML export preamble."</span>
+  <span style="color: #6c3163;">(</span>format <span style="color: #2d9574;">"&lt;div class='nav'&gt;</span>
 <span style="color: #2d9574;">&lt;ul&gt;</span>
 <span style="color: #2d9574;">&lt;li&gt;&lt;a href='/'&gt;Home&lt;/a&gt;&lt;/li&gt;</span>
 <span style="color: #2d9574;">&lt;li&gt;&lt;a href='/archive.html'&gt;Archive&lt;/a&gt;&lt;/li&gt;</span>
 <span style="color: #2d9574;">&lt;/ul&gt;</span>
-<span style="color: #2d9574;">&lt;/div&gt;"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2d9574;">&lt;/div&gt;"</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>
 
-<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">website-html-postamble</span> <span style="color: #bc6ec5;">(</span>info<span style="color: #bc6ec5;">)</span>
-  <span style="color: #9f8766;">"Put Disqus into Org mode website postamble.  Do not show</span>
-<span style="color: #9f8766;">   disqus for the Archive and the Index."</span>
-  <span style="color: #bc6ec5;">(</span>concat
-   <span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">cond</span> <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #4f97d7;">(</span>car <span style="color: #bc6ec5;">(</span>plist-get info <span style="color: #4f97d7;">:title</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span> <span style="color: #2d9574;">"Archive"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
-         <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #4f97d7;">(</span>car <span style="color: #bc6ec5;">(</span>plist-get info <span style="color: #4f97d7;">:title</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span> <span style="color: #2d9574;">"Index"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
-         <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #4f97d7;">(</span>car <span style="color: #bc6ec5;">(</span>plist-get info <span style="color: #4f97d7;">:title</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span> <span style="color: #2d9574;">"GitHub -&gt; IO ()"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
+<span style="color: #3a81c3;">(</span><span style="color: #3a81c3; font-weight: bold;">defun</span> <span style="color: #6c3163; font-weight: bold;">website-html-postamble</span> <span style="color: #6c3163;">(</span>info<span style="color: #6c3163;">)</span>
+  <span style="color: #da8b55;">"Put Disqus into Org mode website postamble.  Do not show</span>
+<span style="color: #da8b55;">   disqus for the Archive and the Index."</span>
+  <span style="color: #6c3163;">(</span>concat
+   <span style="color: #2d9574;">(</span><span style="color: #3a81c3; font-weight: bold;">cond</span> <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #3a81c3;">(</span>car <span style="color: #6c3163;">(</span>plist-get info <span style="color: #3a81c3;">:title</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span> <span style="color: #2d9574;">"Archive"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #3a81c3;">(</span>car <span style="color: #6c3163;">(</span>plist-get info <span style="color: #3a81c3;">:title</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span> <span style="color: #2d9574;">"Index"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
+         <span style="color: #67b11d;">(</span><span style="color: #b1951d;">(</span>string= <span style="color: #3a81c3;">(</span>car <span style="color: #6c3163;">(</span>plist-get info <span style="color: #3a81c3;">:title</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span> <span style="color: #2d9574;">"GitHub -&gt; IO ()"</span><span style="color: #b1951d;">)</span> <span style="color: #2d9574;">""</span><span style="color: #67b11d;">)</span>
          <span style="color: #67b11d;">(</span>t <span style="color: #2d9574;">"&lt;div id='disqus_thread'&gt;&lt;/div&gt;</span>
 <span style="color: #2d9574;">&lt;script type='text/javascript'&gt;</span>
 <span style="color: #2d9574;">  // required: replace example with your forum shortname</span>
@@ -227,7 +222,7 @@ user name and tracking ID).
 <span style="color: #2d9574;">&lt;/script&gt;"</span>
            <span style="color: #67b11d;">(</span>format-time-string <span style="color: #2d9574;">"%Y-%m-%d"</span><span style="color: #67b11d;">)</span>
            org-html-creator-string
-           org-html-validation-link<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+           org-html-validation-link<span style="color: #2d9574;">)</span><span style="color: #6c3163;">)</span><span style="color: #3a81c3;">)</span>
 </pre>
 </div>
 </div>
@@ -262,8 +257,8 @@ bind this to a key) and push the changes to GitHub.  Voila!
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><p>Copyright 2015-2018 Dominik Schrempf</p>
-<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-02-10</span></span></p>
-<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.6) </p>
+<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-04-10</span></span></p>
+<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.9) </p>
 <p><a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML</p>
 </div>
 </div>

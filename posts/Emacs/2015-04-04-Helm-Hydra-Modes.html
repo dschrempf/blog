@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-10 Sat 17:18 -->
+<!-- 2018-04-10 Tue 08:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Helm and Hydra minor modes</title>
@@ -61,10 +61,10 @@ actions.  You can bind the <code>TAB</code> key back to
 <code>helm-execute-persistent-action</code> with
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp"><span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Bind TAB to complete stuff.</span>
-<span style="color: #4f97d7;">(</span>define-key helm-map <span style="color: #bc6ec5;">(</span>kbd <span style="color: #2d9574;">"TAB"</span><span style="color: #bc6ec5;">)</span>         'helm-execute-persistent-action<span style="color: #4f97d7;">)</span>
-<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">Rebind `</span><span style="color: #a45bad; background-color: #292e34;">helm-select-action</span><span style="color: #2aa1ae; background-color: #292e34;">' (originally bound to TAB).</span>
-<span style="color: #4f97d7;">(</span>define-key helm-map <span style="color: #bc6ec5;">(</span>kbd <span style="color: #2d9574;">"C-j"</span><span style="color: #bc6ec5;">)</span>         'helm-select-action<span style="color: #4f97d7;">)</span>
+<pre class="src src-lisp"><span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Bind TAB to complete stuff.</span>
+<span style="color: #3a81c3;">(</span>define-key helm-map <span style="color: #6c3163;">(</span>kbd <span style="color: #2d9574;">"TAB"</span><span style="color: #6c3163;">)</span>         'helm-execute-persistent-action<span style="color: #3a81c3;">)</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">;; </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Rebind `</span><span style="color: #4e3163; background-color: #ecf3ec;">helm-select-action</span><span style="color: #2aa1ae; background-color: #ecf3ec;">' (originally bound to TAB).</span>
+<span style="color: #3a81c3;">(</span>define-key helm-map <span style="color: #6c3163;">(</span>kbd <span style="color: #2d9574;">"C-j"</span><span style="color: #6c3163;">)</span>         'helm-select-action<span style="color: #3a81c3;">)</span>
 </pre>
 </div>
 
@@ -116,8 +116,8 @@ Check it out:
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><p>Copyright 2015-2018 Dominik Schrempf</p>
-<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-02-10</span></span></p>
-<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.6) </p>
+<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-04-10</span></span></p>
+<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.9) </p>
 <p><a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML</p>
 </div>
 </div>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-10 Sat 17:18 -->
+<!-- 2018-04-10 Tue 08:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BitTorrent Sync over SSH proxy</title>
@@ -75,22 +75,6 @@ access to the internet and that is accessible by client A; then we ca
 set up an SSH SOCKS proxy; check it out.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-ditaa">+----------+          +----------+                
-| Client A |----------| Firewall |----------------+ 
-+----------+          |     cRED |                |
-     ^                +----------+                |
-     |                                     +------------+      +-----------+
-     |                                     |  Internet  |&lt;----&gt;| Client C  |
-     |                                     |      cBLU  |      +-----------+
-     |                                     +------------+    
-     |                                            ^          
-     |  SSH Tunnel    +----------+                |          
-     +---------------&gt;| Client B |&lt;---------------+          
-                      +----------+                       
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img src="firewall-ssh-proxy.png" alt="firewall-ssh-proxy.png" />
@@ -108,7 +92,7 @@ B.  Client B needs to have access to the internet.  Then you can setup
 a dynamic SSH tunnel at client A with:
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">ssh -vvv -N -D <span style="color: #a45bad;">1080</span> username@clientB
+<pre class="src src-sh">ssh -vvv -N -D <span style="color: #4e3163;">1080</span> username@clientB
 </pre>
 </div>
 <dl class="org-dl">
@@ -149,57 +133,57 @@ configuration file below.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span style="color: #4f97d7;">{</span>
+<pre class="src src-java"><span style="color: #3a81c3;">{</span>
   <span style="color: #2d9574;">"device_name"</span> : <span style="color: #2d9574;">"username@clientA"</span>,
-  <span style="color: #2d9574;">"listening_port"</span> : <span style="color: #a45bad;">0</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">0 - randomize port.</span>
+  <span style="color: #2d9574;">"listening_port"</span> : <span style="color: #4e3163;">0</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">0 - randomize port.</span>
 
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">The storage_path dir contains auxilliary app files if no</span>
-<span style="color: #2aa1ae; background-color: #292e34;">   storage_path field: .sync dir created in the directory where binary</span>
-<span style="color: #2aa1ae; background-color: #292e34;">   is located. otherwise user-defined directory will be used. */</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">/* </span><span style="color: #2aa1ae; background-color: #ecf3ec;">The storage_path dir contains auxilliary app files if no</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">   storage_path field: .sync dir created in the directory where binary</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">   is located. otherwise user-defined directory will be used. */</span>
   <span style="color: #2d9574;">"storage_path"</span> : <span style="color: #2d9574;">"/home/username/.btsync"</span>,
 
-  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Set location of pid file.</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Set location of pid file.</span>
   <span style="color: #2d9574;">"pid_file"</span> : <span style="color: #2d9574;">"/home/username/.btsync/btsync.pid"</span>,
 
-  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Do not use UPnP for port mapping.</span>
-  <span style="color: #2d9574;">"use_upnp"</span> : <span style="color: #a45bad;">false</span>,
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Do not use UPnP for port mapping.</span>
+  <span style="color: #2d9574;">"use_upnp"</span> : <span style="color: #4e3163;">false</span>,
 
-  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">limits in kB/s. 0 - no limit.</span>
-  <span style="color: #2d9574;">"download_limit"</span> : <span style="color: #a45bad;">0</span>,
-  <span style="color: #2d9574;">"upload_limit"</span> : <span style="color: #a45bad;">0</span>,
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">limits in kB/s. 0 - no limit.</span>
+  <span style="color: #2d9574;">"download_limit"</span> : <span style="color: #4e3163;">0</span>,
+  <span style="color: #2d9574;">"upload_limit"</span> : <span style="color: #4e3163;">0</span>,
 
-  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Proxy configuration</span>
-  <span style="color: #2d9574;">"proxy_type"</span> : <span style="color: #2d9574;">"socks4"</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Valid types: "socks4", "socks5", "http_connect". Any other value means no proxy</span>
-  <span style="color: #2d9574;">"proxy_addr"</span> : <span style="color: #2d9574;">"127.0.0.1"</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">IP address of proxy server.</span>
-  <span style="color: #2d9574;">"proxy_port"</span> : <span style="color: #a45bad;">1080</span>,
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Proxy configuration</span>
+  <span style="color: #2d9574;">"proxy_type"</span> : <span style="color: #2d9574;">"socks4"</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Valid types: "socks4", "socks5", "http_connect". Any other value means no proxy</span>
+  <span style="color: #2d9574;">"proxy_addr"</span> : <span style="color: #2d9574;">"127.0.0.1"</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">IP address of proxy server.</span>
+  <span style="color: #2d9574;">"proxy_port"</span> : <span style="color: #4e3163;">1080</span>,
 
-  <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">Do not use the webui.</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Do not use the webui.</span>
   <span style="color: #2d9574;">"webui"</span> :
-  <span style="color: #bc6ec5;">{</span>
+  <span style="color: #6c3163;">{</span>
     <span style="color: #2d9574;">"listen"</span> : <span style="color: #2d9574;">"0.0.0.0:8889"</span>
-  <span style="color: #bc6ec5;">}</span>,
+  <span style="color: #6c3163;">}</span>,
 
-  <span style="color: #2aa1ae; background-color: #292e34;">/* </span><span style="color: #2aa1ae; background-color: #292e34;">!!! If you set shared folders in config file WebUI will be</span>
-<span style="color: #2aa1ae; background-color: #292e34;">  DISABLED !!!  Shared directories specified in config file override</span>
-<span style="color: #2aa1ae; background-color: #292e34;">  the folders previously added from WebUI. */</span>
+  <span style="color: #2aa1ae; background-color: #ecf3ec;">/* </span><span style="color: #2aa1ae; background-color: #ecf3ec;">!!! If you set shared folders in config file WebUI will be</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">  DISABLED !!!  Shared directories specified in config file override</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;">  the folders previously added from WebUI. */</span>
 
   <span style="color: #2d9574;">"shared_folders"</span> :
-  <span style="color: #bc6ec5;">[</span>
+  <span style="color: #6c3163;">[</span>
     <span style="color: #2d9574;">{</span>
-      <span style="color: #2d9574;">"secret"</span> : <span style="color: #2d9574;">"MYSECRET"</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">required field - use --generate-secret in command line to create new secret</span>
-      <span style="color: #2d9574;">"dir"</span> : <span style="color: #2d9574;">"/home/username/BTSync"</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">* required field</span>
-      <span style="color: #2d9574;">"use_relay_server"</span> : <span style="color: #a45bad;">true</span>, <span style="color: #2aa1ae; background-color: #292e34;">//  </span><span style="color: #2aa1ae; background-color: #292e34;">use relay server when direct connection fails</span>
-      <span style="color: #2d9574;">"use_tracker"</span> : <span style="color: #a45bad;">true</span>,
-      <span style="color: #2d9574;">"use_dht"</span> : <span style="color: #a45bad;">false</span>,
-      <span style="color: #2d9574;">"search_lan"</span> : <span style="color: #a45bad;">true</span>,
-      <span style="color: #2d9574;">"use_sync_trash"</span> : <span style="color: #a45bad;">true</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">enable SyncArchive to store files deleted on remote devices</span>
-      <span style="color: #2d9574;">"overwrite_changes"</span> : <span style="color: #a45bad;">false</span>, <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">restore modified files to original version, ONLY for Read-Only folders</span>
-      <span style="color: #2d9574;">"known_hosts"</span> : <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">specify hosts to attempt connection without additional search</span>
+      <span style="color: #2d9574;">"secret"</span> : <span style="color: #2d9574;">"MYSECRET"</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">required field - use --generate-secret in command line to create new secret</span>
+      <span style="color: #2d9574;">"dir"</span> : <span style="color: #2d9574;">"/home/username/BTSync"</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">* required field</span>
+      <span style="color: #2d9574;">"use_relay_server"</span> : <span style="color: #4e3163;">true</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">//  </span><span style="color: #2aa1ae; background-color: #ecf3ec;">use relay server when direct connection fails</span>
+      <span style="color: #2d9574;">"use_tracker"</span> : <span style="color: #4e3163;">true</span>,
+      <span style="color: #2d9574;">"use_dht"</span> : <span style="color: #4e3163;">false</span>,
+      <span style="color: #2d9574;">"search_lan"</span> : <span style="color: #4e3163;">true</span>,
+      <span style="color: #2d9574;">"use_sync_trash"</span> : <span style="color: #4e3163;">true</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">enable SyncArchive to store files deleted on remote devices</span>
+      <span style="color: #2d9574;">"overwrite_changes"</span> : <span style="color: #4e3163;">false</span>, <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">restore modified files to original version, ONLY for Read-Only folders</span>
+      <span style="color: #2d9574;">"known_hosts"</span> : <span style="color: #2aa1ae; background-color: #ecf3ec;">// </span><span style="color: #2aa1ae; background-color: #ecf3ec;">specify hosts to attempt connection without additional search</span>
       <span style="color: #67b11d;">[</span>
       <span style="color: #67b11d;">]</span>
     <span style="color: #2d9574;">}</span>
-  <span style="color: #bc6ec5;">]</span>
-<span style="color: #4f97d7;">}</span>
+  <span style="color: #6c3163;">]</span>
+<span style="color: #3a81c3;">}</span>
 </pre>
 </div>
 </div>
@@ -221,8 +205,8 @@ configuration file below.
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><p>Copyright 2015-2018 Dominik Schrempf</p>
-<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-02-10</span></span></p>
-<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.6) </p>
+<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-04-10</span></span></p>
+<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.9) </p>
 <p><a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML</p>
 </div>
 </div>

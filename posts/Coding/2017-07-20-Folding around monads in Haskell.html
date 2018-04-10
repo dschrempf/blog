@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-10 Sat 17:18 -->
+<!-- 2018-04-10 Tue 08:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Happy folding around monads in Haskell</title>
@@ -38,7 +38,7 @@ previous output</b>. The following function produces an <i>action b</i> from a <
 also taking into account the output of the previous <i>action b</i>.
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">f</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span>b <span style="color: #7590db;">-&gt;</span> a <span style="color: #7590db;">-&gt;</span> m b<span style="color: #4f97d7;">)</span>
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">f</span> <span style="color: #715ab1;">::</span> <span style="color: #3a81c3;">(</span>b <span style="color: #715ab1;">-&gt;</span> a <span style="color: #715ab1;">-&gt;</span> m b<span style="color: #3a81c3;">)</span>
 </pre>
 </div>
 
@@ -46,9 +46,9 @@ also taking into account the output of the previous <i>action b</i>.
 And here the definition of <code>foldlM</code> (which is the same as <code>foldM</code>).
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">foldlM</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Foldable</span> t, <span style="color: #ce537a; font-weight: bold;">Monad</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #4f97d7;">(</span>b <span style="color: #7590db;">-&gt;</span> a <span style="color: #7590db;">-&gt;</span> m b<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">-&gt;</span> b <span style="color: #7590db;">-&gt;</span> t a <span style="color: #7590db;">-&gt;</span> m b
-<span style="color: #bc6ec5; font-weight: bold;">foldlM</span> f z0 xs <span style="color: #7590db;">=</span> foldr f' return xs z0
-  <span style="color: #4f97d7; font-weight: bold;">where</span> f' x k z <span style="color: #7590db;">=</span> f z x <span style="color: #7590db;">&gt;&gt;=</span> k
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">foldlM</span> <span style="color: #715ab1;">::</span> <span style="color: #3a81c3;">(</span><span style="color: #ba2f59; font-weight: bold;">Foldable</span> t, <span style="color: #ba2f59; font-weight: bold;">Monad</span> m<span style="color: #3a81c3;">)</span> <span style="color: #715ab1;">=&gt;</span> <span style="color: #3a81c3;">(</span>b <span style="color: #715ab1;">-&gt;</span> a <span style="color: #715ab1;">-&gt;</span> m b<span style="color: #3a81c3;">)</span> <span style="color: #715ab1;">-&gt;</span> b <span style="color: #715ab1;">-&gt;</span> t a <span style="color: #715ab1;">-&gt;</span> m b
+<span style="color: #6c3163; font-weight: bold;">foldlM</span> f z0 xs <span style="color: #715ab1;">=</span> foldr f' return xs z0
+  <span style="color: #3a81c3; font-weight: bold;">where</span> f' x k z <span style="color: #715ab1;">=</span> f z x <span style="color: #715ab1;">&gt;&gt;=</span> k
 </pre>
 </div>
 
@@ -61,10 +61,10 @@ sure how to access or store the actual chain. This could be done by an
 equivalent of <code>scanl</code> for general monads, which I was unable to find.
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Monad</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #ce537a; font-weight: bold;">State</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">ProbMatrix</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">Int</span> <span style="color: #7590db;">-&gt;</span> m <span style="color: #ce537a; font-weight: bold;">State</span>
-<span style="color: #bc6ec5; font-weight: bold;">jumpN</span> s p n <span style="color: #7590db;">=</span> foldM jump s <span style="color: #4f97d7;">(</span>replicate n p<span style="color: #4f97d7;">)</span>
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">jumpN</span> <span style="color: #715ab1;">::</span> <span style="color: #3a81c3;">(</span><span style="color: #ba2f59; font-weight: bold;">Monad</span> m<span style="color: #3a81c3;">)</span> <span style="color: #715ab1;">=&gt;</span> <span style="color: #ba2f59; font-weight: bold;">State</span> <span style="color: #715ab1;">-&gt;</span> <span style="color: #ba2f59; font-weight: bold;">ProbMatrix</span> <span style="color: #715ab1;">-&gt;</span> <span style="color: #ba2f59; font-weight: bold;">Int</span> <span style="color: #715ab1;">-&gt;</span> m <span style="color: #ba2f59; font-weight: bold;">State</span>
+<span style="color: #6c3163; font-weight: bold;">jumpN</span> s p n <span style="color: #715ab1;">=</span> foldM jump s <span style="color: #3a81c3;">(</span>replicate n p<span style="color: #3a81c3;">)</span>
 
-<span style="color: #bc6ec5; font-weight: bold;">jump</span> <span style="color: #7590db;">::</span> <span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">Monad</span> m<span style="color: #4f97d7;">)</span> <span style="color: #7590db;">=&gt;</span> <span style="color: #ce537a; font-weight: bold;">State</span> <span style="color: #7590db;">-&gt;</span> <span style="color: #ce537a; font-weight: bold;">ProbMatrix</span> <span style="color: #7590db;">-&gt;</span> m <span style="color: #ce537a; font-weight: bold;">State</span>
+<span style="color: #6c3163; font-weight: bold;">jump</span> <span style="color: #715ab1;">::</span> <span style="color: #3a81c3;">(</span><span style="color: #ba2f59; font-weight: bold;">Monad</span> m<span style="color: #3a81c3;">)</span> <span style="color: #715ab1;">=&gt;</span> <span style="color: #ba2f59; font-weight: bold;">State</span> <span style="color: #715ab1;">-&gt;</span> <span style="color: #ba2f59; font-weight: bold;">ProbMatrix</span> <span style="color: #715ab1;">-&gt;</span> m <span style="color: #ba2f59; font-weight: bold;">State</span>
 </pre>
 </div>
 
@@ -72,26 +72,26 @@ equivalent of <code>scanl</code> for general monads, which I was unable to find.
 And specifically, with <code>p</code> being any transition probability matrix
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> foldM jump <span style="color: #a45bad;">0</span> <span style="color: #4f97d7;">[</span>p, p<span style="color: #4f97d7;">]</span>
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">jumpN</span> <span style="color: #4e3163;">0</span> p <span style="color: #4e3163;">2</span> <span style="color: #715ab1;">=</span> foldM jump <span style="color: #4e3163;">0</span> <span style="color: #3a81c3;">[</span>p, p<span style="color: #3a81c3;">]</span>
 </pre>
 </div>
 <p>
 Now we use the definition of <code>foldM</code>
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> foldr f' return <span style="color: #4f97d7;">[</span>p, p<span style="color: #4f97d7;">]</span> <span style="color: #a45bad;">0</span>
-  <span style="color: #4f97d7; font-weight: bold;">where</span> f' x k z <span style="color: #7590db;">=</span> jump z x <span style="color: #7590db;">&gt;&gt;=</span> k
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">jumpN</span> <span style="color: #4e3163;">0</span> p <span style="color: #4e3163;">2</span> <span style="color: #715ab1;">=</span> foldr f' return <span style="color: #3a81c3;">[</span>p, p<span style="color: #3a81c3;">]</span> <span style="color: #4e3163;">0</span>
+  <span style="color: #3a81c3; font-weight: bold;">where</span> f' x k z <span style="color: #715ab1;">=</span> jump z x <span style="color: #715ab1;">&gt;&gt;=</span> k
 </pre>
 </div>
 <p>
 which leads to
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> f' p <span style="color: #4f97d7;">(</span>foldr f' return <span style="color: #bc6ec5;">[</span>p<span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span> <span style="color: #a45bad;">0</span>
-            <span style="color: #7590db;">=</span> f' p <span style="color: #4f97d7;">(</span>f' p <span style="color: #bc6ec5;">(</span>foldr f' return <span style="color: #2d9574; font-weight: bold;">[]</span><span style="color: #bc6ec5;">)</span> <span style="color: #a45bad;">0</span>
-            <span style="color: #7590db;">=</span> f' p <span style="color: #bc6ec5;">(</span>f' p <span style="color: #2d9574;">(</span>return<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span> <span style="color: #a45bad;">0</span>
-            <span style="color: #7590db;">=</span> f' p <span style="color: #bc6ec5;">(</span>f' p return<span style="color: #bc6ec5;">)</span> <span style="color: #a45bad;">0</span>
-            <span style="color: #7590db;">=</span> jump <span style="color: #a45bad;">0</span> p <span style="color: #7590db;">&gt;&gt;=</span> <span style="color: #bc6ec5;">(</span>f' p return<span style="color: #bc6ec5;">)</span>
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">jumpN</span> <span style="color: #4e3163;">0</span> p <span style="color: #4e3163;">2</span> <span style="color: #715ab1;">=</span> f' p <span style="color: #3a81c3;">(</span>foldr f' return <span style="color: #6c3163;">[</span>p<span style="color: #6c3163;">]</span><span style="color: #3a81c3;">)</span> <span style="color: #4e3163;">0</span>
+            <span style="color: #715ab1;">=</span> f' p <span style="color: #3a81c3;">(</span>f' p <span style="color: #6c3163;">(</span>foldr f' return <span style="color: #2d9574; font-weight: bold;">[]</span><span style="color: #6c3163;">)</span> <span style="color: #4e3163;">0</span>
+            <span style="color: #715ab1;">=</span> f' p <span style="color: #6c3163;">(</span>f' p <span style="color: #2d9574;">(</span>return<span style="color: #2d9574;">)</span><span style="color: #6c3163;">)</span> <span style="color: #4e3163;">0</span>
+            <span style="color: #715ab1;">=</span> f' p <span style="color: #6c3163;">(</span>f' p return<span style="color: #6c3163;">)</span> <span style="color: #4e3163;">0</span>
+            <span style="color: #715ab1;">=</span> jump <span style="color: #4e3163;">0</span> p <span style="color: #715ab1;">&gt;&gt;=</span> <span style="color: #6c3163;">(</span>f' p return<span style="color: #6c3163;">)</span>
 </pre>
 </div>
 <p>
@@ -100,16 +100,16 @@ first, we perform a jump from zero and use the output to feed it to the next
 jump.
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #bc6ec5; font-weight: bold;">jumpN</span> <span style="color: #a45bad;">0</span> p <span style="color: #a45bad;">2</span> <span style="color: #7590db;">=</span> jump <span style="color: #a45bad;">0</span> p <span style="color: #7590db;">&gt;&gt;=</span> <span style="color: #4f97d7;">(</span>f' p return<span style="color: #4f97d7;">)</span>
-            <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
-            s' <span style="color: #7590db;">&lt;-</span> jump <span style="color: #a45bad;">0</span> p
+<pre class="src src-haskell"><span style="color: #6c3163; font-weight: bold;">jumpN</span> <span style="color: #4e3163;">0</span> p <span style="color: #4e3163;">2</span> <span style="color: #715ab1;">=</span> jump <span style="color: #4e3163;">0</span> p <span style="color: #715ab1;">&gt;&gt;=</span> <span style="color: #3a81c3;">(</span>f' p return<span style="color: #3a81c3;">)</span>
+            <span style="color: #715ab1;">=</span> <span style="color: #3a81c3; font-weight: bold;">do</span>
+            s' <span style="color: #715ab1;">&lt;-</span> jump <span style="color: #4e3163;">0</span> p
             f' p return s'
-            <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
-            s' <span style="color: #7590db;">&lt;-</span> jump <span style="color: #a45bad;">0</span> p
-            <span style="color: #4f97d7;">(</span>jump s' p <span style="color: #7590db;">&gt;&gt;=</span> return<span style="color: #4f97d7;">)</span>
-            <span style="color: #7590db;">=</span> <span style="color: #4f97d7; font-weight: bold;">do</span>
-            s'  <span style="color: #7590db;">&lt;-</span> jump <span style="color: #a45bad;">0</span>  p
-            s'' <span style="color: #7590db;">&lt;-</span> jump s' p
+            <span style="color: #715ab1;">=</span> <span style="color: #3a81c3; font-weight: bold;">do</span>
+            s' <span style="color: #715ab1;">&lt;-</span> jump <span style="color: #4e3163;">0</span> p
+            <span style="color: #3a81c3;">(</span>jump s' p <span style="color: #715ab1;">&gt;&gt;=</span> return<span style="color: #3a81c3;">)</span>
+            <span style="color: #715ab1;">=</span> <span style="color: #3a81c3; font-weight: bold;">do</span>
+            s'  <span style="color: #715ab1;">&lt;-</span> jump <span style="color: #4e3163;">0</span>  p
+            s'' <span style="color: #715ab1;">&lt;-</span> jump s' p
             return s''
 </pre>
 </div>
@@ -133,8 +133,8 @@ Holy crap, I am not sure if understanding this was worth the pain :-).
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><p>Copyright 2015-2018 Dominik Schrempf</p>
-<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-02-10</span></span></p>
-<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.6) </p>
+<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-04-10</span></span></p>
+<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.9) </p>
 <p><a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML</p>
 </div>
 </div>

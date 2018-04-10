@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-02-10 Sat 17:18 -->
+<!-- 2018-04-10 Tue 08:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Configure SSH</title>
@@ -52,15 +52,15 @@ your login without any password.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Create an SSH key (use the standard path).  Be careful, if you do</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">not set a passphrase, anybody that has access to your computer can</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">log into servers that have been set up to accept your key.</span>
+<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Create an SSH key (use the standard path).  Be careful, if you do</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">not set a passphrase, anybody that has access to your computer can</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">log into servers that have been set up to accept your key.</span>
 ssh-keygen
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Copy the key on your server.</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Copy the key on your server.</span>
 ssh-copy-id yourusername@yourserver.example.com
 
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Try it out and be happy!</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Try it out and be happy!</span>
 ssh yourusername@yourserver.example.com
 </pre>
 </div>
@@ -103,15 +103,6 @@ not from the outside.  However, you have access to <code>server</code> which,
 in turn has access to <code>private</code>.
 </p>
 
-<div class="org-src-container">
-<pre class="src src-ditaa">+------+      +------------------------+      +-----------------------+
-| home |-----&gt;| yourserver.example.com |-----&gt;| privatecomputer.local |
-|      |      | yourusername           |      | privateusername       |
-|      |      | alias server           |      | alias private         |
-+------+      +------------------------+      +-----------------------+
-</pre>
-</div>
-
 
 <div class="figure">
 <p><img src="ssh-proxy.png" alt="ssh-proxy.png" />
@@ -122,12 +113,12 @@ in turn has access to <code>private</code>.
 Hmm, normally, you would need to
 </p>
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Log into the server.</span>
+<pre class="src src-sh"><span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Log into the server.</span>
 ssh yourusername@yourserver.example.com
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Wait.  Enter password.  Wait.</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Wait.  Enter password.  Wait.</span>
 ssh privateusername@privatecomputer.local
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Wait.  Enter password.  Wait.</span>
-<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">That sucks.</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">Wait.  Enter password.  Wait.</span>
+<span style="color: #2aa1ae; background-color: #ecf3ec;"># </span><span style="color: #2aa1ae; background-color: #ecf3ec;">That sucks.</span>
 </pre>
 </div>
 
@@ -185,8 +176,8 @@ Wow.
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript' rel='nofollow'>comments powered by Disqus.</a></noscript><p>Copyright 2015-2018 Dominik Schrempf</p>
-<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-02-10</span></span></p>
-<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.6) </p>
+<p>Last updated <span class="timestamp-wrapper"><span class="timestamp">2018-04-10</span></span></p>
+<p>Built with <a href="https://www.gnu.org/software/emacs/">Emacs</a> 25.3.1 (<a href="https://orgmode.org">Org</a> mode 9.1.9) </p>
 <p><a href="http://validator.w3.org/check?uri=referer">Validate</a> HTML</p>
 </div>
 </div>
