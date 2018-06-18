@@ -85,3 +85,12 @@ pre {
 /*         display: inline-block; */
 /*     } */
 /* } */
+
+/* Blue */
+.theme-base-darkblue .sidebar {
+    background-color: #336699;
+}
+.theme-base-darkblue .content a,
+.theme-base-darkblue .related-posts li a:hover {
+    color: #336699;
+}
