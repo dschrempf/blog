@@ -1,3 +1,0 @@
-#+TITLE: HTML export of Org Source of Blog/Homepage
-The articles are written in Org Mode.  This repository is the HTML
-export.

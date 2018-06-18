@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Concept → IO () &middot; Dominik Schrempf</title>
+
+  
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/myblog.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dschrempf.github.io/touch-icon-144-precomposed.png">
+  <link href="https://dschrempf.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="How to use your phone without Google applications">
+  <meta name="keywords" content="Android,,">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img style="border-radius:50%"
+             src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+             alt="gravatar" title="Dominik Schrempf">
+      
+      <h1>Concept → IO ()</h1>
+      <p class="lead">A collection of articles about Linux, Emacs, coding and music.</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/">Blog</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/linux/">Linux</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/emacs/">Emacs</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/coding/">Coding</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/music/">Music</a></li>
+      
+      
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/links/">Links</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/about/">About</a></li>
+      
+    </ul><br/>
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+            <a href="https://github.com/dschrempf" target="_blank"><i class="fa fa-github fa-1x"></i></a>
+            
+            <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fa fa-stack-overflow fa-1x"></i></a>
+            
+            
+            
+            <a href="https://twitter.com/fazky" target="_blank"><i class="fa fa-twitter fa-1x"></i></a>
+            
+            <a href="https://orcid.org/0000-0001-8865-9237" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>
+            <a href="mailto:dominik.schrempf@gmail.com"><i class="fa fa-envelope fa-1x"></i></a>
+            <a href="/gpg_public_key.txt"><i class="fa fa-key fa-1x"></i></a>
+            
+      </li>
+    </ul>
+
+    
+
+    <p>&copy; 2018 Dominik Schrempf <a href="https://dschrempf.github.io/license/">GPL3</a><br/></p>
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Get rid of Google</h1>
+    <span class="post-date">Aug 5, 2016 &middot; 3 minute read &middot; <a href="https://dschrempf.github.io/linux/2016-08-05-android-without-google/#disqus_thread">Comments</a>
+    </span>
+    
+
+<p>I like a lot of stuff that Google is doing, especially that it
+supports open source.  However, I really dislike their attitude
+towards user privacy.  That is why I decided to get rid of Google on
+my Android phone.  However, I had to solve some problems in order to
+keep user-friendliness at a high level and to be able to use all
+applications that I need.</p>
+
+<p>The main issues are:</p>
+
+<ol>
+<li>Which <a href="#cyanogenmod-without-open-gapps">ROM</a> do I use?</li>
+<li>How do I <a href="#application-management">install software</a> and keep it up to date?</li>
+<li>How do I synchronize all my <a href="#contact-and-calendar">contacts and calendar</a>?</li>
+<li>Can I <a href="#replacement-of-google-applications">replace applications</a> that do not run without Google Play
+Services?</li>
+</ol>
+
+<p>The answers are:</p>
+
+<h2 id="cyanogenmod-without-open-gapps">Cyanogenmod without Open GApps</h2>
+
+<p>I have been using <a href="http://www.cyanogenmod.org/">Cyanogenmod</a> for quite some time now and I am very
+happy with it.  After a complete backup, I formatted every possible
+partition on my phone and did a clean reinstall without Open GApps.
+This left me with a Google-less Android install.</p>
+
+<h2 id="application-management">Application management</h2>
+
+<p>Use <a href="https://f-droid.org/">F-Droid</a>.  For applications that are not available in F-Droid, use
+a <em>service</em> that provides APK files of Google Play Store applications.</p>
+
+<p>This is the main drawback, because this <em>service</em> has to be trusted in
+that it does not alter the APK files in any way.  I decided to use
+<a href="https://apkpure.com/">APKPure</a> because it comes with an application that can update all
+installed applications.  I compared the <code>md5</code> check sums of randomly
+chosen APK files from <em>APKPure</em> with the one from the Google Play
+Store and could not find any differences.  This problem of completely
+trusting an unknown organization is still bugging me but I did not
+find another solution so far (especially because all application
+stores are incomplete).</p>
+
+<h2 id="contact-and-calendar">Contact and calendar</h2>
+
+<p>For contact and calendar synchronization, I use a Raspberry Pi with
+<a href="https://nextcloud.com/">Nextcloud</a> (or <a href="https://owncloud.org/">Owncloud</a>) together with <a href="https://davdroid.bitfire.at/">DavDroid</a> on the phone (which is
+available on F-Droid).  I am sure there are other services available
+that do not require an extensive server setup like this one.</p>
+
+<h2 id="replacement-of-google-applications">Replacement of Google applications</h2>
+
+<p>I replaced Google Maps with OsmAnd; Gmail with the native Android mail
+client; I never used Google Now nor Hangouts nor any other Google
+application.</p>
+
+<p>So far, this was way easier than I thought.  Ironically, a local
+application that provides information about public transport was the
+only one that complained about Google Play Services being
+non-existent.  That&rsquo;s when I dived into this issue and found <a href="https://microg.org/">microG</a>,
+an open source library that provides replacements for a lot of
+functions usually provided by Google Play Services.</p>
+
+<h3 id="microg">microG</h3>
+
+<p>The setup on Cyanogenmod with Android 6.0.1 is tough because system
+spoofing needs to be available.  This can be done using Haystack or
+Xposed (do not follow both instruction sets).</p>
+
+<h4 id="installation-of-haystack">Installation of Haystack</h4>
+
+<p>A detailed explanation can be found on the <a href="https://github.com/Lanchon/haystack">GitHub page</a>.</p>
+
+<h4 id="installation-of-xposed">Installation of Xposed</h4>
+
+<ul>
+<li>With F-Droid, install Xposed Downloader.</li>
+<li>With Xposed Downloader, download the latest Xposed framework and the Xposed
+Installer.</li>
+<li>In Recovery mode, install the latest Xposed framework (always wipe
+cache).</li>
+<li>Wipe cache and reboot; check if the Xposed framework is working
+correctly (start Xposed installer).</li>
+<li>With Xposed, download FakeGApps and activate it; reboot.</li>
+</ul>
+
+<h4 id="installation-of-microg-services-core">Installation of microG Services Core</h4>
+
+<ul>
+<li>With F-Droid, activate the <a href="https://microg.org/fdroid.html">microG repository</a>.</li>
+<li>With F-Droid, install microG Services Core, microG Services
+Framework and a network location backend (e.g., MozillaNlpbackend).</li>
+<li>With microG, open settings and check if spoofing support is enabled
+(Self-Check).</li>
+<li>With microG, enable everything and also the network location
+provider backend.</li>
+<li>And yea, it works!</li>
+<li>If you have installed applications that use Google Cloud Messaging
+(like <a href="https://whispersystems.org/">Signal</a>) before, you have to either reinstall them, or
+re-register to the Google servers, otherwise message delivery may be
+delayed.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Installing Android without Google Play Services was way easier than I
+thought.  However, to enable applications that require certain
+features like the messaging or the location interface of Google Play
+Services, extensive tinkering is necessary.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "fazky";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "fazky";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://dschrempf.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

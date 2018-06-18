@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Concept → IO () &middot; Dominik Schrempf</title>
+
+  
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/myblog.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dschrempf.github.io/touch-icon-144-precomposed.png">
+  <link href="https://dschrempf.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="An example of a monadic fold">
+  <meta name="keywords" content="Haskell,,">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img style="border-radius:50%"
+             src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+             alt="gravatar" title="Dominik Schrempf">
+      
+      <h1>Concept → IO ()</h1>
+      <p class="lead">A collection of articles about Linux, Emacs, coding and music.</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/">Blog</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/linux/">Linux</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/emacs/">Emacs</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/coding/">Coding</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/music/">Music</a></li>
+      
+      
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/links/">Links</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/about/">About</a></li>
+      
+    </ul><br/>
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+            <a href="https://github.com/dschrempf" target="_blank"><i class="fa fa-github fa-1x"></i></a>
+            
+            <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fa fa-stack-overflow fa-1x"></i></a>
+            
+            
+            
+            <a href="https://twitter.com/fazky" target="_blank"><i class="fa fa-twitter fa-1x"></i></a>
+            
+            <a href="https://orcid.org/0000-0001-8865-9237" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>
+            <a href="mailto:dominik.schrempf@gmail.com"><i class="fa fa-envelope fa-1x"></i></a>
+            <a href="/gpg_public_key.txt"><i class="fa fa-key fa-1x"></i></a>
+            
+      </li>
+    </ul>
+
+    
+
+    <p>&copy; 2018 Dominik Schrempf <a href="https://dschrempf.github.io/license/">GPL3</a><br/></p>
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Happy folding around monads in Haskell</h1>
+    <span class="post-date">Jul 20, 2017 &middot; 3 minute read &middot; <a href="https://dschrempf.github.io/coding/2017-07-20-folding-around-monads-in-haskell/#disqus_thread">Comments</a>
+    </span>
+    <p>Folds are complicated themselves, but monadic folds always have blown my mind.
+In what follows, I try to dissect <code>foldlM</code> for a specific example.</p>
+
+<p>Monadic folds can be used to <strong>perform a series of actions that depend on the
+previous output</strong>. The following function produces an <em>action b</em> from a <em>value a</em>
+also taking into account the output of the previous <em>action b</em>.</p>
+
+<pre><code class="language-haskell">f :: (b -&gt; a -&gt; m b)
+</code></pre>
+
+<p>And here the definition of <code>foldlM</code> (which is the same as <code>foldM</code>).</p>
+
+<pre><code class="language-haskell">foldlM :: (Foldable t, Monad m) =&gt; (b -&gt; a -&gt; m b) -&gt; b -&gt; t a -&gt; m b
+foldlM f z0 xs = foldr f' return xs z0
+  where f' x k z = f z x &gt;&gt;= k
+</code></pre>
+
+<p>Let&rsquo;s have a look at an example. The following function performs <code>n</code> jumps of a
+Markov chain starting from a given <code>State</code> <code>s</code> (an integer) according to a
+transition probability matrix <code>ProbMatrix</code> <code>p</code> (don&rsquo;t worry about the state
+space, or the state space size, it does not matter). At the moment, I am not
+sure how to access or store the actual chain. This could be done by an
+equivalent of <code>scanl</code> for general monads, which I was unable to find.</p>
+
+<pre><code class="language-haskell">jumpN :: (Monad m) =&gt; State -&gt; ProbMatrix -&gt; Int -&gt; m State
+jumpN s p n = foldM jump s (replicate n p)
+
+jump :: (Monad m) =&gt; State -&gt; ProbMatrix -&gt; m State
+</code></pre>
+
+<p>And specifically, with <code>p</code> being any transition probability matrix</p>
+
+<pre><code class="language-haskell">jumpN 0 p 2 = foldM jump 0 [p, p]
+</code></pre>
+
+<p>Now we use the definition of <code>foldM</code></p>
+
+<pre><code class="language-haskell">jumpN 0 p 2 = foldr f' return [p, p] 0
+  where f' x k z = jump z x &gt;&gt;= k
+</code></pre>
+
+<p>which leads to</p>
+
+<pre><code class="language-haskell">jumpN 0 p 2 = f' p (foldr f' return [p]) 0
+            = f' p (f' p (foldr f' return []) 0
+            = f' p (f' p (return)) 0
+            = f' p (f' p return) 0
+            = jump 0 p &gt;&gt;= (f' p return)
+</code></pre>
+
+<p>And finally, we got what we wanted. This is the first time, that we see that
+first, we perform a jump from zero and use the output to feed it to the next
+jump.</p>
+
+<pre><code class="language-haskell">jumpN 0 p 2 = jump 0 p &gt;&gt;= (f' p return)
+            = do
+            s' &lt;- jump 0 p
+            f' p return s'
+            = do
+            s' &lt;- jump 0 p
+            (jump s' p &gt;&gt;= return)
+            = do
+            s'  &lt;- jump 0  p
+            s'' &lt;- jump s' p
+            return s''
+</code></pre>
+
+<p>Holy crap, I am not sure if understanding this was worth the pain :-).</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "fazky";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "fazky";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://dschrempf.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

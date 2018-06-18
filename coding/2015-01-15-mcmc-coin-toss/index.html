@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Concept → IO () &middot; Dominik Schrempf</title>
+
+  
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/highlight/github.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+  <link rel="stylesheet" href="https://dschrempf.github.io/css/myblog.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dschrempf.github.io/touch-icon-144-precomposed.png">
+  <link href="https://dschrempf.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="MCMC simulation to approximate observations of coin tosses.">
+  <meta name="keywords" content="MCMC,,,Statistics,,Toss">
+  
+</head>
+<body class="theme-base-0d">
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      
+        <img style="border-radius:50%"
+             src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+             alt="gravatar" title="Dominik Schrempf">
+      
+      <h1>Concept → IO ()</h1>
+      <p class="lead">A collection of articles about Linux, Emacs, coding and music.</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/">Blog</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/linux/">Linux</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/emacs/">Emacs</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/coding/">Coding</a></li>
+      
+      <li class="sidebar-nav-item">&ensp;<a href="https://dschrempf.github.io/music/">Music</a></li>
+      
+      
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/links/">Links</a></li>
+      
+      <li class="sidebar-nav-item"><a href="https://dschrempf.github.io/about/">About</a></li>
+      
+    </ul><br/>
+
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+            <a href="https://github.com/dschrempf" target="_blank"><i class="fa fa-github fa-1x"></i></a>
+            
+            <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fa fa-stack-overflow fa-1x"></i></a>
+            
+            
+            
+            <a href="https://twitter.com/fazky" target="_blank"><i class="fa fa-twitter fa-1x"></i></a>
+            
+            <a href="https://orcid.org/0000-0001-8865-9237" target="_blank"><i class="ai ai-orcid ai-1x"></i></a>
+            <a href="mailto:dominik.schrempf@gmail.com"><i class="fa fa-envelope fa-1x"></i></a>
+            <a href="/gpg_public_key.txt"><i class="fa fa-key fa-1x"></i></a>
+            
+      </li>
+    </ul>
+
+    
+
+    <p>&copy; 2018 Dominik Schrempf <a href="https://dschrempf.github.io/license/">GPL3</a><br/></p>
+    
+
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">A simple MCMC simulation</h1>
+    <span class="post-date">Jan 15, 2015 &middot; 4 minute read &middot; <a href="https://dschrempf.github.io/coding/2015-01-15-mcmc-coin-toss/#disqus_thread">Comments</a>
+    </span>
+    <p>Suppose we observe 58 heads out of 100 coin tosses. Now, we want to know the
+probability of tossing a head \(\theta\). A maximum likelihood guess would be
+\(\theta = 0.58\) because then, the probability of observing 58 heads</p>
+
+<p>\begin{align}
+  P(58 \mathrm{ heads}) = {100 \choose 58} (0.58)^{58} (0.42)^{42}
+\end{align}</p>
+
+<p>is greatest (an example of the binomial distribution).</p>
+
+<p>However, we could also use a Bayesian approach to calculate the posterior
+distribution of the probability \(\theta\) (i.e., the probability that \(\theta\) is
+a certain value conditioned on our observation).</p>
+
+<p>The following C++ code does exactly this (the last column is the posterior).</p>
+
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+#include &lt;math.h&gt;
+#include &lt;gsl/gsl_rng.h&gt;
+
+// Run a coin toss MCMC simulation.
+
+// User interface.
+// Observation.
+int n_tosses = 100;
+int n_heads  = 58;
+int n_tails  = n_tosses - n_heads;
+
+// MCMC settings.
+int n_iter      = 10000;
+int print_every = 500;
+double delta    = 0.1;
+
+void fix_width_cout_str (std::string s)
+{
+    std::cout &lt;&lt; std::setw(10) &lt;&lt; std::fixed &lt;&lt; std::setprecision(2)&lt;&lt; s &lt;&lt; &quot;  &quot;;
+}
+
+void fix_width_cout_dbl (double d)
+{
+    std::cout &lt;&lt; std::setw(10) &lt;&lt; std::fixed &lt;&lt; std::setprecision(2)&lt;&lt; d &lt;&lt; &quot;  &quot;;
+}
+
+int main (int argc, char *argv[])
+{
+    const gsl_rng_type * t;
+    gsl_rng * r;
+    double theta;               // The probability of tossing a head.
+    double posterior[100];           // The posterior.
+
+    gsl_rng_env_setup();
+
+    t = gsl_rng_default;
+    r = gsl_rng_alloc (t);
+    gsl_rng_set (r, 1);
+
+    // Pick a first guess from the prior distribution (uniform prior).
+    // Here, the prior does not really effect the posterior.  However,
+    // it kicks in, when the likelihood ratio for acceptance is
+    // calculated (see below).
+    theta = gsl_rng_uniform (r);
+
+    std::cout &lt;&lt; &quot;Start MCMC.&quot; &lt;&lt; std::endl;
+
+    fix_width_cout_str(&quot;iteration&quot;);
+    fix_width_cout_str(&quot;theta_old&quot;);
+    fix_width_cout_str(&quot;theta_pri&quot;);
+    fix_width_cout_str(&quot;ln_tot&quot;);
+    fix_width_cout_str(&quot;pr_of_acc&quot;);
+    fix_width_cout_str(&quot;theta_new&quot;);
+    std::cout &lt;&lt; std::endl;
+
+    // Initialize posterior.
+    for (int i = 0; i &lt; 100; i++) {
+        posterior[i] = 0.0;
+    }
+
+    for (int i = 0; i &lt; n_iter; i++)
+        {
+            // Acceptance ratio.
+            double acc;
+            double ln_likelihood_ratio;
+            double ln_prior_ratio;
+            double ln_proposal_ratio;
+            double ln_tot;
+
+            //////////////////////////////
+            // Propose a new theta.
+            // Uniform, symmetric jump algorithm (Metropolis algorithm).
+
+            // The jump algorithm influences the runtime (How many
+            // proposals are accepted?) but it should not change the
+            // posterior; this can be proven for the Metropolos and
+            // the Metropolis-Hastings (non-symmetric jumps) algorithm.
+            double old_theta   = theta;
+            double rn          = gsl_rng_uniform (r);
+            double theta_prime = theta + (rn - 0.5) * delta;
+
+            if (theta_prime &lt; 0.0)
+                theta_prime = - theta_prime;
+            if (theta_prime &gt; 1.0)
+                theta_prime = 2.0 - theta_prime;
+
+            //////////////////////////////
+            // Accept theta_prime?
+            // Calculate the natural logarithm of the likelihood
+            // ratios of the new proposal to the old one.  It consists
+            // of:
+            // 1. The likelihood ratio due to the model.
+            // 2. The ratio of the prior (this is, where the prior
+            // comes in).  If the likelihood ratio of the model is
+            // flat (i.e., ln_likelihood_ratio ~= 0.0), the prior is
+            // very informative; something that we do not want in
+            // general.
+            // 3. The ratio of the proposal (the jumping algorithm).
+            // This is, how we incorporate non-symmetric jumping
+            // algorithms, so that they do not change the posterior.
+            ln_likelihood_ratio =
+                (n_heads*log(theta_prime) + n_tails*log(1.0-theta_prime)) -
+                (n_heads*log(theta) + n_tails*log(1.0-theta));
+            ln_prior_ratio = 0.0;
+            ln_proposal_ratio = 0.0;
+            ln_tot = ln_likelihood_ratio + ln_prior_ratio + ln_proposal_ratio;
+
+            // Circumvent underflow error.
+            if (ln_tot &lt; -300.0)
+                acc = 0.0;
+            else if (ln_tot &gt; 0.0)
+                acc = 1.0;
+            else
+                acc = exp (ln_tot);
+
+            // Accept with probability acc.
+            double u = gsl_rng_uniform (r);
+            if (u &lt; acc)
+                {
+                    theta = theta_prime;
+                    posterior[(int)(theta*100)] += 1.0;
+                }
+
+            //////////////////////////////
+            //Log results.
+            if (i % print_every == 0)
+                {
+                    fix_width_cout_dbl (i);
+                    fix_width_cout_dbl (old_theta);
+                    fix_width_cout_dbl (theta_prime);
+                    fix_width_cout_dbl (ln_tot);
+                    fix_width_cout_dbl (acc);
+                    fix_width_cout_dbl (theta);
+                    std::cout &lt;&lt; std::endl;
+                }
+
+        }
+
+    std::cout &lt;&lt; &quot;MCMC finished.&quot; &lt;&lt; std::endl;
+    std::cout &lt;&lt; std::endl;
+
+    // Normalize posterior.
+    double sum = 0.0;
+    for (int i = 0; i &lt; 100; i++) {
+        sum += posterior[i];
+    }
+    for (int i = 0; i &lt; 100; i++) {
+        posterior[i] = posterior[i]/sum;
+    }
+
+
+    for (int i =0 ; i &lt; 100; i++) {
+        std::cout &lt;&lt; &quot;Theta between &quot;;
+        std::cout &lt;&lt; std::setw(3) &lt;&lt; i;
+        std::cout &lt;&lt; &quot; and &quot;;
+        std::cout &lt;&lt; std::setw(3) &lt;&lt; i+1;
+        std::cout &lt;&lt; &quot;:\t&quot;;
+        std::cout &lt;&lt; std::setw(4) &lt;&lt; std::setprecision(2) &lt;&lt; (posterior[i]);
+        std::cout &lt;&lt; std::endl;
+    }
+
+
+    gsl_rng_free (r);
+
+    return 0;
+}
+</code></pre>
+
+  </div>
+  <div id="disqus_thread"></div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "fazky";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+
+
+<script type="text/javascript">
+    var disqus_shortname = "fazky";
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<script src="https://dschrempf.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+
