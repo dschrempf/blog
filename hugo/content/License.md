@@ -1,7 +1,6 @@
 +++
 title = "LICENCE"
 author = ["Dominik Schrempf"]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "page"
 draft = false
 +++

@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "Adventures when using having to deal with proprietary drivers on Arch Linux."
 date = 2017-09-05T00:00:00+02:00
 keywords = ["MSU", "", "", "", "", "", "", "", ""]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

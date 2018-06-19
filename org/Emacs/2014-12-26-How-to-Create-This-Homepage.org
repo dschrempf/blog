@@ -1,7 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Emacs
 #+HUGO_TYPE: post
-#+HUGO_LASTMOD: 2016-04-09
 #+Title: How to create this homepage
 #+DATE: <2014-12-26 Fri>
 #+AUTHOR: Dominik Schrempf

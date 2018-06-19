@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "Excellent networking HOWTOs"
 date = 2017-09-13T00:00:00+02:00
 keywords = ["Networking", "", "", "", "", "", ""]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

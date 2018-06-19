@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "How to use your phone without Google applications"
 date = 2016-08-05T00:00:00+02:00
 keywords = ["Android", "", ""]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

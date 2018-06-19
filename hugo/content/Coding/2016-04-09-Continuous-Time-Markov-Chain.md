@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "Simulate a continuous time Markov chain with any transition rate matrix."
 date = 2016-04-09T00:00:00+02:00
 keywords = ["CTMC", "", "Chain", "", "Markov", "Chain"]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

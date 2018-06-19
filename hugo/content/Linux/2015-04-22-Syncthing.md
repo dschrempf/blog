@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "Description"
 date = 2015-04-22T00:00:00+02:00
 keywords = ["Keywords"]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

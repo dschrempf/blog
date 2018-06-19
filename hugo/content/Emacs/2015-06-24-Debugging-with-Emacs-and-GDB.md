@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "Use GDB from withing Emacs to debug source code."
 date = 2015-06-24T00:00:00+02:00
 keywords = ["GDB", "", "", "", "", ""]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

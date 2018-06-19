@@ -4,7 +4,6 @@ author = ["Dominik Schrempf"]
 description = "Incremental completion and bindings that stick around."
 date = 2015-04-04T00:00:00+02:00
 keywords = ["Incremental", "Completion", "", ""]
-lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++
