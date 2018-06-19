@@ -1,4 +1,3 @@
-[submodule "hugo/themes/hyde-x"]
-	path = hugo/themes/hyde-x
-	url = https://github.com/zyro/hyde-x
-
+[submodule "hugo/public"]
+	path = hugo/public
+	url = git@github.com:dschrempf/dschrempf.github.io.git

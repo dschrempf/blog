@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-DEST="../docs/"
+DEST="public"
 
 # Build site.
 hugo -d "$DEST"
