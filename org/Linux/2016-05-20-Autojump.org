@@ -1,0 +1,21 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Linux
+#+HUGO_TYPE: post
+#+TITLE: Autojump
+#+DATE: <2016-05-20 Fri>
+#+AUTHOR: Dominik Schrempf
+#+DESCRIPTION: Autojump; boost your shell experience.
+#+KEYWORDS: Shell, Bash, Change Directory, CD, Speed, Fast, Fasd
+#+LANGUAGE: en
+
+*Autojump* is a ~cd~ command that learns!  It enables you to easily
+navigate directories from the command line:
+- [[https://github.com/wting/autojump][Autojump on GitHub]]
+
+It is readily available in most Linux distributions.  The sole thing
+that has to be done manually is sourcing a script in your =.bashrc=.
+#+BEGIN_SRC sh
+source /etc/profile.d/autojump.sh
+#+END_SRC
+
+Jumping around with ~j~ is awesome :-)!

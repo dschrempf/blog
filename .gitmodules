@@ -1,0 +1,4 @@
+[submodule "hugo/themes/hyde-x"]
+	path = hugo/themes/hyde-x
+	url = https://github.com/zyro/hyde-x
+

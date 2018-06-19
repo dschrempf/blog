@@ -1,0 +1,26 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Coding
+#+HUGO_TYPE: post
+#+TITLE: Easy pretty print in Haskell
+#+DATE: <2014-12-23 Tue>
+#+AUTHOR: Dominik Schrempf
+#+EMAIL: dominik@schwarzbaer
+#+DESCRIPTION: Use pretty-show to pretty print objects in GHCi.
+#+KEYWORDS: Haskell, Pretty Print, Show
+#+LANGUAGE: en
+
+I repeatedly struggle with GHCi when I want to print lists and maps and actually
+look at them and analyze them. Today I came accross [[https://hackage.haskell.org/package/pretty-show][pretty-show]], a haskell
+package that allows pretty printing of all objects that are instances of the
+type class Show.
+
+The usage is very straight forward:
+
+#+begin_src haskell
+import qualified Text.Show.Pretty as Pr
+#+end_src
+
+This provides Pr.ppShow which can be used in GHCi (or other interpreters):
+#+begin_src haskell
+putStrLn $ Pr.ppShow object
+#+end_src

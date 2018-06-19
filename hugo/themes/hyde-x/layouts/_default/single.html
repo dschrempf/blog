@@ -1,0 +1,9 @@
+{{ partial "head.html" . }}
+<div class="content container">
+    <!-- <div class="post"> -->
+    <h1 class="post-title">{{ .Title }}</h1>
+    <!-- <span class="post-date">Last modified: {{ .Lastmod.Format "Jan 2, 2006" }}.</span> -->
+    {{ .Content }}
+    <!-- </div> -->
+</div>
+{{ partial "foot.html" . }}

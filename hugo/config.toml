@@ -1,0 +1,94 @@
+baseurl = "https://dschrempf.github.io/"
+title = "Concept → IO ()"
+languageCode = "en-us"
+# At the moment, the shortname to get comment counts is hard coded.
+disqusShortname = "dschrempf"
+MetaDataFormat = "toml"
+theme = "hyde-x"
+paginate = 40
+
+[author]
+    name = "Dominik Schrempf"
+
+[permalinks]
+    # Optional. Change the permalink format for the 'post' content type.
+    # The format shown here is the same one Jekyll/Octopress uses by default.
+    post = "/blog/:year/:month/:day/:title/"
+
+[taxonomies]
+    # Optional. Use if you want tags and lists.
+    category = "categories"
+
+# All parameters below here are optional and can be mixed and matched.
+[params]
+    # If false display full article contents in blog index.
+    # Otherwise show description and 'read on' link to individual blog post page.
+    # Default (if omitted) is true.
+    # Directly deactivated in the partial of the theme.
+    # truncate = false
+
+    # Used when a given page doesn't set its own.
+    defaultDescription = "Linux, Emacs, coding and more."
+    defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
+
+    # Hide estimated reading time for posts.
+    # Default (if omitted) is false.
+    hideReadingTime = false
+
+    # Changes sidebar background and link/accent colours.
+    theme = "theme-base-darkblue"
+
+    # Select a syntax highight. Check the static/css/highlight directory for options.
+    highlight = "github"
+
+    # Optional additional custom CSS file URL, will override other styles.
+    # customCSS = ""
+
+    # Displays under the author name in the sidebar, keep it short.
+    # You can use markdown here.
+    tagline = "A collection of articles about Linux, Emacs, coding and music."
+
+    # Text for the top menu link, which goes the root URL for the site.
+    # Default (if omitted) is "Blog".
+    home = "Blog"
+
+    # Metadata used to drive integrations.
+    googleAnalytics = ""
+    gravatarHash = "b05a00fb86fa378973181afd07c7e548"
+
+    # Sidebar social links, these must be full URLs.
+    github = "https://github.com/dschrempf"
+    bitbucket = ""
+    stackOverflow = "https://www.stackoverflow.com/users/3536806"
+    linkedin = ""
+    googleplus = ""
+    facebook = ""
+    twitter = "https://twitter.com/fazky"
+    youtube = ""
+    orcid = "https://orcid.org/0000-0001-8865-9237"
+    email = "mailto:dominik.schrempf@gmail.com"
+    gpgkey = "/gpg_public_key.txt"
+
+    # Other social-like sidebar links
+    rss = false
+    # flattr = ""
+
+[[menu.main]]
+    url = "/linux/"
+    name = "Linux"
+    weight = 2
+
+[[menu.main]]
+    url = "/emacs/"
+    name = "Emacs"
+    weight = 3
+
+[[menu.main]]
+    url = "/coding/"
+    name = "Coding"
+    weight = 4
+
+[[menu.main]]
+    url = "/music/"
+    name = "Music"
+    weight = 5

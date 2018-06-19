@@ -1,0 +1,106 @@
+/* Decrease bottom padding to remove unnecessary scroll bars. */
+.content {
+    padding-bottom: 4rem;
+}
+
+.sidebar-about h1 {
+    color: #fff;
+    margin-top: 0;
+    font-family: serif;
+    font-weight: normal;
+    font-size: 1.75rem;
+}
+
+.sidebar-nav {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.sidebar-about img {
+    margin: 0 auto 0.5rem auto;
+    width: 100px;
+    height: 100px;
+}
+
+@media (min-width: 48em) {
+    .sidebar-about img {
+        margin: 0 auto 0.75rem auto;
+        width: 125px;
+        height: 125px;
+    }
+}
+
+@media (min-width: 58em) {
+    .sidebar-about img {
+        margin: 0 auto 1rem auto;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Improves alignment of text when list is centered for small screens */
+.sidebar-nav {
+    display: inline-block;
+}
+
+.sidebar-nav-item {
+    text-align: left;
+}
+
+.sidebar .footer {
+    font-size: 0.8rem;
+}
+
+/* Time stamp handling should be the same as `code`. However, proper inheritance
+   is not supported with CSS, so I copied this over from `poole.css` and changed
+   it according to my needs. If the styles of `code` are changed, however, this
+   has to be amended manually. */
+.timestamp {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+.timestamp {
+    font-size: 85%;
+    color: #bf616a;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    /* Improve handling of space after time stamp. */
+    padding: .25em 0em;
+    line-height: 1em;
+    display: inline-block;
+}
+
+pre .timestamp {
+    padding: 0;
+    font-size: 100%;
+    color: inherit;
+    background-color: transparent;
+}
+
+pre {
+    white-space: pre;
+}
+
+@media (min-width: 48em) {
+    .content {
+        max-width: 40rem;
+    }
+}
+
+/* Adjust width of code blocks when the mouse is over the block. */
+/* @media (min-width: 64em) { */
+/*     pre:hover { */
+/*         max-width: 50rem; */
+/*         display: inline-block; */
+/*     } */
+/* } */
+
+/* Blue */
+.theme-base-darkblue .sidebar {
+    background-color: #336699;
+}
+.theme-base-darkblue .content a,
+.theme-base-darkblue .related-posts li a:hover {
+    color: #336699;
+}

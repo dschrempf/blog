@@ -1,0 +1,49 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Emacs
+#+HUGO_TYPE: post
+#+TITLE: Emacs Helm and Hydra minor modes
+#+DATE: <2015-04-04 Sat>
+#+AUTHOR: Dominik Schrempf
+#+EMAIL: dominik@schwarzbaer
+#+DESCRIPTION: Incremental completion and bindings that stick around.
+#+KEYWORDS: Incremental Completion, Find, Keybinding
+#+LANGUAGE: en
+
+Recently, I stumbled upon two nice Emacs minor modes.
+
+* Helm mode
+Helm mode offers an *incremental completion* and *selection narrowing*
+framework.  It will help you to find what you're looking for in Emacs
+(like buffers, files, commands etc).  Resources and discussions can be
+found at the following homepages:
+- development and installation instructions at the [[https://github.com/emacs-helm/helm][Helm mode GitHub page]];
+- the Emacs initialization files and [[https://github.com/thierryvolpiatto/emacs-tv-config][configuration of the Helm maintainer]];
+- [[http://tuhdo.github.io/helm-intro.html][a good overview of the features]] and a sample configuration.
+
+I can recommend to use the =TAB= key for completion and not for other
+actions.  You can bind the =TAB= key back to
+=helm-execute-persistent-action= with
+#+BEGIN_SRC lisp
+  ;; Bind TAB to complete stuff.
+  (define-key helm-map (kbd "TAB")         'helm-execute-persistent-action)
+  ;; Rebind `helm-select-action' (originally bound to TAB).
+  (define-key helm-map (kbd "C-j")         'helm-select-action)
+#+END_SRC
+
+I had used [[http://emacswiki.org/emacs/InteractivelyDoThings][Ido mode]] extensively before I switched to Helm mode.  I
+must admit that the first thought was: too heavy and, oh, I miss the
+insertion with =RET= as well as that Ido remembers which files I had
+visited earlier.  Also, completion cannot be used when looking for
+commands with =helm-M-x=.  However, with Helm mode I enjoy most that I
+get an overview of what is out there.  That is what I miss with Ido
+mode.  Try it out yourself!
+
+* Hydra mode
+Hydra mode makes Emacs key bindings stick around so that they can be
+used without modifiers.  It also displays them on the screen, so that
+rarely used shortcuts can be remembered without looking into the
+configuration files again (and again and again).  It is very useful!
+
+Check it out:
+- source code and introduction at [[https://github.com/abo-abo/hydra][Hydra mode on GitHub]];
+- some blog entries of the creator at [[http://oremacs.com/archive/][(or emacs irrelevant)]].

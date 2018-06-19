@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concept → IO ()</title>
+    <link>https://dschrempf.github.io/</link>
+    <description>Recent content on Concept → IO ()</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jun 2018 10:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://dschrempf.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LICENCE</title>
+      <link>https://dschrempf.github.io/license/</link>
+      <pubDate>Tue, 19 Jun 2018 10:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/license/</guid>
+      <description>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 Copyright (C) 2007 Free Software Foundation, Inc. &amp;lt;https://fsf.org/&amp;gt; Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed. Preamble The GNU General Public License is a free, copyleft license for software and other kinds of works. The licenses for most software and other practical works are designed to take away your freedom to share and change the works.</description>
+    </item>
+    
+    <item>
+      <title>Links to newspaper articles</title>
+      <link>https://dschrempf.github.io/links/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/links/</guid>
+      <description>Deutsch &amp;lt;2017-11-17 Fri&amp;gt;  Appell für Umweltschutz: &amp;ldquo;Warnung an Menschheit&amp;rdquo; von 15.000 Forschern, derStandard. In acht von neun entscheidenden Problemfeldern hat es seit 1992 Rückschritte gegeben.
+&amp;lt;2017-11-13 Mon&amp;gt;  Schriftsteller Elsberg über CRISPR/Cas9: Was, wenn Gott sich geirrt hat?, derStandard. In der postfaktischen Debatte über Gentechnik wird vermengt, was man auseinanderhalten sollte.
+&amp;lt;2017-11-06 Mon&amp;gt;  Es gibt zu viele Messenger – und einen klar besten: Signal, derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattformen miteinander, am klügsten wäre jedoch die Einigung auf Signal.</description>
+    </item>
+    
+    <item>
+      <title>Markov chains in Haskell</title>
+      <link>https://dschrempf.github.io/coding/2018-02-10-markov-chains-in-haskell/</link>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/coding/2018-02-10-markov-chains-in-haskell/</guid>
+      <description>I have been working on Markov chains for quite a while now and wanted to assess how Haskell can deal with simulating a simple, discrete chain.
+Many sources can be found online. The code presented here is partly taken from a question on stackoverflow. However, I was unsatisfied with the nomenclature and parts of the code. So I refactored most of it. Also, there is a Haskell library markov-chain, which I am unsatisfied with because of code readability (it&amp;rsquo;s pretty abstruse).</description>
+    </item>
+    
+    <item>
+      <title>Networking HOWTOs</title>
+      <link>https://dschrempf.github.io/linux/2017-09-13-networking-tutorials/</link>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2017-09-13-networking-tutorials/</guid>
+      <description>Sometimes you discover online resources that you want to remember and share. These tutorials by the developers of iptables (mainly Paul &amp;lsquo;Rusty&amp;rsquo; Russell) are one of those gems. They discuss how the internet works, how packets can be adequately filtered and how a firewall can be setup.
+Enjoy!</description>
+    </item>
+    
+    <item>
+      <title>Marvell Storage Utility on HPE ProLiant MicroServer Gen10</title>
+      <link>https://dschrempf.github.io/linux/2017-09-05-hpe-microserver-msu/</link>
+      <pubDate>Tue, 05 Sep 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2017-09-05-hpe-microserver-msu/</guid>
+      <description>Marvell SATA controller Recently I purchased an HPE ProLiant MicroServer Gen10 which comes with the Marvell SATA controller 88SE9230, also called Marvell Storage Utility (MSU). As far as I know, this controller has an ARM chip to provide RAID 0 (non-redundant combination of disks), RAID 1 (straight mirroring) or RAID 10 (a combination of RAID 0 and RAID 1).
+Neither Marvell nor HPE do provide drivers for generic Linux systems but they do provide a package for ClearOS which uses the Red Hat Package Manager (RPM).</description>
+    </item>
+    
+    <item>
+      <title>Happy folding around monads in Haskell</title>
+      <link>https://dschrempf.github.io/coding/2017-07-20-folding-around-monads-in-haskell/</link>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/coding/2017-07-20-folding-around-monads-in-haskell/</guid>
+      <description>Folds are complicated themselves, but monadic folds always have blown my mind. In what follows, I try to dissect foldlM for a specific example.
+Monadic folds can be used to perform a series of actions that depend on the previous output. The following function produces an action b from a value a also taking into account the output of the previous action b.
+f :: (b -&amp;gt; a -&amp;gt; m b)  And here the definition of foldlM (which is the same as foldM).</description>
+    </item>
+    
+    <item>
+      <title>Get rid of Google</title>
+      <link>https://dschrempf.github.io/linux/2016-08-05-android-without-google/</link>
+      <pubDate>Fri, 05 Aug 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2016-08-05-android-without-google/</guid>
+      <description>I like a lot of stuff that Google is doing, especially that it supports open source. However, I really dislike their attitude towards user privacy. That is why I decided to get rid of Google on my Android phone. However, I had to solve some problems in order to keep user-friendliness at a high level and to be able to use all applications that I need.
+The main issues are:</description>
+    </item>
+    
+    <item>
+      <title>Autojump</title>
+      <link>https://dschrempf.github.io/linux/2016-05-20-autojump/</link>
+      <pubDate>Fri, 20 May 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2016-05-20-autojump/</guid>
+      <description>Autojump is a cd command that learns! It enables you to easily navigate directories from the command line:
+ Autojump on GitHub  It is readily available in most Linux distributions. The sole thing that has to be done manually is sourcing a script in your .bashrc.
+source /etc/profile.d/autojump.sh  Jumping around with j is awesome :-)!</description>
+    </item>
+    
+    <item>
+      <title>A simulator for continuous-time Markov chains</title>
+      <link>https://dschrempf.github.io/coding/2016-04-09-continuous-time-markov-chain/</link>
+      <pubDate>Sat, 09 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/coding/2016-04-09-continuous-time-markov-chain/</guid>
+      <description>[2016-04-09 Sat]  I extended my set of C++ programs to include a simulator for generic continuous-time Markov chains. I.e., any transition rate matrix can be used.
+If you are interested, just get the GitHub repository and compile the whole set of programs with make all. Documentation can be found in the doc/ folder (check the CTMC class).
+There is a sample program src/moran_model_boundary_mutation, that runs the Moran model with boundary mutation (De Maio, N.</description>
+    </item>
+    
+    <item>
+      <title>Configure SSH</title>
+      <link>https://dschrempf.github.io/linux/2016-04-09-ssh-config/</link>
+      <pubDate>Sat, 09 Apr 2016 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2016-04-09-ssh-config/</guid>
+      <description>Did you ever get sick of typing the IP of your SSH server. There is an incredible feature of SSH that saves you a lot of time typing host names, IP addresses or passwords.
+Login with SSH key First, you want to create your own SSH key so that your server accepts your login without any password.
+# Create an SSH key (use the standard path). Be careful, if you do # not set a passphrase, anybody that has access to your computer can # log into servers that have been set up to accept your key.</description>
+    </item>
+    
+    <item>
+      <title>Cantus Novus Wien</title>
+      <link>https://dschrempf.github.io/music/2015-08-31-cantus-novus/</link>
+      <pubDate>Mon, 31 Aug 2015 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/music/2015-08-31-cantus-novus/</guid>
+      <description>In my free time I love to make music and that&amp;rsquo;s why I am participating in the choir Cantus Novus Wien. We are about 40 people and perform sacred as well as secular music pieces.
+Audio samples Audio samples can be found on Soundcloud.
+A short quote from the homepage (in German) Der Cantus Novus Wien besteht aus engagierten Sängerinnen und Sängern, die am Wiener Diözesankonservatorium für Kirchenmusik zusammenfinden. Das gemeinsame, lebendige Singen zielt auf hohe musikalische Qualität; ein Schwerpunkt ist dabei zeitgenössische Chormusik mit Uraufführungen von Auftragswerken österreichischer Komponisten wie Wolfgang Sauseng, Ruth McGuire, Wolfgang Reisinger, Markus Pfandler und Wolfram Wagner.</description>
+    </item>
+    
+    <item>
+      <title>Debugging with Emacs and GDB</title>
+      <link>https://dschrempf.github.io/emacs/2015-06-24-debugging-with-emacs-and-gdb/</link>
+      <pubDate>Wed, 24 Jun 2015 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/emacs/2015-06-24-debugging-with-emacs-and-gdb/</guid>
+      <description>Introduction Erroneous source code can be a nasty issue to tackle. Print statements that inform you about the states of variables are handy but sometimes they are unable to represent the intrinsic structure of the code. Debuggers allow you to run your code step by step, display and watch variables and see what is going on inside another program while it executes.
+The GNU poject debugger Here, we will use the GNU project debugger (GDB), because it is freely available, very actively developed and can be used on many operating systems.</description>
+    </item>
+    
+    <item>
+      <title>exiv2 command line power</title>
+      <link>https://dschrempf.github.io/linux/2015-04-25-exiv2-command-line-power/</link>
+      <pubDate>Sat, 25 Apr 2015 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2015-04-25-exiv2-command-line-power/</guid>
+      <description>Does this sound familiar to you: You come back from a holiday with your family or friends and want to merge photos taken with 4 different cameras. However, somebody forgot to adjust the date (or did not set the daylight saving time accordingly). Hmm.
+This problem can be solved easily. exiv2 is a program to read and write Exif image metadata and image comments. It offers a very easy command line interface and shortcuts to batch rename files (e.</description>
+    </item>
+    
+    <item>
+      <title>Syncthing with SSH Port Forwarding</title>
+      <link>https://dschrempf.github.io/linux/2015-04-22-syncthing/</link>
+      <pubDate>Wed, 22 Apr 2015 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2015-04-22-syncthing/</guid>
+      <description>Introduction Recently, I have explained how to configure BitTorrent Sync over an SSH SOCKS proxy. However, due to various problems with BTSync, I tried Syncthing and I am very satisfied with it.
+Advantages that I have experienced so far:
+ open source; publicly available synchronization protocol; very reliable if the configuration is fine; it&amp;rsquo;s a young project with motivated developers; it is fast (if enough CPU is available).  Disadvantages that I have experienced so far:</description>
+    </item>
+    
+    <item>
+      <title>Emacs Helm and Hydra minor modes</title>
+      <link>https://dschrempf.github.io/emacs/2015-04-04-helm-hydra-modes/</link>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0200</pubDate>
+      
+      <guid>https://dschrempf.github.io/emacs/2015-04-04-helm-hydra-modes/</guid>
+      <description>Recently, I stumbled upon two nice Emacs minor modes.
+Helm mode Helm mode offers an incremental completion and selection narrowing framework. It will help you to find what you&amp;rsquo;re looking for in Emacs (like buffers, files, commands etc). Resources and discussions can be found at the following homepages:
+ development and installation instructions at the Helm mode GitHub page; the Emacs initialization files and configuration of the Helm maintainer; a good overview of the features and a sample configuration.</description>
+    </item>
+    
+    <item>
+      <title>Population genetics C&#43;&#43; programs</title>
+      <link>https://dschrempf.github.io/coding/2015-03-26-popgen-cpp-programs/</link>
+      <pubDate>Thu, 26 Mar 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/coding/2015-03-26-popgen-cpp-programs/</guid>
+      <description>I maintain a Github repository that contains a bunch of very basic C++ programs that use Markov chains and other types of simulations to infer basic statistical parameters. The applications mainly focus on Population Genetics problems, although this is not always the case. At the moment, the list of programs is:
+ bookshelf.cpp Bookshelf Markov chain brownian_motion_mcmc.cpp Simulate standard Brownian motion (Wiener process) coin_toss_mcmc.cpp Run a coin toss MCMC simulation cube_mcmc.</description>
+    </item>
+    
+    <item>
+      <title>BitTorrent Sync over SSH proxy</title>
+      <link>https://dschrempf.github.io/linux/2015-01-30-btsync/</link>
+      <pubDate>Fri, 30 Jan 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2015-01-30-btsync/</guid>
+      <description>&amp;lt;2015-04-22 Wed&amp;gt;  I have switched from BitTorrent Sync to Syncthing. Reasons are:
+ the synchronization was not reliable (synchronization stalled sometimes; every update leads to a re-synchronization of all files); the corporate policy is not to my liking (a Pro version is available; the free version only supports a limited amount of folders and clients; it is not sure if it will stay free in the future).  Please also refer to the blog entry that describes how to configure Syncthing with SSH port forwarding.</description>
+    </item>
+    
+    <item>
+      <title>A simple MCMC simulation</title>
+      <link>https://dschrempf.github.io/coding/2015-01-15-mcmc-coin-toss/</link>
+      <pubDate>Thu, 15 Jan 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/coding/2015-01-15-mcmc-coin-toss/</guid>
+      <description>Suppose we observe 58 heads out of 100 coin tosses. Now, we want to know the probability of tossing a head \(\theta\). A maximum likelihood guess would be \(\theta = 0.58\) because then, the probability of observing 58 heads
+\begin{align} P(58 \mathrm{ heads}) = {100 \choose 58} (0.58)^{58} (0.42)^{42} \end{align}
+is greatest (an example of the binomial distribution).
+However, we could also use a Bayesian approach to calculate the posterior distribution of the probability \(\theta\) (i.</description>
+    </item>
+    
+    <item>
+      <title>Dateutils</title>
+      <link>https://dschrempf.github.io/linux/2015-01-07-dateutils/</link>
+      <pubDate>Wed, 07 Jan 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2015-01-07-dateutils/</guid>
+      <description>Did you ever need to calculate the time difference between two consecutive time stamps from a log file or something similar? Check out dateutils, it is really useful:
+ddiff -i &#39;%H:%M:%S&#39; &#39;19:09:43,683&#39; &#39;19:34:10,350&#39;  </description>
+    </item>
+    
+    <item>
+      <title>Zip folders with GNU Parallel</title>
+      <link>https://dschrempf.github.io/linux/2015-01-07-gnu-parallel/</link>
+      <pubDate>Wed, 07 Jan 2015 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/linux/2015-01-07-gnu-parallel/</guid>
+      <description>Working with large files takes a long time. Sometimes, it is worth to zip folders individually, so that a single archive does not get too large. GNU Parallel is a shell tool to execute jobs in parallel. Here, I show one of possibly many methods to use it to zip many folders (or files) in parallel.
+ Create a file with all folders that you want to zip, e.g with:  ls -1 &amp;gt; folders   Use GNU Parallel to zip them:  parallel -a folders &amp;quot;tar -czf {}.</description>
+    </item>
+    
+    <item>
+      <title>How to create this homepage</title>
+      <link>https://dschrempf.github.io/emacs/2014-12-26-how-to-create-this-homepage/</link>
+      <pubDate>Fri, 26 Dec 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/emacs/2014-12-26-how-to-create-this-homepage/</guid>
+      <description>This homepage was created with Emacs and Org mode. It is hosted at github.io and comments can be done using Disqus. I assume a working Org mode setup and a GitHub as well as a Disqus account.
+&amp;lt;2015-03-26 Thu&amp;gt;  Update; general revision of code and text.
+&amp;lt;2016-04-09 Sat&amp;gt;  Another update.
+General idea  Org mode A great tool for taking notes and exporting them to all kind of formats.</description>
+    </item>
+    
+    <item>
+      <title>Dominik Schrempf</title>
+      <link>https://dschrempf.github.io/about/</link>
+      <pubDate>Wed, 24 Dec 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/about/</guid>
+      <description>Postdoc in Evolutionary Biology
+Eötvös Loránd University
+Interests  Evolutionary Biology Phylogenetics Markov Chains Functional Programming  Education  PhD in Phylogenetics, Vienna University of Veterinary Medicine, 2017 MSc in Physics, Vienna University of Technology, 2013  Biography Dominik Schrempf is a postdoc in evolutionary biology at the Eötvös Loránd University in Budapest. He is developing models suitable for inferring deep phylogenies, when gene duplication and loss and horizontal gene transfer are abundant.</description>
+    </item>
+    
+    <item>
+      <title>Easy pretty print in Haskell</title>
+      <link>https://dschrempf.github.io/coding/2014-12-23-haskell-pretty-print/</link>
+      <pubDate>Tue, 23 Dec 2014 00:00:00 +0100</pubDate>
+      
+      <guid>https://dschrempf.github.io/coding/2014-12-23-haskell-pretty-print/</guid>
+      <description>I repeatedly struggle with GHCi when I want to print lists and maps and actually look at them and analyze them. Today I came accross pretty-show, a haskell package that allows pretty printing of all objects that are instances of the type class Show.
+The usage is very straight forward:
+import qualified Text.Show.Pretty as Pr  This provides Pr.ppShow which can be used in GHCi (or other interpreters):
+putStrLn $ Pr.</description>
+    </item>
+    
+  </channel>
+</rss>

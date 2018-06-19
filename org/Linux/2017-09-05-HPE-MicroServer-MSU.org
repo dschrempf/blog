@@ -1,0 +1,54 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Linux
+#+HUGO_TYPE: post
+#+TITLE: Marvell Storage Utility on HPE ProLiant MicroServer Gen10
+#+DATE: <2017-09-05 Tue>
+#+AUTHOR: Dominik Schrempf
+#+DESCRIPTION: Adventures when using having to deal with proprietary drivers on Arch Linux.
+#+KEYWORDS: MSU, 88SE9230, Marvell, HPE, MicroServer, RAID, SMART, SATA, SCSI
+#+LANGUAGE: en
+
+* Marvell SATA controller
+Recently I purchased an HPE ProLiant MicroServer Gen10 which comes with the
+Marvell SATA controller 88SE9230, also called Marvell Storage Utility (MSU). As
+far as I know, this controller has an ARM chip to provide RAID 0 (non-redundant
+combination of disks), RAID 1 (straight mirroring) or RAID 10 (a combination of
+RAID 0 and RAID 1).
+
+Neither Marvell nor HPE do provide drivers for generic Linux systems but they do
+provide a package for ClearOS which uses the Red Hat Package Manager (RPM).
+
+Initially, I tried to manage the RAID using the Marvell BIOS utility which can
+be accessed by the EFI shell. The BIOS utility and the user guide can be
+downloaded from the [[https://www.hpe.com/us/en/support.html][HPE support center]]. However, this procedure is slow and
+complicated, especially if the server is headless, as in my case. Furthermore,
+monitoring the disks with SMART data is also impossible. So I decided to invest
+some time in amending the ClearOS package for Arch Linux and provide an [[https://aur.archlinux.org/packages/marvell-msu/][AUR
+package]].
+
+* Marvell controller package
+I had serious trouble running the original scripts and daemons because they are
+(a) written for ClearOS and (b) expect the generic but outdated SCSI kernel
+module [[http://www.tldp.org/HOWTO/SCSI-2.4-HOWTO/sg.html][sg]] to be loaded. I provide replacements with the same functionality:
+1. [[https://aur.archlinux.org/cgit/aur.git/tree/MSUAgent?h=marvell-msu][MSUAgent]] - The MSU Event Manager.
+2. [[https://aur.archlinux.org/cgit/aur.git/tree/MSUWebService?h=marvell-msu][MSUWebServer]] - The MSU Web Server (manual access at port 8045).
+3. [[https://aur.archlinux.org/cgit/aur.git/tree/MSUStart?h=marvell-msu][MSUStart]] - A small script to access the web interface.
+
+These scripts also pull the =sg= module in case it is not loaded.
+
+For my purposes however (I do not need a web interface), the MSU client =mvcli=,
+which is located in the folder =/opt/marvell/storage/cli= is all I need. Don't
+forget to manually load the =sg= module, which sets up the SCSI devices for this
+script, e.g., with
+: sudo modprobe -a sg
+
+Then, the SMART data can be retrieved, e.g., with
+: sudo /opt/marvell/storage/cli/mvcli smart -p 0
+
+Awesome :-)!
+
+In the course of this project, I also stumbled upon other very useful SCSI
+related software: =lsscsi=, =sg3_utils=, =sdparm=, =hdidle=.
+
+I am still having trouble with monitoring temperature (e.g., CPU temperature),
+please leave a note if you know an easy way to achieve this.
