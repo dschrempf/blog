@@ -48,6 +48,10 @@
     text-align: left;
 }
 
+.sidebar .footer {
+    font-size: 0.8rem;
+}
+
 /* Time stamp handling should be the same as `code`. However, proper inheritance
    is not supported with CSS, so I copied this over from `poole.css` and changed
    it according to my needs. If the styles of `code` are changed, however, this
