@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "An example of a monadic fold"
 date = 2017-07-20T00:00:00+02:00
 keywords = ["Haskell", "", ""]
-lastmod = 2018-06-18T11:50:00+02:00
+lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++

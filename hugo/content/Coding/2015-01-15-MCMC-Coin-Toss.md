@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "MCMC simulation to approximate observations of coin tosses."
 date = 2015-01-15T00:00:00+01:00
 keywords = ["MCMC", "", "", "Statistics", "", "Toss"]
-lastmod = 2018-06-18T11:50:00+02:00
+lastmod = 2018-06-19T11:45:00+02:00
 type = "post"
 draft = false
 +++
