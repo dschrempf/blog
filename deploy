@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+# $1: (Optional) Git commit message.
+
+CWD=$(pwd)
+
+git_push () {
+    git add .
+    if [ -n "$1" ]; then
+        msg="$1"
+    else
+        msg="Rebuilding site $(date)."
+    fi
+    git commit -m "$msg"
+    git push origin master
+}
+
+cd hugo || exit 1
+
+# Build site.
+hugo
+
+# Push to 'dschrempf/dschrempf.github.io'.
+cd public || exit 1
+git_push "$1"
+
+# Push to 'dschrempf/blog'.
+cd "$CWD" || exit 1
+git_push "$1"
