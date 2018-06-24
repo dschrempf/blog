@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2018-06-19T11:45:00+02:00
+lastmod = 2018-06-24T10:55:00+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -28,7 +28,7 @@ miteinander, am klügsten wäre jedoch die Einigung auf Signal.
 
 ## Español {#español}
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-22 Thu&gt; </span></span> [“A veces, hasta los paranoicos tenemos razón”](https://elpais.com/cultura/2016/09/15/actualidad/1473939710_796979.html), elPaís. Los que
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-09-22 Thu&gt; </span></span> [“A veces, hasta los paranoicos tenemos razón”](https://elpais.com/cultura/2016/09/15/actualidad/1473939710%5F796979.html), elPaís. Los que
 me preocupan son todos esos jóvenes ignorantes que pasan de todo porque dicen
 que no tienen nada que ocultar. Es ese tipo de gente que no se preocupa por el
 mundo en el que vive, porque se violen los derechos, las libertades que muchos

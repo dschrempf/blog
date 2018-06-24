@@ -38,7 +38,7 @@ although `gdb` can be used from the command line and can debug many
 different languages.
 
 A good overview about debugging in Emacs with GDB can be found in the
-[Emacs manual](http://www.gnu.org/software/emacs/manual/html_node/emacs/GDB-Graphical-Interface.html#GDB-Graphical-Interface).
+[Emacs manual](http://www.gnu.org/software/emacs/manual/html%5Fnode/emacs/GDB-Graphical-Interface.html#GDB-Graphical-Interface).
 
 A short step-by-step guide:
 
