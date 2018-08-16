@@ -4,6 +4,7 @@ author = ["Dominik Schrempf"]
 description = "How to zip folders in parallel."
 date = 2015-01-07T00:00:00+01:00
 keywords = ["GNU", "Parallel", "", "", ""]
+tags = ["Linux"]
 type = "post"
 draft = false
 +++

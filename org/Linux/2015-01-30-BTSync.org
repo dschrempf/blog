@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
+#+HUGO_TAGS: Linux
 #+HUGO_TYPE: post
 #+TITLE: BitTorrent Sync over SSH proxy
 #+DATE: <2015-01-30 Fri>

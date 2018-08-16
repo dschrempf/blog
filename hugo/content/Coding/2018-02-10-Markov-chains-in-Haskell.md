@@ -4,6 +4,7 @@ author = ["Dominik Schrempf"]
 description = "A clean Markov chain in Haskell"
 date = 2018-02-10T00:00:00+01:00
 keywords = ["Markov", "chain", "", "", "matrix", "", "process"]
+tags = ["Coding"]
 type = "post"
 draft = false
 +++

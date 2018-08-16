@@ -4,6 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Manipulate multiple image files and their Exif data on the command line."
 date = 2015-04-25T00:00:00+02:00
 keywords = ["Image", "", "", "", "", "Line", "", "Manipulation", ""]
+tags = ["Linux"]
 type = "post"
 draft = false
 +++

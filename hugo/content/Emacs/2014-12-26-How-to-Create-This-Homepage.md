@@ -3,6 +3,7 @@ title = "How to create this homepage"
 author = ["Dominik Schrempf"]
 date = 2014-12-26T00:00:00+01:00
 keywords = ["Emacs", "", "", "Mode", "", "", "", ""]
+tags = ["Emacs"]
 type = "post"
 draft = false
 +++
@@ -72,7 +73,7 @@ framework](http://orgmode.org/manual/HTML-export.html#HTML-export).
 This is the main step.  Org mode has to know how to export your Org
 files so that they can be hosted by GitHub:
 
-<a id="org320602f"></a>
+<a id="orge64b9b7"></a>
 ```lisp
 (setq org-publish-project-alist
       '(
@@ -123,7 +124,7 @@ preamble includes a small header; the postamble includes the Disqus
 comment section and Google Analytics (make sure to replace you
 user name and tracking ID).
 
-<a id="org8401349"></a>
+<a id="orgbcbe11a"></a>
 ```lisp
 ;; BugFix: Manually disable home/up links in preamble.
 (setq org-html-home/up-format "")

@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
+#+HUGO_TAGS: Linux
 #+HUGO_TYPE: post
 #+TITLE: Autojump
 #+DATE: <2016-05-20 Fri>

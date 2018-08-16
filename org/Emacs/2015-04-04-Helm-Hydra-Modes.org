@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Emacs
+#+HUGO_TAGS: Emacs
 #+HUGO_TYPE: post
 #+TITLE: Emacs Helm and Hydra minor modes
 #+DATE: <2015-04-04 Sat>

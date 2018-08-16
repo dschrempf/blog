@@ -4,6 +4,7 @@ author = ["Dominik Schrempf"]
 description = "The Cantus Novus Wien is a Viennese choir that I sing in."
 date = 2015-08-31T00:00:00+02:00
 keywords = ["Choir", "", "Novus", "", "", "", "", "", "Musik"]
+tags = ["Music"]
 type = "post"
 draft = false
 +++

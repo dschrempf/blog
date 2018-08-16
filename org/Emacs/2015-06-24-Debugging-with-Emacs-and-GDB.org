@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Emacs
+#+HUGO_TAGS: Emacs
 #+HUGO_TYPE: post
 #+TITLE: Debugging with Emacs and GDB
 #+DATE: <2015-06-24 Wed>

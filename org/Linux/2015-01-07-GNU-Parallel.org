@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
+#+HUGO_TAGS: Linux
 #+HUGO_TYPE: post
 #+TITLE: Zip folders with GNU Parallel
 #+DATE: <2015-01-07 Wed>

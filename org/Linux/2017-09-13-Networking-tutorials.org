@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
+#+HUGO_TAGS: Linux
 #+HUGO_TYPE: post
 #+TITLE: Networking HOWTOs
 #+DATE: <2017-09-13 Wed>

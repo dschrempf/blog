@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Coding
+#+HUGO_TAGS: Coding
 #+HUGO_TYPE: post
 #+TITLE: Happy folding around monads in Haskell
 #+DATE: <2017-07-20 Thu>

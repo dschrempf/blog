@@ -4,6 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Use pretty-show to pretty print objects in GHCi."
 date = 2014-12-23T00:00:00+01:00
 keywords = ["Haskell", "", "Print", ""]
+tags = ["Coding"]
 type = "post"
 draft = false
 +++

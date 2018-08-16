@@ -1,5 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Music
+#+HUGO_TAGS: Music
 #+HUGO_TYPE: post
 #+TITLE: Cantus Novus Wien
 #+DATE: <2015-08-31 Mon>
