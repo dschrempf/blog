@@ -1,0 +1,18 @@
+#+HUGO_BASE_DIR: ../hugo
+#+HUGO_SECTION: ./
+#+HUGO_MENU: :menu search :weight 7 :name Search
+#+HUGO_AUTO_SET_LASTMOD: t
+#+HUGO_TYPE: page
+#+HUGO_LAYOUT: search
+#+HUGO_CUSTOM_FRONT_MATTER: :sitemap "priority : 0.1" :search t
+#+TITLE: Search
+#+DATE: <2018-08-16 Thu>
+#+AUTHOR: Dominik Schrempf
+#+EMAIL: dominik.schrempf@gmail.com
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: num:nil
+

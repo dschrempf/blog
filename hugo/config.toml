@@ -7,6 +7,9 @@ MetaDataFormat = "toml"
 theme = "hyde-x"
 paginate = 40
 
+[outputs]
+    home = ["HTML", "JSON"]
+
 [author]
     name = "Dominik Schrempf"
 
