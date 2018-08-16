@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Coding
-#+HUGO_TAGS: Coding
+#+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
 #+TITLE: A simulator for continuous-time Markov chains
 #+DATE: <2016-04-09 Sat>

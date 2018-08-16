@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Coding
-#+HUGO_TAGS: Coding
+#+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
 #+TITLE: Population genetics C++ programs
 #+DATE: <2015-03-26 Thu>

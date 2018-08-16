@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
-#+HUGO_TAGS: Linux
+#+HUGO_CATEGORIES: Linux
 #+HUGO_TYPE: post
 #+TITLE: Syncthing with SSH Port Forwarding
 #+DATE: <2015-04-22 Wed>

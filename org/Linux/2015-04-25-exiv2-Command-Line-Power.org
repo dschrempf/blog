@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
-#+HUGO_TAGS: Linux
+#+HUGO_CATEGORIES: Linux
 #+HUGO_TYPE: post
 #+TITLE: exiv2 command line power
 #+DATE: <2015-04-25 Sat>

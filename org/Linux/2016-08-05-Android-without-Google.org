@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
-#+HUGO_TAGS: Linux
+#+HUGO_CATEGORIES: Linux
 #+HUGO_TYPE: post
 #+TITLE: Get rid of Google
 #+DATE: <2016-08-05 Fri>

@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Excellent networking HOWTOs"
 date = 2017-09-13T00:00:00+02:00
 keywords = ["Networking", "", "", "", "", "", ""]
-tags = ["Linux"]
+categories = ["Linux"]
 type = "post"
 draft = false
 +++

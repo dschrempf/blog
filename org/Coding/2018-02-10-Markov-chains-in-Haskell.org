@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Coding
-#+HUGO_TAGS: Coding
+#+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
 #+TITLE: Markov chains in Haskell
 #+DATE: <2018-02-10 Sat>

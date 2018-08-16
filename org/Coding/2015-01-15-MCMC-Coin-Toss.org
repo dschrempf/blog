@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Coding
-#+HUGO_TAGS: Coding
+#+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
 #+TITLE: A simple MCMC simulation
 #+DATE: <2015-01-15 Thu>

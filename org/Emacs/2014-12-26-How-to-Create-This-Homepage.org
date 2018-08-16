@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Emacs
-#+HUGO_TAGS: Emacs
+#+HUGO_CATEGORIES: Emacs
 #+HUGO_TYPE: post
 #+Title: How to create this homepage
 #+DATE: <2014-12-26 Fri>

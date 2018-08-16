@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "A collection of C++ programs about Markov chains and Population Genetics."
 date = 2015-03-26T00:00:00+01:00
 keywords = ["Population", "Genetics", "", "", "Chain", "", ""]
-tags = ["Coding"]
+categories = ["Coding"]
 type = "post"
 draft = false
 +++

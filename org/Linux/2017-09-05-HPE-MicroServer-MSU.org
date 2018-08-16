@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
-#+HUGO_TAGS: Linux
+#+HUGO_CATEGORIES: Linux
 #+HUGO_TYPE: post
 #+TITLE: Marvell Storage Utility on HPE ProLiant MicroServer Gen10
 #+DATE: <2017-09-05 Tue>

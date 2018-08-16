@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "A proper configuration of SSH can save a lot of time (typing passwords, hosts)."
 date = 2016-04-09T00:00:00+02:00
 keywords = ["SSH", "", "", "Configuration", "", "Config"]
-tags = ["Linux"]
+categories = ["Linux"]
 type = "post"
 draft = false
 +++

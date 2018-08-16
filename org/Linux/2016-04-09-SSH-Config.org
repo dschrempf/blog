@@ -1,6 +1,6 @@
 #+HUGO_BASE_DIR: ../../hugo
 #+HUGO_SECTION: Linux
-#+HUGO_TAGS: Linux
+#+HUGO_CATEGORIES: Linux
 #+HUGO_TYPE: post
 #+TITLE: Configure SSH
 #+DATE: <2016-04-09 Sat>
