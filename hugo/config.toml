@@ -24,12 +24,6 @@ paginate = 40
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
-    # If false display full article contents in blog index.
-    # Otherwise show description and 'read on' link to individual blog post page.
-    # Default (if omitted) is true.
-    # Directly deactivated in the partial of the theme.
-    # truncate = false
-
     # Used when a given page doesn't set its own.
     defaultDescription = "Linux, Emacs, coding and more."
     defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
