@@ -24,7 +24,7 @@ Species Tree Estimation. Systematic Biology, 64(6),
 1018–1031. doi:10.1093/sysbio/syv048).
 
 Using the chain is as easy as:
-#+BEGIN_SRC C++
+#+BEGIN_SRC cpp
   // Define a GNU Scientific Library Matrix object.
   gsl_matrix * my_transition_rate_matrix = alloc_and_set_matrix();
   CTMC my_chain(my_transition_rate_matrix, number_of_states);
@@ -37,7 +37,7 @@ Using the chain is as easy as:
 
 If you want to log the path of the chain, you have to activate the log
 path upon initialization:
-#+BEGIN_SRC C++
+#+BEGIN_SRC cpp
   CTMC my_chain(my_transition_rate_matrix, number_of_states, true);
 
   // Print the path.

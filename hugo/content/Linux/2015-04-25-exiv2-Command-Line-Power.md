@@ -55,7 +55,7 @@ ad | adjust
 
 An example:
 
-```sh
+```bash
 exiv2 adjust -a 1 *.jpg
 ```
 
@@ -68,7 +68,7 @@ directory.
 After you have adjusted the time stamps of the different cameras, you
 may want to rename the files, e.g.:
 
-```sh
+```bash
 exiv2 rename *.jpg
 ```
 

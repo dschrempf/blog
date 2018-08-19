@@ -73,7 +73,7 @@ framework](http://orgmode.org/manual/HTML-export.html#HTML-export).
 This is the main step.  Org mode has to know how to export your Org
 files so that they can be hosted by GitHub:
 
-<a id="orgce5ef7c"></a>
+<a id="orgcc93680"></a>
 ```lisp
 (setq org-publish-project-alist
       '(
@@ -124,7 +124,7 @@ preamble includes a small header; the postamble includes the Disqus
 comment section and Google Analytics (make sure to replace you
 user name and tracking ID).
 
-<a id="org131163e"></a>
+<a id="org7441488"></a>
 ```lisp
 ;; BugFix: Manually disable home/up links in preamble.
 (setq org-html-home/up-format "")

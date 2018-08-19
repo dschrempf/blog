@@ -46,13 +46,13 @@ which is located in the folder `/opt/marvell/storage/cli` is all I need. Don't
 forget to manually load the `sg` module, which sets up the SCSI devices for this
 script, e.g., with
 
-```text
+```bash
 sudo modprobe -a sg
 ```
 
 Then, the SMART data can be retrieved, e.g., with
 
-```text
+```bash
 sudo /opt/marvell/storage/cli/mvcli smart -p 0
 ```
 

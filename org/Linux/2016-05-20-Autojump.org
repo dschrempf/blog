@@ -15,7 +15,7 @@ navigate directories from the command line:
 
 It is readily available in most Linux distributions.  The sole thing
 that has to be done manually is sourcing a script in your =.bashrc=.
-#+BEGIN_SRC sh
+#+BEGIN_SRC bash
 source /etc/profile.d/autojump.sh
 #+END_SRC
 

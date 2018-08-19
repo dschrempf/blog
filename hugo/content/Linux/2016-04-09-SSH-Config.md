@@ -19,7 +19,7 @@ host names, IP addresses or passwords.
 First, you want to create your own [SSH key](https://wiki.archlinux.org/index.php/SSH%5Fkeys) so that your server accepts
 your login without any password.
 
-```sh
+```bash
 # Create an SSH key (use the standard path).  Be careful, if you do
 # not set a passphrase, anybody that has access to your computer can
 # log into servers that have been set up to accept your key.
@@ -46,7 +46,7 @@ Host server
 
 Try to log into `yourserver` (now aliased `server`):
 
-```sh
+```bash
 ssh server
 ```
 
@@ -64,7 +64,7 @@ in turn has access to `private`.
 
 Hmm, normally, you would need to
 
-```sh
+```bash
 # Log into the server.
 ssh yourusername@yourserver.example.com
 # Wait.  Enter password.  Wait.
@@ -95,7 +95,7 @@ your `~/.ssh/config`:
 
 And try it out:
 
-```sh
+```bash
 ssh private
 ```
 

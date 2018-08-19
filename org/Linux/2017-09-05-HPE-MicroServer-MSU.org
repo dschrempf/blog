@@ -41,10 +41,14 @@ For my purposes however (I do not need a web interface), the MSU client =mvcli=,
 which is located in the folder =/opt/marvell/storage/cli= is all I need. Don't
 forget to manually load the =sg= module, which sets up the SCSI devices for this
 script, e.g., with
-: sudo modprobe -a sg
+#+BEGIN_SRC bash
+sudo modprobe -a sg
+#+END_SRC
 
 Then, the SMART data can be retrieved, e.g., with
-: sudo /opt/marvell/storage/cli/mvcli smart -p 0
+#+BEGIN_SRC bash
+sudo /opt/marvell/storage/cli/mvcli smart -p 0
+#+END_SRC
 
 Awesome :-)!
 
