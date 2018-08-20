@@ -5,7 +5,7 @@ languageCode = "en-us"
 disqusShortname = "dschrempf"
 MetaDataFormat = "toml"
 theme = "hyde-x"
-paginate = 40
+paginate = 10
 
 [outputs]
     home = ["HTML", "JSON"]
