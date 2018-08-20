@@ -6,3 +6,4 @@ Source code of my [blog](https://dschrempf.github.io/) built with
 - [Hugo](https://gohugo.io/)
 - [ox-hugo](https://ox-hugo.scripter.co/)
 - [Hyde-X](https://github.com/zyro/hyde-x)
+- [Skeria](https://github.com/dschrempf/skeria)
