@@ -1,11 +1,12 @@
 baseurl = "https://dschrempf.github.io/"
 title = "Concept → IO ()"
+
 languageCode = "en-us"
-# At the moment, the shortname to get comment counts is hard coded.
 disqusShortname = "dschrempf"
 MetaDataFormat = "toml"
+
 theme = "hyde-x"
-paginate = 10
+paginate = 30
 
 [outputs]
     home = ["HTML", "JSON"]
@@ -63,12 +64,19 @@ paginate = 10
     twitter = "https://twitter.com/fazky"
     youtube = ""
     orcid = "https://orcid.org/0000-0001-8865-9237"
+    flattr = ""
+
+    # Mailto link.
     email = "mailto:dominik.schrempf@gmail.com"
+
+    # GPG key.
     gpgkey = "/gpg_public_key.txt"
 
-    # Other social-like sidebar links
+    # RSS.
     rss = false
-    # flattr = ""
+
+    # Privacy statement link.
+    privacyPolicy = "https://www.iubenda.com/privacy-policy/76967501"
 
 [[menu.main]]
     url = "/linux/"
