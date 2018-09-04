@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2018-08-19T18:15:00+02:00
+lastmod = 2018-09-04T16:20:00+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -34,3 +34,11 @@ que no tienen nada que ocultar. Es ese tipo de gente que no se preocupa por el
 mundo en el que vive, porque se violen los derechos, las libertades que muchos
 antes defendieron en la Constitución. Me preocupa la pasividad que veo a mi
 alrededor.
+
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2018-09-04 Tue&gt; </span></span> [El genetista italiano que desmontó el concepto de raza](https://elpais.com/elpais/2018/09/03/ciencia/1535974124%5F908508.html), elPaís.
+“El racismo es un antiguo flagelo de la humanidad”. “Pensamos que la ciencia sea
+objetiva. La ciencia está modelada por la sociedad porque es una actividad
+humana productiva que necesita tiempo y dinero, pues está guiada y dirigida por
+aquellas fuerzas que en el mundo ejercen el control sobre el dinero y sobre el
+tiempo. Las fuerzas sociales y económicas determinan en larga medida lo que la
+ciencia hace y cómo lo hace”.
