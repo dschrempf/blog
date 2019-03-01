@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: Use GDB from withing Emacs to debug source code.
-#+KEYWORDS: GDB, Emacs, CPP, GUD, Debugger, Debugging
+#+KEYWORDS: GDB Emacs CPP GUD Debugger Debugging
 #+LANGUAGE: en
 
 * Introduction

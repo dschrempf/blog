@@ -6,7 +6,7 @@
 #+DATE: <2017-09-13 Wed>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: Excellent networking HOWTOs
-#+KEYWORDS: Networking, IPTABLES, Filtering, IP, TCP, Router, Internet
+#+KEYWORDS: Networking IPTABLES Filtering IP TCP Router Internet
 #+LANGUAGE: en
 
 Sometimes you discover online resources that you want to remember and share.

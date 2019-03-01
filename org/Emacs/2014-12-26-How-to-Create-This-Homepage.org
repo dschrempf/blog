@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION:
-#+KEYWORDS: Emacs, Org-Mode, Org Mode, Disqus, Homepage, Publish, Export
+#+KEYWORDS: Emacs Org-Mode "Org Mode" Disqus Homepage Publish Export
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport

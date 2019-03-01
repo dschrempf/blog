@@ -6,7 +6,7 @@
 #+DATE: <2016-04-09 Sat>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: Simulate a continuous time Markov chain with any transition rate matrix.
-#+KEYWORDS: CTMC, Markov Chain, Continuous-Time Markov Chain
+#+KEYWORDS: CTMC "Markov Chain" "Continuous-Time Markov Chain"
 #+LANGUAGE: en
 
 [2016-04-09 Sat] I extended [[file:2015-03-26-PopGen-CPP-Programs.org][my set of C++ programs]] to include a

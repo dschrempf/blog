@@ -3,11 +3,15 @@ title = "Marvell Storage Utility on HPE ProLiant MicroServer Gen10"
 author = ["Dominik Schrempf"]
 description = "Adventures when using having to deal with proprietary drivers on Arch Linux."
 date = 2017-09-05T00:00:00+02:00
-keywords = ["MSU", "", "", "", "", "", "", "", ""]
+keywords = ["MSU", "88SE9230", "Marvell", "HPE", "MicroServer", "RAID", "SMART", "SATA", "SCSI"]
 categories = ["Linux"]
 type = "post"
 draft = false
 +++
+
+<span class="timestamp-wrapper"><span class="timestamp">[2019-03-01 Fri] </span></span> See [comment below](http://disq.us/p/1zy3urq); some Linux operating systems already provide
+native support for the Marvell RAID controller in legacy mode.
+
 
 ## Marvell SATA controller {#marvell-sata-controller}
 

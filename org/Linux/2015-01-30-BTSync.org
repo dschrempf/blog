@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: Use BitTorrent Sync over an SSH SOCKS Proxy
-#+KEYWORDS: BTSync, BitTorrent, Sync, SOCKS, Proxy, SSH
+#+KEYWORDS: BTSync BitTorrent Sync SOCKS Proxy SSH
 #+LANGUAGE: en
 
 <2015-04-22 Wed> I have switched from BitTorrent Sync to [[https://syncthing.net/][Syncthing]].

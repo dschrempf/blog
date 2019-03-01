@@ -6,7 +6,7 @@
 #+DATE: <2017-07-20 Thu>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: An example of a monadic fold
-#+KEYWORDS: Haskell, Monad, Fold
+#+KEYWORDS: Haskell Monad Fold
 #+LANGUAGE: en
 
 Folds are complicated themselves, but monadic folds always have blown my mind.

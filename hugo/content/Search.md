@@ -2,8 +2,9 @@
 title = "Search"
 author = ["Dominik Schrempf"]
 date = 2018-08-16T00:00:00+02:00
+keywords = ["Search"]
 layout = "search"
-lastmod = 2018-09-04T16:20:00+02:00
+lastmod = 2019-03-01T09:00:00+01:00
 type = "page"
 draft = false
 sitemap = "priority : 0.1"

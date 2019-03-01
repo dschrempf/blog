@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: How to zip folders in parallel.
-#+KEYWORDS: GNU Parallel, Parallel, Tar, Zip
+#+KEYWORDS: "GNU Parallel" Parallel Tar Zip
 #+LANGUAGE: en
 
 Working with large files takes a long time. Sometimes, it is worth to zip

@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: MCMC simulation to approximate observations of coin tosses.
-#+KEYWORDS: MCMC, Simulation, Bayesian Statistics, Coin Toss
+#+KEYWORDS: MCMC Simulation "Bayesian Statistics" "Coin Toss"
 #+LANGUAGE: en
 
 Suppose we observe 58 heads out of 100 coin tosses. Now, we want to know the

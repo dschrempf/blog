@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: Incremental completion and bindings that stick around.
-#+KEYWORDS: Incremental Completion, Find, Keybinding
+#+KEYWORDS: "Incremental Completion" Find Keybinding
 #+LANGUAGE: en
 
 Recently, I stumbled upon two nice Emacs minor modes.

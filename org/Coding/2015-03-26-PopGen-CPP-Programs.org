@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: A collection of C++ programs about Markov chains and Population Genetics.
-#+KEYWORDS: Population Genetics, C++, Markov Chain, Probability, Statistics
+#+KEYWORDS: "Population Genetics" C++ "Markov Chain" Probability Statistics
 #+LANGUAGE: en
 
 I maintain a [[https://github.com/fazky/popgen-cpp-programs][Github repository]] that contains a bunch of very basic C++ programs

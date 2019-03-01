@@ -3,8 +3,8 @@ title = "Dominik Schrempf"
 author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
-keywords = ["Dominik", "Schrempf", "", "", "", "", "", "", "Genetics", ""]
-lastmod = 2018-09-04T16:20:00+02:00
+keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
+lastmod = 2019-03-01T09:00:00+01:00
 type = "page"
 draft = false
 [menu.about]

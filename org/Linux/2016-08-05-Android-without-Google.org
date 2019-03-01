@@ -6,7 +6,7 @@
 #+DATE: <2016-08-05 Fri>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: How to use your phone without Google applications
-#+KEYWORDS: Android, Google, APKPure
+#+KEYWORDS: Android Google APKPure
 #+LANGUAGE: en
 
 I like a lot of stuff that Google is doing, especially that it

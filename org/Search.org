@@ -10,7 +10,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
 #+DESCRIPTION:
-#+KEYWORDS:
+#+KEYWORDS: Search
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport

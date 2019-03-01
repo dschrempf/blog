@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: Work with times and dates in the shell.
-#+KEYWORDS: Dateutils, Time, Date, Difference, Shell, Seconds
+#+KEYWORDS: Dateutils Time Date Difference Shell Seconds
 #+LANGUAGE: en
 
 Did you ever need to calculate the time difference between two consecutive time

@@ -7,7 +7,7 @@
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik@schwarzbaer
 #+DESCRIPTION: Use pretty-show to pretty print objects in GHCi.
-#+KEYWORDS: Haskell, Pretty Print, Show
+#+KEYWORDS: Haskell "Pretty Print" Show
 #+LANGUAGE: en
 
 I repeatedly struggle with GHCi when I want to print lists and maps and actually

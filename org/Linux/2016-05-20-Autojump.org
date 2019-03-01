@@ -6,7 +6,7 @@
 #+DATE: <2016-05-20 Fri>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: Autojump; boost your shell experience.
-#+KEYWORDS: Shell, Bash, Change Directory, CD, Speed, Fast, Fasd
+#+KEYWORDS: Shell Bash "Change Directory" CD Speed Fast Fasd
 #+LANGUAGE: en
 
 *Autojump* is a ~cd~ command that learns!  It enables you to easily

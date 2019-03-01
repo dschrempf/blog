@@ -6,7 +6,7 @@
 #+DATE: <2016-04-09 Sat>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: A proper configuration of SSH can save a lot of time (typing passwords, hosts).
-#+KEYWORDS: SSH, .ssh, SSH Configuration, SSH Config
+#+KEYWORDS: SSH .ssh "SSH Configuration" "SSH Config"
 #+LANGUAGE: en
 
 Did you ever get sick of typing the IP of your SSH server.  There is

@@ -6,8 +6,11 @@
 #+DATE: <2017-09-05 Tue>
 #+AUTHOR: Dominik Schrempf
 #+DESCRIPTION: Adventures when using having to deal with proprietary drivers on Arch Linux.
-#+KEYWORDS: MSU, 88SE9230, Marvell, HPE, MicroServer, RAID, SMART, SATA, SCSI
+#+KEYWORDS: MSU 88SE9230 Marvell HPE MicroServer RAID SMART SATA SCSI
 #+LANGUAGE: en
+
+[2019-03-01 Fri] See [[http://disq.us/p/1zy3urq][comment below]]; some Linux operating systems already provide
+native support for the Marvell RAID controller in legacy mode.
 
 * Marvell SATA controller
 Recently I purchased an HPE ProLiant MicroServer Gen10 which comes with the
