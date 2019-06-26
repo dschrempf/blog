@@ -1,17 +1,26 @@
 #!/usr/bin/bash
 
+# Command line arguments.
 # $1: (Optional) Git commit message.
 
+# Current working directory.
 CWD=$(pwd)
 
+# A function to be called from within a git repository. Stage, commit all
+# changes with optional commit message, and push to the corresponding remote
+# repository.
 git_push () {
+    # Stage all changes.
     git add .
+    # If there is a commit message, use it, otherwise use a standard message.
     if [ -n "$1" ]; then
         msg="$1"
     else
         msg="Rebuilding site $(date)."
     fi
+    # Commit the changes.
     git commit -m "$msg"
+    # Push the changes to the remote repository (origin).
     git push origin master
 }
 
@@ -20,10 +29,10 @@ cd hugo || exit 1
 # Build site.
 hugo
 
-# Push to 'dschrempf/dschrempf.github.io'.
+# Push the website built by Hugo to 'dschrempf/dschrempf.github.io'.
 cd public || exit 1
 git_push "$1"
 
-# Push to 'dschrempf/blog'.
+# Push the Org Mode source files to 'dschrempf/blog'.
 cd "$CWD" || exit 1
 git_push "$1"
