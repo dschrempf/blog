@@ -52,7 +52,8 @@ paginate = 30
 
     # Metadata used to drive integrations.
     googleAnalytics = ""
-    gravatarHash = "b05a00fb86fa378973181afd07c7e548"
+    # gravatarHash = "b05a00fb86fa378973181afd07c7e548"
+    gravatarHash = ""
 
     # Sidebar social links, these must be full URLs.
     github = "https://github.com/dschrempf"
