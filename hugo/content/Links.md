@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2019-03-01T09:00:00+01:00
+lastmod = 2019-08-23T10:58:22+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -12,6 +12,9 @@ draft = false
 +++
 
 ## Deutsch {#deutsch}
+
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-17 Sat&gt; </span></span> [Lärm: Je schneller, desto LAUTER!!!](https://www.derstandard.at/story/2000107463546/laerm-je-schneller-desto-lauter), derStandard. Wo kann man
+noch Ruhe finden?
 
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-17 Fri&gt; </span></span> [Appell für Umweltschutz: "Warnung an Menschheit" von 15.000
 Forschern](https://derstandard.at/2000067737827/15-000-Forscher-unterstuetzen-dramatische-Warnung-an-die-Menschheit), derStandard. In acht von neun entscheidenden Problemfeldern hat es

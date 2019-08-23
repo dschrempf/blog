@@ -16,11 +16,15 @@ possibly many methods to use it to zip many folders (or files) in parallel.
 
 1.  Create a file with all folders that you want to zip, e.g with:
 
+<!--listend-->
+
 ```sh
 ls -1 > folders
 ```
 
 1.  Use GNU Parallel to zip them:
+
+<!--listend-->
 
 ```sh
 parallel -a folders "tar -czf {}.tar.gz {}"
