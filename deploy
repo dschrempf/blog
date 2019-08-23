@@ -26,13 +26,15 @@ git_push () {
 
 cd hugo || exit 1
 
-# Build site.
+echo "Build site with Hugo."
 hugo
 
-# Push the website built by Hugo to 'dschrempf/dschrempf.github.io'.
+echo "Push the website built by Hugo to 'dschrempf/dschrempf.github.io'."
 cd public || exit 1
 git_push "$1"
 
-# Push the Org Mode source files to 'dschrempf/blog'.
+echo "Push the Org Mode source files to 'dschrempf/blog'."
 cd "$CWD" || exit 1
 git_push "$1"
+
+echo "Done."
