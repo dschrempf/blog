@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2019-08-25T11:14:40+02:00
+lastmod = 2019-08-30T13:53:03+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -27,6 +27,13 @@ vermengt, was man auseinanderhalten sollte.
 <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-11-06 Mon&gt; </span></span> [Es gibt zu viele Messenger – und einen klar besten: Signal](https://derstandard.at/2000067258484/Es-gibt-zu-viele-Messenger-und-einen-klar-besten-Signal),
 derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattformen
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
+
+
+## English {#english}
+
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-08-30 Fri&gt; </span></span> [The Secret Shame of Middle-Class Americans](https://www.theatlantic.com/magazine/archive/2016/05/my-secret-shame/476415/), TheAtlantic. Nearly
+half of Americans would have trouble finding $400 to pay for an emergency. I’m
+one of them.
 
 
 ## Español {#español}

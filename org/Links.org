@@ -28,6 +28,11 @@ vermengt, was man auseinanderhalten sollte.
 derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattformen
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
+* English
+<2019-08-30 Fri> [[https://www.theatlantic.com/magazine/archive/2016/05/my-secret-shame/476415/][The Secret Shame of Middle-Class Americans]], TheAtlantic. Nearly
+half of Americans would have trouble finding $400 to pay for an emergency. I’m
+one of them.
+
 * Español
 <2016-09-22 Thu> [[https://elpais.com/cultura/2016/09/15/actualidad/1473939710_796979.html][“A veces, hasta los paranoicos tenemos razón”]], elPaís. Los que
 me preocupan son todos esos jóvenes ignorantes que pasan de todo porque dicen
