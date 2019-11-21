@@ -145,4 +145,4 @@ also induces associativity of \\(\ast\\).
 The algebraic way of thinking about graphs and how to manipulate them was new to
 me. Nonsense graph objects cannot be created at all, and so, an important source
 of bugs is eliminated. This principle is an excellent example of the dogma
-[\*parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/), for which Haskell forms an excellent framework.
+[parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/), for which Haskell forms an excellent framework.
