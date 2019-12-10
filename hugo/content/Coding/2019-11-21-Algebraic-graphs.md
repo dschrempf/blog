@@ -96,7 +96,7 @@ Further, we have the **decomposition law**:
   x \ast y \ast z = x \ast y + x \ast z + y \ast z.
 \end{align}
 
-The string decomposition law is a sufficient condition to induce the following
+The strong decomposition law is a sufficient condition to induce the following
 statements.
 
 -   The identities of \\(+\\) and \\(\ast\\) are equal.
