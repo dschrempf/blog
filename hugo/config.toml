@@ -23,6 +23,18 @@ paginate = 30
     # Optional. Use if you want tags and lists.
     category = "categories"
 
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = true
+    style = "tango"
+    tabWidth = 2
+
 # All parameters below here are optional and can be mixed and matched.
 [params]
     # Used when a given page doesn't set its own.
@@ -35,12 +47,6 @@ paginate = 30
 
     # Changes sidebar background and link/accent colours.
     theme = "theme-base-darkblue"
-
-    # Select a syntax highight. Check the static/css/highlight directory for options.
-    highlight = "github"
-
-    # Optional additional custom CSS file URL, will override other styles.
-    # customCSS = ""
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
