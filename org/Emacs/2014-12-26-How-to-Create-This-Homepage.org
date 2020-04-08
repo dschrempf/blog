@@ -17,9 +17,9 @@ This homepage was created with Emacs and [[http://orgmode.org/][Org mode]]. It i
 comments can be done using [[https://disqus.com/][Disqus]]. I assume a working Org mode setup and a
 GitHub as well as a Disqus account.
 
-<2015-03-26 Thu> Update; general revision of code and text.
+[2015-03-26 Thu] Update; general revision of code and text.
 
-<2016-04-09 Sat> Another update.
+[2016-04-09 Sat] Another update.
 
 * General idea
 - Org mode :: A great tool for taking notes and exporting them to

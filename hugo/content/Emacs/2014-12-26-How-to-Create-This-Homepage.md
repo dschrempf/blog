@@ -12,9 +12,9 @@ This homepage was created with Emacs and [Org mode](http://orgmode.org/). It is 
 comments can be done using [Disqus](https://disqus.com/). I assume a working Org mode setup and a
 GitHub as well as a Disqus account.
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2015-03-26 Thu&gt; </span></span> Update; general revision of code and text.
+<span class="timestamp-wrapper"><span class="timestamp">[2015-03-26 Thu] </span></span> Update; general revision of code and text.
 
-<span class="timestamp-wrapper"><span class="timestamp">&lt;2016-04-09 Sat&gt; </span></span> Another update.
+<span class="timestamp-wrapper"><span class="timestamp">[2016-04-09 Sat] </span></span> Another update.
 
 
 ## General idea {#general-idea}
