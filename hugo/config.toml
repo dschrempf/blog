@@ -34,6 +34,8 @@ paginate = 30
     noClasses = true
     style = "tango"
     tabWidth = 2
+  [markup.goldmark.renderer]
+    unsafe= true
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
