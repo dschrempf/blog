@@ -34,12 +34,9 @@ half of Americans would have trouble finding $400 to pay for an emergency. I’m
 one of them.
 
 * Español
-<2016-09-22 Thu> [[https://elpais.com/cultura/2016/09/15/actualidad/1473939710_796979.html][“A veces, hasta los paranoicos tenemos razón”]], elPaís. Los que
-me preocupan son todos esos jóvenes ignorantes que pasan de todo porque dicen
-que no tienen nada que ocultar. Es ese tipo de gente que no se preocupa por el
-mundo en el que vive, porque se violen los derechos, las libertades que muchos
-antes defendieron en la Constitución. Me preocupa la pasividad que veo a mi
-alrededor.
+<2020-04-08 Wed> [[https://elpais.com/ciencia/2020-04-08/somos-una-europa-unida-o-no-la-unica-respuesta-posible-es-ayudar-a-los-paises-que-lo-necesitan.html]["¿Somos una Europa Unida o no? La única respuesta posible es
+ayudar a los países que lo necesitan"]], elPaís. El jefe de la ciencia europea
+dimite en medio de la crisis desatada por el nuevo coronavirus.
 
 <2018-09-04 Tue> [[https://elpais.com/elpais/2018/09/03/ciencia/1535974124_908508.html][El genetista italiano que desmontó el concepto de raza]], elPaís.
 “El racismo es un antiguo flagelo de la humanidad”. “Pensamos que la ciencia sea
@@ -48,3 +45,10 @@ humana productiva que necesita tiempo y dinero, pues está guiada y dirigida por
 aquellas fuerzas que en el mundo ejercen el control sobre el dinero y sobre el
 tiempo. Las fuerzas sociales y económicas determinan en larga medida lo que la
 ciencia hace y cómo lo hace”.
+
+<2016-09-22 Thu> [[https://elpais.com/cultura/2016/09/15/actualidad/1473939710_796979.html][“A veces, hasta los paranoicos tenemos razón”]], elPaís. Los que
+me preocupan son todos esos jóvenes ignorantes que pasan de todo porque dicen
+que no tienen nada que ocultar. Es ese tipo de gente que no se preocupa por el
+mundo en el que vive, porque se violen los derechos, las libertades que muchos
+antes defendieron en la Constitución. Me preocupa la pasividad que veo a mi
+alrededor.
