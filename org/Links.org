@@ -29,6 +29,15 @@ derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattforme
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
 * English
+[2020-04-29 Wed] [[https://www.nature.com/articles/d41586-020-01266-z][Pseudoscience and COVID-19 — we’ve had enough already]], Nature.
+#+begin_quote
+There is some evidence that alternative treatments and placebo effects can
+relieve distress — a common justification for tolerating unproven alternative
+treatments. But it’s inappropriate to deceive people (even for their benefit)
+with magical thinking, and it is inappropriate for scientists to let such
+misinformation go unremarked.
+#+end_quote
+
 [2019-08-30 Fri] [[https://www.theatlantic.com/magazine/archive/2016/05/my-secret-shame/476415/][The Secret Shame of Middle-Class Americans]], TheAtlantic. Nearly
 half of Americans would have trouble finding $400 to pay for an emergency. I’m
 one of them.
