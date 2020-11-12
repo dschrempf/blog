@@ -94,3 +94,5 @@ methods running various MCMC samplers in parallel.
 - Sequential Monte Carlo.
 - Parallel tempering.
 - Metropolic-coupled MCMC (MC3) :: Parallel tempering.
+
+bibliography:~/Evolutionary-Biology/Bibliography/bibliography.bib

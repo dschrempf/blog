@@ -138,3 +138,17 @@ Reversible jump MCMC algorithm
 -   Sequential Monte Carlo.
 -   Parallel tempering.
 -   Parallel tempering.
+
+# Bibliography
+<a id="Geyer2011"></a>[Geyer2011] @InBook          Geyer2011,
+  Author        = Geyer, Charles J,
+  Title         = Introduction to Markov Chain Monte Carlo,
+  Pages         = 45,
+  Publisher     = CRC press,
+  Year          = 2011,
+  BookTitle     = Handbook of Markov Chain Monte Carlo
+ [↩](#676b94678a2d6c9d04a9b66e91b82cd3)
+
+<a id="Brooks2011"></a>[Brooks2011] Brooks, Gelman, Jones, & Meng, Handbook of Markov chain Monte Carlo, CRC press (2011). [↩](#e1e37a8427e438f2177e7c707a2f8694)
+
+<a id="Liang2011"></a>[Liang2011] Liang, Liu & Carroll, Advanced Markov chain Monte Carlo methods: learning from  past samples, John Wiley & Sons (2011). [↩](#b5a706697adb263d73098e60072ae11d)
