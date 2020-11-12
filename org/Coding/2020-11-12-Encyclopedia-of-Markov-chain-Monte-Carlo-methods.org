@@ -1,0 +1,96 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Coding
+#+HUGO_CATEGORIES: Coding
+#+HUGO_TYPE: post
+#+TITLE: Encyclopedia of Markov chain Monte Carlo methods
+#+DATE: <2020-11-12 Thu>
+#+AUTHOR: Dominik Schrempf
+#+EMAIL: dominik.schrempf@gmail.com
+#+DESCRIPTION: In the MCMC community, many people call the same concepts by different names
+#+KEYWORDS: "Markov chain Monte Carlo" Metropolis-Hastings Metropolis-Hastings-Green "Population based methods"
+#+LANGUAGE: en
+
+The nomenclature here is taken from the excellent introduction to Markov chain
+Monte Carlo (MCMC) methods by autocite:Geyer2011, Chapter 1 in
+autocite:Brooks2011. More advanced topics such as population based MCMC methods
+are covered in autocite:Liang2011.
+
+I started this encyclopedic overview because in the MCMC community many people
+call the same or similar concepts by very different names. Please let me know,
+if you have suggestions or comments, or if you would like to add some
+definitions or synonyms to this overview.
+
+* Necessary definitions
+*Elementary updates* are instructions about how to advance a Markov chain so
+that it possibly reaches a new state. That is, elementary updates specify how
+the chain traverses the state space. Elementary updates cannot be decomposed
+into smaller updates.
+
+Elementary updates can be combined to form composite updates, a technique often
+referred to as *composition*. We use the word *update* to refer to either an
+elementary or a composite update.
+
+Updates can also be executed in random order, a technique often referred to as
+*mixture*. Here, the word mixture is used in the sense of mixture models, and
+not in the sense of a chain reaching convergence.
+
+The *composition* and *mixture* of elementary updates allows the specification
+of all (Is this true?, Please correct me if it is not.) MCMC algorithms
+involving a single chain. In particular, Gibbs samplers of all sorts can be
+specified using this procedure.
+
+Roughly, a *Markov kernel* is a map describing the probability density (for
+continuous spaces) or the probability mass (for discrete spaces) of updating one
+state to another.
+
+The *Metropolis-Hasings-Green* algorithm specifies the acceptance probability of
+updates so that the stationary distribution of the resulting Markov chain is the
+desired posterior distribution.
+
+Many methods to improve convergence of MCMC samplers have been designed. Most
+notably, we have methods involving *auxiliary variables* and *population based*
+methods running various MCMC samplers in parallel.
+
+* Unnecessary synonyms
+- Proposal :: Update.
+- Move :: Update.
+- Metropolis update :: Update with uniform Markov kernel.
+- Metropolis-Hastings update :: Update with arbitrary Markov kernel.
+
+* Unnecessary synonyms and special cases of Metropolis-Hastings-Green MCMC methods
+- Fixed scan algorithm :: MCMC sampler involving composition.
+- Random scan algorithm :: MCMC sampler involving mixture.
+- Random sequence scan algorithm :: MCMC sampler involving composition and mixture.
+- Gibbs update :: Update with Metropolis-Hastings ratio of 1.0. That is, Gibbs
+  updates are always accepted. Gibbs updates can be designed using conditional
+  Markov kernels.
+- Gibbs sampler :: MCMC sampler in which all of the elementary updates are
+  Gibbs, combined either by composition (fixed scan), by mixture (random scan),
+  or both (random sequence scan).
+- Metropolis algorithm :: MCMC sampler in which all of the elementary updates
+  are Metropolis, combined either by composition, mixture, or both (and the same
+  "scan" terminology is used).
+- Metropolis-Hastings algorithm :: MCMC sampler in which all of the elementary
+  updates are Metropolis-Hastings, combined either by composition, mixture, or
+  both (and the same "scan" terminology is used).
+- Metropolis-within-Gibbs sampler :: The same as the preceding item. This name
+  makes no sense at all since Gibbs is a special case of Metropolis-Hastings.
+- Independence Metropolis-Hastings algorithm :: Special case of the
+  Metropolis-Hastings algorithm in which the Markov kernel does not depend on
+  the current state: \(q(x, \cdot)\) does not depend on \(x\).
+- Random-walk Metropolis-Hastings algorithm :: Special case of the
+  Metropolis-Hastings algorithm in which the proposal has the form \(x+e\),
+  where \(e\) is stochastically independent of the current state \(x\), so
+  \(q(x, y\) has the form \(f(y-x)\).
+- Reversible jump MCMC algorithm :: MCMC sampler including updates between
+  different models possibly having a different set of parameters. However, these
+  updates are in no way special.
+
+* Unnecessary synonyms or special cases of auxiliary variable MCMC methods
+- Simulated annealing.
+- Simulated tempering.
+  
+* Unnecessary synonyms for population based MCMC methods
+- Sequential Monte Carlo.
+- Parallel tempering.
+- Metropolic-coupled MCMC (MC3) :: Parallel tempering.
