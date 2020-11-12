@@ -137,7 +137,7 @@ Reversible jump MCMC algorithm
 
 -   Sequential Monte Carlo.
 -   Parallel tempering.
--   Parallel tempering.
+-   Metropolic-coupled MCMC (MC3) is Parallel tempering.
 
 # Bibliography
 <a id="Geyer2011"></a>[Geyer2011] @InBook          Geyer2011,
