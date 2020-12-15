@@ -86,11 +86,12 @@ methods running various MCMC samplers in parallel.
   different models possibly having a different set of parameters. However, these
   updates are in no way special.
 
-* Unnecessary synonyms or special cases of auxiliary variable MCMC methods
+* Special cases of auxiliary variable MCMC methods
+- Data augmentation.
 - Simulated annealing.
 - Simulated tempering.
   
-* Unnecessary synonyms for population based MCMC methods
+* Special cases of population based MCMC methods
 - Sequential Monte Carlo.
 - Parallel tempering.
 - Metropolic-coupled MCMC (MC3) is Parallel tempering.

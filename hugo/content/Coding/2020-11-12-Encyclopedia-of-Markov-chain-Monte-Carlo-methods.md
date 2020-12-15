@@ -127,13 +127,14 @@ Reversible jump MCMC algorithm
     updates are in no way special.
 
 
-## Unnecessary synonyms or special cases of auxiliary variable MCMC methods {#unnecessary-synonyms-or-special-cases-of-auxiliary-variable-mcmc-methods}
+## Special cases of auxiliary variable MCMC methods {#special-cases-of-auxiliary-variable-mcmc-methods}
 
+-   Data augmentation.
 -   Simulated annealing.
 -   Simulated tempering.
 
 
-## Unnecessary synonyms for population based MCMC methods {#unnecessary-synonyms-for-population-based-mcmc-methods}
+## Special cases of population based MCMC methods {#special-cases-of-population-based-mcmc-methods}
 
 -   Sequential Monte Carlo.
 -   Parallel tempering.
