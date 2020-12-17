@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2020-12-15T09:59:32+01:00
+lastmod = 2020-12-17T14:14:10+01:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -45,6 +45,10 @@ one of them.
 
 
 ## Español {#español}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2020-12-17 Thu] </span></span> ["La independencia periodística, el mejor negocio de los
+medios"](https://elpais.com/ideas/2020-12-16/el-buen-periodismo-requiere-independencia.html), elPaís. La independencia es el valor más preciado para un medio de
+calidad.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-08 Wed] </span></span> ["¿Somos una Europa Unida o no? La única respuesta posible es
 ayudar a los países que lo necesitan"](https://elpais.com/ciencia/2020-04-08/somos-una-europa-unida-o-no-la-unica-respuesta-posible-es-ayudar-a-los-paises-que-lo-necesitan.html), elPaís. El jefe de la ciencia europea
