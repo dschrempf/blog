@@ -3,7 +3,7 @@
 #+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
 #+TITLE: Encyclopedia of Markov chain Monte Carlo methods
-#+DATE: <2020-11-12 Thu>
+#+DATE: <2020-12-18 Fri>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
 #+DESCRIPTION: In the MCMC community, many people call the same concepts by different names
@@ -24,11 +24,15 @@ like to add some definitions or synonyms to this overview.
   fullcite:Liang2011.
 
 ** Articles
+:PROPERTIES:
+:ID:       7ba3e76f-cb8e-4513-bdb4-1c41161b6e4b
+:END:
 - fullcite:Gilks2001
 - fullcite:DelMoral2006
 - fullcite:Andrieu2010
 - fullcite:Doucet2011
 - fullcite:Chopin2012
+- fullcite:Heng2020
 
 ** Articles tailored to a phylogenetic audience
 - fullcite:BouchardCote2012

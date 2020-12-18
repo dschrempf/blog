@@ -2,7 +2,7 @@
 title = "Encyclopedia of Markov chain Monte Carlo methods"
 author = ["Dominik Schrempf"]
 description = "In the MCMC community, many people call the same concepts by different names"
-date = 2020-11-12T00:00:00+01:00
+date = 2020-12-18T00:00:00+01:00
 keywords = ["Markov chain Monte Carlo", "Metropolis-Hastings", "Metropolis-Hastings-Green", "Population based methods"]
 categories = ["Coding"]
 type = "post"
@@ -54,6 +54,7 @@ like to add some definitions or synonyms to this overview.
     }">Doucet2011</a></sup>
 -   <sup id="0529e4756add5da79b1f4eef5589b43f"><a href="#Chopin2012" title="Chopin, Jacob \&amp; Papaspiliopoulos, SMC2: an efficient algorithm for sequential analysis of  state space models, {Journal of the Royal Statistical Society: Series B
                       (Statistical Methodology)}, v(3), 397--426 (2012).">Chopin2012</a></sup>
+-   <sup id="75ffedaf2627a4fcdfe80e3118ce6fcf"><a href="#Heng2020" title="Heng, Bishop, Deligiannidis, \&amp; Doucet, Controlled sequential Monte Carlo, {Annals of Statistics}, v(5), 2904&#8211;2929 (2020).">Heng2020</a></sup>
 
 
 ### Articles tailored to a phylogenetic audience {#articles-tailored-to-a-phylogenetic-audience}
@@ -212,6 +213,8 @@ Reversible jump MCMC algorithm
 
 <a id="Chopin2012"></a>[Chopin2012] Chopin, Jacob & Papaspiliopoulos, SMC2: an efficient algorithm for sequential analysis of  state space models, <i>Journal of the Royal Statistical Society: Series B
                   (Statistical Methodology)</i>, <b>75(3)</b>, 397-426 (2012). <a href="http://dx.doi.org/10.1111/j.1467-9868.2012.01046.x">doi</a>. [↩](#0529e4756add5da79b1f4eef5589b43f)
+
+<a id="Heng2020"></a>[Heng2020] Heng, Bishop, Deligiannidis, & Doucet, Controlled sequential Monte Carlo, <i>Annals of Statistics</i>, <b>48(5)</b>, 2904–2929 (2020). <a href="http://dx.doi.org/10.1214/19-AOS1914">link</a>. <a href="http://dx.doi.org/10.1214/19-aos1914">doi</a>. [↩](#75ffedaf2627a4fcdfe80e3118ce6fcf)
 
 <a id="BouchardCote2012"></a>[BouchardCote2012] Bouchard-Côté, Sankararaman, & Jordan, Phylogenetic inference via sequential monte carlo, <i>Systematic Biology</i>, <b>61(4)</b>, 579-593 (2012). <a href="http://dx.doi.org/10.1093/sysbio/syr131">doi</a>. [↩](#a6376643b744242fb6bba104f05712f2)
 
