@@ -22,6 +22,7 @@ like to add some definitions or synonyms to this overview.
   fullcite:Brooks2011.
 - More advanced topics such as population based MCMC methods are covered in
   fullcite:Liang2011.
+- See autocite:Doucet2001 for sequential Monte Carlo algorithms.
 
 ** Articles
 :PROPERTIES:
