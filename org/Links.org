@@ -29,6 +29,8 @@ derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattforme
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
 * English
+[2021-01-11 Mon] [[https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/][Polarization in Poland: A Warning From Europe]], The Atlantic.
+
 [2020-04-29 Wed] [[https://www.nature.com/articles/d41586-020-01266-z][Pseudoscience and COVID-19 — we’ve had enough already]], Nature.
 #+begin_quote
 There is some evidence that alternative treatments and placebo effects can

@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2020-12-17T14:14:10+01:00
+lastmod = 2021-01-11T09:38:54+01:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -30,6 +30,8 @@ miteinander, am klügsten wäre jedoch die Einigung auf Signal.
 
 
 ## English {#english}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2021-01-11 Mon] </span></span> [Polarization in Poland: A Warning From Europe](https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/), The Atlantic.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-29 Wed] </span></span> [Pseudoscience and COVID-19 — we’ve had enough already](https://www.nature.com/articles/d41586-020-01266-z), Nature.
 
