@@ -47,9 +47,6 @@ paginate = 30
     # Default (if omitted) is false.
     hideReadingTime = false
 
-    # Changes sidebar background and link/accent colours.
-    theme = "theme-base-darkblue"
-
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
     tagline = "Articles about Linux, Emacs, coding and music."
