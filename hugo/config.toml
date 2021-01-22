@@ -49,7 +49,7 @@ paginate = 30
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "Articles about Linux, Emacs, coding and music."
+    tagline = "Articles about coding and music."
 
     # Text for the top menu link, which goes the root URL for the site.
     # Default (if omitted) is "Blog".
