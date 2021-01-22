@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2021-01-15T15:29:47+01:00
+lastmod = 2021-01-22T17:53:12+01:00
 type = "page"
 draft = false
 [menu.about]
@@ -13,8 +13,13 @@ draft = false
   name = "About"
 +++
 
-Postdoc in Evolutionary Biology<br />
-[Eötvös Loránd University](https://www.elte.hu/en/)
+<img style="border-radius: 50%; float: right;"
+     src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+     alt="gravatar"
+     title="Dominik Schrempf"/>
+<div> Postdoc in Evolutionary Biology<br/>
+<a href="https://www.elte.hu/en/">Eötvös Loránd University</a>
+</div>
 
 
 ## Interests {#interests}

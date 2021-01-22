@@ -29,7 +29,7 @@ like to add some definitions or synonyms to this overview.
       Year          = 2011,
       Pages         = 45
     }">Geyer2011</a></sup>, Chapter 1 in
-    <sup id="e1e37a8427e438f2177e7c707a2f8694"><a href="#Brooks2011" title="Brooks, Gelman, Jones, \&amp; Meng, Handbook of Markov chain Monte Carlo, CRC press (2011).">Brooks2011</a></sup>.
+    <sup id="e1e37a8427e438f2177e7c707a2f8694"><a href="#Brooks2011" title="Brooks, Gelman, Jones, \&amp; Meng, {Handbook of Markov Chain Monte Carlo}, CRC press (2011).">Brooks2011</a></sup>.
 -   More advanced topics such as population based MCMC methods are covered in
     <sup id="b5a706697adb263d73098e60072ae11d"><a href="#Liang2011" title="Liang, Liu \&amp; Carroll, Advanced Markov chain Monte Carlo methods: learning from  past samples, John Wiley \&amp; Sons (2011).">Liang2011</a></sup>.
 -   See <sup id="9207e829ab55aba29074181b4b770dd6"><a href="#Doucet2001" title="Sequential Monte Carlo Methods in Practice, Springer New York (2001).">Doucet2001</a></sup> for sequential Monte Carlo algorithms.
@@ -188,7 +188,7 @@ Reversible jump MCMC algorithm
   Pages         = 45
  [↩](#676b94678a2d6c9d04a9b66e91b82cd3)
 
-<a id="Brooks2011"></a>[Brooks2011] Brooks, Gelman, Jones, & Meng, Handbook of Markov chain Monte Carlo, CRC press (2011). [↩](#e1e37a8427e438f2177e7c707a2f8694)
+<a id="Brooks2011"></a>[Brooks2011] Brooks, Gelman, Jones, & Meng, Handbook of Markov Chain Monte Carlo, CRC press (2011). [↩](#e1e37a8427e438f2177e7c707a2f8694)
 
 <a id="Liang2011"></a>[Liang2011] Liang, Liu & Carroll, Advanced Markov chain Monte Carlo methods: learning from  past samples, John Wiley & Sons (2011). [↩](#b5a706697adb263d73098e60072ae11d)
 
