@@ -14,8 +14,17 @@
 #+EXCLUDE_TAGS: noexport
 #+OPTIONS: num:nil
 
-Postdoc in Evolutionary Biology\\
-[[https://www.elte.hu/en/][Eötvös Loránd University]]
+
+# Gravatar.
+#+begin_export html
+<img style="border-radius: 50%; float: right;"
+     src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+     alt="gravatar"
+     title="Dominik Schrempf"/>
+<div> Postdoc in Evolutionary Biology<br/>
+<a href="https://www.elte.hu/en/">Eötvös Loránd University</a>
+</div>
+#+end_export
 
 * Interests
 - Evolutionary Biology
