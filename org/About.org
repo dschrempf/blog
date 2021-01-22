@@ -14,11 +14,10 @@
 #+EXCLUDE_TAGS: noexport
 #+OPTIONS: num:nil
 
-
 # Gravatar.
 #+begin_export html
 <img style="border-radius: 50%; float: right;"
-     src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+     src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=150"
      alt="gravatar"
      title="Dominik Schrempf"/>
 <div> Postdoc in Evolutionary Biology<br/>

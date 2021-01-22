@@ -43,10 +43,6 @@ paginate = 30
     defaultDescription = "Linux, Emacs, coding and more."
     defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
 
-    # Hide estimated reading time for posts.
-    # Default (if omitted) is false.
-    hideReadingTime = false
-
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
     tagline = "Articles about coding and music."

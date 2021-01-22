@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2021-01-22T17:53:12+01:00
+lastmod = 2021-01-22T18:43:22+01:00
 type = "page"
 draft = false
 [menu.about]
@@ -14,7 +14,7 @@ draft = false
 +++
 
 <img style="border-radius: 50%; float: right;"
-     src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=200"
+     src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=150"
      alt="gravatar"
      title="Dominik Schrempf"/>
 <div> Postdoc in Evolutionary Biology<br/>
