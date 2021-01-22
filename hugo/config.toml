@@ -47,13 +47,6 @@ paginate = 30
     # You can use markdown here.
     tagline = "Articles about coding and music."
 
-    # Text for the top menu link, which goes the root URL for the site.
-    # Default (if omitted) is "Blog".
-    home = "Blog"
-
-    # Metadata used to drive integrations.
-    googleAnalytics = ""
-
     # Sidebar social links, these must be full URLs.
     github = "https://github.com/dschrempf"
     bitbucket = ""
