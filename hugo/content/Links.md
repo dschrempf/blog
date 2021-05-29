@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2021-01-22T17:53:13+01:00
+lastmod = 2021-05-29T17:07:06+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -12,6 +12,10 @@ draft = false
 +++
 
 ## Deutsch {#deutsch}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2021-05-29 Sat] </span></span> [Elf Jahre an der Macht: Das Orbán-Regime der Günstlinge](https://www.derstandard.at/story/2000127007319/zehn-jahre-an-der-macht-das-orban-regime-der-guenstlinge),
+derStandard. Viktor Orbán hat sich auf Kosten Ungarns mit gezielten
+Grenzüberschreitungen die unumschränkte Macht gesichert
 
 <span class="timestamp-wrapper"><span class="timestamp">[2019-08-17 Sat] </span></span> [Lärm: Je schneller, desto LAUTER!!!](https://www.derstandard.at/story/2000107463546/laerm-je-schneller-desto-lauter), derStandard. Wo kann man
 noch Ruhe finden?

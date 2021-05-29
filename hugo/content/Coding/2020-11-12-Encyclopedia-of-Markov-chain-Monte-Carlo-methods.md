@@ -24,15 +24,29 @@ like to add some definitions or synonyms to this overview.
     Monte Carlo (MCMC) methods by <sup id="676b94678a2d6c9d04a9b66e91b82cd3"><a href="#Geyer2011" title="@InCollection{    Geyer2011,
       Author        = {Geyer, Charles J},
       Title         = {{Introduction to Markov Chain Monte Carlo}},
+      Editor        = {Brooks, Steve and Gelman, Andrew and Jones, Galin and
+                      Meng, Xiao-Li},
       BookTitle     = {{Handbook of Markov Chain Monte Carlo}},
       Publisher     = {CRC press},
       Year          = 2011,
       Pages         = 45
     }">Geyer2011</a></sup>, Chapter 1 in
-    <sup id="e1e37a8427e438f2177e7c707a2f8694"><a href="#Brooks2011" title="Brooks, Gelman, Jones, \&amp; Meng, {Handbook of Markov Chain Monte Carlo}, CRC press (2011).">Brooks2011</a></sup>.
+    <sup id="e1e37a8427e438f2177e7c707a2f8694"><a href="#Brooks2011" title="@Collection{      Brooks2011,
+      Editor        = {Brooks, Steve and Gelman, Andrew and Jones, Galin and
+                      Meng, Xiao-Li},
+      Title         = {{Handbook of Markov Chain Monte Carlo}},
+      Publisher     = {CRC press},
+      Year          = 2011
+    }">Brooks2011</a></sup>.
 -   More advanced topics such as population based MCMC methods are covered in
     <sup id="b5a706697adb263d73098e60072ae11d"><a href="#Liang2011" title="Liang, Liu \&amp; Carroll, Advanced Markov chain Monte Carlo methods: learning from  past samples, John Wiley \&amp; Sons (2011).">Liang2011</a></sup>.
--   See <sup id="9207e829ab55aba29074181b4b770dd6"><a href="#Doucet2001" title="Sequential Monte Carlo Methods in Practice, Springer New York (2001).">Doucet2001</a></sup> for sequential Monte Carlo algorithms.
+-   See <sup id="9207e829ab55aba29074181b4b770dd6"><a href="#Doucet2001" title="@Collection{      Doucet2001,
+      Editor        = {Arnaud Doucet and Nando de Freitas and Neil Gordon},
+      Title         = {Sequential Monte Carlo Methods in Practice},
+      Publisher     = {Springer New York},
+      Year          = 2001,
+      DOI           = {10.1007/978-1-4757-3437-9}
+    }">Doucet2001</a></sup> for sequential Monte Carlo algorithms.
 
 
 ### Articles {#articles}
@@ -47,11 +61,11 @@ like to add some definitions or synonyms to this overview.
       Author        = {A. {Doucet} and A. M. {Johansen}},
       Title         = {{A tutorial on particle filtering and smoothing: fifteen
                       years later}},
+      Editor        = {Dan Crisan and Boris Rozovskii},
       BookTitle     = {{The Oxford handbook of nonlinear filtering}},
       Publisher     = {Oxford: Oxford University Press},
       Year          = 2011,
-      Pages         = {656--704},
-      msc2010       = {62M10}
+      Pages         = {656--704}
     }">Doucet2011</a></sup>
 -   <sup id="0529e4756add5da79b1f4eef5589b43f"><a href="#Chopin2012" title="Chopin, Jacob \&amp; Papaspiliopoulos, SMC2: an efficient algorithm for sequential analysis of  state space models, {Journal of the Royal Statistical Society: Series B
                       (Statistical Methodology)}, v(3), 397--426 (2012).">Chopin2012</a></sup>
@@ -182,17 +196,31 @@ Reversible jump MCMC algorithm
 <a id="Geyer2011"></a>[Geyer2011] @InCollection    Geyer2011,
   Author        = Geyer, Charles J,
   Title         = Introduction to Markov Chain Monte Carlo,
+  Editor        = Brooks, Steve and Gelman, Andrew and Jones, Galin and
+                  Meng, Xiao-Li,
   BookTitle     = Handbook of Markov Chain Monte Carlo,
   Publisher     = CRC press,
   Year          = 2011,
   Pages         = 45
  [↩](#676b94678a2d6c9d04a9b66e91b82cd3)
 
-<a id="Brooks2011"></a>[Brooks2011] Brooks, Gelman, Jones, & Meng, Handbook of Markov Chain Monte Carlo, CRC press (2011). [↩](#e1e37a8427e438f2177e7c707a2f8694)
+<a id="Brooks2011"></a>[Brooks2011] @Collection      Brooks2011,
+  Editor        = Brooks, Steve and Gelman, Andrew and Jones, Galin and
+                  Meng, Xiao-Li,
+  Title         = Handbook of Markov Chain Monte Carlo,
+  Publisher     = CRC press,
+  Year          = 2011
+ [↩](#e1e37a8427e438f2177e7c707a2f8694)
 
 <a id="Liang2011"></a>[Liang2011] Liang, Liu & Carroll, Advanced Markov chain Monte Carlo methods: learning from  past samples, John Wiley & Sons (2011). [↩](#b5a706697adb263d73098e60072ae11d)
 
-<a id="Doucet2001"></a>[Doucet2001] Sequential Monte Carlo Methods in Practice, Springer New York (2001). [↩](#9207e829ab55aba29074181b4b770dd6)
+<a id="Doucet2001"></a>[Doucet2001] @Collection      Doucet2001,
+  Editor        = Arnaud Doucet and Nando de Freitas and Neil Gordon,
+  Title         = Sequential Monte Carlo Methods in Practice,
+  Publisher     = Springer New York,
+  Year          = 2001,
+  DOI           = 10.1007/978-1-4757-3437-9
+ [↩](#9207e829ab55aba29074181b4b770dd6)
 
 <a id="Gilks2001"></a>[Gilks2001] Walter Gilks & Carlo Berzuini, Following a Moving Target-Monte Carlo Inference for  Dynamic Bayesian Models, <i>Journal of the Royal Statistical Society. Series B
                   (Statistical Methodology)</i>, <b>63(1)</b>, 127-146 (2001). [↩](#f0227103734119b77f5580811b6f3205)
@@ -207,11 +235,11 @@ Reversible jump MCMC algorithm
   Author        = A. Doucet and A. M. Johansen,
   Title         = A tutorial on particle filtering and smoothing: fifteen
                   years later,
+  Editor        = Dan Crisan and Boris Rozovskii,
   BookTitle     = The Oxford handbook of nonlinear filtering,
   Publisher     = Oxford: Oxford University Press,
   Year          = 2011,
-  Pages         = 656-704,
-  msc2010       = 62M10
+  Pages         = 656-704
  [↩](#54b61d4f223d48473b86320c0a4d367e)
 
 <a id="Chopin2012"></a>[Chopin2012] Chopin, Jacob & Papaspiliopoulos, SMC2: an efficient algorithm for sequential analysis of  state space models, <i>Journal of the Royal Statistical Society: Series B

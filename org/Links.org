@@ -13,6 +13,10 @@
 #+OPTIONS: num:nil
 
 * Deutsch
+[2021-05-29 Sat] [[https://www.derstandard.at/story/2000127007319/zehn-jahre-an-der-macht-das-orban-regime-der-guenstlinge][Elf Jahre an der Macht: Das Orbán-Regime der Günstlinge]],
+derStandard. Viktor Orbán hat sich auf Kosten Ungarns mit gezielten
+Grenzüberschreitungen die unumschränkte Macht gesichert
+
 [2019-08-17 Sat] [[https://www.derstandard.at/story/2000107463546/laerm-je-schneller-desto-lauter][Lärm: Je schneller, desto LAUTER!!!]], derStandard. Wo kann man
 noch Ruhe finden?
 

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 # Command line arguments.
 # $1: (Optional) Git commit message.
