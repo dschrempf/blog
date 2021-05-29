@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Command line arguments.
 # $1: (Optional) Git commit message.
 
@@ -24,17 +26,17 @@ git_push () {
     git push origin master
 }
 
-cd hugo || exit 1
+cd hugo
 
 echo "Build site with Hugo."
 hugo
 
 echo "Push the website built by Hugo to 'dschrempf/dschrempf.github.io'."
-cd public || exit 1
+cd public
 git_push "$1"
 
 echo "Push the Org Mode source files to 'dschrempf/blog'."
-cd "$CWD" || exit 1
+cd "$CWD"
 git_push "$1"
 
 echo "Done."
