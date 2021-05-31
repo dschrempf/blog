@@ -49,6 +49,13 @@ half of Americans would have trouble finding $400 to pay for an emergency. I’m
 one of them.
 
 * Español
+[2021-05-31 Mon] [[https://elpais.com/eps/2021-05-29/urbanismo-feminista-ciudad-feliz.html][Viena, el éxito del urbanismo feminista]], elPaís. A mediados del
+ siglo pasado, un grupo de hombres de clase media y conductores definieron las
+ bases urbanísticas de las ciudades. Como respuesta surgió el urbanismo
+ feminista, modelo que pone a las personas en el centro. Viena lleva décadas
+ aplicándolo y ahora es una de las ciudades más agradables y verdes del mundo,
+ también una de las mejores para vivir.
+
 [2020-12-17 Thu] [[https://elpais.com/ideas/2020-12-16/el-buen-periodismo-requiere-independencia.html]["La independencia periodística, el mejor negocio de los
 medios"]], elPaís. La independencia es el valor más preciado para un medio de
 calidad.

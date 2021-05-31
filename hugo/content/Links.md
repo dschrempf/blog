@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2021-05-29T17:13:41+02:00
+lastmod = 2021-05-31T11:17:23+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -51,6 +51,13 @@ one of them.
 
 
 ## Español {#español}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2021-05-31 Mon] </span></span> [Viena, el éxito del urbanismo feminista](https://elpais.com/eps/2021-05-29/urbanismo-feminista-ciudad-feliz.html), elPaís. A mediados del
+ siglo pasado, un grupo de hombres de clase media y conductores definieron las
+ bases urbanísticas de las ciudades. Como respuesta surgió el urbanismo
+ feminista, modelo que pone a las personas en el centro. Viena lleva décadas
+ aplicándolo y ahora es una de las ciudades más agradables y verdes del mundo,
+ también una de las mejores para vivir.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2020-12-17 Thu] </span></span> ["La independencia periodística, el mejor negocio de los
 medios"](https://elpais.com/ideas/2020-12-16/el-buen-periodismo-requiere-independencia.html), elPaís. La independencia es el valor más preciado para un medio de
