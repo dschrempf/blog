@@ -49,6 +49,11 @@ half of Americans would have trouble finding $400 to pay for an emergency. I’m
 one of them.
 
 * Español
+[2021-12-09 Thu] [[https://elpais.com/sociedad/2021-12-09/asi-consigue-un-laboratorio-multiplicar-por-1000-el-precio-de-un-medicamento.html][Así consigue un laboratorio multiplicar por 1.000 el precio de
+un medicamento]], elPais. Leadiant Biosciences ha subido de 14 céntimos a 140
+euros la pastilla del tratamiento de una enfermedad rara aprovechándose del
+monopolio concedido por la UE.
+
 [2021-05-31 Mon] [[https://elpais.com/eps/2021-05-29/urbanismo-feminista-ciudad-feliz.html][Viena, el éxito del urbanismo feminista]], elPaís. A mediados del
  siglo pasado, un grupo de hombres de clase media y conductores definieron las
  bases urbanísticas de las ciudades. Como respuesta surgió el urbanismo

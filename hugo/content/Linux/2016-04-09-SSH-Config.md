@@ -20,16 +20,16 @@ First, you want to create your own [SSH key](https://wiki.archlinux.org/index.ph
 your login without any password.
 
 ```bash
-# Create an SSH key (use the standard path).  Be careful, if you do
-# not set a passphrase, anybody that has access to your computer can
-# log into servers that have been set up to accept your key.
-ssh-keygen
+  # Create an SSH key (use the standard path).  Be careful, if you do
+  # not set a passphrase, anybody that has access to your computer can
+  # log into servers that have been set up to accept your key.
+  ssh-keygen
 
-# Copy the key on your server.
-ssh-copy-id yourusername@yourserver.example.com
+  # Copy the key on your server.
+  ssh-copy-id yourusername@yourserver.example.com
 
-# Try it out and be happy!
-ssh yourusername@yourserver.example.com
+  # Try it out and be happy!
+  ssh yourusername@yourserver.example.com
 ```
 
 
@@ -38,16 +38,16 @@ ssh yourusername@yourserver.example.com
 Now, it is getting better; edit or create the file `~/.ssh.config`:
 
 ```text
-#~/.ssh/config
-Host server
-     HostName yourserver.example.com
-     User yourusername
+  #~/.ssh/config
+  Host server
+       HostName yourserver.example.com
+       User yourusername
 ```
 
 Try to log into `yourserver` (now aliased `server`):
 
 ```bash
-ssh server
+  ssh server
 ```
 
 Wow, that was fast.
@@ -65,12 +65,12 @@ in turn has access to `private`.
 Hmm, normally, you would need to
 
 ```bash
-# Log into the server.
-ssh yourusername@yourserver.example.com
-# Wait.  Enter password.  Wait.
-ssh privateusername@privatecomputer.local
-# Wait.  Enter password.  Wait.
-# That sucks.
+  # Log into the server.
+  ssh yourusername@yourserver.example.com
+  # Wait.  Enter password.  Wait.
+  ssh privateusername@privatecomputer.local
+  # Wait.  Enter password.  Wait.
+  # That sucks.
 ```
 
 We can setup SSH keys so that we do not have to enter passwords
@@ -96,7 +96,7 @@ your `~/.ssh/config`:
 And try it out:
 
 ```bash
-ssh private
+  ssh private
 ```
 
 Wow.

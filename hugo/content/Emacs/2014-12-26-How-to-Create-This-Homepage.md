@@ -75,47 +75,47 @@ files so that they can be hosted by GitHub:
 
 <a id="code-snippet--Org publish setup"></a>
 ```lisp
-(setq org-publish-project-alist
-      '(
-        ;; Blog posts in Org mode that are exported to html and hosted
-        ;; by GitHub.
-        ("blog"
-         ;; Directory with Org files.
-         :base-directory "~/Shared/blog/org/"
-         :base-extension "org"
-         ;; Output directory for html files on GitHub.
-         :publishing-directory "~/Shared/blog/dschrempf.github.io/"
-         :publishing-function (org-html-publish-to-html)
-         :html-extension "html"
-         ;; Create a sitemap that contains all posts in
-         ;; anti-chronological order.
-         :auto-sitemap t
-         :sitemap-filename "archive.org"
-         :sitemap-title "Archive"
-         :sitemap-sort-files anti-chronologically
-         :sitemap-style list
-         :recursive t
-         :section-numbers nil
-         :with-toc t
-         ;; Do not include predefined header scripts.
-         :html-head-include-default-style nil
-         :html-head-include-scripts nil
-         :html-head "<link rel='stylesheet' href='/css/site.css' type='text/css'/>
-<meta name=\"viewport\" content=\"width=device-width\"/>"
-         :html-preamble website-html-preamble
-         :html-postamble website-html-postamble
-         :html-link-home "http://dschrempf.github.io/"
-         :html-link-use-abs-url nil)
+  (setq org-publish-project-alist
+        '(
+          ;; Blog posts in Org mode that are exported to html and hosted
+          ;; by GitHub.
+          ("blog"
+           ;; Directory with Org files.
+           :base-directory "~/Shared/blog/org/"
+           :base-extension "org"
+           ;; Output directory for html files on GitHub.
+           :publishing-directory "~/Shared/blog/dschrempf.github.io/"
+           :publishing-function (org-html-publish-to-html)
+           :html-extension "html"
+           ;; Create a sitemap that contains all posts in
+           ;; anti-chronological order.
+           :auto-sitemap t
+           :sitemap-filename "archive.org"
+           :sitemap-title "Archive"
+           :sitemap-sort-files anti-chronologically
+           :sitemap-style list
+           :recursive t
+           :section-numbers nil
+           :with-toc t
+           ;; Do not include predefined header scripts.
+           :html-head-include-default-style nil
+           :html-head-include-scripts nil
+           :html-head "<link rel='stylesheet' href='/css/site.css' type='text/css'/>
+  <meta name=\"viewport\" content=\"width=device-width\"/>"
+           :html-preamble website-html-preamble
+           :html-postamble website-html-postamble
+           :html-link-home "http://dschrempf.github.io/"
+           :html-link-use-abs-url nil)
 
-        ("static"
-         :base-directory "~/Shared/blog/org/"
-         :base-extension "css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/Shared/blog/dschrempf.github.io/"
-         :publishing-function org-publish-attachment
-         :recursive t)
+          ("static"
+           :base-directory "~/Shared/blog/org/"
+           :base-extension "css\\|js\\|jpg\\|gif\\|png\\|pdf\\|mp3\\|ogg\\|swf"
+           :publishing-directory "~/Shared/blog/dschrempf.github.io/"
+           :publishing-function org-publish-attachment
+           :recursive t)
 
-        ;; ("website" :components ("blog" "images" "js" "css"))))
-        ("website" :components ("blog" "static"))))
+          ;; ("website" :components ("blog" "images" "js" "css"))))
+          ("website" :components ("blog" "static"))))
 ```
 
 This defines a set of projects that can be published simultaneously
@@ -126,59 +126,59 @@ user name and tracking ID).
 
 <a id="code-snippet--Preamble and postamble"></a>
 ```lisp
-;; BugFix: Manually disable home/up links in preamble.
-(setq org-html-home/up-format "")
+  ;; BugFix: Manually disable home/up links in preamble.
+  (setq org-html-home/up-format "")
 
-(defun website-html-preamble (info)
-  "Org-mode website HTML export preamble."
-  (format "<div class='nav'>
-<ul>
-<li><a href='/'>Home</a></li>
-<li><a href='/archive.html'>Archive</a></li>
-</ul>
-</div>"))
+  (defun website-html-preamble (info)
+    "Org-mode website HTML export preamble."
+    (format "<div class='nav'>
+  <ul>
+  <li><a href='/'>Home</a></li>
+  <li><a href='/archive.html'>Archive</a></li>
+  </ul>
+  </div>"))
 
-(defun website-html-postamble (info)
-  "Put Disqus into Org mode website postamble.  Do not show
-   disqus for the Archive and the Index."
-  (concat
-   (cond ((string= (car (plist-get info :title)) "Archive") "")
-         ((string= (car (plist-get info :title)) "Index") "")
-         ((string= (car (plist-get info :title)) "GitHub -> IO ()") "")
-         (t "<div id='disqus_thread'></div>
-<script type='text/javascript'>
-  // required: replace example with your forum shortname
-  var disqus_shortname = 'YOUR DISQUS NAME HERE';
-  (function() {
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] ||
-       document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript><p>Please enable JavaScript to view the
-  <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p>
-</noscript>"))
-   (format "<div class='footer'>
-Copyright 2014 AUTHOR<br/>
-Last updated %s <br/>
-Built with %s <br/>
-%s HTML
-</div>
-<script type='text/javascript'>
- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
- })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (defun website-html-postamble (info)
+    "Put Disqus into Org mode website postamble.  Do not show
+     disqus for the Archive and the Index."
+    (concat
+     (cond ((string= (car (plist-get info :title)) "Archive") "")
+           ((string= (car (plist-get info :title)) "Index") "")
+           ((string= (car (plist-get info :title)) "GitHub -> IO ()") "")
+           (t "<div id='disqus_thread'></div>
+  <script type='text/javascript'>
+    // required: replace example with your forum shortname
+    var disqus_shortname = 'YOUR DISQUS NAME HERE';
+    (function() {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] ||
+         document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript><p>Please enable JavaScript to view the
+    <a href='http://disqus.com/?ref_noscript'>comments powered by Disqus.</a></p>
+  </noscript>"))
+     (format "<div class='footer'>
+  Copyright 2014 AUTHOR<br/>
+  Last updated %s <br/>
+  Built with %s <br/>
+  %s HTML
+  </div>
+  <script type='text/javascript'>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
- ga('create', 'PUT YOUR TRACKING ID HERE', 'auto');
- ga('send', 'pageview');
+   ga('create', 'PUT YOUR TRACKING ID HERE', 'auto');
+   ga('send', 'pageview');
 
-</script>"
-           (format-time-string "%Y-%m-%d")
-           org-html-creator-string
-           org-html-validation-link)))
+  </script>"
+             (format-time-string "%Y-%m-%d")
+             org-html-creator-string
+             org-html-validation-link)))
 ```
 
 

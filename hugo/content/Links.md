@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2021-05-31T11:17:23+02:00
+lastmod = 2021-12-09T18:34:41+01:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -51,6 +51,11 @@ one of them.
 
 
 ## Español {#español}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2021-12-09 Thu] </span></span> [Así consigue un laboratorio multiplicar por 1.000 el precio de
+un medicamento](https://elpais.com/sociedad/2021-12-09/asi-consigue-un-laboratorio-multiplicar-por-1000-el-precio-de-un-medicamento.html), elPais. Leadiant Biosciences ha subido de 14 céntimos a 140
+euros la pastilla del tratamiento de una enfermedad rara aprovechándose del
+monopolio concedido por la UE.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2021-05-31 Mon] </span></span> [Viena, el éxito del urbanismo feminista](https://elpais.com/eps/2021-05-29/urbanismo-feminista-ciudad-feliz.html), elPaís. A mediados del
  siglo pasado, un grupo de hombres de clase media y conductores definieron las

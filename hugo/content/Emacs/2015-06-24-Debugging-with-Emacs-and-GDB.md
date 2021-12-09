@@ -46,16 +46,16 @@ A short step-by-step guide:
 -   Open and save a new file `hello.c` with the following contents:
 
     ```c
-    #include <stdio.h>
+        #include <stdio.h>
 
-    int main(int argc, char* argv[]) {
-        int i;
-        printf("hello world\n");
-        for ( i=0;i<10;++i) {
-            printf("%d \n",i);
+        int main(int argc, char* argv[]) {
+            int i;
+            printf("hello world\n");
+            for ( i=0;i<10;++i) {
+                printf("%d \n",i);
+            }
+            return 0;
         }
-        return 0;
-    }
     ```
 
 -   Compile it with `M-x compile`; enter the command `gcc -Wall -g
@@ -82,7 +82,7 @@ the fringe or with `C-x C-a C-b`.
 To permanently set the nice GDB user interface layout, put
 
 ```lisp
-(setq gdb-many-windows t)
+  (setq gdb-many-windows t)
 ```
 
 into your `.emacs` file.  I have also written a function, that
@@ -112,43 +112,43 @@ function `dom-gdb-restore-windows`, that resets the display and fixes
 the window layout:
 
 ```lisp
-(defun dom-gdb-restore-windows ()
-  "Restore GDB session."
-  (interactive)
-  (if (eq gdb-many-windows t)
-      (gdb-restore-windows)
-    (dom-gdb-restore-windows-gud-io-and-source)))
+  (defun dom-gdb-restore-windows ()
+    "Restore GDB session."
+    (interactive)
+    (if (eq gdb-many-windows t)
+        (gdb-restore-windows)
+      (dom-gdb-restore-windows-gud-io-and-source)))
 
-(defun dom-gdb-restore-windows-gud-io-and-source ()
-  "Restore GUD buffer, IO buffer and source buffer next to each other."
-  (interactive)
-  ;; Select dedicated GUD buffer.
-  (switch-to-buffer gud-comint-buffer)
-  (delete-other-windows)
-  (set-window-dedicated-p (get-buffer-window) t)
-  (when (or gud-last-last-frame gdb-show-main)
-    (let ((side-win (split-window nil nil t))
-          (bottom-win (split-window)))
-      ;; Put source to the right.
-      (set-window-buffer
-       side-win
+  (defun dom-gdb-restore-windows-gud-io-and-source ()
+    "Restore GUD buffer, IO buffer and source buffer next to each other."
+    (interactive)
+    ;; Select dedicated GUD buffer.
+    (switch-to-buffer gud-comint-buffer)
+    (delete-other-windows)
+    (set-window-dedicated-p (get-buffer-window) t)
+    (when (or gud-last-last-frame gdb-show-main)
+      (let ((side-win (split-window nil nil t))
+            (bottom-win (split-window)))
+        ;; Put source to the right.
+        (set-window-buffer
+         side-win
+         (if gud-last-last-frame
+             (gud-find-file (car gud-last-last-frame))
+           (gud-find-file gdb-main-file)))
+        (setq gdb-source-window side-win)
+        ;; Show dedicated IO buffer below.
+        (set-window-buffer
+         bottom-win
+         (gdb-get-buffer-create 'gdb-inferior-io))
+        (set-window-dedicated-p bottom-win t))))
+
+  (defun dom-gdb-display-source-buffer ()
+    "Display gdb source buffer if it is set."
+    (interactive)
+    (when (or gud-last-last-frame gdb-show-main)
+      (switch-to-buffer
        (if gud-last-last-frame
            (gud-find-file (car gud-last-last-frame))
-         (gud-find-file gdb-main-file)))
-      (setq gdb-source-window side-win)
-      ;; Show dedicated IO buffer below.
-      (set-window-buffer
-       bottom-win
-       (gdb-get-buffer-create 'gdb-inferior-io))
-      (set-window-dedicated-p bottom-win t))))
-
-(defun dom-gdb-display-source-buffer ()
-  "Display gdb source buffer if it is set."
-  (interactive)
-  (when (or gud-last-last-frame gdb-show-main)
-    (switch-to-buffer
-     (if gud-last-last-frame
-         (gud-find-file (car gud-last-last-frame))
-       (gud-find-file gdb-main-file))))
-  (delete-other-windows))
+         (gud-find-file gdb-main-file))))
+    (delete-other-windows))
 ```

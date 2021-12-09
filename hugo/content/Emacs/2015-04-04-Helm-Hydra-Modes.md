@@ -28,10 +28,10 @@ actions.  You can bind the `TAB` key back to
 `helm-execute-persistent-action` with
 
 ```lisp
-;; Bind TAB to complete stuff.
-(define-key helm-map (kbd "TAB")         'helm-execute-persistent-action)
-;; Rebind `helm-select-action' (originally bound to TAB).
-(define-key helm-map (kbd "C-j")         'helm-select-action)
+  ;; Bind TAB to complete stuff.
+  (define-key helm-map (kbd "TAB")         'helm-execute-persistent-action)
+  ;; Rebind `helm-select-action' (originally bound to TAB).
+  (define-key helm-map (kbd "C-j")         'helm-select-action)
 ```
 
 I had used [Ido mode](http://emacswiki.org/emacs/InteractivelyDoThings) extensively before I switched to Helm mode.  I
