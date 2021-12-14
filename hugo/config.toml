@@ -2,7 +2,7 @@ baseurl = "https://dschrempf.github.io/"
 title = "Concept → IO ()"
 
 languageCode = "en-us"
-disqusShortname = "dschrempf"
+disqusShortname = ""
 MetaDataFormat = "toml"
 
 theme = "skeria"
@@ -45,7 +45,7 @@ paginate = 30
 
     # Displays under the author name in the sidebar, keep it short.
     # You can use markdown here.
-    tagline = "Articles about coding and music."
+    tagline = ""
 
     # Sidebar social links, these must be full URLs.
     github = "https://github.com/dschrempf"

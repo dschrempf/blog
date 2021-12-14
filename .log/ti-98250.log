@@ -1,0 +1,34 @@
+[13:38:25.609] Global cache location '/home/dominik/.cache/typescript/4.5', safe file path '/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/typingSafeList.json', types map path /nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/typesMap.json
+[13:38:25.610] Processing cache location '/home/dominik/.cache/typescript/4.5'
+[13:38:25.610] Trying to find '/home/dominik/.cache/typescript/4.5/package.json'...
+[13:38:25.613] Finished processing cache location '/home/dominik/.cache/typescript/4.5'
+[13:38:25.613] Process id: 98257
+[13:38:25.613] NPM location: /nix/store/3mhy30qbr4f6m04zzbc9km55bf2aykcd-nodejs-14.18.1/bin/npm (explicit '--npmLocation' not  provided)
+[13:38:25.613] validateDefaultNpmLocation: false
+[13:38:25.614] Npm config file: /home/dominik/.cache/typescript/4.5/package.json
+[13:38:25.614] Npm config file: '/home/dominik/.cache/typescript/4.5/package.json' is missing, creating new one...
+[13:38:25.614] Updating types-registry npm package...
+[13:38:25.615] Exec: /nix/store/3mhy30qbr4f6m04zzbc9km55bf2aykcd-nodejs-14.18.1/bin/npm install --ignore-scripts types-registry@latest
+[13:38:27.045]     Succeeded. stdout:
+    + types-registry@0.1.571
+    added 1 package from 1 contributor and audited 1 package in 0.597s
+found 0 vulnerabilities
+
+
+[13:38:27.046] Updated types-registry npm package
+[13:38:27.088] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es5.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2016.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.dom.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/dominik/Shared/blog/hugo/themes/skeria/static/js/search.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/dominik/Shared/blog/hugo/themes/skeria/static/js","kind":"discover"}
+[13:38:27.113] Loaded safelist from types map file '/nix/store/plbik9pqq1hmrdpml9cpb3yqp4ddm7wk-typescript-4.5.3/lib/node_modules/typescript/lib/typesMap.json'
+[13:38:27.113] Explicitly included types: []
+[13:38:27.114] Inferred typings from unresolved imports: []
+[13:38:27.114] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/dominik/Shared/blog/hugo/themes/skeria/static/js/bower_components","/home/dominik/Shared/blog/hugo/themes/skeria/static/js/node_modules"]}
+[13:38:27.114] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/dominik/Shared/blog/hugo/themes/skeria/static/js/bower_components","/home/dominik/Shared/blog/hugo/themes/skeria/static/js/node_modules"]}
+[13:38:27.114] DirectoryWatcher:: Added:: WatchInfo: /home/dominik/Shared/blog/hugo/themes/skeria/static/js/bower_components
+[13:38:27.115] DirectoryWatcher:: Added:: WatchInfo: /home/dominik/Shared/blog/hugo/themes/skeria/static/js/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[13:38:27.116] Elapsed:: 1.3895309995859861ms DirectoryWatcher:: Added:: WatchInfo: /home/dominik/Shared/blog/hugo/themes/skeria/static/js/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[13:38:27.116] DirectoryWatcher:: Added:: WatchInfo: /home/dominik/Shared/blog/hugo/themes/skeria/static/js/node_modules
+[13:38:27.116] DirectoryWatcher:: Added:: WatchInfo: /home/dominik/Shared/blog/hugo/themes/skeria/static/js/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[13:38:27.117] Elapsed:: 0.10630299896001816ms DirectoryWatcher:: Added:: WatchInfo: /home/dominik/Shared/blog/hugo/themes/skeria/static/js/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[13:38:27.117] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[13:38:27.117] Response has been sent.
+[13:38:27.117] No new typings were requested as a result of typings discovery

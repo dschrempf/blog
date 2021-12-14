@@ -14,16 +14,17 @@
 #+EXCLUDE_TAGS: noexport
 #+OPTIONS: num:nil
 
+
 # Gravatar.
 #+begin_export html
 <img style="border-radius: 50%; float: right;"
      src="https://www.gravatar.com/avatar/b05a00fb86fa378973181afd07c7e548?s=150"
      alt="gravatar"
      title="Dominik Schrempf"/>
-<div> Postdoc in Evolutionary Biology<br/>
-<a href="https://www.elte.hu/en/">Eötvös Loránd University</a>
-</div>
 #+end_export
+
+Postdoc in Evolutionary Biology\\
+[[https://www.elte.hu/en/][Eötvös Loránd University]]
 
 * Interests
 - Evolutionary Biology
@@ -39,16 +40,13 @@
 :PROPERTIES:
 :ID:       fcb6959f-90b5-4fa2-aed8-422cb9406d58
 :END:
-Dominik Schrempf is a postdoc in evolutionary biology at the Eötvös Loránd
-University in Budapest. He is developing models suitable for inferring deep
+I am a postdoc in evolutionary biology at the Eötvös Loránd University in
+Budapest. I develop phylogenetic methods suitable for inferring deep
 phylogenies, when gene duplication and loss and horizontal gene transfer are
 abundant.
 
-During his PhD, Dominik Schrempf worked on phylogenetic models accounting for
-present and ancestral genetic variation which leads to incomplete lineage
-sorting ([[http://www.iqtree.org/doc/Polymorphism-Aware-Models][PoMo]]). He focused on finding analytical solutions of models in
-population genetics to employ in phylogenetic inference. He became particularly
-intrigued by the connection between discrete and continuous approaches.
+During my PhD, I worked on phylogenetic models accounting for present and
+ancestral genetic variation which leads to incomplete lineage sorting ([[http://www.iqtree.org/doc/Polymorphism-Aware-Models][PoMo]]).
 
 # Maybe insert CV here.
 
