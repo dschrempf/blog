@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2021-12-14T17:13:18+01:00
+lastmod = 2021-12-14T17:15:11+01:00
 type = "page"
 draft = false
 [menu.about]
