@@ -10,7 +10,7 @@
 #+LANGUAGE: en
 
 Sometimes you discover online resources that you want to remember and share.
-[[http://iptables.org/][These tutorials]] by the developers of [[http://iptables.org/][=iptables=]] (mainly Paul 'Rusty' Russell)
+[[https://www.netfilter.org/documentation/index.html#documentation-howto][These tutorials]] by the developers of [[http://iptables.org/][=iptables=]] (mainly Paul 'Rusty' Russell)
 are one of those gems. They discuss how the internet works, how packets can be
 adequately filtered and how a firewall can be setup.
 
