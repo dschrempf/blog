@@ -18,28 +18,27 @@ like to add some definitions or synonyms to this overview.
 * Bibliography
 ** Books
 - The nomenclature here is taken from the excellent introduction to Markov chain
-  Monte Carlo (MCMC) methods by fullcite:Geyer2011, Chapter 1 in
-  fullcite:Brooks2011.
+  Monte Carlo (MCMC) methods by [cite/t:@Geyer2011], Chapter 1 in
+  [cite/t:@Brooks2011].
 - More advanced topics such as population based MCMC methods are covered in
-  fullcite:Liang2011.
-- See autocite:Doucet2001 for sequential Monte Carlo algorithms.
+  [cite/t:@Liang2011].
+- See [cite/t:@Doucet2001] for sequential Monte Carlo algorithms.
 
 ** Articles
 :PROPERTIES:
 :ID:       7ba3e76f-cb8e-4513-bdb4-1c41161b6e4b
 :END:
-- fullcite:Gilks2001
-- fullcite:DelMoral2006
-- fullcite:Andrieu2010
-- fullcite:Doucet2011
-- fullcite:Chopin2012
-- fullcite:Heng2020
+- [cite/t:@Gilks2001]
+- [cite/t:@DelMoral2006]
+- [cite/t:@Andrieu2010]
+- [cite/t:@Doucet2011]
+- [cite/t:@Chopin2012]
+- [cite/t:@Heng2020]
 
 ** Articles tailored to a phylogenetic audience
-- fullcite:BouchardCote2012
-- fullcite:Dinh2018
-- fullcite:Fourment2018
-
+- [cite/t:@BouchardCote2012]
+- [cite/t:@Dinh2018]
+- [cite/t:@Fourment2018]
 
 * Necessary definitions
 *Elementary updates* are instructions about how to advance a Markov chain so
@@ -117,4 +116,5 @@ methods running various MCMC samplers in parallel.
 - Parallel tempering.
 - Metropolic-coupled MCMC (MC3) is Parallel tempering.
 
-bibliography:~/Evolutionary-Biology/Bibliography/bibliography.bib
+* References
+#+print_bibliography:

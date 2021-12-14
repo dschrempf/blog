@@ -21,28 +21,28 @@ like to add some definitions or synonyms to this overview.
 ### Books {#books}
 
 -   The nomenclature here is taken from the excellent introduction to Markov chain
-    Monte Carlo (MCMC) methods by <Geyer2011>, Chapter 1 in
-    <Brooks2011>.
+    Monte Carlo (MCMC) methods by Geyer (<a href="#citeproc_bib_item_10">2011</a>), Chapter 1 in
+    Brooks et al. (<a href="#citeproc_bib_item_3">2011</a>).
 -   More advanced topics such as population based MCMC methods are covered in
-    <Liang2011>.
--   See <Doucet2001> for sequential Monte Carlo algorithms.
+    Liang, Liu, and Carroll (<a href="#citeproc_bib_item_13">2011</a>).
+-   See Doucet, de Freitas, and Gordon (<a href="#citeproc_bib_item_8">2001</a>) for sequential Monte Carlo algorithms.
 
 
 ### Articles {#articles}
 
--   <Gilks2001>
--   <DelMoral2006>
--   <Andrieu2010>
--   <Doucet2011>
--   <Chopin2012>
--   <Heng2020>
+-   Gilks and Berzuini (<a href="#citeproc_bib_item_11">2001</a>)
+-   Del Moral, Doucet, and Jasra (<a href="#citeproc_bib_item_5">2006</a>)
+-   Andrieu, Doucet, and Holenstein (<a href="#citeproc_bib_item_1">2010</a>)
+-   Doucet and Johansen (<a href="#citeproc_bib_item_7">2011</a>)
+-   Chopin, Jacob, and Papaspiliopoulos (<a href="#citeproc_bib_item_4">2012</a>)
+-   Heng et al. (<a href="#citeproc_bib_item_12">2020</a>)
 
 
 ### Articles tailored to a phylogenetic audience {#articles-tailored-to-a-phylogenetic-audience}
 
--   <BouchardCote2012>
--   <Dinh2018>
--   <Fourment2018>
+-   Bouchard-Côté, Sankararaman, and Jordan (<a href="#citeproc_bib_item_2">2012</a>)
+-   Dinh, Darling, and IV (<a href="#citeproc_bib_item_6">2018</a>)
+-   Fourment et al. (<a href="#citeproc_bib_item_9">2018</a>)
 
 
 ## Necessary definitions {#necessary-definitions}
@@ -158,4 +158,21 @@ Reversible jump MCMC algorithm
 -   Parallel tempering.
 -   Metropolic-coupled MCMC (MC3) is Parallel tempering.
 
-<~/Evolutionary-Biology/Bibliography/bibliography.bib>
+
+## References {#references}
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Andrieu, Christophe, Arnaud Doucet, and Roman Holenstein. 2010. “Particle Markov Chain Monte Carlo Methods.” <i>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</i> 72 (3): 269–342. <a href="https://doi.org/10.1111/j.1467-9868.2009.00736.x">https://doi.org/10.1111/j.1467-9868.2009.00736.x</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Bouchard-Côté, Alexandre, Sriram Sankararaman, and Michael I. Jordan. 2012. “Phylogenetic Inference via Sequential Monte Carlo.” <i>Systematic Biology</i> 61 (4): 579–93. <a href="https://doi.org/10.1093/sysbio/syr131">https://doi.org/10.1093/sysbio/syr131</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Brooks, Steve, Andrew Gelman, Galin Jones, and Xiao-Li Meng, eds. 2011. <i>Handbook of Markov Chain Monte Carlo</i>. CRC press.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>Chopin, N., P. E. Jacob, and O. Papaspiliopoulos. 2012. “Smc2: An Efficient Algorithm for Sequential Analysis of State Space Models.” <i>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</i> 75 (3): 397–426. <a href="https://doi.org/10.1111/j.1467-9868.2012.01046.x">https://doi.org/10.1111/j.1467-9868.2012.01046.x</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_5"></a>Del Moral, Pierre, Arnaud Doucet, and Ajay Jasra. 2006. “Sequential Monte Carlo Samplers.” <i>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</i> 68 (3): 411–36. <a href="https://doi.org/10.1111/j.1467-9868.2006.00553.x">https://doi.org/10.1111/j.1467-9868.2006.00553.x</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_6"></a>Dinh, Vu, Aaron E Darling, and Frederick A Matsen IV. 2018. “Online Bayesian Phylogenetic Inference: Theoretical Foundations via Sequential Monte Carlo.” Edited by Edward Susko. <i>Systematic Biology</i> 67 (3): 503–17. <a href="https://doi.org/10.1093/sysbio/syx087">https://doi.org/10.1093/sysbio/syx087</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_7"></a>Doucet, A., and A. M. Johansen. 2011. “A tutorial on particle filtering and smoothing: fifteen years later.” In <i>The Oxford handbook of nonlinear filtering</i>, edited by Dan Crisan and Boris Rozovskii, 656–704. Oxford: Oxford University Press.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_8"></a>Doucet, Arnaud, Nando de Freitas, and Neil Gordon, eds. 2001. <i>Sequential Monte Carlo Methods in Practice</i>. Springer New York. <a href="https://doi.org/10.1007/978-1-4757-3437-9">https://doi.org/10.1007/978-1-4757-3437-9</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_9"></a>Fourment, Mathieu, Brian C. Claywell, Vu Dinh, Connor McCoy, Frederick A. Matsen IV, and Aaron E. Darling. 2018. “Effective Online Bayesian Phylogenetics via Sequential Monte Carlo with Guided Proposals.” Edited by Edward Suskso. <i>Systematic Biology</i> 67 (3): 490–502. <a href="https://doi.org/10.1093/sysbio/syx090">https://doi.org/10.1093/sysbio/syx090</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_10"></a>Geyer, Charles J. 2011. “Introduction to Markov Chain Monte Carlo.” In <i>Handbook of Markov Chain Monte Carlo</i>, edited by Steve Brooks, Andrew Gelman, Galin Jones, and Xiao-Li Meng, 45. CRC press.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_11"></a>Gilks, Walter R., and Carlo Berzuini. 2001. “Following a Moving Target-Monte Carlo Inference for Dynamic Bayesian Models.” <i>Journal of the Royal Statistical Society. Series B (Statistical Methodology)</i> 63 (1): 127–46.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_12"></a>Heng, Jeremy, Adrian N. Bishop, George Deligiannidis, and Arnaud Doucet. 2020. “Controlled Sequential Monte Carlo.” <i>Annals of Statistics</i> 48 (5): 2904–29. <a href="https://doi.org/10.1214/19-aos1914">https://doi.org/10.1214/19-aos1914</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_13"></a>Liang, Faming, Chuanhai Liu, and Raymond Carroll. 2011. <i>Advanced Markov Chain Monte Carlo Methods: Learning from Past Samples</i>. Vol. 714. John Wiley &#38; Sons.</div>
+</div>
