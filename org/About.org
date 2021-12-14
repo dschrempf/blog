@@ -57,4 +57,3 @@ intrigued by the connection between discrete and continuous approaches.
 # Maybe link to some other stuff that interests me.
 
 # See https://themes.gohugo.io/theme/academic/.
-
