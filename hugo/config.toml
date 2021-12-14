@@ -69,7 +69,7 @@ paginate = 30
     rss = false
 
     # Privacy statement link.
-    privacyPolicy = "https://www.iubenda.com/privacy-policy/76967501"
+    privacyPolicy = "/privacy/"
 
 [[menu.main]]
     url = "/linux/"
