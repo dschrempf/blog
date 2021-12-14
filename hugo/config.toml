@@ -47,7 +47,7 @@ paginate = 30
     # You can use markdown here.
     tagline = ""
 
-    # Sidebar social links, these must be full URLs.
+    # Icons.
     github = "https://github.com/dschrempf"
     bitbucket = ""
     stackOverflow = "https://www.stackoverflow.com/users/3536806"
@@ -58,18 +58,12 @@ paginate = 30
     youtube = ""
     orcid = "https://orcid.org/0000-0001-8865-9237"
     flattr = ""
-
-    # Mailto link.
     email = "mailto:dominik.schrempf@gmail.com"
-
-    # GPG key.
     gpgkey = "/gpg_public_key.txt"
+    rss = ""
 
-    # RSS.
-    rss = false
-
-    # Privacy statement link.
-    privacyPolicy = "/privacy/"
+    # Link to privacy notice.
+    privacyNotice = "/privacy/"
 
 [[menu.main]]
     url = "/linux/"
