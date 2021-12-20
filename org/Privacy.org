@@ -18,7 +18,7 @@ This page does not collect any data.
 Your data is safe!
 
 #+begin_export html
-Contact me:
+Contact me: &nbsp;
 <span class="icons-item"> <a href="https://github.com/dschrempf" target="_blank"><i class="fab fa-github"></i></a></span>
 <span class="icons-item"> <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a></span>
 <span class="icons-item"> <a href="https://twitter.com/fazky" target="_blank"><i class="fab fa-twitter fa-1x"></i></a></span>

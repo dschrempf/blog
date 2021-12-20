@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Privacy notice."
 date = 2021-12-14T00:00:00+01:00
 keywords = ["Privacy notice", "Blog", "Linux", "Emacs", "Python", "Haskell", "Music"]
-lastmod = 2021-12-14T17:15:12+01:00
+lastmod = 2021-12-20T09:28:27+01:00
 type = "page"
 draft = false
 +++
@@ -13,7 +13,7 @@ This page does not collect any data.
 
 Your data is safe!
 
-Contact me:
+Contact me: &nbsp;
 <span class="icons-item"> <a href="https://github.com/dschrempf" target="_blank"><i class="fab fa-github"></i></a></span>
 <span class="icons-item"> <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a></span>
 <span class="icons-item"> <a href="https://twitter.com/fazky" target="_blank"><i class="fab fa-twitter fa-1x"></i></a></span>
