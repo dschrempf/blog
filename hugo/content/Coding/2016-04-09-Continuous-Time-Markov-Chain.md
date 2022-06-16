@@ -19,9 +19,9 @@ the `doc/` folder (check the `CTMC` class).
 
 There is a sample program `src/moran_model_boundary_mutation`, that
 runs the Moran model with boundary mutation (De Maio, N., Schrempf,
-D., & Kosiol, C. (2015). PoMo: An Allele Frequency-Based Approach for
+D., &amp; Kosiol, C. (2015). PoMo: An Allele Frequency-Based Approach for
 Species Tree Estimation. Systematic Biology, 64(6),
-1018–1031. <10.1093/sysbio/syv048>).
+1018–1031. doi:10.1093/sysbio/syv048).
 
 Using the chain is as easy as:
 

@@ -71,7 +71,7 @@ class Graph g where
   connect :: g -> g -> g
 ```
 
-The definition involves a [type synonym family](https://wiki.haskell.org/GHC/Type%5Ffamilies), which is a function on the type
+The definition involves a [type synonym family](https://wiki.haskell.org/GHC/Type_families), which is a function on the type
 level. The type synonym family specifies how the type of a vertex can be
 extracted from the data type instance.
 
@@ -115,7 +115,7 @@ and overlay them. More basic, \\( \forall x \in G\\) we have
   x = x \ast \epsilon.
 \end{align}
 
-_The [canonical form](https://en.wikipedia.org/wiki/Canonical%5Fform) of a given graph \\(g = (V\_g, E\_g)\\) is_
+_The [canonical form](https://en.wikipedia.org/wiki/Canonical_form) of a given graph \\(g = (V\_g, E\_g)\\) is_
 
 \begin{align}
   g = \sum\_{v \in V\_g} v + \sum\_{(u,v) \in E\_g} u \ast v.

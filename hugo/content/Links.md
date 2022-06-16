@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2021-12-14T17:15:12+01:00
+lastmod = 2022-06-16T11:25:38+02:00
 draft = false
 [menu.about]
   identifier = "links-to-newspaper-articles"
@@ -52,8 +52,13 @@ one of them.
 
 ## Español {#español}
 
+<span class="timestamp-wrapper"><span class="timestamp">[2022-06-16 Thu] </span></span> [No son tus hijos, no es tu jefe; es el sistema. Así se genera
+el agotamiento o ‘burnout’ parental](https://elpais.com/salud-y-bienestar/2022-06-16/no-son-tus-hijos-no-es-tu-jefe-es-el-sistema-asi-se-genera-el-agotamiento-o-burnout-parental.html), elPaís. Los tabúes sobre la maternidad
+impiden que muchas mujeres sepan qué les ocurre o que sientan que pueden hablar
+sobre ello con los demás.
+
 <span class="timestamp-wrapper"><span class="timestamp">[2021-12-09 Thu] </span></span> [Así consigue un laboratorio multiplicar por 1.000 el precio de
-un medicamento](https://elpais.com/sociedad/2021-12-09/asi-consigue-un-laboratorio-multiplicar-por-1000-el-precio-de-un-medicamento.html), elPais. Leadiant Biosciences ha subido de 14 céntimos a 140
+un medicamento](https://elpais.com/sociedad/2021-12-09/asi-consigue-un-laboratorio-multiplicar-por-1000-el-precio-de-un-medicamento.html), elPaís. Leadiant Biosciences ha subido de 14 céntimos a 140
 euros la pastilla del tratamiento de una enfermedad rara aprovechándose del
 monopolio concedido por la UE.
 
@@ -72,7 +77,7 @@ calidad.
 ayudar a los países que lo necesitan"](https://elpais.com/ciencia/2020-04-08/somos-una-europa-unida-o-no-la-unica-respuesta-posible-es-ayudar-a-los-paises-que-lo-necesitan.html), elPaís. El jefe de la ciencia europea
 dimite en medio de la crisis desatada por el nuevo coronavirus.
 
-<span class="timestamp-wrapper"><span class="timestamp">[2018-09-04 Tue] </span></span> [El genetista italiano que desmontó el concepto de raza](https://elpais.com/elpais/2018/09/03/ciencia/1535974124%5F908508.html), elPaís.
+<span class="timestamp-wrapper"><span class="timestamp">[2018-09-04 Tue] </span></span> [El genetista italiano que desmontó el concepto de raza](https://elpais.com/elpais/2018/09/03/ciencia/1535974124_908508.html), elPaís.
 “El racismo es un antiguo flagelo de la humanidad”. “Pensamos que la ciencia sea
 objetiva. La ciencia está modelada por la sociedad porque es una actividad
 humana productiva que necesita tiempo y dinero, pues está guiada y dirigida por
@@ -80,7 +85,7 @@ aquellas fuerzas que en el mundo ejercen el control sobre el dinero y sobre el
 tiempo. Las fuerzas sociales y económicas determinan en larga medida lo que la
 ciencia hace y cómo lo hace”.
 
-<span class="timestamp-wrapper"><span class="timestamp">[2016-09-22 Thu] </span></span> [“A veces, hasta los paranoicos tenemos razón”](https://elpais.com/cultura/2016/09/15/actualidad/1473939710%5F796979.html), elPaís. Los que
+<span class="timestamp-wrapper"><span class="timestamp">[2016-09-22 Thu] </span></span> [“A veces, hasta los paranoicos tenemos razón”](https://elpais.com/cultura/2016/09/15/actualidad/1473939710_796979.html), elPaís. Los que
 me preocupan son todos esos jóvenes ignorantes que pasan de todo porque dicen
 que no tienen nada que ocultar. Es ese tipo de gente que no se preocupa por el
 mundo en el que vive, porque se violen los derechos, las libertades que muchos

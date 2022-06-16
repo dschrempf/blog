@@ -16,7 +16,7 @@ host names, IP addresses or passwords.
 
 ## Login with SSH key {#login-with-ssh-key}
 
-First, you want to create your own [SSH key](https://wiki.archlinux.org/index.php/SSH%5Fkeys) so that your server accepts
+First, you want to create your own [SSH key](https://wiki.archlinux.org/index.php/SSH_keys) so that your server accepts
 your login without any password.
 
 ```bash
