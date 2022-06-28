@@ -1,0 +1,49 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Coding
+#+HUGO_CATEGORIES: Coding
+#+HUGO_TYPE: post
+#+TITLE: Parameter inference using Markov chain Monte Carlo algorithms and Haskell
+#+DATE: <2022-06-28 Tue>
+#+AUTHOR: Dominik Schrempf
+#+EMAIL: dominik.schrempf@gmail.com
+#+DESCRIPTION: How to use a Markov chain Monte Carlo sampler
+#+KEYWORDS: "Markov chain Monte Carlo" "Haskell" "Metropolis-Hastings-Green" "Hamiltonian dynamics"
+#+LANGUAGE: en
+
+#+bibliography: ~/Evolutionary-Biology/Bibliography/bibliography.bib
+
+# Motivation.
+
+Motivate first. Use the [[https://revbayes.github.io/tutorials/mcmc/poisson.html][Poisson example]] (from the benchmark).
+
+#+begin_blockemph
+This sounds theoretical and over-complicated. Why do I need a dedicated
+algorithm to sample from a probability distribution? Isn't it easy to just pick
+more probable values more often than less probably values, and do so with the
+correct ratio?
+#+end_blockemph
+
+The answer is: Yes, and this is exactly what Markov chain Monte Carlo samplers
+do. For example, the most famous Metropolis-Hastings-Green algorithm
+[cite:@Geyer2011] samples new values from a given, well-behaved proposal
+distribution, only to accept or reject the new values according to the actual
+probability distribution of interest.
+
+# Algorithm.
+
+[[https://en.wikipedia.org/wiki/Markov_chain][Markov chains]] (or processes) are sequences of events with a peculiar property:
+the probability of each possible next event only depends on the state of the
+previous event. Markov chains are widely used in statistics, for example, to
+predict the weather. An interesting application of Markov chains is [[https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo][Markov chain
+Monte Carlo]], a class of algorithms used to effectively sample from probability
+distributions.
+
+# Notes.
+
+Disclaimer: Many probability distributions are heavily studied and there exist
+much faster, dedicated sampling methods. For example, see the [[https://en.wikipedia.org/wiki/Normal_distribution#Generating_values_from_normal_distribution][computatinal
+methods to sample from the normal distribution]]. Actually, the
+Metropolis-Hastings-Green algorithm makes uses these dedicated methods.
+
+* References
+#+print_bibliography:
