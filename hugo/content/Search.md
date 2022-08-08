@@ -4,13 +4,14 @@ author = ["Dominik Schrempf"]
 date = 2018-08-16T00:00:00+02:00
 keywords = ["Search"]
 layout = "search"
-lastmod = 2022-06-16T11:25:38+02:00
+lastmod = 2022-08-08T21:51:32+02:00
 type = "page"
 draft = false
 sitemap = "priority : 0.1"
 search = "t"
-[menu.search]
-  identifier = "search"
-  weight = 7
-  name = "Search"
+[menu]
+  [menu.search]
+    identifier = "search"
+    weight = 7
+    name = "Search"
 +++

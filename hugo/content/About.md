@@ -4,13 +4,14 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-06-16T11:25:37+02:00
+lastmod = 2022-08-08T21:51:29+02:00
 type = "page"
 draft = false
-[menu.about]
-  identifier = "dominik-schrempf"
-  weight = 6
-  name = "About"
+[menu]
+  [menu.about]
+    identifier = "dominik-schrempf"
+    weight = 6
+    name = "About"
 +++
 
 <img style="border-radius: 50%; float: right;"

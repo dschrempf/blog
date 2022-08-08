@@ -44,7 +44,6 @@ A good overview about debugging in Emacs with GDB can be found in the
 A short step-by-step guide:
 
 -   Open and save a new file `hello.c` with the following contents:
-
     ```c
         #include <stdio.h>
 
