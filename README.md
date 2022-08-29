@@ -1,8 +1,8 @@
 Source code of my [blog](https://dschrempf.github.io/).
 
 # Built with
-- [Org Mode](https://orgmode.org/);
-- [Hugo](https://gohugo.io/);
+- [Org Mode](https://orgmode.org/).
+- [Hugo](https://gohugo.io/).
 - [ox-hugo](https://ox-hugo.scripter.co/).
 
 # Theme
