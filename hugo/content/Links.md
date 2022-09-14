@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2022-08-29T07:04:31+02:00
+lastmod = 2022-09-14T13:41:16+02:00
 draft = false
 [menu]
   [menu.about]
@@ -35,6 +35,11 @@ miteinander, am klügsten wäre jedoch die Einigung auf Signal.
 
 
 ## English {#english}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2022-09-01 Thu] </span></span> [Civil disobedience by scientists helps press for urgent climate
+action](https://www.nature.com/articles/s41558-022-01461-y); nature climate change. A matching article on The Guardian: [Scientists
+call on colleagues to protest climate crisis with civil disobedience](https://www.theguardian.com/environment/2022/aug/29/scientists-call-on-colleagues-to-protest-climate-crisis-with-civil-disobedience). Maybe
+also check out the [Extinction Rebellion](https://rebellion.global/).
 
 <span class="timestamp-wrapper"><span class="timestamp">[2021-01-11 Mon] </span></span> [Polarization in Poland: A Warning From Europe](https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/), The Atlantic.
 
