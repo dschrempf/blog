@@ -33,6 +33,11 @@ derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattforme
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
 * English
+[2022-09-01 Thu] [[https://www.nature.com/articles/s41558-022-01461-y][Civil disobedience by scientists helps press for urgent climate
+action]]; nature climate change. A matching article on The Guardian: [[https://www.theguardian.com/environment/2022/aug/29/scientists-call-on-colleagues-to-protest-climate-crisis-with-civil-disobedience][Scientists
+call on colleagues to protest climate crisis with civil disobedience]]. Maybe
+also check out the [[https://rebellion.global/][Extinction Rebellion]].
+
 [2021-01-11 Mon] [[https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/][Polarization in Poland: A Warning From Europe]], The Atlantic.
 
 [2020-04-29 Wed] [[https://www.nature.com/articles/d41586-020-01266-z][Pseudoscience and COVID-19 — we’ve had enough already]], Nature.
