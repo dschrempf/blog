@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2022-09-14T13:41:16+02:00
+lastmod = 2022-09-20T09:23:23+02:00
 draft = false
 [menu]
   [menu.about]
@@ -14,9 +14,14 @@ draft = false
 
 ## Deutsch {#deutsch}
 
+<span class="timestamp-wrapper"><span class="timestamp">[2022-09-17 Sat] </span></span> [Strompreisbremse: Ja nicht auf etwas verzichten müssen!](https://www.derstandard.at/story/2000139163806/strompreisbremse-ja-nicht-auf-etwas-verzichten-muessen),
+derStandard. Die Zukunft unserer Kinder scheint egal zu sein. Wir wollen jetzt
+billigen Strom. Österreich hängt kommenden Generationen mit der Strompreisbremse
+eine gewaltige Schuldenlast um.
+
 <span class="timestamp-wrapper"><span class="timestamp">[2021-05-29 Sat] </span></span> [Elf Jahre an der Macht: Das Orbán-Regime der Günstlinge](https://www.derstandard.at/story/2000127007319/zehn-jahre-an-der-macht-das-orban-regime-der-guenstlinge),
 derStandard. Viktor Orbán hat sich auf Kosten Ungarns mit gezielten
-Grenzüberschreitungen die unumschränkte Macht gesichert
+Grenzüberschreitungen die unumschränkte Macht gesichert.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2019-08-17 Sat] </span></span> [Lärm: Je schneller, desto LAUTER!!!](https://www.derstandard.at/story/2000107463546/laerm-je-schneller-desto-lauter), derStandard. Wo kann man
 noch Ruhe finden?
@@ -41,7 +46,7 @@ action](https://www.nature.com/articles/s41558-022-01461-y); nature climate chan
 call on colleagues to protest climate crisis with civil disobedience](https://www.theguardian.com/environment/2022/aug/29/scientists-call-on-colleagues-to-protest-climate-crisis-with-civil-disobedience). Maybe
 also check out the [Extinction Rebellion](https://rebellion.global/).
 
-<span class="timestamp-wrapper"><span class="timestamp">[2021-01-11 Mon] </span></span> [Polarization in Poland: A Warning From Europe](https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/), The Atlantic.
+<span class="timestamp-wrapper"><span class="timestamp">[2021-01-11 Mon] </span></span> [Polarization in Poland: A Warning From Europe](https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/), TheAtlantic.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-29 Wed] </span></span> [Pseudoscience and COVID-19 — we’ve had enough already](https://www.nature.com/articles/d41586-020-01266-z), Nature.
 
@@ -54,6 +59,11 @@ also check out the [Extinction Rebellion](https://rebellion.global/).
 <span class="timestamp-wrapper"><span class="timestamp">[2019-08-30 Fri] </span></span> [The Secret Shame of Middle-Class Americans](https://www.theatlantic.com/magazine/archive/2016/05/my-secret-shame/476415/), TheAtlantic. Nearly
 half of Americans would have trouble finding $400 to pay for an emergency. I’m
 one of them.
+
+<span class="timestamp-wrapper"><span class="timestamp">[2017-06-27 Tue] </span></span> [Is the staggeringly profitable business of scientific
+publishing bad for science?](https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science), TheGuardian. It is an industry like no other,
+with profit margins to rival Google – and it was created by one of Britain’s
+most notorious tycoons: Robert Maxwell.
 
 
 ## Español {#español}
