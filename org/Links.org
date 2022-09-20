@@ -13,9 +13,14 @@
 #+OPTIONS: num:nil
 
 * Deutsch
+[2022-09-17 Sat] [[https://www.derstandard.at/story/2000139163806/strompreisbremse-ja-nicht-auf-etwas-verzichten-muessen][Strompreisbremse: Ja nicht auf etwas verzichten müssen!]],
+derStandard. Die Zukunft unserer Kinder scheint egal zu sein. Wir wollen jetzt
+billigen Strom. Österreich hängt kommenden Generationen mit der Strompreisbremse
+eine gewaltige Schuldenlast um.
+
 [2021-05-29 Sat] [[https://www.derstandard.at/story/2000127007319/zehn-jahre-an-der-macht-das-orban-regime-der-guenstlinge][Elf Jahre an der Macht: Das Orbán-Regime der Günstlinge]],
 derStandard. Viktor Orbán hat sich auf Kosten Ungarns mit gezielten
-Grenzüberschreitungen die unumschränkte Macht gesichert
+Grenzüberschreitungen die unumschränkte Macht gesichert.
 
 [2019-08-17 Sat] [[https://www.derstandard.at/story/2000107463546/laerm-je-schneller-desto-lauter][Lärm: Je schneller, desto LAUTER!!!]], derStandard. Wo kann man
 noch Ruhe finden?
@@ -33,12 +38,13 @@ derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattforme
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
 * English
+
 [2022-09-01 Thu] [[https://www.nature.com/articles/s41558-022-01461-y][Civil disobedience by scientists helps press for urgent climate
 action]]; nature climate change. A matching article on The Guardian: [[https://www.theguardian.com/environment/2022/aug/29/scientists-call-on-colleagues-to-protest-climate-crisis-with-civil-disobedience][Scientists
 call on colleagues to protest climate crisis with civil disobedience]]. Maybe
 also check out the [[https://rebellion.global/][Extinction Rebellion]].
 
-[2021-01-11 Mon] [[https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/][Polarization in Poland: A Warning From Europe]], The Atlantic.
+[2021-01-11 Mon] [[https://www.theatlantic.com/magazine/archive/2018/10/poland-polarization/568324/][Polarization in Poland: A Warning From Europe]], TheAtlantic.
 
 [2020-04-29 Wed] [[https://www.nature.com/articles/d41586-020-01266-z][Pseudoscience and COVID-19 — we’ve had enough already]], Nature.
 #+begin_quote
@@ -52,6 +58,11 @@ misinformation go unremarked.
 [2019-08-30 Fri] [[https://www.theatlantic.com/magazine/archive/2016/05/my-secret-shame/476415/][The Secret Shame of Middle-Class Americans]], TheAtlantic. Nearly
 half of Americans would have trouble finding $400 to pay for an emergency. I’m
 one of them.
+
+[2017-06-27 Tue] [[https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science][Is the staggeringly profitable business of scientific
+publishing bad for science?]], TheGuardian. It is an industry like no other,
+with profit margins to rival Google – and it was created by one of Britain’s
+most notorious tycoons: Robert Maxwell.
 
 * Español
 [2022-06-16 Thu] [[https://elpais.com/salud-y-bienestar/2022-06-16/no-son-tus-hijos-no-es-tu-jefe-es-el-sistema-asi-se-genera-el-agotamiento-o-burnout-parental.html][No son tus hijos, no es tu jefe; es el sistema. Así se genera
