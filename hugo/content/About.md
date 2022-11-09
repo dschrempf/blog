@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-09-20T09:23:23+02:00
+lastmod = 2022-11-09T16:45:58+01:00
 type = "page"
 draft = false
 [menu]
@@ -27,30 +27,60 @@ draft = false
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 
-Postdoc in Evolutionary Biology<br />
-[Eötvös Loránd University](https://www.elte.hu/en/)
+Postdoc in Computational Evolutionary Biology<br />
+[Eötvös Loránd University, Budapest](https://www.elte.hu/en/)
 
 
 ## Interests {#interests}
 
+-   Functional Programming (Haskell)
+-   Software engineering
+-   Markov Chains
+-   Data science
 -   Evolutionary Biology
 -   Phylogenetics
--   Markov Chains
--   Functional Programming
 
 
 ## Education {#education}
 
--   PhD in Phylogenetics, Vienna University of Veterinary Medicine, 2017
+-   PhD in Computational Evolutionary Biology, Vienna University of Veterinary Medicine, 2017
 -   MSc in Physics, Vienna University of Technology, 2013
 
 
 ## Biography {#biography}
 
-I am a postdoc in evolutionary biology at the Eötvös Loránd University in
-Budapest. I develop phylogenetic methods suitable for inferring deep
-phylogenies, when gene duplication and loss and horizontal gene transfer are
-abundant.
+I am a postdoctoral researcher and software engineer in computational
+evolutionary biology with 15 years of experience in programming in Haskell. I
+have applied my programming skills in a wide array of topics ranging from
+physics and biology to finance.
 
-During my PhD, I worked on phylogenetic models accounting for present and
-ancestral genetic variation which leads to incomplete lineage sorting ([PoMo](http://www.iqtree.org/doc/Polymorphism-Aware-Models)).
+I consider myself an expert in developing, implementing and applying Markov
+chain Monte Carlo samplers. I also have comprehensive experience in working with
+probabilistic models and algorithms in maximum likelihood frameworks.
+
+I have used Haskell extensively in my research projects involving statistical
+inference on phylogenetic trees, which show evolutionary relationships of
+species. In particular, one of my most successful projects is [`mcmc`](https://hackage.haskell.org/package/mcmc), a flexible
+Markov chain Monte Carlo sampler with state-of-the-art features (e.g.,
+techniques based on Hamiltonian dynamics). I am using the `mcmc` library, for
+example, to [estimate node ages of phylogenetic trees](https://github.com/dschrempf/mcmc-date) with great success.
+
+Further, I am developing libraries and tools available on [Hackage](https://hackage.haskell.org/user/dschrempf); please find a
+complete list in my curriculum vitae. Working on these libraries did not only
+require expertise in statistical methods but has also trained me in other
+aspects of computer science such as efficient data structures, serialization,
+parallel programming, unit and property testing, or parsing. Further, I have
+gained experience in concurrent multi-threaded programming using WebSockets and
+REST APIs by developing a trading bot.
+
+I am not only familiar with the Haskell but also with the Linux and Nix
+ecosystems. I have been using Linux for over 20 years and Nix/NixOS more than
+three years.
+
+I enjoy working in international teams. In the last ten years, English has been
+my working language, and I have been collaborating with scientists from all over
+the world. I have acquired considerable experience in giving oral presentations,
+for example, by attending conferences. I am also proficient in writing
+publications (17 papers published in renowned scientific journals).
+
+Please contact me if you want to hire me!
