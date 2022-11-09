@@ -23,7 +23,6 @@
      title="Dominik Schrempf"/>
 #+end_export
 
-
 #+begin_export html
 <span class="icons-item"> <a href="https://github.com/dschrempf" target="_blank"><i class="fab fa-github"></i></a></span>
 <span class="icons-item"> <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a></span>
@@ -36,8 +35,8 @@
 Postdoc in Computational Evolutionary Biology\\
 [[https://www.elte.hu/en/][Eötvös Loránd University, Budapest]]
 
-I am available for hire! Please see below, [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to
-contact me!
+I am available for hire!\\
+Please see below, [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to contact me!
 
 * Interests
 - Functional Programming (Haskell)

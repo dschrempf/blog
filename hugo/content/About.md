@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-11-09T16:55:30+01:00
+lastmod = 2022-11-09T17:03:37+01:00
 type = "page"
 draft = false
 [menu]
@@ -30,8 +30,8 @@ draft = false
 Postdoc in Computational Evolutionary Biology<br />
 [Eötvös Loránd University, Budapest](https://www.elte.hu/en/)
 
-I am available for hire! Please see below, [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to
-contact me!
+I am available for hire!<br />
+Please see below, [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to contact me!
 
 
 ## Interests {#interests}
