@@ -36,6 +36,9 @@
 Postdoc in Computational Evolutionary Biology\\
 [[https://www.elte.hu/en/][Eötvös Loránd University, Budapest]]
 
+I am available for hire! Please see below, [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to
+contact me!
+
 * Interests
 - Functional Programming (Haskell)
 - Software engineering
@@ -48,7 +51,7 @@ Postdoc in Computational Evolutionary Biology\\
 - PhD in Computational Evolutionary Biology, Vienna University of Veterinary Medicine, 2017
 - MSc in Physics, Vienna University of Technology, 2013
 
-* Biography
+* About
 :PROPERTIES:
 :ID:       fcb6959f-90b5-4fa2-aed8-422cb9406d58
 :END:
@@ -56,7 +59,8 @@ Postdoc in Computational Evolutionary Biology\\
 I am a postdoctoral researcher and software engineer in computational
 evolutionary biology with 15 years of experience in programming in Haskell. I
 have applied my programming skills in a wide array of topics ranging from
-physics and biology to finance.
+physics and biology to finance. Now, I would like to move fully into the
+programming community.
 
 I consider myself an expert in developing, implementing and applying Markov
 chain Monte Carlo samplers. I also have comprehensive experience in working with
@@ -87,9 +91,7 @@ the world. I have acquired considerable experience in giving oral presentations,
 for example, by attending conferences. I am also proficient in writing
 publications (17 papers published in renowned scientific journals).
 
-Please contact me if you want to hire me!
-
-# Maybe insert CV here.
+I am available for hire! Please [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to contact me!
 
 # Maybe link to some talks.
 

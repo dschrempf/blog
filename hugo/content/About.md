@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-11-09T16:45:58+01:00
+lastmod = 2022-11-09T16:55:30+01:00
 type = "page"
 draft = false
 [menu]
@@ -30,6 +30,9 @@ draft = false
 Postdoc in Computational Evolutionary Biology<br />
 [Eötvös Loránd University, Budapest](https://www.elte.hu/en/)
 
+I am available for hire! Please see below, [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to
+contact me!
+
 
 ## Interests {#interests}
 
@@ -47,12 +50,13 @@ Postdoc in Computational Evolutionary Biology<br />
 -   MSc in Physics, Vienna University of Technology, 2013
 
 
-## Biography {#biography}
+## About {#about}
 
 I am a postdoctoral researcher and software engineer in computational
 evolutionary biology with 15 years of experience in programming in Haskell. I
 have applied my programming skills in a wide array of topics ranging from
-physics and biology to finance.
+physics and biology to finance. Now, I would like to move fully into the
+programming community.
 
 I consider myself an expert in developing, implementing and applying Markov
 chain Monte Carlo samplers. I also have comprehensive experience in working with
@@ -83,4 +87,4 @@ the world. I have acquired considerable experience in giving oral presentations,
 for example, by attending conferences. I am also proficient in writing
 publications (17 papers published in renowned scientific journals).
 
-Please contact me if you want to hire me!
+I am available for hire! Please [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to contact me!
