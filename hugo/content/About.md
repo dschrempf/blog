@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-11-22T10:13:34+01:00
+lastmod = 2022-11-22T10:16:27+01:00
 type = "page"
 draft = false
 [menu]
@@ -73,8 +73,8 @@ complete list in my curriculum vitae. Working on these libraries did not only
 require expertise in statistical methods but has also trained me in other
 aspects of computer science such as efficient data structures, serialization,
 parallel programming, unit and property testing, or parsing. Further, I have
-gained experience in concurrent multithreaded programming using the WebSocket
-protocol and REST APIs by developing a trading bot.
+gained experience in concurrent multithreaded programming using Web Sockets and
+REST APIs by developing a trading bot.
 
 I am also familiar with the Linux and Nix ecosystems. I have been using Linux
 for over 20 years and NixOS for more than three years. I manage my projects
