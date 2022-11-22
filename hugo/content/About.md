@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-11-09T17:03:37+01:00
+lastmod = 2022-11-22T10:13:34+01:00
 type = "page"
 draft = false
 [menu]
@@ -27,7 +27,7 @@ draft = false
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 
-Postdoc in Computational Evolutionary Biology<br />
+Postdoc in Computational Biology<br />
 [Eötvös Loránd University, Budapest](https://www.elte.hu/en/)
 
 I am available for hire!<br />
@@ -40,23 +40,22 @@ Please see below, [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and 
 -   Software engineering
 -   Markov Chains
 -   Data science
--   Evolutionary Biology
+-   Computational biology
 -   Phylogenetics
 
 
 ## Education {#education}
 
--   PhD in Computational Evolutionary Biology, Vienna University of Veterinary Medicine, 2017
+-   PhD in Computational Biology, Vienna University of Veterinary Medicine, 2017
 -   MSc in Physics, Vienna University of Technology, 2013
 
 
 ## About {#about}
 
-I am a postdoctoral researcher and software engineer in computational
-evolutionary biology with 15 years of experience in programming in Haskell. I
-have applied my programming skills in a wide array of topics ranging from
-physics and biology to finance. Now, I would like to move fully into the
-programming community.
+I am a postdoctoral researcher and software engineer in computational biology
+with 15 years of experience in programming in Haskell. I have applied my
+programming skills in a wide array of topics ranging from physics and biology to
+finance. Now, I would like to move fully into the programming community.
 
 I consider myself an expert in developing, implementing and applying Markov
 chain Monte Carlo samplers. I also have comprehensive experience in working with
@@ -74,17 +73,18 @@ complete list in my curriculum vitae. Working on these libraries did not only
 require expertise in statistical methods but has also trained me in other
 aspects of computer science such as efficient data structures, serialization,
 parallel programming, unit and property testing, or parsing. Further, I have
-gained experience in concurrent multi-threaded programming using WebSockets and
-REST APIs by developing a trading bot.
+gained experience in concurrent multithreaded programming using the WebSocket
+protocol and REST APIs by developing a trading bot.
 
-I am not only familiar with the Haskell but also with the Linux and Nix
-ecosystems. I have been using Linux for over 20 years and Nix/NixOS more than
-three years.
+I am also familiar with the Linux and Nix ecosystems. I have been using Linux
+for over 20 years and NixOS for more than three years. I manage my projects
+using Git and the Nix package manager.
 
 I enjoy working in international teams. In the last ten years, English has been
 my working language, and I have been collaborating with scientists from all over
 the world. I have acquired considerable experience in giving oral presentations,
-for example, by attending conferences. I am also proficient in writing
-publications (17 papers published in renowned scientific journals).
+for example, by attending conferences. I am also proficient in reading and
+writing publications (17 papers published in renowned scientific journals).
 
-I am available for hire! Please [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to contact me!
+I am available for hire! Please [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf), have a look at my [GitHub](https://github.com/dschrempf) or
+[Google Scholar](https://scholar.google.com/citations?user=3pvnGAcAAAAJ&hl=en) profiles, and feel free to contact me!
