@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-11-29T20:22:38+01:00
+lastmod = 2022-11-29T20:29:27+01:00
 type = "page"
 draft = false
 [menu]
@@ -72,23 +72,26 @@ Markov chain Monte Carlo sampler with state-of-the-art features (e.g.,
 techniques based on Hamiltonian dynamics). I am using the `mcmc` library, for
 example, to [estimate node ages of phylogenetic trees](https://github.com/dschrempf/mcmc-date) with great success.
 
-Further, I am developing libraries and tools available on [Hackage](https://hackage.haskell.org/user/dschrempf); please find a
-complete list in my curriculum vitae. Working on these libraries did not only
-require expertise in statistical methods but has also trained me in other
-aspects of computer science such as efficient data structures, serialization,
-parallel programming, unit and property testing, or parsing. Further, I have
-gained experience in concurrent multithreaded programming using Web Sockets and
-REST APIs by developing a trading bot.
+Further, I am developing libraries and tools available on [Hackage](https://hackage.haskell.org/user/dschrempf). Working on
+these libraries did not only require expertise in statistical methods but has
+also trained me in other aspects of computer science such as efficient data
+structures, serialization, parallel programming, unit and property testing, or
+parsing. Further, I have gained experience in concurrent multithreaded
+programming using Web Sockets and REST APIs by developing a trading bot.
 
 I am also familiar with the Linux and Nix ecosystems. I have been using Linux
 for over 20 years and NixOS for more than three years. I manage my projects
 using Git and the Nix package manager.
 
-I enjoy working in international teams. In the last ten years, English has been
-my working language, and I have been collaborating with scientists from all over
-the world. I have acquired considerable experience in giving oral presentations,
-for example, by attending conferences. I am also proficient in reading and
-writing publications (17 papers published in renowned scientific journals).
+Finally, I enjoy working in international teams. In the last ten years, English
+has been my working language, and I have been collaborating with scientists from
+all over the world. I have acquired considerable experience in giving oral
+presentations, for example, by attending conferences. I am also proficient in
+reading and writing publications (17 papers published in renowned scientific
+journals; see [Google Scholar](https://scholar.google.com/citations?user=3pvnGAcAAAAJ&hl=en)).
 
-I am available for hire! Please [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf), have a look at my [GitHub](https://github.com/dschrempf) or
-[Google Scholar](https://scholar.google.com/citations?user=3pvnGAcAAAAJ&hl=en) profiles, and feel free to contact me!
+I am enthusiastic about new projects and challenges, and about joining your
+engineering team and contributing to your codebase. Haskell is my passion, but I
+also frequently use other programming languages such as Rust or Python. I am
+available for hire! Please [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf), have a look at my [GitHub](https://github.com/dschrempf) profile
+and feel free to contact me!
