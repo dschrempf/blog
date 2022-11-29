@@ -35,8 +35,12 @@
 Postdoc in Computational Biology\\
 [[https://www.elte.hu/en/][Eötvös Loránd University, Budapest]]
 
-I am available for hire!\\
-Please see below, [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to contact me!
+*I am available for hire!*\\
+Please see below, [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to contact me!\\
+
+Interested? I built a proof of concept and stake web application: A [[https://dschrempf.duckdns.org/][*minimalist
+weather prediction application*]]. I deploy the application to my home server
+which is turned on roughly from 8am to 10pm CET.
 
 * Interests
 - Functional Programming (Haskell)

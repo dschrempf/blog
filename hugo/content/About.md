@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-11-22T10:16:27+01:00
+lastmod = 2022-11-29T20:22:38+01:00
 type = "page"
 draft = false
 [menu]
@@ -30,8 +30,12 @@ draft = false
 Postdoc in Computational Biology<br />
 [Eötvös Loránd University, Budapest](https://www.elte.hu/en/)
 
-I am available for hire!<br />
-Please see below, [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to contact me!
+**I am available for hire!**<br />
+Please see below, [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf) and feel free to contact me!<br />
+
+Interested? I built a proof of concept and stake web application: A [**minimalist
+weather prediction application**](https://dschrempf.duckdns.org/). I deploy the application to my home server
+which is turned on roughly from 8am to 10pm CET.
 
 
 ## Interests {#interests}
