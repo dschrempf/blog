@@ -1,0 +1,28 @@
+#+HUGO_BASE_DIR: ../../hugo
+#+HUGO_SECTION: Coding
+#+HUGO_CATEGORIES: Coding
+#+HUGO_TYPE: post
+#+TITLE: Weather prediction application
+#+DATE: <2022-12-02 Fri>
+#+AUTHOR: Dominik Schrempf
+#+EMAIL: dominik.schrempf@gmail.com
+#+DESCRIPTION: Proof of concept weather prediction web application
+#+KEYWORDS: "Weather prediction" "Web application" Frontend Backend Haskell Scotty Lucid "Markov chain Monte Carlo" MCMC Nix "Nix Flakes"
+#+LANGUAGE: en
+
+I created a minimalist [[https://dschrempf.duckdns.org/][weather predicition application]] --- a short proof of
+concept and stake.
+
+The main elements of the Haskell tech stack are:
+- [[https://hackage.haskell.org/package/scotty][Scotty]]: A web framework.
+- [[https://hackage.haskell.org/package/lucid][Lucid]]: A domain specific language for HTML.
+- [[https://hackage.haskell.org/package/mcmc][Mcmc]]: A Markov chain Monte Carlo sampler.
+
+Other noteworthy components of this project:
+- The development environment is managed by the [[https://github.com/NixOS/nix][Nix package manager]].
+- The application is deployed using a [[https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html][Nix Flake]].
+
+For details, have a look at the [[https://github.com/dschrempf/webapp][project source code]].
+
+I deploy the application to my home server which is turned on roughly from 8am
+to 10pm CET. I mean, who wants to predict the weather during the night?
