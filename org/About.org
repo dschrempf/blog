@@ -82,7 +82,7 @@ Web Sockets and REST APIs by developing a trading bot. Recently, I have created
 a minimalist [[https://dschrempf.duckdns.org/][weather prediction application]], and I am participating in the
 [[https://github.com/dschrempf/advent-of-code-twentytwo][Advent of Code, 2022]].
 
-I am also familiar with the Linux and Nix ecosystems. I have been using Linux
+Next, I am familiar with the Linux and Nix ecosystems. I have been using Linux
 for over 20 years and NixOS for more than three years. I manage my projects
 using Git and the Nix package manager.
 

@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-12-13T14:10:38+01:00
+lastmod = 2022-12-13T14:31:57+01:00
 type = "page"
 draft = false
 [menu]
@@ -79,7 +79,7 @@ Web Sockets and REST APIs by developing a trading bot. Recently, I have created
 a minimalist [weather prediction application](https://dschrempf.duckdns.org/), and I am participating in the
 [Advent of Code, 2022](https://github.com/dschrempf/advent-of-code-twentytwo).
 
-I am also familiar with the Linux and Nix ecosystems. I have been using Linux
+Next, I am familiar with the Linux and Nix ecosystems. I have been using Linux
 for over 20 years and NixOS for more than three years. I manage my projects
 using Git and the Nix package manager.
 
