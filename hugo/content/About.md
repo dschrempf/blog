@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information."
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2022-12-02T14:46:14+01:00
+lastmod = 2022-12-13T14:10:38+01:00
 type = "page"
 draft = false
 [menu]
@@ -45,7 +45,6 @@ which is turned on roughly from 8am to 10pm CET.
 -   Markov Chains
 -   Data science
 -   Computational biology
--   Phylogenetics
 
 
 ## Education {#education}
@@ -63,21 +62,22 @@ finance. Now, I would like to move fully into the programming community.
 
 I consider myself an expert in developing, implementing and applying Markov
 chain Monte Carlo samplers. I also have comprehensive experience in working with
-probabilistic models and algorithms in maximum likelihood frameworks.
-
-I have used Haskell extensively in my research projects involving statistical
-inference on phylogenetic trees, which show evolutionary relationships of
-species. In particular, one of my most successful projects is [`mcmc`](https://hackage.haskell.org/package/mcmc), a flexible
-Markov chain Monte Carlo sampler with state-of-the-art features (e.g.,
-techniques based on Hamiltonian dynamics). I am using the `mcmc` library, for
-example, to [estimate node ages of phylogenetic trees](https://github.com/dschrempf/mcmc-date) with great success.
+probabilistic models and algorithms in maximum likelihood frameworks. I have
+used Haskell extensively in my research projects involving statistical inference
+on phylogenetic trees, which show evolutionary relationships of species. In
+particular, one of my most successful projects is [`mcmc`](https://hackage.haskell.org/package/mcmc), a flexible Markov
+chain Monte Carlo sampler with state-of-the-art features (e.g., techniques based
+on Hamiltonian dynamics). I am using the `mcmc` library, for example, to
+[estimate node ages of phylogenetic trees](https://github.com/dschrempf/mcmc-date) with great success.
 
 Further, I am developing libraries and tools available on [Hackage](https://hackage.haskell.org/user/dschrempf). Working on
 these libraries did not only require expertise in statistical methods but has
 also trained me in other aspects of computer science such as efficient data
 structures, serialization, parallel programming, unit and property testing, or
-parsing. Further, I have gained experience in concurrent multithreaded
-programming using Web Sockets and REST APIs by developing a trading bot.
+parsing. I have gained experience in concurrent multithreaded programming using
+Web Sockets and REST APIs by developing a trading bot. Recently, I have created
+a minimalist [weather prediction application](https://dschrempf.duckdns.org/), and I am participating in the
+[Advent of Code, 2022](https://github.com/dschrempf/advent-of-code-twentytwo).
 
 I am also familiar with the Linux and Nix ecosystems. I have been using Linux
 for over 20 years and NixOS for more than three years. I manage my projects
@@ -90,8 +90,7 @@ presentations, for example, by attending conferences. I am also proficient in
 reading and writing publications (17 papers published in renowned scientific
 journals; see [Google Scholar](https://scholar.google.com/citations?user=3pvnGAcAAAAJ&hl=en)).
 
-I am enthusiastic about new projects and challenges, and about joining your
-engineering team and contributing to your codebase. Haskell is my passion, but I
-also frequently use other programming languages such as Rust or Python. I am
+I am enthusiastic about new projects and challenges. Haskell is my passion, but
+I also frequently use other programming languages such as Rust or Python. I am
 available for hire! Please [download my resume](/2022-11-09-CV-Schrempf-Dominik.pdf), have a look at my [GitHub](https://github.com/dschrempf) profile
 and feel free to contact me!

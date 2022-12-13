@@ -11,6 +11,13 @@
 #+LANGUAGE: en
 
 [[https://mmhaskell.com/blog/2022/11/30/advent-of-code-2022][Everybody]] [[https://www.reddit.com/r/haskell/comments/z9mjcz/advent_of_code_2022_day_1/][posts]] [[https://news.ycombinator.com/item?id=33811958][their]] [[https://wjwh.eu/posts/2022-11-30-haskell-aoc-tricks.html][solutions]] [[https://gitlab.com/slotThe/advent2022][in]] [[https://github.com/borisskert/Advent-of-Code-2022.hs][Haskell]] to the [[https://adventofcode.com/2022][Advent of Code]] (described well
-on [[https://en.wikipedia.org/wiki/Advent_of_Code][Wikipedia]]). So I thought I am going to join the crowd: [[https://github.com/dschrempf/advent-of-code-twentytwo][*Here are mine*]].
+on [[https://en.wikipedia.org/wiki/Advent_of_Code][Wikipedia]]). So I thought I am going to join the crowd.
+
+[[https://github.com/dschrempf/advent-of-code-twentytwo][*Here are mine*]]! I did clean the code after submission, but I did not change
+anything substantial such as algorithms or data structures.
 
 ([[https://github.com/Scriptim/AdventOfCode2022][Want]] [[https://github.com/hrichharms/AoC_2022][some]] [[https://github.com/Lorin-Lange/Advent-of-Code-2022][more]]? [[https://github.com/prikhi/advent-of-code-2022][And]] --- [[https://github.com/Sheinxy/Advent2022][well]] --- [[https://github.com/IndecisionTree/adventofcode2022][more]]?)
+
+If you ask me, the solutions of [[https://github.com/Sheinxy/Advent2022][Sheinxy]] and [[https://github.com/Scriptim/AdventOfCode2022][Scriptim]] are great! Also, do not
+miss the ones posted by [[https://github.com/MondayMorningHaskell/AdventOfCode/tree/aoc-2022/src][Monday Morning Haskell]], although they do have some
+boilerplate.
