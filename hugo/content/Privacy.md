@@ -4,17 +4,20 @@ author = ["Dominik Schrempf"]
 description = "Privacy notice."
 date = 2021-12-14T00:00:00+01:00
 keywords = ["Privacy notice", "Blog", "Linux", "Emacs", "Python", "Haskell", "Music"]
-lastmod = 2022-12-20T21:02:17+01:00
+lastmod = 2023-01-27T11:47:08+01:00
 type = "page"
 draft = false
 +++
 
-This page does not collect any data, **your data is safe**.
+Personally, I do not collect any data.
 
-When accessing the website, you load some static yet external libraries:
+However:
 
--   Website content: [MathJax](https://github.com/mathjax/MathJax), and [Font Awesome Free](https://fontawesome.com/);
--   Search: [JQuery](https://jquery.com/), [MarkJs](https://markjs.io/), and [FuseJs](https://fusejs.io/).
+-   This page is hosted by GitHub Pages which collects some data. Please see the
+    [privacy policy of GitHub](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
+-   When accessing the website, you load some static yet external libraries:
+    -   Website content: [MathJax](https://github.com/mathjax/MathJax), and [Font Awesome Free](https://fontawesome.com/);
+    -   Search: [JQuery](https://jquery.com/), [MarkJs](https://markjs.io/), and [FuseJs](https://fusejs.io/).
 
 If you have questions, please contact me: &nbsp;
 <span class="icons-item"> <a href="https://github.com/dschrempf" target="_blank"><i class="fab fa-github"></i></a></span>

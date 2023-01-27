@@ -13,11 +13,14 @@
 #+EXCLUDE_TAGS: noexport
 #+OPTIONS: num:nil
 
-This page does not collect any data, *your data is safe*.
+Personally, I do not collect any data.
 
-When accessing the website, you load some static yet external libraries:
-- Website content: [[https://github.com/mathjax/MathJax][MathJax]], and [[https://fontawesome.com/][Font Awesome Free]];
-- Search: [[https://jquery.com/][JQuery]], [[https://markjs.io/][MarkJs]], and [[https://fusejs.io/][FuseJs]].
+However:
+- This page is hosted by GitHub Pages which collects some data. Please see the
+  [[https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement][privacy policy of GitHub]].
+- When accessing the website, you load some static yet external libraries:
+  - Website content: [[https://github.com/mathjax/MathJax][MathJax]], and [[https://fontawesome.com/][Font Awesome Free]];
+  - Search: [[https://jquery.com/][JQuery]], [[https://markjs.io/][MarkJs]], and [[https://fusejs.io/][FuseJs]].
 
 #+begin_export html
 If you have questions, please contact me: &nbsp;
