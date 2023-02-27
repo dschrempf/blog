@@ -34,13 +34,6 @@
 Postdoc in Computational Biology\\
 [[https://www.elte.hu/en/][Eötvös Loránd University, Budapest]]
 
-*I am available for hire!*\\
-Please see below, [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]] and feel free to contact me!\\
-
-Interested? I built a proof of concept and stake web application: A [[https://dschrempf.duckdns.org/][*minimalist
-weather prediction application*]]. I deploy the application to my home server
-which is turned on roughly from 8am to 10pm CET.
-
 * Interests
 - Functional Programming (Haskell)
 - Software engineering
@@ -56,49 +49,7 @@ which is turned on roughly from 8am to 10pm CET.
 :PROPERTIES:
 :ID:       fcb6959f-90b5-4fa2-aed8-422cb9406d58
 :END:
-
 I am a postdoctoral researcher and software engineer in computational biology
 with 15 years of experience in programming in Haskell. I have applied my
 programming skills in a wide array of topics ranging from physics and biology to
-finance. Now, I would like to move fully into the programming community.
-
-I consider myself an expert in developing, implementing and applying Markov
-chain Monte Carlo samplers. I also have comprehensive experience in working with
-probabilistic models and algorithms in maximum likelihood frameworks. I have
-used Haskell extensively in my research projects involving statistical inference
-on phylogenetic trees, which show evolutionary relationships of species. In
-particular, one of my most successful projects is [[https://hackage.haskell.org/package/mcmc][=mcmc=]], a flexible Markov
-chain Monte Carlo sampler with state-of-the-art features (e.g., techniques based
-on Hamiltonian dynamics). I am using the =mcmc= library, for example, to
-[[https://github.com/dschrempf/mcmc-date][estimate node ages of phylogenetic trees]] with great success.
-
-Further, I am developing libraries and tools available on [[https://hackage.haskell.org/user/dschrempf][Hackage]]. Working on
-these libraries did not only require expertise in statistical methods but has
-also trained me in other aspects of computer science such as efficient data
-structures, serialization, parallel programming, unit and property testing, or
-parsing. I have gained experience in concurrent multithreaded programming using
-Web Sockets and REST APIs by developing a trading bot. Recently, I have created
-a minimalist [[https://dschrempf.duckdns.org/][weather prediction application]], and I am participating in the
-[[https://github.com/dschrempf/advent-of-code-twentytwo][Advent of Code, 2022]].
-
-Next, I am familiar with the Linux and Nix ecosystems. I have been using Linux
-for over 20 years and NixOS for more than three years. I manage my projects
-using Git and the Nix package manager.
-
-Finally, I enjoy working in international teams. In the last ten years, English
-has been my working language, and I have been collaborating with scientists from
-all over the world. I have acquired considerable experience in giving oral
-presentations, for example, by attending conferences. I am also proficient in
-reading and writing publications (17 papers published in renowned scientific
-journals; see [[https://scholar.google.com/citations?user=3pvnGAcAAAAJ&hl=en][Google Scholar]]).
-
-I am enthusiastic about new projects and challenges. Haskell is my passion, but
-I also frequently use other programming languages such as Rust or Python. I am
-available for hire! Please [[file:Static/2022-11-09-CV-Schrempf-Dominik.pdf][download my resume]], have a look at my [[https://github.com/dschrempf][GitHub]] profile
-and feel free to contact me!
-
-# Maybe link to some talks.
-
-# Maybe link to some other stuff that interests me.
-
-# See https://themes.gohugo.io/theme/academic/.
+finance.

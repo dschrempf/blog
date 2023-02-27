@@ -9,6 +9,8 @@ type = "post"
 draft = false
 +++
 
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2023-02-27 Mon&gt; </span></span> Note: I have taken the application offline.
+
 I created a minimalist [weather predicition application](https://dschrempf.duckdns.org/) --- a short proof of
 concept and stake.
 

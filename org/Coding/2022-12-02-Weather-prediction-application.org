@@ -10,6 +10,8 @@
 #+KEYWORDS: "Weather prediction" "Web application" Frontend Backend Haskell Scotty Lucid "Markov chain Monte Carlo" MCMC Nix "Nix Flakes"
 #+LANGUAGE: en
 
+<2023-02-27 Mon> Note: I have taken the application offline.
+
 I created a minimalist [[https://dschrempf.duckdns.org/][weather predicition application]] --- a short proof of
 concept and stake.
 
