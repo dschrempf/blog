@@ -11,16 +11,18 @@
 #+LANGUAGE: en
 
 Do you want to use Emacs for Java development? I suggest using the language
-server protocol with [[https://github.com/emacs-lsp/lsp-mode][=lsp-mode=]] and [[https://github.com/emacs-lsp/lsp-java][=lsp-java=]], the [[https://github.com/eclipse/eclipse.jdt.ls][Eclipse JDT language server]]
-(=jdtls=). And do you also want a declarative development environment without
-surprises? Use [[https://github.com/nix-community/nix-direnv][Nix Direnv]], [[https://github.com/purcell/envrc][envrc.el]], and a [[https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html][Nix Flake]]! I assume familiarity with
-these concepts. In the following, I will explain Java-related setup.
+server protocol with [[https://github.com/emacs-lsp/lsp-mode][=lsp-mode=]] and [[https://github.com/emacs-lsp/lsp-java][=lsp-java=]] together with the [[https://github.com/eclipse/eclipse.jdt.ls][Eclipse JDT
+language server]] (=jdtls=). And do you also want a declarative development
+environment without surprises? Use [[https://github.com/nix-community/nix-direnv][Nix Direnv]], [[https://github.com/purcell/envrc][envrc.el]], and a [[https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html][Nix Flake]]! I
+assume familiarity with these concepts. In the following, I will focus on the
+Java-related Emacs setup.
 
-The reasons is that I stumbled upon problems when using a declarative
-configuration. In particular, =lsp-java= uses a global variable
-~lsp-java-server-install-dir~ which specifies the installation directory of
-=jdtls=. Further, it uses global workspace and configuration directories which
-are [[https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line][=jdtls= specific settings]]; we want those to be project-specific.
+The reason of this post is that I have stumbled upon problems when using a
+declarative, project-specific configuration. In particular, =lsp-java= uses a
+global variable ~lsp-java-server-install-dir~ which specifies the installation
+directory of =jdtls=. Further, it uses global workspace and configuration
+directories which are [[https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line][=jdtls= specific settings]]; we want those to be
+project-specific.
 
 But first things first. The following snippet defines a minimalist Nix Flake
 that provides a development environment for Java:
@@ -53,36 +55,13 @@ that provides a development environment for Java:
 }
 #+end_src
 
-We also set up a directory environment file:
+We also set up a directory environment file, and use it:
 #+name: envrc
 #+begin_src sh :exports code :eval never
 echo "use flake" > .envrc
+direnv allow
+direnv reload
 #+end_src
-
-If you want, you can now set up a demo project using
-~lsp-java-spring-initializer~. The directory structure is:
-#+name: tree
-#+begin_src sh :exports results :results output
-tree -a -L 1 ~/Scratch/java
-#+end_src
-
-#+results: tree
-#+begin_example
-/home/dominik/Scratch/java
-├── config-linux   -- Created by =jdtls=, see below.
-├── demo           -- Demo project.
-├── .direnv
-├── .envrc
-├── flake.lock
-├── flake.nix
-├── .git
-├── .gitignore
-└── java-workspace -- Created by =jdtls=, see below.
-
-5 directories, 4 files
-#+end_example
-
-
 
 However, the language server will not work yet. We need to tell =lsp-java= about
 the location of =jdtls= and how to run it. This has proven to be difficult, if
@@ -115,9 +94,36 @@ not arduous. The solution, however, is pretty easy.
      (add-hook 'java-mode-hook #'my-set-lsp-path))
    #+end_src
 
-Like so, everything works like a charm. We can have different versions of
-=jdtls= for different projects, and they do not even interfere with each other.
-Wow. There is still some local state and cache created by =Gradle= or =Maven=,
-depending on which build tool you use. For example, I do have a =~/.gradle=
-directory with lots of artifacts... If you know how to tell Gradle or Maven to
-be project-specific, let me know!
+Like so, everything works like a charm, and my experience with =lsp-java= has
+been great so far! We can have different versions of =jdtls= for different
+projects, and they do not even interfere with each other. Wow.
+
+If you want, you can now set up a demo project from within Emacs using
+~lsp-java-spring-initializer~. After setting up the =demo= project, the
+directory structure is:
+#+name: tree
+#+begin_src sh :exports results :results output
+tree -a -L 1 ~/Scratch/java
+#+end_src
+
+#+results: tree
+#+begin_example
+/home/dominik/Scratch/java
+├── config-linux   -- Created by =jdtls=, see above.
+├── demo           -- Demo project.
+├── .direnv
+├── .envrc
+├── flake.lock
+├── flake.nix
+├── .git
+├── .gitignore
+└── java-workspace -- Created by =jdtls=, see above.
+
+5 directories, 4 files
+#+end_example
+
+In conclusion, we have a project-specific, declarative Java development setup.
+However, there is still some local state and cache created by =Gradle= or
+=Maven=, depending on which build tool you use. For example, I do have a
+=~/.gradle= directory with lots of artifacts... If you know how to tell Gradle
+or Maven to be project-specific, let me know!
