@@ -6,10 +6,8 @@ date = 2023-03-02T00:00:00+01:00
 keywords = ["Emacs", "Java", "Nix", "Nix Flakes", "LSP", "jdtls", "jdt-language-server"]
 categories = ["Emacs"]
 type = "post"
-draft = true
+draft = false
 +++
-
-NOTE: Remove the draft label when done (and do not forget to re-export).
 
 Do you want to use Emacs for Java development? I suggest using the language
 server protocol with [`lsp-mode`](https://github.com/emacs-lsp/lsp-mode) and [`lsp-java`](https://github.com/emacs-lsp/lsp-java), the [Eclipse JDT language server](https://github.com/eclipse/eclipse.jdt.ls)

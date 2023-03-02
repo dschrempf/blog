@@ -9,9 +9,6 @@
 #+DESCRIPTION: A declarative Java development setup in Emacs using a Nix Flake.
 #+KEYWORDS: Emacs Java Nix "Nix Flakes" LSP jdtls jdt-language-server
 #+LANGUAGE: en
-#+HUGO_DRAFT: true
-
-NOTE: Remove the draft label when done (and do not forget to re-export).
 
 Do you want to use Emacs for Java development? I suggest using the language
 server protocol with [[https://github.com/emacs-lsp/lsp-mode][=lsp-mode=]] and [[https://github.com/emacs-lsp/lsp-java][=lsp-java=]], the [[https://github.com/eclipse/eclipse.jdt.ls][Eclipse JDT language server]]
