@@ -11,8 +11,6 @@
 #+LANGUAGE: en
 #+HUGO_DRAFT: false
 
-#+bibliography: ~/Evolutionary-Biology/Bibliography/bibliography.bib
-
 * Motivation :ignore:
 We analyze the number of worldwide airline fatal accidents:
 

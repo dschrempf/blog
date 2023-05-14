@@ -38,9 +38,6 @@ that provides a development environment for Java:
       {
         devShells.default = with pkgs; mkShell {
           packages = [
-            # See https://github.com/NixOS/nixpkgs/issues/59209.
-            bashInteractive
-
             # Gradle, Java development kit, and Java language server.
             gradle
             jdk
