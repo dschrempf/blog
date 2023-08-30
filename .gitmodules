@@ -1,6 +1,0 @@
-[submodule "hugo/public"]
-	path = hugo/public
-	url = git@github.com:dschrempf/dschrempf.github.io.git
-[submodule "hugo/themes/hyde-x"]
-	path = hugo/themes/skeria
-	url = git@github.com:dschrempf/skeria
