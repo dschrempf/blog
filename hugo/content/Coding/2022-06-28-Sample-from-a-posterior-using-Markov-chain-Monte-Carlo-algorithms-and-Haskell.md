@@ -19,7 +19,7 @@ We analyze the number of worldwide airline fatal accidents:
 
 </div>
 
-This table is an excerpt of Table 2.2 in Gelman, Carlin, Stern, and Rubin (<a href="#citeproc_bib_item_1">2014</a>).
+This table is an excerpt of Table 2.2 in Gelman, Andrew and Carlin, John B and Stern, Hal S and Rubin, Donald B (2014).
 
 We assume that the number of fatal accidents \\(X\\) is [Poisson distributed](https://en.wikipedia.org/wiki/Poisson_distribution) with
 fatal accident rate \\(\lambda\\)
@@ -59,7 +59,7 @@ correct ratio?
 </div>
 
 The answer is: Yes, and this is exactly what MCMC samplers do. For example, the
-most famous Metropolis-Hastings-Green algorithm (<a href="#citeproc_bib_item_2">Geyer 2011</a> , an excellent
+most famous Metropolis-Hastings-Green algorithm (Geyer, Charles J, 2011, an excellent
 introduction to MCMC by the way) samples new values from given, well-behaved
 proposal distributions, only to accept or reject these new values according to
 the actual probability distribution of interest.
@@ -258,15 +258,15 @@ If this post spurred your interest, and you want to have a look at a real-life
 project: We use the `mcmc` library to perform _phylogenetic dating_. With
 [McmcDate](https://github.com/dschrempf/mcmc-date) we infer the ages of speciations using molecular sequence data (DNA),
 [molecular clocks](https://en.wikipedia.org/wiki/Molecular_clock), the age of fossils, gene transfers and much more! For example,
-we apply `McmcDate` to data from land plants (<a href="#citeproc_bib_item_3">Harris et al. 2021</a>).
+we apply `McmcDate` to data from land plants (Harris, Brogan J. and Clark, James W. and Schrempf, Dominik and Szöllősi, Gergely J. and Donoghue, Philip C.J. and Hetherington, Alistair M. and Williams, Tom A., 2021).
 
 The `mcmc` library is under development, and I am happy about your suggestions
 or comments; drop them on the [repository on GitHub](https://github.com/dschrempf/mcmc)!
 
 ## References
 
-<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
-  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Gelman, Andrew, John B Carlin, Hal S Stern, and Donald B Rubin. 2014. <i>Bayesian Data Analysis</i>. CRC Press.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>Geyer, Charles J. 2011. “Introduction to Markov Chain Monte Carlo.” In <i>Handbook of Markov Chain Monte Carlo</i>, edited by Steve Brooks, Andrew Gelman, Galin Jones, and Xiao-Li Meng, 45. CRC press.</div>
-  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Harris, Brogan J., James W. Clark, Dominik Schrempf, Gergely J. Szöllősi, Philip C.J. Donoghue, Alistair M. Hetherington, and Tom A. Williams. 2021. “Divergent Evolutionary Trajectories of Bryophytes and Tracheophytes from a Complex Common Ancestor of Land Plants.” <i>Biorxiv</i>. <a href="https://doi.org/10.1101/2021.10.28.466308">https://doi.org/10.1101/2021.10.28.466308</a>.</div>
-</div>
+Gelman, Andrew and Carlin, John B and Stern, Hal S and Rubin, Donald B (2014). _Bayesian data analysis_, CRC Press.
+
+Geyer, Charles J (2011). _{Introduction to Markov Chain Monte Carlo}_, CRC press.
+
+Harris, Brogan J. and Clark, James W. and Schrempf, Dominik and Szöllősi, Gergely J. and Donoghue, Philip C.J. and Hetherington, Alistair M. and Williams, Tom A. (2021). _Divergent evolutionary trajectories of bryophytes and tracheophytes from a complex common ancestor of land plants_.

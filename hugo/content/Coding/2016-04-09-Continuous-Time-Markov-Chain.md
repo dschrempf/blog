@@ -21,29 +21,29 @@ There is a sample program `src/moran_model_boundary_mutation`, that
 runs the Moran model with boundary mutation (De Maio, N., Schrempf,
 D., &amp; Kosiol, C. (2015). PoMo: An Allele Frequency-Based Approach for
 Species Tree Estimation. Systematic Biology, 64(6),
-1018–1031. doi:10.1093/sysbio/syv048).
+1018–1031. https://doi.org/10.1093/sysbio/syv048).
 
 Using the chain is as easy as:
 
 ```cpp
-  // Define a GNU Scientific Library Matrix object.
-  gsl_matrix * my_transition_rate_matrix = alloc_and_set_matrix();
-  CTMC my_chain(my_transition_rate_matrix, number_of_states);
-  my_chain.run(a_specific_time);
+// Define a GNU Scientific Library Matrix object.
+gsl_matrix * my_transition_rate_matrix = alloc_and_set_matrix();
+CTMC my_chain(my_transition_rate_matrix, number_of_states);
+my_chain.run(a_specific_time);
 
-  // Now we print some output.
-  my_chain.print_hitting_times(std::cout);
-  my_chain.print_invariant_distribution(std::cout);
+// Now we print some output.
+my_chain.print_hitting_times(std::cout);
+my_chain.print_invariant_distribution(std::cout);
 ```
 
 If you want to log the path of the chain, you have to activate the log
 path upon initialization:
 
 ```cpp
-  CTMC my_chain(my_transition_rate_matrix, number_of_states, true);
+CTMC my_chain(my_transition_rate_matrix, number_of_states, true);
 
-  // Print the path.
-  my_chain.print_path(std::cout);
+// Print the path.
+my_chain.print_path(std::cout);
 ```
 
 Logging the path is disabled by default because it uses a lot of

@@ -68,11 +68,11 @@ not arduous. The solution, however, is pretty easy.
 1.  Use the wrapper script shipped with `jdtls` instead of a manual `java
        --lots-of-options` invocation like so:
     ```emacs-lisp
-       (after! lsp-java
-         (defun lsp-java--ls-command ()
-           (list "jdt-language-server"
-                 "-configuration" "../config-linux"
-                 "-data" "../java-workspace")))
+    (after! lsp-java
+      (defun lsp-java--ls-command ()
+        (list "jdt-language-server"
+              "-configuration" "../config-linux"
+              "-data" "../java-workspace")))
     ```
 
     -   `after!` is a [Doom Emacs](https://github.com/doomemacs/doomemacs) macro that executes code after loading a feature.
@@ -87,10 +87,10 @@ not arduous. The solution, however, is pretty easy.
 2.  Set `lsp-java-server-install-dir` in a hook using the environment variable
     `JDTLS_PATH` set by the Nix Flake shell:
     ```emacs-lisp
-       (after! cc-mode
-         (defun my-set-lsp-path ()
-           (setq lsp-java-server-install-dir (getenv "JDTLS_PATH")))
-         (add-hook 'java-mode-hook #'my-set-lsp-path))
+    (after! cc-mode
+      (defun my-set-lsp-path ()
+        (setq lsp-java-server-install-dir (getenv "JDTLS_PATH")))
+      (add-hook 'java-mode-hook #'my-set-lsp-path))
     ```
 
 Like so, everything works like a charm, and my experience with `lsp-java` has
