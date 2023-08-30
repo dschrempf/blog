@@ -158,9 +158,6 @@ Reversible jump MCMC algorithm
 -   Parallel tempering.
 -   Metropolic-coupled MCMC (MC3) is Parallel tempering.
 
-
-## References {#references}
-
 ## References
 
 A. {Doucet} and A. M. {Johansen} (2011). _{A tutorial on particle filtering and smoothing: fifteen years later}_, Oxford: Oxford University Press.

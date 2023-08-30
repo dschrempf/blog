@@ -116,5 +116,5 @@ methods running various MCMC samplers in parallel.
 - Parallel tempering.
 - Metropolic-coupled MCMC (MC3) is Parallel tempering.
 
-* References
+* References :ignore:
 #+print_bibliography:

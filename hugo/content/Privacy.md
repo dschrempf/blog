@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Privacy notice."
 date = 2021-12-14T00:00:00+01:00
 keywords = ["Privacy notice", "Blog", "Linux", "Emacs", "Python", "Haskell", "Music"]
-lastmod = 2023-08-30T11:13:39+02:00
+lastmod = 2023-08-30T11:42:35+02:00
 type = "page"
 draft = false
 +++
