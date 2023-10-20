@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links."
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2023-08-30T11:42:34+02:00
+lastmod = 2023-10-20T11:53:21+02:00
 draft = false
 [menu]
   [menu.about]
@@ -40,6 +40,8 @@ miteinander, am klügsten wäre jedoch die Einigung auf Signal.
 
 
 ## English {#english}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2023-10-20 Fri] </span></span> [Why Haskell is important](https://www.tweag.io/blog/2019-09-06-why-haskell-is-important/), TWEAG, Marko Karpov.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2022-09-01 Thu] </span></span> [Civil disobedience by scientists helps press for urgent climate
 action](https://www.nature.com/articles/s41558-022-01461-y); nature climate change. A matching article on The Guardian: [Scientists
