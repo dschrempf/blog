@@ -11,9 +11,6 @@ paginate = 30
 [outputs]
     home = ["HTML", "JSON"]
 
-[author]
-    name = "Dominik Schrempf"
-
 [permalinks]
     # Optional. Change the permalink format for the 'post' content type.
     # The format shown here is the same one Jekyll/Octopress uses by default.
@@ -39,6 +36,8 @@ paginate = 30
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
+    author.name = "Dominik Schrempf"
+
     # Used when a given page doesn't set its own.
     defaultDescription = "Linux, Emacs, coding and more."
     defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
