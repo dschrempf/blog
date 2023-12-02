@@ -2,7 +2,7 @@
 #+HUGO_SECTION: Coding
 #+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
-#+TITLE: Advent of code, 2023
+#+TITLE: Advent of code (2023)
 #+DATE: <2023-12-02 Sat>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
@@ -12,7 +12,7 @@
 
 /Alle Jahre wieder .../
 
-I am not sure how far I get this year, but writing Haskell is just too much fun:
-[[https://github.com/dschrempf/aoc23][Solutions to the advent of code, 2023]].
+I am not sure how far I get this year, but writing Haskell is just too much fun.
+Have a look at [[https://github.com/dschrempf/aoc23][my solutions to the Advent of code, 2023]].
 
 Cheers!
