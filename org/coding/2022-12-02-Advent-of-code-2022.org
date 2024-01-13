@@ -6,11 +6,11 @@
 #+DATE: <2022-12-02 Fri>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Solutions to the Advent of Code (2022) challenges
-#+KEYWORDS: Haskell "Advent of Code"
+#+DESCRIPTION: Solutions to the Advent of code (2022) challenges
+#+KEYWORDS: Haskell "Advent of code"
 #+LANGUAGE: en
 
-[[https://mmhaskell.com/blog/2022/11/30/advent-of-code-2022][Everybody]] [[https://www.reddit.com/r/haskell/comments/z9mjcz/advent_of_code_2022_day_1/][posts]] [[https://news.ycombinator.com/item?id=33811958][their]] [[https://wjwh.eu/posts/2022-11-30-haskell-aoc-tricks.html][solutions]] [[https://gitlab.com/slotThe/advent2022][in]] [[https://github.com/borisskert/Advent-of-Code-2022.hs][Haskell]] to the [[https://adventofcode.com/2022][Advent of Code]] (described well
+[[https://mmhaskell.com/blog/2022/11/30/advent-of-code-2022][Everybody]] [[https://www.reddit.com/r/haskell/comments/z9mjcz/advent_of_code_2022_day_1/][posts]] [[https://news.ycombinator.com/item?id=33811958][their]] [[https://wjwh.eu/posts/2022-11-30-haskell-aoc-tricks.html][solutions]] [[https://gitlab.com/slotThe/advent2022][in]] [[https://github.com/borisskert/Advent-of-Code-2022.hs][Haskell]] to the [[https://adventofcode.com/2022][Advent of code]] (described well
 on [[https://en.wikipedia.org/wiki/Advent_of_Code][Wikipedia]]). So I thought I am going to join the crowd.
 
 [[https://github.com/dschrempf/advent-of-code-twentytwo][*Here are mine*]]! I did clean the code after submission, but I did not change
