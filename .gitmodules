@@ -1,0 +1,3 @@
+[submodule "hugo/themes/skeria"]
+	path = hugo/themes/skeria
+	url = git@github.com:dschrempf/skeria.git
