@@ -2,7 +2,7 @@
 #+HUGO_SECTION: Coding
 #+HUGO_CATEGORIES: Coding
 #+HUGO_TYPE: post
-#+TITLE: Advent of Code (2022)
+#+TITLE: Advent of code (2022)
 #+DATE: <2022-12-02 Fri>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
