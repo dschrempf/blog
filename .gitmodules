@@ -1,3 +1,6 @@
 [submodule "hugo/themes/skeria"]
 	path = hugo/themes/skeria
 	url = git@github.com:dschrempf/skeria.git
+[submodule "hugo/public"]
+	path = hugo/public
+	url = git@github.com:dschrempf/dschrempf.github.io.git
