@@ -31,6 +31,7 @@ scattered around a bit, so here you go:
 - some [[https://mmonit.com/wiki/Monit/ConfigurationExamples][real world configuration examples]];
 - the [[https://wiki.archlinux.org/title/Monit][Arch Wiki entry on Monit]].
 
+The NixOS configuration module:
 #+begin_src nix
 { filesystems # List of monitored file system paths.
 , drives      # List of monitored drives.
