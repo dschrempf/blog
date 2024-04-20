@@ -1,0 +1,89 @@
+#+hugo_base_dir: ../../hugo
+#+hugo_section: Linux
+#+hugo_categories: Linux
+#+hugo_type: post
+#+title: Pipewire network setup
+#+date: <2024-04-20 Sat>
+#+author: Dominik Schrempf
+#+email: dominik.schrempf@gmail.com
+#+description: Share audio devices managed by Pipewire on a network
+#+keywords: Pipewire Audio Network Sink Source Server Client Source Playback Linux NixOS
+#+language: en
+
+My goal was to *play audio over the network*.
+
+In detail, a computer with a sound card and speakers serves the audio device on
+the network (referred to as /server/). Other computers (referred to as
+/clients/) play audio which they send to the server to be played on the speakers
+managed by the servers. Ideally, this happens in real time without delay.
+
+* NixOS setup
+I had such a service set up using Pulseaudio a while ago, but it being
+Pulseaudio I was eager to switch to [[https://pipewire.org/][Pipewire]] as soon as possible (Pipewire seems
+to be the cool kid on the block). There are numerous sources available talking
+about how easy a network setup was, however, I had trouble setting it up on
+NixOS. So I thought sharing my configuration may be useful to others.
+
+** Server NixOS module
+#+begin_src nix :exports code :results none
+  _:
+
+  {
+    services.pipewire.enable = true;
+    services.pipewire.alsa.enable = true;
+    services.pipewire.pulse.enable = true;
+
+    # Publish audio sink on the local network.
+    services.pipewire.extraConfig.pipewire-pulse."30-network-publish" = {
+      "pulse.cmd" = [
+        { cmd = "load-module"; args = "module-native-protocol-tcp"; }
+        { cmd = "load-module"; args = "module-zeroconf-publish"; }
+      ];
+    };
+
+    # Important: Open TCP port used by the Pulseaudio network sink.
+    networking.firewall.allowedTCPPorts = [
+      4713
+    ];
+  }
+#+end_src
+
+** Client NixOS module
+#+begin_src nix :exports code :results none
+  _:
+
+  {
+    services.pipewire.enable = true;
+    services.pipewire.alsa.enable = true;
+    services.pipewire.pulse.enable = true;
+
+    services.pipewire.extraConfig.pipewire-pulse."30-network-discover" = {
+      "pulse.cmd" = [
+        { cmd = "load-module"; args = "module-zeroconf-discover"; }
+      ];
+    };
+  }
+
+#+end_src
+
+** Avahi
+Further, [[https://avahi.org/][Avahi]] needs to be enabled and corresponding ports need to be opened in
+the firewall. I am not exactly sure how much of the following setup is required,
+but here you go:
+#+begin_src nix :exports code :results none
+  # I do not know how much of this is necessary, but that's what I have in my configuration.
+  services.avahi.enable = true;
+  services.avahi.openFirewall = true;
+  services.avahi.publish.enable = true;
+  services.avahi.publish.addresses = true;
+  services.avahi.publish.domain = true;
+  services.avahi.publish.userServices = true;
+  services.avahi.publish.workstation = true;
+#+end_src
+
+* Sources and links
+Sources I used to come up with this configuration:
+- [[https://wiki.archlinux.org/title/PipeWire][Arch Linux Wiki article about Pipewire]]
+- [[https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/Network][Pipewire Wiki article about Network setup]]
+- [[https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/Guide-PulseAudio-Tricks#setup-tcp-network-streaming-between-machines][Pipewire Wiki article about Pulseaudio network setup]]
+- [[https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=services.pipewire][Help about Pipewire services provided by NixOS options]]

@@ -180,7 +180,7 @@ Mathieu Fourment and Brian C. Claywell and Vu Dinh and Connor McCoy and Frederic
 
 Brooks, Steve and Gelman, Andrew and Jones, Galin and Meng, Xiao-Li (2011). _{Handbook of Markov Chain Monte Carlo}_, CRC press.
 
-Arnaud Doucet and Nando de Freitas and Neil Gordon (2001). _Sequential Monte Carlo Methods in Practice_, Springer New York.
+Arnaud Doucet and Nando de Freitas and Neil Gordon (2001). _Sequential Monte Carlo Methods in Practice_, Springer.
 
 Vu Dinh and Aaron E Darling and Frederick A Matsen IV (2018). _Online Bayesian phylogenetic inference: theoretical foundations via sequential Monte Carlo_.
 
