@@ -1,4 +1,5 @@
-#!/usr/bin/env nix-script-bash
+#!/usr/bin/env magix
+#!magix bash
 #!runtimeInputs hugo
 
 set -e
