@@ -6,7 +6,7 @@
 #+DATE: <2015-04-04 Sat>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Incremental completion and bindings that stick around.
+#+DESCRIPTION: Incremental completion and bindings that stick around
 #+KEYWORDS: "Incremental Completion" Find Keybinding
 #+LANGUAGE: en
 

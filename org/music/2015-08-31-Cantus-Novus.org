@@ -6,7 +6,7 @@
 #+DATE: <2015-08-31 Mon>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: The Cantus Novus Wien is a Viennese choir that I sing in.
+#+DESCRIPTION: The Cantus Novus Wien is a Viennese choir that I sing in
 #+KEYWORDS: Choir "Cantus Novus" Wien Vienna Chor Klassik "Sakrale Musik"
 #+LANGUAGE: en
 

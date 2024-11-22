@@ -7,7 +7,7 @@
 #+DATE: <2014-12-24 Wed>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Personal information.
+#+DESCRIPTION: Personal information
 #+KEYWORDS: "Dominik Schrempf" Blog Linux Emacs Python Haskell "Population Genetics" Music
 #+LANGUAGE: en
 #+SELECT_TAGS: export

@@ -6,7 +6,7 @@
 #+DATE: <2014-12-23 Tue>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Use pretty-show to pretty print objects in GHCi.
+#+DESCRIPTION: Use pretty-show to pretty print objects in GHCi
 #+KEYWORDS: Haskell "Pretty Print" Show
 #+LANGUAGE: en
 

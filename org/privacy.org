@@ -6,7 +6,7 @@
 #+DATE: <2021-12-14 Tue>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Privacy notice.
+#+DESCRIPTION: Privacy notice
 #+KEYWORDS: "Privacy notice" Blog Linux Emacs Python Haskell Music
 #+LANGUAGE: en
 #+SELECT_TAGS: export

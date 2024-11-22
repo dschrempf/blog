@@ -6,7 +6,7 @@
 #+DATE: <2015-04-25 Sat>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Manipulate multiple image files and their Exif data on the command line.
+#+DESCRIPTION: Manipulate multiple image files and their Exif data on the command line
 #+KEYWORDS: Image Picture Photo Exif "Command Line" "Batch Manipulation" Linux
 #+LANGUAGE: en
 

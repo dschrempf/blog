@@ -5,7 +5,7 @@
 #+TITLE: Configure SSH
 #+DATE: <2016-04-09 Sat>
 #+AUTHOR: Dominik Schrempf
-#+DESCRIPTION: A proper configuration of SSH can save a lot of time (typing passwords, hosts).
+#+DESCRIPTION: A proper configuration of SSH can save a lot of time (typing passwords, hosts)
 #+KEYWORDS: SSH .ssh "SSH Configuration" "SSH Config"
 #+LANGUAGE: en
 

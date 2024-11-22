@@ -6,7 +6,7 @@
 #+DATE: <2018-06-17 Sun>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Interesting links.
+#+DESCRIPTION: Interesting links
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport

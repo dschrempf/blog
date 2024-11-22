@@ -6,7 +6,7 @@
 #+DATE: <2015-06-24 Wed>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: Use GDB from withing Emacs to debug source code.
+#+DESCRIPTION: Use GDB from withing Emacs to debug source code
 #+KEYWORDS: GDB Emacs CPP GUD Debugger Debugging
 #+LANGUAGE: en
 

@@ -6,7 +6,7 @@
 #+DATE: <2023-03-02 Thu>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: A declarative Java development setup in Emacs using a Nix Flake.
+#+DESCRIPTION: A declarative Java development setup in Emacs using a Nix Flake
 #+KEYWORDS: Emacs Java Nix "Nix Flakes" LSP jdtls jdt-language-server
 #+LANGUAGE: en
 

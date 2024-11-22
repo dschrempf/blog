@@ -5,7 +5,7 @@
 #+TITLE: Marvell Storage Utility on HPE ProLiant MicroServer Gen10
 #+DATE: <2017-09-05 Tue>
 #+AUTHOR: Dominik Schrempf
-#+DESCRIPTION: Adventures when using having to deal with proprietary drivers on Arch Linux.
+#+DESCRIPTION: Adventures when using having to deal with proprietary drivers on Arch Linux
 #+KEYWORDS: MSU 88SE9230 Marvell HPE MicroServer RAID SMART SATA SCSI
 #+LANGUAGE: en
 

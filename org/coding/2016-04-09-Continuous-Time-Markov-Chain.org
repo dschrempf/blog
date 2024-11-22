@@ -5,7 +5,7 @@
 #+TITLE: A simulator for continuous-time Markov chains
 #+DATE: <2016-04-09 Sat>
 #+AUTHOR: Dominik Schrempf
-#+DESCRIPTION: Simulate a continuous time Markov chain with any transition rate matrix.
+#+DESCRIPTION: Simulate a continuous time Markov chain with any transition rate matrix
 #+KEYWORDS: CTMC "Markov Chain" "Continuous-Time Markov Chain"
 #+LANGUAGE: en
 

@@ -6,7 +6,7 @@
 #+DATE: <2015-01-15 Thu>
 #+AUTHOR: Dominik Schrempf
 #+EMAIL: dominik.schrempf@gmail.com
-#+DESCRIPTION: MCMC simulation to approximate observations of coin tosses.
+#+DESCRIPTION: MCMC simulation to approximate observations of coin tosses
 #+KEYWORDS: MCMC Simulation "Bayesian Statistics" "Coin Toss"
 #+LANGUAGE: en
 
