@@ -1,0 +1,52 @@
+#+hugo_base_dir: ../../hugo
+#+hugo_section: Coding
+#+hugo_categories: Coding
+#+hugo_type: post
+#+title: It's Magix
+#+date: <2024-11-22 Fri>
+#+author: Dominik Schrempf
+#+email: dominik.schrempf@gmail.com
+#+description: Build, cache, and run scripts with dependencies
+#+keywords: Nix Haskell Bash Python Compile Cache Scripts
+#+language: en
+#+hugo_draft: true
+
+Long time no see! In this post I would like to present [[https://github.com/dschrempf/magix][Magix]], a tool to build,
+cache, and run possibly compiled scripts with dependencies using the [[https://nixos.org/][Nix package
+manager]].
+
+First, I would like to draw your attention to a [[https://bytes.zone/posts/nix-script/][blog post by Brian Hicks]], in
+which he introduces =nix-script=. In brief, Magix is a slimmed down version of
+=nix-script=:
+
+- Magix is simple and stupid.
+- Magix is a tiny wrapper around =nix-build=.
+- Magix uses Nix derivation templates, and so, is easier to understand,
+  modify, and enhance.
+- Magix is heavily tested (only unit tests at the moment, but please drop a pull
+  request).
+
+Have a look at the following example:
+#+begin_src haskell :session ghci :exports code :results none
+#!/usr/bin/env magix
+#!magix haskell
+#!haskellPackages text
+
+import Data.Text (pack)
+import Data.Text.IO (putStrLn)
+import Prelude hiding (putStrLn)
+
+main :: IO ()
+main = putStrLn $ pack "Hello, World!"
+#+end_src
+
+Magix is going to
+1. parse the directives,
+2. assemble a tiny Nix wrapper expression,
+3. use the Nix package manager to build this expression, and
+4. run the derivation result.
+
+The first time doing so, takes around 0.9 seconds on my machine. That sucks.
+However, in step 1, Magix also hashes the input script, and saves a link to the
+derivation result. That is, if Magix knows a script, the next execution is much
+faster: 0.09 seconds. That is one order of magnitude faster!
