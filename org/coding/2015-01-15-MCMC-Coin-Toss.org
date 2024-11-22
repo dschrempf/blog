@@ -11,16 +11,16 @@
 #+LANGUAGE: en
 
 Suppose we observe 58 heads out of 100 coin tosses. Now, we want to know the
-probability of tossing a head $\theta$. A maximum likelihood guess would be
-$\theta = 0.58$ because then, the probability of observing 58 heads
+probability of tossing a head \(\theta\). A maximum likelihood guess would be
+\(\theta = 0.58\) because then, the probability of observing 58 heads
 \begin{align}
   P(58 \mathrm{ heads}) = {100 \choose 58} (0.58)^{58} (0.42)^{42}
 \end{align}
 is greatest (an example of the binomial distribution).
 
 However, we could also use a Bayesian approach to calculate the posterior
-distribution of the probability $\theta$ (i.e., the probability that $\theta$ is
-a certain value conditioned on our observation).
+distribution of the probability \(\theta\) (i.e., the probability that
+\(\theta\) is a certain value conditioned on our observation).
 
 The following C++ code does exactly this (the last column is the posterior).
 
