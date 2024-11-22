@@ -5,7 +5,7 @@
 #+TITLE: Population genetics C++ programs
 #+DATE: <2015-03-26 Thu>
 #+AUTHOR: Dominik Schrempf
-#+EMAIL: dominik@schwarzbaer
+#+EMAIL: dominik.schrempf@gmail.com
 #+DESCRIPTION: A collection of C++ programs about Markov chains and Population Genetics.
 #+KEYWORDS: "Population Genetics" C++ "Markov Chain" Probability Statistics
 #+LANGUAGE: en

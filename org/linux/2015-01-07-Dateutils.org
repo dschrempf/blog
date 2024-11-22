@@ -5,7 +5,7 @@
 #+TITLE: Dateutils
 #+DATE: <2015-01-07 Wed>
 #+AUTHOR: Dominik Schrempf
-#+EMAIL: dominik@schwarzbaer
+#+EMAIL: dominik.schrempf@gmail.com
 #+DESCRIPTION: Work with times and dates in the shell.
 #+KEYWORDS: Dateutils Time Date Difference Shell Seconds
 #+LANGUAGE: en

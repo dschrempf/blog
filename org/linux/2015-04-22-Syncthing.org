@@ -5,7 +5,7 @@
 #+TITLE: Syncthing with SSH Port Forwarding
 #+DATE: <2015-04-22 Wed>
 #+AUTHOR: Dominik Schrempf
-#+EMAIL: dominik@schwarzbaer
+#+EMAIL: dominik.schrempf@gmail.com
 #+DESCRIPTION: Description
 #+KEYWORDS: Syncthing "Port Forwarding" Firewall
 #+LANGUAGE: en

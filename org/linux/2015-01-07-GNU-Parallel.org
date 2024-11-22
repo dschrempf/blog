@@ -5,7 +5,7 @@
 #+TITLE: Zip folders with GNU Parallel
 #+DATE: <2015-01-07 Wed>
 #+AUTHOR: Dominik Schrempf
-#+EMAIL: dominik@schwarzbaer
+#+EMAIL: dominik.schrempf@gmail.com
 #+DESCRIPTION: How to zip folders in parallel.
 #+KEYWORDS: "GNU Parallel" Parallel Tar Zip
 #+LANGUAGE: en
