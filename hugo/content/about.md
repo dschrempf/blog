@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2025-02-15T21:29:01+01:00
+lastmod = 2025-02-15T21:32:18+01:00
 type = "page"
 draft = false
 [menu]
@@ -49,11 +49,11 @@ of topics ranging from physics and biology to web development and finance.
 
 ## Work experience {#work-experience}
 
--   2023 -- present: Software consultant, TNG Technology Consulting
--   2017 -- 2023:  Postdoc in computational biology (St Andrews, Budapest)
+-   2023 -- present: Software consultant, TNG Technology Consulting (Munich)
+-   2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
 
 
 ## Education {#education}
 
--   2013 -- 2017:  PhD in computational biology, Vienna University of Veterinary Medicine
--   2006 -- 2013:  BSc and MSc in physics, Vienna University of Technology
+-   2013 -- 2017:  PhD in computational biology (Vienna, Aarhus)
+-   2006 -- 2013:  BSc and MSc in physics (Vienna, Santiago de Chile)

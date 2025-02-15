@@ -50,10 +50,9 @@ of topics ranging from physics and biology to web development and finance.
 - Computational biology
 
 * Work experience
-- 2023 -- present: Software consultant, TNG Technology Consulting
-- 2017 -- 2023:  Postdoc in computational biology (St Andrews, Budapest)
+- 2023 -- present: Software consultant, TNG Technology Consulting (Munich)
+- 2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
 
 * Education
-- 2013 -- 2017:  PhD in computational biology, Vienna University of Veterinary Medicine
-- 2006 -- 2013:  BSc and MSc in physics, Vienna University of Technology 
-
+- 2013 -- 2017:  PhD in computational biology (Vienna, Aarhus)
+- 2006 -- 2013:  BSc and MSc in physics (Vienna, Santiago de Chile)
