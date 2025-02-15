@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2025-02-15T21:21:22+01:00
+lastmod = 2025-02-15T21:29:01+01:00
 type = "page"
 draft = false
 [menu]
@@ -31,29 +31,29 @@ Software consultant<br />
 [TNG Technology Consulting](https://www.tngtech.com/en/)
 
 
+## About {#about}
+
+I am a postdoctoral researcher and software engineer with 15 years of experience
+in programming in Haskell. I have applied my programming skills in a wide array
+of topics ranging from physics and biology to web development and finance.
+
+
 ## Interests {#interests}
 
--   Functional Programming (Haskell)
+-   Functional programming (Haskell)
 -   Software engineering
--   Markov Chains
+-   Markov chains
 -   Data science
 -   Computational biology
 
 
 ## Work experience {#work-experience}
 
--   Software consultant, TNG Technology Consulting, 2025
--   Postdoc in Computational Biology (St Andrews, Budapest), 2023
+-   2023 -- present: Software consultant, TNG Technology Consulting
+-   2017 -- 2023:  Postdoc in computational biology (St Andrews, Budapest)
 
 
 ## Education {#education}
 
--   PhD in Computational Biology, Vienna University of Veterinary Medicine, 2017
--   MSc in Physics, Vienna University of Technology, 2013
-
-
-## About {#about}
-
-I am a postdoctoral researcher and software engineer with 15 years of experience
-in programming in Haskell. I have applied my programming skills in a wide array
-of topics ranging from physics and biology to web development and finance.
+-   2013 -- 2017:  PhD in computational biology, Vienna University of Veterinary Medicine
+-   2006 -- 2013:  BSc and MSc in physics, Vienna University of Technology

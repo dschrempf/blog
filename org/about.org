@@ -34,21 +34,6 @@
 Software consultant\\
 [[https://www.tngtech.com/en/][TNG Technology Consulting]]
 
-* Interests
-- Functional Programming (Haskell)
-- Software engineering
-- Markov Chains
-- Data science
-- Computational biology
-
-* Work experience
-- Software consultant, TNG Technology Consulting, 2025
-- Postdoc in Computational Biology (St Andrews, Budapest), 2023
-
-* Education
-- PhD in Computational Biology, Vienna University of Veterinary Medicine, 2017
-- MSc in Physics, Vienna University of Technology, 2013
-
 * About
 :PROPERTIES:
 :ID:       fcb6959f-90b5-4fa2-aed8-422cb9406d58
@@ -56,3 +41,19 @@ Software consultant\\
 I am a postdoctoral researcher and software engineer with 15 years of experience
 in programming in Haskell. I have applied my programming skills in a wide array
 of topics ranging from physics and biology to web development and finance.
+
+* Interests
+- Functional programming (Haskell)
+- Software engineering
+- Markov chains
+- Data science
+- Computational biology
+
+* Work experience
+- 2023 -- present: Software consultant, TNG Technology Consulting
+- 2017 -- 2023:  Postdoc in computational biology (St Andrews, Budapest)
+
+* Education
+- 2013 -- 2017:  PhD in computational biology, Vienna University of Veterinary Medicine
+- 2006 -- 2013:  BSc and MSc in physics, Vienna University of Technology 
+
