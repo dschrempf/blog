@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2025-02-15T20:52:24+01:00
+lastmod = 2025-02-15T21:21:22+01:00
 type = "page"
 draft = false
 [menu]
@@ -40,6 +40,12 @@ Software consultant<br />
 -   Computational biology
 
 
+## Work experience {#work-experience}
+
+-   Software consultant, TNG Technology Consulting, 2025
+-   Postdoc in Computational Biology (St Andrews, Budapest), 2023
+
+
 ## Education {#education}
 
 -   PhD in Computational Biology, Vienna University of Veterinary Medicine, 2017
@@ -48,7 +54,6 @@ Software consultant<br />
 
 ## About {#about}
 
-I am a postdoctoral researcher and software engineer in computational biology
-with 15 years of experience in programming in Haskell. I have applied my
-programming skills in a wide array of topics ranging from physics and biology to
-finance.
+I am a postdoctoral researcher and software engineer with 15 years of experience
+in programming in Haskell. I have applied my programming skills in a wide array
+of topics ranging from physics and biology to web development and finance.

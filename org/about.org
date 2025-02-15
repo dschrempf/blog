@@ -41,6 +41,10 @@ Software consultant\\
 - Data science
 - Computational biology
 
+* Work experience
+- Software consultant, TNG Technology Consulting, 2025
+- Postdoc in Computational Biology (St Andrews, Budapest), 2023
+
 * Education
 - PhD in Computational Biology, Vienna University of Veterinary Medicine, 2017
 - MSc in Physics, Vienna University of Technology, 2013
@@ -49,7 +53,6 @@ Software consultant\\
 :PROPERTIES:
 :ID:       fcb6959f-90b5-4fa2-aed8-422cb9406d58
 :END:
-I am a postdoctoral researcher and software engineer in computational biology
-with 15 years of experience in programming in Haskell. I have applied my
-programming skills in a wide array of topics ranging from physics and biology to
-finance.
+I am a postdoctoral researcher and software engineer with 15 years of experience
+in programming in Haskell. I have applied my programming skills in a wide array
+of topics ranging from physics and biology to web development and finance.
