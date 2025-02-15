@@ -1,7 +1,7 @@
 +++
 title = "Dateutils"
 author = ["Dominik Schrempf"]
-description = "Work with times and dates in the shell."
+description = "Work with times and dates in the shell"
 date = 2015-01-07T00:00:00+01:00
 keywords = ["Dateutils", "Time", "Date", "Difference", "Shell", "Seconds"]
 categories = ["Linux"]

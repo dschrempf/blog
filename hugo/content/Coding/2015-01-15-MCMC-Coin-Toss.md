@@ -1,7 +1,7 @@
 +++
 title = "A simple MCMC simulation"
 author = ["Dominik Schrempf"]
-description = "MCMC simulation to approximate observations of coin tosses."
+description = "MCMC simulation to approximate observations of coin tosses"
 date = 2015-01-15T00:00:00+01:00
 keywords = ["MCMC", "Simulation", "Bayesian Statistics", "Coin Toss"]
 categories = ["Coding"]
@@ -20,8 +20,8 @@ probability of tossing a head \\(\theta\\). A maximum likelihood guess would be
 is greatest (an example of the binomial distribution).
 
 However, we could also use a Bayesian approach to calculate the posterior
-distribution of the probability \\(\theta\\) (i.e., the probability that \\(\theta\\) is
-a certain value conditioned on our observation).
+distribution of the probability \\(\theta\\) (i.e., the probability that
+\\(\theta\\) is a certain value conditioned on our observation).
 
 The following C++ code does exactly this (the last column is the posterior).
 

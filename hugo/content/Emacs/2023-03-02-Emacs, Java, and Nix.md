@@ -1,7 +1,7 @@
 +++
 title = "Emacs, Java, and Nix — An interesting journey"
 author = ["Dominik Schrempf"]
-description = "A declarative Java development setup in Emacs using a Nix Flake."
+description = "A declarative Java development setup in Emacs using a Nix Flake"
 date = 2023-03-02T00:00:00+01:00
 keywords = ["Emacs", "Java", "Nix", "Nix Flakes", "LSP", "jdtls", "jdt-language-server"]
 categories = ["Emacs"]

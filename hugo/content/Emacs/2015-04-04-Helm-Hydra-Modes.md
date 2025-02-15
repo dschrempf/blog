@@ -1,7 +1,7 @@
 +++
 title = "Emacs Helm and Hydra minor modes"
 author = ["Dominik Schrempf"]
-description = "Incremental completion and bindings that stick around."
+description = "Incremental completion and bindings that stick around"
 date = 2015-04-04T00:00:00+02:00
 keywords = ["Incremental Completion", "Find", "Keybinding"]
 categories = ["Emacs"]

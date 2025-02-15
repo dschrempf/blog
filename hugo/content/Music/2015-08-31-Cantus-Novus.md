@@ -1,7 +1,7 @@
 +++
 title = "Cantus Novus Wien"
 author = ["Dominik Schrempf"]
-description = "The Cantus Novus Wien is a Viennese choir that I sing in."
+description = "The Cantus Novus Wien is a Viennese choir that I sing in"
 date = 2015-08-31T00:00:00+02:00
 keywords = ["Choir", "Cantus Novus", "Wien", "Vienna", "Chor", "Klassik", "Sakrale Musik"]
 categories = ["Music"]

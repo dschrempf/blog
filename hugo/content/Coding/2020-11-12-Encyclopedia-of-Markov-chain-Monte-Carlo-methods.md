@@ -160,7 +160,7 @@ Reversible jump MCMC algorithm
 
 ## References
 
-A. {Doucet} and A. M. {Johansen} (2011). _{A tutorial on particle filtering and smoothing: fifteen years later}_, Oxford: Oxford University Press.
+A. {Doucet} and A. M. {Johansen} (2011). _A tutorial on particle filtering and smoothing: fifteen years later_, Oxford: Oxford University Press.
 
 Andrieu, Christophe and Doucet, Arnaud and Holenstein, Roman (2010). _Particle Markov chain Monte Carlo methods_.
 
@@ -170,7 +170,7 @@ Chopin, N. and Jacob, P. E. and Papaspiliopoulos, O. (2012). _SMC2: an efficient
 
 Del Moral, Pierre and Doucet, Arnaud and Jasra, Ajay (2006). _Sequential Monte Carlo samplers_.
 
-Geyer, Charles J (2011). _{Introduction to Markov Chain Monte Carlo}_, CRC press.
+Geyer, Charles J (2011). _Introduction to Markov Chain Monte Carlo_, CRC press.
 
 Heng, Jeremy and Bishop, Adrian N. and Deligiannidis, George and Doucet, Arnaud (2020). _Controlled sequential Monte Carlo_.
 
@@ -178,7 +178,7 @@ Liang, Faming and Liu, Chuanhai and Carroll, Raymond (2011). _Advanced Markov ch
 
 Mathieu Fourment and Brian C. Claywell and Vu Dinh and Connor McCoy and Frederick A. Matsen IV and Aaron E. Darling (2018). _Effective online bayesian phylogenetics via sequential monte carlo with guided proposals_.
 
-Brooks, Steve and Gelman, Andrew and Jones, Galin and Meng, Xiao-Li (2011). _{Handbook of Markov Chain Monte Carlo}_, CRC press.
+Brooks, Steve and Gelman, Andrew and Jones, Galin and Meng, Xiao-Li (2011). _Handbook of Markov Chain Monte Carlo_, CRC press.
 
 Arnaud Doucet and Nando de Freitas and Neil Gordon (2001). _Sequential Monte Carlo Methods in Practice_, Springer.
 

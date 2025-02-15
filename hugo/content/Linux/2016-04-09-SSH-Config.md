@@ -1,7 +1,7 @@
 +++
 title = "Configure SSH"
 author = ["Dominik Schrempf"]
-description = "A proper configuration of SSH can save a lot of time (typing passwords, hosts)."
+description = "A proper configuration of SSH can save a lot of time (typing passwords, hosts)"
 date = 2016-04-09T00:00:00+02:00
 keywords = ["SSH", ".ssh", "SSH Configuration", "SSH Config"]
 categories = ["Linux"]

@@ -31,8 +31,8 @@
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 #+end_export
-Postdoc in Computational Biology\\
-[[https://www.elte.hu/en/][Eötvös Loránd University, Budapest]]
+Software consultant\\
+[[https://www.tngtech.com/en/][TNG Technology Consulting]]
 
 * Interests
 - Functional Programming (Haskell)

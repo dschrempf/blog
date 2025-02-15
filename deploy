@@ -3,6 +3,7 @@
 #!runtimeInputs hugo
 
 set -e
+set +u
 
 # Command line arguments.
 # $1: (Optional) Git commit message.

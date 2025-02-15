@@ -1,7 +1,7 @@
 +++
 title = "Easy pretty print in Haskell"
 author = ["Dominik Schrempf"]
-description = "Use pretty-show to pretty print objects in GHCi."
+description = "Use pretty-show to pretty print objects in GHCi"
 date = 2014-12-23T00:00:00+01:00
 keywords = ["Haskell", "Pretty Print", "Show"]
 categories = ["Coding"]

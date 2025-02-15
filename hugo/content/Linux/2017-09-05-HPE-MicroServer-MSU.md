@@ -1,7 +1,7 @@
 +++
 title = "Marvell Storage Utility on HPE ProLiant MicroServer Gen10"
 author = ["Dominik Schrempf"]
-description = "Adventures when using having to deal with proprietary drivers on Arch Linux."
+description = "Adventures when using having to deal with proprietary drivers on Arch Linux"
 date = 2017-09-05T00:00:00+02:00
 keywords = ["MSU", "88SE9230", "Marvell", "HPE", "MicroServer", "RAID", "SMART", "SATA", "SCSI"]
 categories = ["Linux"]

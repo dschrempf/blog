@@ -267,6 +267,6 @@ or comments; drop them on the [repository on GitHub](https://github.com/dschremp
 
 Gelman, Andrew and Carlin, John B and Stern, Hal S and Rubin, Donald B (2014). _Bayesian data analysis_, CRC Press.
 
-Geyer, Charles J (2011). _{Introduction to Markov Chain Monte Carlo}_, CRC press.
+Geyer, Charles J (2011). _Introduction to Markov Chain Monte Carlo_, CRC press.
 
 Harris, Brogan J. and Clark, James W. and Schrempf, Dominik and Szöllősi, Gergely J. and Donoghue, Philip C.J. and Hetherington, Alistair M. and Williams, Tom A. (2021). _Divergent evolutionary trajectories of bryophytes and tracheophytes from a complex common ancestor of land plants_.

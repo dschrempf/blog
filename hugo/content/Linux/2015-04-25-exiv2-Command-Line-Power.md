@@ -1,7 +1,7 @@
 +++
 title = "exiv2 command line power"
 author = ["Dominik Schrempf"]
-description = "Manipulate multiple image files and their Exif data on the command line."
+description = "Manipulate multiple image files and their Exif data on the command line"
 date = 2015-04-25T00:00:00+02:00
 keywords = ["Image", "Picture", "Photo", "Exif", "Command Line", "Batch Manipulation", "Linux"]
 categories = ["Linux"]
