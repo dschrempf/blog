@@ -1,6 +1,6 @@
 #!/usr/bin/env magix
 #!magix bash
-#!runtimeInputs hugo
+#!packages hugo
 
 set -e
 set +u

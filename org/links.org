@@ -38,6 +38,9 @@ derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattforme
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
 * English
+[2025-03-11 Tue] [[https://youtu.be/dPK6t7echuA][How to think about parallel programming: Not!]], Oracle, Guy
+Steele. (Talk at Strange Loop, 2010).
+
 [2023-10-20 Fri] [[https://www.tweag.io/blog/2019-09-06-why-haskell-is-important/][Why Haskell is important]], TWEAG, Marko Karpov.
 
 [2022-09-01 Thu] [[https://www.nature.com/articles/s41558-022-01461-y][Civil disobedience by scientists helps press for urgent climate

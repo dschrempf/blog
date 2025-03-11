@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links"
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2025-02-15T21:32:18+01:00
+lastmod = 2025-03-11T07:58:32+01:00
 draft = false
 [menu]
   [menu.about]
@@ -40,6 +40,9 @@ miteinander, am klügsten wäre jedoch die Einigung auf Signal.
 
 
 ## English {#english}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2025-03-11 Tue] </span></span> [How to think about parallel programming: Not!](https://youtu.be/dPK6t7echuA), Oracle, Guy
+Steele. (Talk at Strange Loop, 2010).
 
 <span class="timestamp-wrapper"><span class="timestamp">[2023-10-20 Fri] </span></span> [Why Haskell is important](https://www.tweag.io/blog/2019-09-06-why-haskell-is-important/), TWEAG, Marko Karpov.
 
