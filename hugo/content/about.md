@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2025-03-11T07:58:32+01:00
+lastmod = 2025-05-03T21:32:25+02:00
 type = "page"
 draft = false
 [menu]
@@ -27,15 +27,24 @@ draft = false
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 
-Software consultant<br />
-[TNG Technology Consulting](https://www.tngtech.com/en/)
+Haskell software consultant<br />
+[Well-Typed](https://well-typed.com/)
 
 
 ## About {#about}
 
-I am a postdoctoral researcher and software engineer with 15 years of experience
-in programming in Haskell. I have applied my programming skills in a wide array
-of topics ranging from physics and biology to web development and finance.
+With expertise across diverse fields including physics, biology, and web
+development, Dominik offers a broad perspective on programming challenges. He
+developed a deep affinity for Haskell during his PhD and postdoc years, applying
+the language to model evolutionary trees.
+
+This foundational work in Haskell, where the process of building and
+manipulating complex structures felt uniquely intuitive and expressive ---
+almost like talking directly to the computer --- led him to pursue a career as a
+software engineer focused on functional programming. Dominik maintains a set of
+Hackage packages geared towards statistical programming. He is also a proficient
+user of the Nix language and package manager, with a strong interest in the Nix
+ecosystem.
 
 
 ## Interests {#interests}
@@ -49,7 +58,8 @@ of topics ranging from physics and biology to web development and finance.
 
 ## Work experience {#work-experience}
 
--   2023 -- present: Software consultant, TNG Technology Consulting (Munich)
+-   2025 -- present: Haskell software consultant, Well-Typed (London/Vienna)
+-   2023 -- 2025: Software consultant, TNG Technology Consulting (Munich/Vienna)
 -   2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
 
 

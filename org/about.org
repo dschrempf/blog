@@ -31,16 +31,25 @@
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 #+end_export
-Software consultant\\
-[[https://www.tngtech.com/en/][TNG Technology Consulting]]
+Haskell software consultant\\
+[[https://well-typed.com/][Well-Typed]]
 
 * About
 :PROPERTIES:
 :ID:       fcb6959f-90b5-4fa2-aed8-422cb9406d58
 :END:
-I am a postdoctoral researcher and software engineer with 15 years of experience
-in programming in Haskell. I have applied my programming skills in a wide array
-of topics ranging from physics and biology to web development and finance.
+With expertise across diverse fields including physics, biology, and web
+development, Dominik offers a broad perspective on programming challenges. He
+developed a deep affinity for Haskell during his PhD and postdoc years, applying
+the language to model evolutionary trees.
+
+This foundational work in Haskell, where the process of building and
+manipulating complex structures felt uniquely intuitive and expressive ---
+almost like talking directly to the computer --- led him to pursue a career as a
+software engineer focused on functional programming. Dominik maintains a set of
+Hackage packages geared towards statistical programming. He is also a proficient
+user of the Nix language and package manager, with a strong interest in the Nix
+ecosystem.
 
 * Interests
 - Functional programming (Haskell)
@@ -50,7 +59,8 @@ of topics ranging from physics and biology to web development and finance.
 - Computational biology
 
 * Work experience
-- 2023 -- present: Software consultant, TNG Technology Consulting (Munich)
+- 2025 -- present: Haskell software consultant, Well-Typed (London/Vienna)
+- 2023 -- 2025: Software consultant, TNG Technology Consulting (Munich/Vienna)
 - 2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
 
 * Education
