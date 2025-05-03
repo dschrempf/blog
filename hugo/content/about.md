@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2025-05-03T21:32:25+02:00
+lastmod = 2025-05-03T21:36:52+02:00
 type = "page"
 draft = false
 [menu]
@@ -28,7 +28,7 @@ draft = false
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 
 Haskell software consultant<br />
-[Well-Typed](https://well-typed.com/)
+[Well-Typed LLP](https://well-typed.com/)
 
 
 ## About {#about}
@@ -58,7 +58,7 @@ ecosystem.
 
 ## Work experience {#work-experience}
 
--   2025 -- present: Haskell software consultant, Well-Typed (London/Vienna)
+-   2025 -- present: Haskell software consultant, Well-Typed LLP (London/Vienna)
 -   2023 -- 2025: Software consultant, TNG Technology Consulting (Munich/Vienna)
 -   2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
 

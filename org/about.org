@@ -32,7 +32,7 @@
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 #+end_export
 Haskell software consultant\\
-[[https://well-typed.com/][Well-Typed]]
+[[https://well-typed.com/][Well-Typed LLP]]
 
 * About
 :PROPERTIES:
@@ -59,7 +59,7 @@ ecosystem.
 - Computational biology
 
 * Work experience
-- 2025 -- present: Haskell software consultant, Well-Typed (London/Vienna)
+- 2025 -- present: Haskell software consultant, Well-Typed LLP (London/Vienna)
 - 2023 -- 2025: Software consultant, TNG Technology Consulting (Munich/Vienna)
 - 2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
 
