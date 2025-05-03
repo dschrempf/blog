@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2025-05-03T21:36:52+02:00
+lastmod = 2025-05-03T21:54:29+02:00
 type = "page"
 draft = false
 [menu]
@@ -19,16 +19,21 @@ draft = false
      alt="gravatar"
      title="Dominik Schrempf"/>
 
+<span class="icons-item"> <a href="https://www.linkedin.com/in/dominik-schrempf-579b0b244/" target="_blank"><i class="fab fa-linkedin fa-1x"></i></a></span>
 <span class="icons-item"> <a href="https://github.com/dschrempf" target="_blank"><i class="fab fa-github"></i></a></span>
-<span class="icons-item"> <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a></span>
+<span class="icons-item"> <a href="https://www.reddit.com/user/hubgears/" target="_blank"><i class="fab fa-reddit"></i></a></span>
 <span class="icons-item"> <a rel="me" href="https://fosstodon.org/@dschrempf" target="_blank"><i class="fab fa-mastodon fa-1x"></i></a></span>
+<span class="icons-item"> <a href="https://www.stackoverflow.com/users/3536806" target="_blank"><i class="fab fa-stack-overflow fa-1x"></i></a></span>
 <span class="icons-item"> <a href="https://orcid.org/0000-0001-8865-9237" target="_blank"><i class="fab fa-orcid fa-1x"></i></a></span>
 <span class="icons-item"> <a href="https://scholar.google.com/citations?user=3pvnGAcAAAAJ" target="_blank"><i class="fab fa-google fa-1x"></i></a></span>
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
 
-Haskell software consultant<br />
-[Well-Typed LLP](https://well-typed.com/)
+<a class="label" style="font-size: 0.9em;" href="https://hackage.haskell.org/user/dschrempf" target="_blank">Hackage</a>
+<a class="label" style="font-size: 0.9em;" href="https://gitlab.haskell.org/dschrempf" target="_blank"><i class="fab fa-gitlab fa-1x"></i> Haskell GitLab</a>
+<a class="label" style="font-size: 0.9em;" href="https://discourse.haskell.org/u/dschrempf/activity" target="_blank"><i class="fab fa-discourse fa-1x"></i> Haskell Discourse</a>
+
+Haskell software consultant, [Well-Typed LLP](https://well-typed.com/)
 
 
 ## About {#about}
