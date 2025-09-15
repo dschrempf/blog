@@ -1,4 +1,4 @@
-Source code of my [[https://dschrempf.github.io/][blog]].
+Source code of my [[https://blog.composef.org/][blog]].
 
 I license the content of the website under the [[https://github.com/dschrempf/blog/blob/master/LICENSE][GNU General Public License v3.0]].
 

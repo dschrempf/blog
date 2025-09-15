@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links"
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2025-05-03T21:31:22+02:00
+lastmod = 2025-09-15T11:09:56+02:00
 draft = false
 [menu]
   [menu.about]
@@ -72,6 +72,15 @@ most notorious tycoons: Robert Maxwell.
 
 
 ## Español {#español}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2025-08-04 Mon] </span></span> [La sumisión de Bruselas a Trump da alas a la extrema derecha](https://elpais.com/internacional/2025-08-03/la-sumision-de-bruselas-a-trump-da-alas-a-la-extrema-derecha.html),
+elPaís. Los aliados del estadounidense en Europa logran reforzar sus mensajes
+sobre la decadencia del Viejo Continente ante la pasividad de la Unión.
+
+<span class="timestamp-wrapper"><span class="timestamp">[2025-08-04 Mon] </span></span> [Trump desnuda a Europa en apenas seis meses](https://elpais.com/internacional/2025-08-03/trump-desnuda-a-europa-en-apenas-seis-meses.html), elPaís. El
+presidente estadounidense ha aprovechado las debilidades geoestratégicas y
+económicas europeas para imponer un acuerdo comercial desigual y el gasto del 5%
+del PIB en defensa en la OTAN.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2022-06-16 Thu] </span></span> [No son tus hijos, no es tu jefe; es el sistema. Así se genera
 el agotamiento o ‘burnout’ parental](https://elpais.com/salud-y-bienestar/2022-06-16/no-son-tus-hijos-no-es-tu-jefe-es-el-sistema-asi-se-genera-el-agotamiento-o-burnout-parental.html), elPaís. Los tabúes sobre la maternidad

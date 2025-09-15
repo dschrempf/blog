@@ -34,7 +34,7 @@ cd hugo
 echo "Build site with Hugo."
 hugo
 
-echo "Push the website built by Hugo to 'dschrempf/dschrempf.github.io'."
+echo "Push the website built by Hugo to 'dschrempf/blog-html'."
 cd public
 git_push "$1"
 

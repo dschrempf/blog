@@ -1,4 +1,4 @@
-baseurl = "https://dschrempf.github.io/"
+baseurl = "https://blog.composef.org/"
 title = "Concept → IO ()"
 
 languageCode = "en-us"
@@ -8,81 +8,81 @@ MetaDataFormat = "toml"
 theme = "skeria"
 
 [outputs]
-    home = ["HTML", "JSON"]
+home = ["HTML", "JSON"]
 
 [permalinks]
-    # Optional. Change the permalink format for the 'post' content type.
-    # The format shown here is the same one Jekyll/Octopress uses by default.
-    post = "/blog/:year/:month/:day/:title/"
+# Optional. Change the permalink format for the 'post' content type.
+# The format shown here is the same one Jekyll/Octopress uses by default.
+post = "/blog/:year/:month/:day/:title/"
 
 [taxonomies]
-    # Optional. Use if you want tags and lists.
-    category = "categories"
+# Optional. Use if you want tags and lists.
+category = "categories"
 
 [markup]
-  [markup.highlight]
-    codeFences = true
-    guessSyntax = false
-    hl_Lines = ""
-    lineNoStart = 1
-    lineNos = false
-    lineNumbersInTable = false
-    noClasses = true
-    style = "tango"
-    tabWidth = 2
-  [markup.goldmark.renderer]
-    unsafe= true
+[markup.highlight]
+codeFences = true
+guessSyntax = false
+hl_Lines = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = false
+noClasses = true
+style = "tango"
+tabWidth = 2
+[markup.goldmark.renderer]
+unsafe = true
 
 [pagination]
-  pagerSize = 30
+pagerSize = 30
 
 # All parameters below here are optional and can be mixed and matched.
 [params]
-    author.name = "Dominik Schrempf"
+author.name = "Dominik Schrempf"
 
-    # Used when a given page doesn't set its own.
-    defaultDescription = "Linux, Emacs, coding and more."
-    defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
+# Used when a given page doesn't set its own.
+defaultDescription = "Linux, Emacs, coding and more."
+defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
 
-    # Displays under the author name in the sidebar, keep it short.
-    # You can use markdown here.
-    tagline = ""
+# Displays under the author name in the sidebar, keep it short.
+# You can use markdown here.
+tagline = ""
 
-    # Icons.
-    github = "https://github.com/dschrempf"
-    bitbucket = ""
-    stackOverflow = "https://www.stackoverflow.com/users/3536806"
-    linkedin = "https://www.linkedin.com/in/dominik-schrempf-579b0b244/"
-    googleplus = ""
-    facebook = ""
-    mastodon = "https://fosstodon.org/@dschrempf"
-    youtube = ""
-    orcid = "https://orcid.org/0000-0001-8865-9237"
-    googleScholar = "https://scholar.google.com/citations?user=3pvnGAcAAAAJ"
-    flattr = ""
-    email = "mailto:dominik.schrempf@gmail.com"
-    gpgkey = "/gpg_public_key.txt"
-    rss = ""
+# Icons.
+github = "https://github.com/dschrempf"
+bitbucket = ""
+stackOverflow = "https://www.stackoverflow.com/users/3536806"
+linkedin = "https://www.linkedin.com/in/dominik-schrempf-579b0b244/"
+googleplus = ""
+facebook = ""
+mastodon = "https://fosstodon.org/@dschrempf"
+youtube = ""
+orcid = "https://orcid.org/0000-0001-8865-9237"
+googleScholar = "https://scholar.google.com/citations?user=3pvnGAcAAAAJ"
+flattr = ""
+email = "mailto:dominik.schrempf@gmail.com"
+gpgkey = "/gpg_public_key.txt"
+rss = ""
 
-    # Link to privacy notice.
-    privacyNotice = "/privacy/"
-
-[[menu.main]]
-    url = "/linux/"
-    name = "Linux"
-    weight = 2
+# Link to privacy notice.
+privacyNotice = "/privacy/"
 
 [[menu.main]]
-    url = "/emacs/"
-    name = "Emacs"
-    weight = 3
+url = "/linux/"
+name = "Linux"
+weight = 2
 
 [[menu.main]]
-    url = "/coding/"
-    name = "Coding"
-    weight = 4
+url = "/emacs/"
+name = "Emacs"
+weight = 3
 
 [[menu.main]]
-    url = "/music/"
-    name = "Music"
-    weight = 5
+url = "/coding/"
+name = "Coding"
+weight = 4
+
+[[menu.main]]
+url = "/music/"
+name = "Music"
+weight = 5
