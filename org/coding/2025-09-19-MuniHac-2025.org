@@ -1,0 +1,330 @@
+#+hugo_base_dir: ../../hugo
+#+hugo_section: Coding
+#+hugo_categories: Coding
+#+hugo_type: post
+#+title: Notes on MuniHac 2025 talks
+#+date: <2025-09-19 Fri>
+#+author: Dominik Schrempf
+#+email: dominik.schrempf@gmail.com
+#+description: Personal notes I took on the MuniHac 2025 talks
+#+keywords: Haskell MuniHac "Programming languages" Well-Typed GHC
+#+language: en
+
+MuniHac has happened again. I enjoyed it a lot. Below you can find my personal
+notes on the talks. Free free to contact me if you have any comments!
+
+#+toc: headlines 1
+
+* Rodrigo Mesquita: A modern step-through debugger for Haskell
+[2025-09-12 Fri 11:30]
+[[https://youtu.be/urYtE15ryA0][Link to talk]].
+
+Rodrigo gives a pitch about =haskell-debugger=:
+- Uses Debug Adapter Protocol (DAP); [[https://emacs-lsp.github.io/dap-mode/][dap-mode]] for Emacs.
+- Can show evaluation order (helps understand lazy evaluation).
+
+We also observe [[https://en.wikipedia.org/wiki/Tail_call][tail call optimization]], a fundamental feature of functional
+languages, where no stack frame is created for intermediate function calls.
+
+* Gaël Deest: Hindsight - Type-safe, evolvable event sourcing
+:PROPERTIES:
+:ID:       7b789de3-4fa0-465a-a0e9-a998b3b0a8f2
+:END:
+[2025-09-13 Sat 09:30]
+Event sourcing:
+- Events are the single source of truth.
+- Program is fold over events
+  #+begin_src haskell :session ghci :exports code :results none
+  applyEvent :: State -> Event -> State
+  #+end_src
+
+** Drawbacks of event sourcing
+- Complex (indirection, cognitive load)
+- Asynchronous events may lead to problems in consistency
+- Schema design is hard
+- Tests
+
+** Hindsight - The library
+- Opinionated event store abstraction
+- Handles versioned events (e.g., =MoneyDepositedV0=) using type families
+- The code base contains all event versions, but see the talk of [[id:eb9ffe17-b681-4101-8290-ab3aafdb7f2d][Tommy Engström:
+  =domaindriven= - Type-safe event sourcing in Haskell]]
+
+** Other notes
+- Events are single source of truth. If they are inserted into the database,
+  they happened. That's why it is key to distinguish between requests (e.g.,
+  `DoThis`) and commands (e.g., `DoneThis`).
+
+* Andrew Lelechenko: Linear Haskell for string builders
+[[https://youtu.be/ONE6ex8zB00][Link to talk]].
+
+** String
+- String concatenation ~(++)~ is linear in the length of the left argument.
+- Even for long strings, this is not too much of a problem, when concatenation
+  happens once.
+- However, it does make a big difference when folding over lists (fast ~foldr~
+  vs slow ~foldl~).
+- Often, left concatenation is hidden, for example, with hierarchical ~Show~
+  instances. That's part of the reason, why we use ~shows :: String -> String~.
+- For *function composition*, left or right association does not matter much
+  (i.e., only by a constant amount of time)!
+  #+begin_src haskell :session ghci :exports code :results none
+  f . (g . h) ~ (f . g) . h -- In time.
+  #+end_src
+- Difference lists
+  #+begin_src haskell :session ghci :exports code :results none
+  newtype DList = DList (String -> String)
+  #+end_src
+  ensure that we always use function composition. However, using functions
+  everywhere does have a performance impact.
+
+** Text
+- We want to use ~Text~ anyways.
+  #+begin_src haskell :session ghci :exports code :results none
+  data Text = Text {
+      buffer :: ByteArray
+    , offset :: Int
+    , length :: Int
+    }
+  #+end_src
+  Left and right concatenation have the same runtime, but are both /slow/! (It
+  is linear in /both/ of its arguments; we have to copy both byte arrays).
+- We'd have to know the final length of concatenated pieces of text, so we can
+  allocate the final length, and copy everything in.
+- Lazy text sidesteps the issue by managing a list of byte arrays.
+- Lazy types can treat with lazy/streamed input/output.
+- However, they still do not look into the future and repetitively allocate
+  chunks of, e.g., 4 kb.
+
+** ~TextBuilder~
+- Strict builder by summing the individual lengths of text fragments before
+  allocating memory.
+- Fast, but needs to track (pre-compute) maximum lengths of text fragments.
+
+** Java-style string builder
+#+begin_src haskell :session ghci :exports code :results none
+data Buffer = Buffer {
+    buffer :: ByteArray
+  , used   :: Int
+  }
+
+(++) :: Buffer -> Text -> Buffer
+(++) = ... -- Mutates buffer (`freeze . copy bytes . thaw`).
+#+end_src
+Unsafe! We can not just mutate buffers, we need to copy them somewhere else.
+
+We can be honest about having a mutable buffer:
+#+begin_src haskell :session ghci :exports code :results none
+data MutBuffers s = MutBuffer {
+    buffer :: MutableByteArray s
+  , used   :: Int
+  }
+
+(++) :: MutBuffer s -> Text -> ST s (MutBuffer s)
+#+end_src
+Impractical. Can not be used with standard library functions.
+
+** Linear types
+Instead of /poisoning the context/ with ~ST~, we would like to restrict our
+functions in that they can only use the buffer /once/.
+
+First use hidden in =attoparsec=:
+#+begin_src haskell :session ghci :exports code :results none
+data Builder = Builder {
+    gen    :: Int
+  , buffer :: ByteArray -- Also stores the generation counter `gen` at start.
+  , used   :: Int
+  }
+#+end_src
+
+If somebody is tempering with the mutable ~buffer~, one can detect it using the
+immutable generation counter ~gen~. (Bryan o Sullivan).
+
+** Linear and unlifted types
+#+begin_src haskell :session ghci :exports code :results none
+data Buffer :: TYPE ('BoxedRep 'Unlifted) where
+  Buffer :: {-# UNPACK #-} !Text -> Buffer
+#+end_src
+Combines idea of Java and =attoparsec=.
+
+(Values of unlifted types are never bottom.)
+
+#+begin_src haskell :session ghci :exports code :results none
+appendBounded :: Int _> _ -> Buffer %1 -> Buffer
+(>) :: Buffer %1 -> Text -> Buffer
+runBuffer   :: (Buffer %1 -> Buffer) %1 -> Text
+runBufferBS :: (Buffer %1 -> Buffer) %1 -> StrictByteString
+#+end_src
+
+~%1 ->~ (also printed as lollipop arrow) means the old value becomes invalid,
+i.e., is mutated.
+
+We wrap the ~Buffer~ type into an exposed ~Builder~ type we are used. Affects
+performance, again.
+#+begin_src haskell :session ghci :exports code :results none
+data Builder = Builder ) Buffer %1 -> Buffer )
+
+fromText :: Text -> Builder
+-- ...
+#+end_src
+
+Benchmarks show that the library =linear-builder= is extremely fast (especially
+the linear interface, not so much the builder interface).
+
+* Steve Shuck: The =pcre2= regular expression library
+** In Haskell, it is currently too complicated to use regular expressions
+- We need two libraries: =regex-base= and a corresponding backend, e.g.,
+  =regex-pcre=.
+- We need two imports: =Text.Regex.Base=, and =Text.Regex.PCRE.String=.
+- Type signatures are complicated and too general.
+
+** Usage of =pcre2=
+:PROPERTIES:
+:ID:       13f5dd48-307c-4f2f-9c4a-ae064d9df6b1
+:END:
+#+begin_src haskell :session ghci :exports code :results none
+module Main (main) where
+
+ipmort System.Exit      (die)
+import Text.Regex.Pcre2
+
+main :: IO ()
+main = do
+  let re = matchOpt (Caseless <> NotEmpty) "a*"
+
+  case re "aa b Aaa" of
+    []      -> die
+    results -> print results
+#+end_src
+
+Compilation of expressions happens once and is stored in a lookup table. (But
+GHC is smart enough to reuse the compiled regular expressions anyways; i.e., the
+lookup is not even performed). That is, each regular expression is compiled only
+once, even when it is matched multiple times.
+
+Also impressive, Steve provides *Template Haskell splices*:
+- In expressions, the splice defines a function that can directly applied to the
+  string to match against.
+- The quasi quoter can also be used in patter matching contexts. We can even
+  refer to match groups!
+
+* Tommy Engström: =domaindriven= - Type-safe event sourcing in Haskell
+:PROPERTIES:
+:ID:       eb9ffe17-b681-4101-8290-ab3aafdb7f2d
+:END:
+This talk is a reply to the talk of [[id:7b789de3-4fa0-465a-a0e9-a998b3b0a8f2][Gaël Deest: Hindsight - Type-safe, evolvable
+event sourcing]].
+
+Tommy shows how he is handling events in Haskell. He uses =servant=, and
+[[https://hackage.haskell.org/package/domaindriven][=domaindriven=]], a library he is developing.
+
+If event types changes (e.g., a record is added), Tommy migrates all events in
+the store using a function with ~ShapeCoercible~ type class constraint. (You
+need to define how to ~shapeCoerce~ ~EventV1~ to ~EventV2~).
+
+He also argues that the big downside of event sourcing is that the initial
+design is too important. Months into projects, we usually have collected
+knowledge about how the initial design can be improved, but major changes are
+difficult to implement when using event sourcing.
+
+* Joe Warren: How I use Haskell for 3D printing
+:PROPERTIES:
+:ID:       c9e4114a-d3b2-4486-9731-0ab9eef8c4a7
+:END:
+- [[http://doscienceto.it/cad-talk/slides.html][Link to slides]].
+- [[https://doscienceto.it/blog/][Blog of Joe]].
+
+How do 3D printers work:
+- Printer follows GCode, which is a list of path instructions (tool path).
+- STL format: Describes a raw, unstructured triangulated surface by the unit
+  normal and vertices of triangles. Can be compiled to GCode.
+
+We can construct objects using [[https://en.wikipedia.org/wiki/Constructive_solid_geometry][constructive solid geometry]], a Boolean algebra
+for superimposing 3D shapes.
+
+- 1991 :: OpenCascade release (Non-uniform rational B-spline, NURB).
+- 2006 :: In anticipation of the expiration of the FDM patend, first projects
+  start to design open 3D printers.
+- 2009 :: FDM patent expires (most available 3D printers use this technology)
+- 2010 :: OpenSCAD release.
+- 2018 :: Joe writes CSG library.
+- 2023 :: Waterfall CAD (bindings to OpenCascade).
+
+Joe makes a point for using programmable CAD frameworks: Abstraction and code
+reuse.
+
+Producing a number of Christmas logos from SVG images induced Jow to develop an
+SVG importer into Waterfall CAD, and and exporter from Waterfall CAD to SVG.
+
+* Mike Sperber: Six years of FUNAR - Teaching software architecture and functional programming to the uninitiated
+[[https://youtu.be/WRoYKBXWJes][Link to talk]].
+
+- [[https://www.active-group.de/][Active group]].
+- [[https://bobkonf.de/2025/en/][Bob conference]] March 13 2026, Berlin.
+- [[https://haskell.foundation/podcast/][Haskell Interlude]].
+- [[https://conf.researchr.org/home/icfp-splash-2025/funarch-2025][FUNARCH 2025]]. Online ticket available; still looking for contributions.
+
+** What is (specifically) functional software architecture?
+Replies from MuniHac audience.
+
+- Pure business logic
+- Keep interaction with outside world edges
+- Design data types that capture domain logic
+- Parse, don't validate
+- Be declarative
+- Capture laws/properties of data at design stage
+
+** What is software architecture?
+- Designs long-lived software, large software involving multiple people teams
+
+*Functional design and architecture* - Alexander Granin.
+
+FUNAR module: Functional software architecture (iSAQB).
+
+*Structure and interpretation of computer programs* (SICP) - Abelson, Sussman.
+
+*How to design programs* - Felleisen, Findler, Flatt, Krishnamurthi.
+
+*Schreibe dein Programm* - Sperber, Klaeren.
+
+** Software architecture in Haskell
+Functional programming excels in data modeling:
+- Sums (!) and products (algebraic data types).
+
+For example, model the "Hearts" game.
+- Data: What is a card, rank, hand, game, and so on.
+- Events, commands.
+- Domain logic, gameplay workflow.
+
+The modulith - salvation for the monolith?
+
+*Structured design: Fundamentals of discipline of computer program and systems
+design* - Yourdon, Constantine.
+
+Managing, changing code is expensive. The more interdependencies/coupling you
+have in your code, the harder it is to change code. Optimize code to have low
+coupling.
+
+Immutability, abstraction boundaries, expressive interface languages, expressive
+effects.
+
+** Functional software architecture
+- Bottom-up architecture
+- Late software architecture / architecture avoidance (so architecture is easy
+  to change)
+- Functional qualities first (adapt your code; rest through changes, which are
+  easy; refactor!)
+
+** Conclusions
+- Positive feedback
+- We need good books
+- We need good communications
+- The ability to teach well does matter; if something works well in teaching, it
+  usually works well in production
+- Usability may be more important than efficiency or type-level foo
+
+** Questions/comments
+- Primitive obsession and Boolean blindness. Use algebraic data types, not
+  primitive data types.
+- Abstract data types (information hiding; preserve invariances) vs full export
+  (extensibility).
