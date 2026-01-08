@@ -38,6 +38,10 @@ derStandard. Nutzer sprechen mittlerweile über dutzende verschiedene Plattforme
 miteinander, am klügsten wäre jedoch die Einigung auf Signal.
     
 * English
+[2026-01-08 Thu] [[https://time.com/7341726/stranger-things-season-5-part-2-review/]['Stranger Things' Was a Casualty of the Franchise Machine]],
+TIME. Stranger Things Started as a Triumph of Trauma Bonding. It Ended as a
+Casualty of the Franchise Machine.
+
 [2025-03-11 Tue] [[https://youtu.be/dPK6t7echuA][How to think about parallel programming: Not!]], Oracle, Guy
 Steele. (Talk at Strange Loop, 2010).
 
@@ -69,6 +73,11 @@ with profit margins to rival Google – and it was created by one of Britain’s
 most notorious tycoons: Robert Maxwell.
 
 * Español
+[2026-01-08 Thu] [[https://elpais.com/ideas/2026-01-03/el-efectismo-como-ideologia-en-el-final-de-stranger-things.html][El efectismo como ideología en el final de ‘Stranger Things’]],
+elPaís. La serie apuesta por una forma de cultura que trabaja únicamente con las
+emociones y que apuesta por el efecto inmediato, que no es otro que agitar a las
+masas.
+
 [2025-08-04 Mon] [[https://elpais.com/internacional/2025-08-03/la-sumision-de-bruselas-a-trump-da-alas-a-la-extrema-derecha.html][La sumisión de Bruselas a Trump da alas a la extrema derecha]],
 elPaís. Los aliados del estadounidense en Europa logran reforzar sus mensajes
 sobre la decadencia del Viejo Continente ante la pasividad de la Unión.
