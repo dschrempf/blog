@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links"
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2025-09-19T21:46:16+02:00
+lastmod = 2026-01-08T21:11:52+01:00
 draft = false
 [menu]
   [menu.about]
@@ -41,6 +41,10 @@ miteinander, am klügsten wäre jedoch die Einigung auf Signal.
 
 ## English {#english}
 
+<span class="timestamp-wrapper"><span class="timestamp">[2026-01-08 Thu] </span></span> ['Stranger Things' Was a Casualty of the Franchise Machine](https://time.com/7341726/stranger-things-season-5-part-2-review/),
+TIME. Stranger Things Started as a Triumph of Trauma Bonding. It Ended as a
+Casualty of the Franchise Machine.
+
 <span class="timestamp-wrapper"><span class="timestamp">[2025-03-11 Tue] </span></span> [How to think about parallel programming: Not!](https://youtu.be/dPK6t7echuA), Oracle, Guy
 Steele. (Talk at Strange Loop, 2010).
 
@@ -72,6 +76,11 @@ most notorious tycoons: Robert Maxwell.
 
 
 ## Español {#español}
+
+<span class="timestamp-wrapper"><span class="timestamp">[2026-01-08 Thu] </span></span> [El efectismo como ideología en el final de ‘Stranger Things’](https://elpais.com/ideas/2026-01-03/el-efectismo-como-ideologia-en-el-final-de-stranger-things.html),
+elPaís. La serie apuesta por una forma de cultura que trabaja únicamente con las
+emociones y que apuesta por el efecto inmediato, que no es otro que agitar a las
+masas.
 
 <span class="timestamp-wrapper"><span class="timestamp">[2025-08-04 Mon] </span></span> [La sumisión de Bruselas a Trump da alas a la extrema derecha](https://elpais.com/internacional/2025-08-03/la-sumision-de-bruselas-a-trump-da-alas-a-la-extrema-derecha.html),
 elPaís. Los aliados del estadounidense en Europa logran reforzar sus mensajes
