@@ -41,7 +41,7 @@ pagerSize = 30
 author.name = "Dominik Schrempf"
 
 # Used when a given page doesn't set its own.
-defaultDescription = "Linux, Emacs, coding and more."
+defaultDescription = "Linux, Emacs, coding and more"
 defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
 
 # Displays under the author name in the sidebar, keep it short.
