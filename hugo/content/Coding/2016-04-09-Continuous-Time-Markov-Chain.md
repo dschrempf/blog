@@ -9,7 +9,7 @@ type = "post"
 draft = false
 +++
 
-<span class="timestamp-wrapper"><span class="timestamp">[2016-04-09 Sat] </span></span> I extended [my set of C++ programs]({{< relref "2015-03-26-PopGen-CPP-Programs" >}}) to include a
+<span class="timestamp-wrapper"><span class="timestamp">[2016-04-09 Sat]</span></span> I extended [my set of C++ programs]({{< relref "2015-03-26-PopGen-CPP-Programs" >}}) to include a
 simulator for generic continuous-time Markov chains.  I.e., any
 transition rate matrix can be used.
 

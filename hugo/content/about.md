@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2026-01-08T21:11:52+01:00
+lastmod = 2026-03-06T08:49:27+01:00
 type = "page"
 draft = false
 [menu]
@@ -51,6 +51,8 @@ Hackage packages geared towards statistical programming. He is also a proficient
 user of the Nix language and package manager, with a strong interest in the Nix
 ecosystem.
 
+[Curriculum vitae](/2026-03-06-CV-Dominik-Schrempf.pdf).
+
 
 ## Interests {#interests}
 
@@ -63,9 +65,9 @@ ecosystem.
 
 ## Work experience {#work-experience}
 
--   2025 -- present: Haskell software consultant, Well-Typed LLP (London/Vienna)
--   2023 -- 2025: Software consultant, TNG Technology Consulting (Munich/Vienna)
--   2017 -- 2023:  Postdoc in computational biology (St. Andrews, Budapest)
+-   2025 -- present: Haskell software consultant, Well-Typed LLP (London, Vienna)
+-   2023 -- 2025: Software consultant, TNG Technology Consulting (Munich, Vienna)
+-   2017 -- 2023: Postdoc in computational biology (St. Andrews, Budapest)
 
 
 ## Education {#education}

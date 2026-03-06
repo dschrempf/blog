@@ -9,7 +9,7 @@ type = "post"
 draft = false
 +++
 
-<span class="timestamp-wrapper"><span class="timestamp">[2019-03-01 Fri] </span></span> See [comment below](http://disq.us/p/1zy3urq); some Linux operating systems already provide
+<span class="timestamp-wrapper"><span class="timestamp">[2019-03-01 Fri]</span></span> See [comment below](http://disq.us/p/1zy3urq); some Linux operating systems already provide
 native support for the Marvell RAID controller in legacy mode.
 
 

@@ -59,6 +59,8 @@ Hackage packages geared towards statistical programming. He is also a proficient
 user of the Nix language and package manager, with a strong interest in the Nix
 ecosystem.
 
+[[file:/2026-03-06-CV-Dominik-Schrempf.pdf][Curriculum vitae]].
+
 * Interests
 - Functional programming (Haskell)
 - Software engineering
