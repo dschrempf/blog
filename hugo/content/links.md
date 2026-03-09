@@ -3,7 +3,7 @@ title = "Links to newspaper articles"
 author = ["Dominik Schrempf"]
 description = "Interesting links"
 date = 2018-06-17T00:00:00+02:00
-lastmod = 2026-03-06T08:49:27+01:00
+lastmod = 2026-03-09T07:59:51+01:00
 draft = false
 [menu]
   [menu.about]

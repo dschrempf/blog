@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2026-03-06T08:49:27+01:00
+lastmod = 2026-03-09T07:59:50+01:00
 type = "page"
 draft = false
 [menu]
@@ -51,7 +51,7 @@ Hackage packages geared towards statistical programming. He is also a proficient
 user of the Nix language and package manager, with a strong interest in the Nix
 ecosystem.
 
-[Curriculum vitae](/2026-03-06-CV-Dominik-Schrempf.pdf).
+<a href="/cv.pdf" download="CV-Dominik-Schrempf.pdf">Curriculum vitae</a>.
 
 
 ## Interests {#interests}
