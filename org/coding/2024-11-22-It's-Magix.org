@@ -9,7 +9,6 @@
 #+description: Build, cache, and run scripts with dependencies
 #+keywords: Nix Haskell Bash Python Compile Cache Scripts
 #+language: en
-#+hugo_draft: true
 
 Long time no see! In this post I would like to present [[https://github.com/dschrempf/magix][Magix]], a tool to build,
 cache, and run possibly compiled scripts with dependencies using the [[https://nixos.org/][Nix package

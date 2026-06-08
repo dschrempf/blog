@@ -9,7 +9,6 @@
 #+DESCRIPTION: How to use a Markov chain Monte Carlo sampler
 #+KEYWORDS: "Markov chain Monte Carlo" "Haskell" "Metropolis-Hastings-Green" "Hamiltonian dynamics"
 #+LANGUAGE: en
-#+HUGO_DRAFT: false
 
 * Motivation :ignore:
 We analyze the number of worldwide airline fatal accidents:
