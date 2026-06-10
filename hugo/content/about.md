@@ -4,7 +4,7 @@ author = ["Dominik Schrempf"]
 description = "Personal information"
 date = 2014-12-24T00:00:00+01:00
 keywords = ["Dominik Schrempf", "Blog", "Linux", "Emacs", "Python", "Haskell", "Population Genetics", "Music"]
-lastmod = 2026-06-08T21:25:40+02:00
+lastmod = 2026-06-10T21:32:33+02:00
 type = "page"
 draft = false
 [menu]
@@ -19,6 +19,7 @@ draft = false
      alt="gravatar"
      title="Dominik Schrempf"/>
 
+<div class="icons-subtitle">
 <span class="icons-item"> <a href="https://www.linkedin.com/in/dominik-schrempf-579b0b244/" target="_blank"><i class="fab fa-linkedin fa-1x"></i></a></span>
 <span class="icons-item"> <a href="https://github.com/dschrempf" target="_blank"><i class="fab fa-github"></i></a></span>
 <span class="icons-item"> <a href="https://www.reddit.com/user/hubgears/" target="_blank"><i class="fab fa-reddit"></i></a></span>
@@ -28,6 +29,7 @@ draft = false
 <span class="icons-item"> <a href="https://scholar.google.com/citations?user=3pvnGAcAAAAJ" target="_blank"><i class="fab fa-google fa-1x"></i></a></span>
 <span class="icons-item"> <a href="mailto:dominik.schrempf@gmail.com"><i class="fas fa-envelope fa-1x"></i></a></span>
 <span class="icons-item"> <a href="/gpg_public_key.txt"><i class="fas fa-key fa-1x"></i></a></span>
+</div>
 
 <a class="label" style="font-size: 0.9em;" href="https://hackage.haskell.org/user/dschrempf" target="_blank">Hackage</a>
 <a class="label" style="font-size: 0.9em;" href="https://gitlab.haskell.org/dschrempf" target="_blank"><i class="fab fa-gitlab fa-1x"></i> Haskell GitLab</a>
