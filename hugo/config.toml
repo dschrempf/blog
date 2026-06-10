@@ -1,7 +1,7 @@
 baseurl = "https://blog.composef.org/"
 title = "Concept → IO ()"
 
-languageCode = "en-us"
+locale = "en-us"
 disqusShortname = ""
 MetaDataFormat = "toml"
 
