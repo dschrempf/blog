@@ -29,7 +29,25 @@ git_push () {
     git push origin master
 }
 
+echo "Ensure the published-site submodule (hugo/public) is initialized and healthy."
+# 'hugo' writes its output into hugo/public, a git submodule pointing at the
+# published-site repo (dschrempf/dschrempf.github.io). If its gitdir pointer is
+# missing or broken (e.g. wiped by a stray 'hugo --cleanDestinationDir'), we
+# would build into a detached, unpushable working tree. Repair it first.
+if [ ! -e hugo/public/.git ]; then
+    git submodule deinit -f hugo/public || true
+fi
+git submodule update --init hugo/public
+
 cd hugo
+
+echo "Remove stale files from the previous build."
+# Drop all tracked files in the published site so renamed/fingerprinted assets
+# from older builds (e.g. css/skeria.<old-hash>.css) do not linger. We do NOT
+# use 'hugo --cleanDestinationDir' here: it would delete the submodule's '.git'
+# pointer file. Going through git instead preserves '.git' and any untracked
+# files, and the subsequent 'git add .' in git_push stages the removals.
+git -C public rm -r -q --ignore-unmatch . || true
 
 echo "Build site with Hugo."
 hugo
