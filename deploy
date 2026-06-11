@@ -29,25 +29,35 @@ git_push () {
     git push origin master
 }
 
-echo "Ensure the published-site submodule (hugo/public) is initialized and healthy."
+echo "Prepare the published-site checkout (hugo/public)."
 # 'hugo' writes its output into hugo/public, a git submodule pointing at the
-# published-site repo (dschrempf/dschrempf.github.io). If its gitdir pointer is
-# missing or broken (e.g. wiped by a stray 'hugo --cleanDestinationDir'), we
-# would build into a detached, unpushable working tree. Repair it first.
+# published-site repo (dschrempf/dschrempf.github.io). The deploy *advances*
+# that site, so the submodule MUST sit on the 'master' branch -- not a detached
+# HEAD. Commits made on a detached HEAD never move 'master', so the
+# 'git push origin master' below would report "up-to-date" and push nothing,
+# while the parent repo records the unpublished commit. That mismatch is exactly
+# what leaves the submodule "broken" on a fresh clone, so do NOT run
+# 'git submodule update' on an existing checkout (it detaches HEAD).
+
+# Initialize only on a fresh clone, where the working tree does not exist yet.
 if [ ! -e hugo/public/.git ]; then
-    git submodule deinit -f hugo/public || true
+    git submodule update --init hugo/public
 fi
-git submodule update --init hugo/public
+
+# Put the checkout on 'master' at exactly the live commit, then empty the
+# working tree so stale files from older builds (renamed/fingerprinted assets,
+# deleted pages, ...) cannot survive -- hugo regenerates everything from source
+# below, and 'git add .' then stages the removals. This is the "re-initialize,
+# removing old files" step; we do it via git rather than
+# 'hugo --cleanDestinationDir', which would delete the submodule's .git pointer.
+# 'rm -r' drops tracked files; 'clean -fdx' drops the untracked leftovers. Both
+# leave '.git' untouched.
+git -C hugo/public fetch origin master
+git -C hugo/public checkout -f -B master origin/master
+git -C hugo/public rm -r -q --ignore-unmatch .
+git -C hugo/public clean -fdx
 
 cd hugo
-
-echo "Remove stale files from the previous build."
-# Drop all tracked files in the published site so renamed/fingerprinted assets
-# from older builds (e.g. css/skeria.<old-hash>.css) do not linger. We do NOT
-# use 'hugo --cleanDestinationDir' here: it would delete the submodule's '.git'
-# pointer file. Going through git instead preserves '.git' and any untracked
-# files, and the subsequent 'git add .' in git_push stages the removals.
-git -C public rm -r -q --ignore-unmatch . || true
 
 echo "Build site with Hugo."
 hugo
