@@ -1,14 +1,15 @@
 baseurl = "https://blog.composef.org/"
 title = "Concept → IO ()"
 
-locale = "en-us"
+locale = "en-US"
 disqusShortname = ""
 MetaDataFormat = "toml"
 
 theme = "skeria"
 
 [outputs]
-home = ["HTML", "JSON"]
+# RSS: the site feed. JSON: the search index.
+home = ["HTML", "RSS", "JSON"]
 
 [permalinks]
 # Optional. Change the permalink format for the 'post' content type.
@@ -44,6 +45,13 @@ author.name = "Dominik Schrempf"
 defaultDescription = "Linux, Emacs, coding and more"
 defaultKeywords = "Arch Linux, Emacs, Haskell, C++, Python"
 
+# Social preview image for link previews, relative to the site root. Without it
+# shared links fall back to a plain text preview. Wants ~1200x630 px.
+# images = ["og-image.png"]
+
+# Credits the author in Mastodon link previews.
+fediverseCreator = "@dschrempf@fosstodon.org"
+
 # Displays under the author name in the sidebar, keep it short.
 # You can use markdown here.
 tagline = ""
@@ -57,7 +65,7 @@ orcid = "https://orcid.org/0000-0001-8865-9237"
 googleScholar = "https://scholar.google.com/citations?user=3pvnGAcAAAAJ"
 email = "mailto:dominik.schrempf@gmail.com"
 gpgkey = "/gpg_public_key.txt"
-rss = ""
+rss = true
 
 # Link to privacy notice.
 privacyNotice = "/privacy/"
